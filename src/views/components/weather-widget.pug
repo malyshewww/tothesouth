@@ -4,7 +4,7 @@
 			.card-weather__header 
 				.card-weather__main
 					.card-weather__image 
-						img(src="/assets/images/city/weather-widget/weather-1.svg", alt="")
+						img(src="assets/images/city/weather-widget/weather-1.svg", alt="")
 					.card-weather__degrees
 						.card-weather__value= cityPage.weather.header.degrees
 						.card-weather__sup-value °C / °F
@@ -21,7 +21,7 @@
 					.card-weather__item(class={active: index === 0})
 						.card-weather__caption= item.caption
 						.card-weather__image 
-							img(src=`/assets/images/city/weather-widget/weather-${item.image}.svg`, alt=item.caption)
+							img(src=`assets/images/city/weather-widget/weather-${item.image}.svg`, alt=item.caption)
 						.card-weather__temp.temp-weather
 							each temp in item.range
 								.temp-weather__value= temp

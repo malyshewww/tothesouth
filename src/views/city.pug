@@ -6,12 +6,12 @@ block variables
 	- let currentPage = "Алушта"
 
 append styles 
-	link(href="/assets/styles/city.css" rel="stylesheet")
-	link(href="/assets/styles/content.css" rel="stylesheet")
-	link(href="/assets/styles/images-widget.css" rel="stylesheet")
-	link(href="/assets/styles/map-widget.css" rel="stylesheet")
-	link(href="/assets/styles/facility-preview.css" rel="stylesheet")
-	link(href="/assets/styles/weather-widget.css" rel="stylesheet")
+	link(href="assets/styles/city.css" rel="stylesheet")
+	link(href="assets/styles/content.css" rel="stylesheet")
+	link(href="assets/styles/images-widget.css" rel="stylesheet")
+	link(href="assets/styles/map-widget.css" rel="stylesheet")
+	link(href="assets/styles/facility-preview.css" rel="stylesheet")
+	link(href="assets/styles/weather-widget.css" rel="stylesheet")
 
 append scripts 
 	script(src="assets/scripts/map.js")
@@ -23,7 +23,7 @@ block content
 			+cityNavigation(0)
 			.city__wrapper 
 				.city__image.ibg
-					img(src="/assets/images/city/city-main/main.jpg", alt="фото")
+					img(src="assets/images/city/city-main/main.jpg", alt="фото")
 				.city__body.city-layout
 					aside.aside
 						+asideNavigation([...cityPage.resorts], "Курорты рядом")
