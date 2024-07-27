@@ -1,0 +1,38 @@
+@use 'sass:math';
+@import 'config/variables';
+@import 'config/mixins';
+@import 'pages/city/city-common.scss';
+
+.city-photos {
+	&__body {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 30px;
+	}
+	&__item {
+	}
+	& .content {
+		& h2 {
+			font-size: 32px;
+			font-weight: 800;
+		}
+	}
+	& .content-group .facilities-body {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+.card-photo {
+	display: grid;
+	gap: 10px;
+	align-content: start;
+	align-items: start;
+	&__image {
+		padding-bottom: math.div(220, 370) * 100%;
+		border-radius: 10px;
+		overflow: hidden;
+	}
+	&__caption {
+		font-size: 16px;
+		line-height: 130%;
+	}
+}

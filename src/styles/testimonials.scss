@@ -1,0 +1,11 @@
+@use 'sass:math';
+@import 'config/variables';
+@import 'config/mixins';
+@import 'pages/city/city-common';
+@import 'components/testimonials-item';
+
+.testimonials {
+	& .heading {
+		margin-bottom: 40px;
+	}
+}

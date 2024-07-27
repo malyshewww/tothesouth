@@ -1,0 +1,14 @@
+@use 'sass:math';
+@import 'config/variables';
+@import 'config/mixins';
+@import 'pages/city/city-common.scss';
+
+@import 'components/post-item.scss';
+
+.city-posts {
+	&__list {
+		@include reset-list;
+		display: grid;
+		gap: 20px;
+	}
+}

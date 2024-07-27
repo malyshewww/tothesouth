@@ -1,0 +1,12 @@
+.main-hotels {
+	padding: 61px 0;
+	& .heading {
+		margin-bottom: 40px;
+		&__title {
+			max-width: 455px;
+		}
+	}
+	& .hotels-wrapper {
+		gap: 40px;
+	}
+}

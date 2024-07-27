@@ -1,0 +1,24 @@
+footer.footer
+    .container 
+        .footer__body 
+            .footer__info.info-footer
+                a(href="homepage.html").footer__logo
+                    img(src="assets/images/logo.svg", alt="")
+                .footer__copy ©На Юга, 2024
+                a(href="#").footer__politic Политика конфиденциальности
+                .footer__disclamer Мы не предоставляем услуги бронирования. Всю информацию Вы можете найти на странице заинтресовавшего Вас обьекта Пишите, мы обязательно ответим
+            .footer__main.main-footer
+                .footer__menu.menu-footer
+                    .menu-footer__label Информация
+                    ul.menu-footer__list 
+                        each item in footerMenu.list
+                            li.menu-footer__item
+                                a(href=item.link).menu-footer__link= item.title 
+                    ul.menu-footer__list 
+                        each item in footerMenu.listSecond
+                            li.menu-footer__item
+                                a(href=item.link).menu-footer__link= item.title 
+                .footer__contacts  
+                    a(href="tel:+79788029014").footer__phone +7 (978) 802 90 14
+                    a(href="mailto:info@na-uga.ru").footer__email info@na-uga.ru
+                    a(href="#").footer__button.btn.btn-orange-transparent Добавить проект 

@@ -1,0 +1,38 @@
+.breadcrumbs {
+	margin: 20px 0;
+	&__navigation {
+	}
+	&__list {
+		@include reset-list;
+		display: flex;
+		align-items: center;
+		gap: 5px;
+	}
+	&__item {
+		font-size: 12px;
+		line-height: 120%;
+		& + & {
+			display: flex;
+			align-items: center;
+			gap: 5px;
+			&::before {
+				content: '';
+				display: block;
+				width: 9px;
+				height: 17px;
+				flex-shrink: 0;
+				background-image: url('../images/icons/arrow-right.svg');
+				background-repeat: no-repeat;
+				background-position: center center;
+			}
+		}
+		&.active {
+			color: $gray-text;
+			pointer-events: none;
+		}
+	}
+	&__link {
+	}
+}
+.container {
+}

@@ -1,0 +1,25 @@
+.main-news
+    .main-news__wrapper
+        .container 
+            .heading 
+                .heading__title Новости
+                a(href="#").btn.btn-blue Все новости 
+        .main-news__body 
+            .container
+                .main-news__slider.swiper
+                    .main-news__slider-wrapper.swiper-wrapper 
+                        each item in homePage.news
+                            .main-news__item.news-card
+                                .news-card__image.ibg
+                                    img(src=`assets/images/homepage/main-news/news-${item.img}.jpg`, alt=item.title)
+                                .news-card__body 
+                                    .news-card__title= item.title
+                                    .news-card__description 
+                                        p= item.descr
+                                            | #[a(href="#").news-card__link Подробнее]
+                                    .news-card__bottom 
+                                        .news-card__date 21.06.24
+                                        .news-card__badge Новости
+            .slider-controls 
+                button(type="button").slider-button.slider-button-prev 
+                button(type="button").slider-button.slider-button-next 

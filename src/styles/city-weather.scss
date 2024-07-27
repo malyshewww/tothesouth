@@ -1,0 +1,15 @@
+@use 'sass:math';
+@import 'config/variables';
+@import 'config/mixins';
+@import 'pages/city/city-common.scss';
+
+.city-weather {
+	&__body {
+		border: 1px solid $gray-line;
+		border-radius: 10px;
+		background: $white;
+	}
+	& .weather-widget {
+		padding: 39px 40px;
+	}
+}

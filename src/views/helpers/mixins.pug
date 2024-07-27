@@ -1,0 +1,155 @@
+mixin facilityPreview(item, imgPath, className)
+    .card-preview(class=className)
+        button(type="button").button-favorite 
+        .card-preview__body
+            .card-preview__image.ibg
+                img(src=`assets/images/${imgPath}/hotel-${item.img}.jpg`, alt="")
+            .card-preview__content 
+                if item.title
+                    .card-preview__title= item.title 
+                if item.descr
+                    .card-preview__description= item.descr
+                if item.price
+                    .card-preview__bottom 
+                        .card-preview__price= item.price
+                        .card-preview__sub-price за чел. в сутки в июне
+mixin breadCrumbs([...arr], currentPage)
+    .breadcrumbs
+        .container 
+            nav.breadcrumbs__navigation 
+                ul.breadcrumbs__list 
+                    each item in arr
+                        li.breadcrumbs__item 
+                            a(href=item.link).breadcrumbs__link= item.title
+                    li.breadcrumbs__item.active= currentPage
+mixin imagesWidget([...imagesArr], classNames)
+    .images-widget(class=classNames)
+        each image in imagesArr
+            .images-widget__image.ibg 
+                img(src=`assets/images/city/images-widget/${image}.jpg`, alt="изображение")
+mixin badges([...badgesArr])
+    .badges
+        ul.badges__list 
+            each badge in badgesArr
+                li.badges__item 
+                    a(href=badge.link).badges__link= badge.title
+mixin hotelsBlock([...badges])
+    .hotels-wrapper 
+        .hotels-body 
+            if block 
+                block
+        a(href="#").btn.btn-lg.btn-blue-transparent Посмотреть все предложения
+        if badges && badges.length
+            +badges(badges)
+mixin facilitiesBlock([...badges], link)
+    .facilities-wrapper
+        .facilities-body
+            if block 
+                block
+        if link
+            a(href="#").btn.btn-lg.btn-blue-transparent Все предложения
+        if badges && badges.length
+            +badges(badges)
+mixin testimonialsIitem(item)
+    .testimonials-item
+        .testimonials-item__image.ibg
+            img(src=`/assets/images/testimonials/${item.img}.jpg`, alt=item.place)
+        .testimonials-item__body 
+            .testimonials-item__place= item.place
+            address.testimonials-item__address= item.address
+            .testimonials-item__info 
+                .testimonials-item__author= item.author
+                .testimonials-item__date= item.date     
+                .rating
+                    ul.rating__list.r-4
+                        li.rating__item 
+                        li.rating__item 
+                        li.rating__item 
+                        li.rating__item 
+                        li.rating__item 
+            .testimonials-item__text 
+                p= item.text
+                a(href="#").testimonials-item__btn.btn-more Подробнее
+mixin btnShowMore(title, link)
+    a(href=link).btn.btn-lg.btn-blue-transparent= title
+mixin cityNavigation(currentIndex)
+    nav.city__navigation.navigation-city
+        ul.navigation-city__list 
+            each item, index in cityPage.navigation
+                li.navigation-city__item(class={expanded: item.subList})
+                    a(href=item.link class={active: index == currentIndex}).navigation-city__link= item.title
+                    if item.subList
+                        ul.navigation-city__sub-list
+                            each subItem in item.subList
+                                li.navigation-city__sub-item
+                                    a(href=subItem.link).navigation-city__sub-link= subItem.title
+
+mixin cardPhoto(item)
+    figure.city-photos__item.card-photo
+        .card-photo__image.ibg
+            img(src=`assets/images/city/city-photos/${item.img}.jpg`, alt=item.caption)
+        figcaption.card-photo__caption= item.caption
+mixin pagination([...arr], activeIndex)
+    nav.pagination-nav 
+        ul.pagination
+            li.page-item.page-item--prev
+                a(href="#").page-link Назад
+            each item, index in arr
+                li.page-item(class={active: index === activeIndex})
+                    a(href="#").page-link= item
+            li.page-item.page-item--next
+                a(href="#").page-link Вперед
+mixin object(item, idx)
+    .object
+        input(type="checkbox" name="object" id=`object-${idx}` checked=item.checked).input-object.visuallyHidden
+        label(for=`object-${idx}`).object-card
+            span.object-card__icon 
+                img(src=`assets/images/objects/${item.icon}.svg`, alt=item.caption)
+            span.object-card__caption= item.caption
+            span.object-card__checkbox 
+                span
+mixin asideNavigation([...arrLinks], caption)
+    .aside-navigation
+        .aside__caption= caption
+        nav
+            ul.aside-navigation__list 
+                each item in arrLinks
+                    li.aside-navigation__item 
+                        a(href=item.link).aside-navigation__link= item.title
+mixin btnDetail(text = "Подробнее")
+    a(href="#").btn-detail= text 
+mixin objectCard(item, classNames)
+    .object-card(class=[`object-card--${item.icon} ${classNames}`])
+        span.object-card__icon
+        span.object-card__caption= item.caption
+mixin fieldGroup(caption)
+    fieldset.form-group
+        legend.form-group__caption= caption
+        if block 
+            block
+mixin customDropdown([...dropList], currentValue)
+    .custom-dropdown
+        .custom-dropdown__wrapper(data-dropdown)
+            .custom-dropdown__btn(data-dropdown-button)= currentValue
+            ul.custom-dropdown__list.select-list(data-dropdown-list)
+                each item in dropList
+                    li.select-list__item(data-value=item)= item
+            input(type="hidden" value="").custom-dropdown__input
+mixin checkbox(item, idx, name)
+    .checkbox
+        input(type="checkbox" name=name id=`${name}-${idx}` checked=item.checked).checkbox-input.visuallyHidden
+        label(for=`${name}-${idx}`).checkbox-label
+            | #{item.title}
+            span 
+mixin facilityCardPreview(item)
+    .facility-preview
+        .facility-preview__image-wrap
+            .facility-preview__image.ibg
+                img(src=`assets/images/facilities/${item.img}.jpg`, alt=item.title)
+            button(type="button").button-favorite 
+        .facility-preview__body
+            .facility-preview__title= item.title
+            .facility-preview__sub-title= item.subTitle
+            .facility-preview__description
+                p #{item.descr}
+                +btnDetail("Подобнее")

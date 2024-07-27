@@ -1,0 +1,89 @@
+@use 'sass:math';
+
+.main-features {
+	padding: 51px 0px 61px;
+	& .heading {
+		display: grid;
+		grid-template-columns: 1fr 0.702fr;
+		gap: 30px;
+		align-items: flex-end;
+		&__title {
+			max-width: 540px;
+		}
+		&__sub-title {
+			max-width: 360px;
+		}
+	}
+	&__body {
+		display: grid;
+		grid-template-columns: 1fr 0.702fr;
+		gap: 30px;
+		align-items: stretch;
+	}
+	&__items {
+		display: grid;
+		grid-template-columns: 100%;
+		gap: 30px;
+	}
+	&__item {
+		min-height: 167px;
+		border: 1px solid $gray-line;
+		border-radius: 15px;
+		padding: 29px 30px;
+		background: $white;
+		display: flex;
+		align-items: flex-start;
+		gap: 20px;
+	}
+	&__icon {
+		border-radius: 50%;
+		width: 60px;
+		height: 60px;
+		background: $gray-background;
+		display: grid;
+		place-items: center;
+		flex-shrink: 0;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+	&__content {
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+	}
+	&__title {
+		font-weight: 700;
+		font-size: 24px;
+		line-height: 120%;
+		color: $black;
+	}
+	&__description {
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 130%;
+		color: $black;
+	}
+	&__image {
+		border-radius: 20px;
+		overflow: hidden;
+		padding-bottom: math.div(561, 470) * 100%;
+	}
+}
+
+.main-features__item {
+	&:nth-child(1) {
+		& .main-features__icon {
+			background-image: url('../images/homepage/main-features/calendar.svg');
+		}
+	}
+	&:nth-child(2) {
+		& .main-features__icon {
+			background-image: url('../images/homepage/main-features/bagage.svg');
+		}
+	}
+	&:nth-child(3) {
+		& .main-features__icon {
+			background-image: url('../images/homepage/main-features/chat-star.svg');
+		}
+	}
+}

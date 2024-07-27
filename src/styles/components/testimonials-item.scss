@@ -1,0 +1,117 @@
+@use 'sass:math';
+
+.testimonials {
+	&__wrapper {
+		display: grid;
+		gap: 20px;
+	}
+	&__body {
+		display: grid;
+		gap: 40px;
+	}
+}
+.testimonials-item {
+	border: 1px solid $gray-line;
+	border-radius: 10px;
+	padding: 39px 40px;
+	background: $white;
+	min-height: 300px;
+	display: flex;
+	align-items: flex-start;
+	gap: 30px;
+	&__image {
+		border-radius: 10px;
+		// padding-bottom: math.div(220, 330) * 100%;
+		overflow: hidden;
+		flex-shrink: 0;
+		height: 220px;
+		width: 330px;
+	}
+	&__body {
+		display: grid;
+		justify-items: start;
+		gap: 10px;
+	}
+	&__place {
+		font-weight: 700;
+		font-size: 24px;
+		line-height: 120%;
+	}
+	&__address {
+		font-style: normal;
+		font-size: 14px;
+		line-height: 140%;
+		color: $gray-text;
+	}
+	&__info {
+		display: flex;
+		align-items: center;
+		gap: 20px;
+		width: 100%;
+	}
+	&__author {
+		font-weight: 700;
+		font-size: 20px;
+		line-height: 120%;
+	}
+	&__date {
+		font-size: 14px;
+		line-height: 140%;
+		color: $gray-text;
+	}
+	&__text {
+		font-size: 16px;
+		line-height: 130%;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 4;
+		overflow: hidden;
+		& p {
+			display: inline;
+			&:not(:last-child) {
+				margin-bottom: 10px;
+			}
+		}
+	}
+}
+.rating {
+	margin-left: auto;
+	&__list {
+		@include reset-list;
+		display: flex;
+		align-items: center;
+		gap: 5px;
+	}
+	&__item {
+		width: 13px;
+		height: 14px;
+		display: block;
+		background-image: url('../images/icons/star-t.svg');
+		background-size: 13px 14px;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+}
+.rating__list.r-1 li:nth-child(-n + 1) {
+	background-image: url('../images/icons/star.svg');
+	background-repeat: no-repeat;
+}
+
+.rating__list.r-2 li:nth-child(-n + 2) {
+	background-image: url('../images/icons/star.svg');
+	background-repeat: no-repeat;
+}
+
+.rating__list.r-3 li:nth-child(-n + 3) {
+	background-image: url('../images/icons/star.svg');
+	background-repeat: no-repeat;
+}
+
+.rating__list.r-4 li:nth-child(-n + 4) {
+	background-image: url('../images/icons/star.svg');
+	background-repeat: no-repeat;
+}
+
+.rating__list.r-5 li:nth-child(-n + 5) {
+	background-image: url('../images/icons/star.svg');
+	background-repeat: no-repeat;
+}

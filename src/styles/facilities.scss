@@ -1,0 +1,64 @@
+@use 'sass:math';
+@import 'config/variables';
+@import 'config/mixins';
+@import 'pages/city/city-common.scss';
+
+@import 'components/object-card.scss';
+
+.city-facilities {
+	&__body {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 30px;
+	}
+}
+.facility-preview {
+	padding: 19px;
+	border: 1px solid $gray-line;
+	border-radius: 10px;
+	background: $white;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	&__image-wrap {
+		position: relative;
+	}
+	&__image {
+		padding-bottom: math.div(190, 230) * 100%;
+		border-radius: 10px;
+		overflow: hidden;
+	}
+	&__body {
+		display: grid;
+		gap: 5px;
+	}
+	&__title {
+		font-weight: 700;
+		font-size: 20px;
+		line-height: 120%;
+		color: $black;
+	}
+	&__sub-title {
+		font-size: 14px;
+		line-height: 140%;
+		color: $gray-text;
+	}
+	&__description {
+		margin-top: 5px;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 5;
+		overflow: hidden;
+		& p {
+			font-size: 14px;
+			color: $black;
+			line-height: 140%;
+			display: inline;
+		}
+	}
+}
+.ibg {
+}
+.button-favorite {
+}
+.btn-detail {
+}

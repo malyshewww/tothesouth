@@ -1,0 +1,102 @@
+.header {
+	padding: 10px 0;
+	min-height: $header-height;
+	background-color: $white;
+	&__body {
+		display: flex;
+		justify-content: space-between;
+		gap: 20px;
+	}
+	&__left {
+		display: flex;
+		align-items: center;
+		gap: 0 50px;
+	}
+	&__logo {
+		display: block;
+	}
+	&__choices {
+	}
+	&__btn-choice {
+		gap: 10px;
+		&::after {
+			content: '';
+			width: 13px;
+			height: 13px;
+			mask-image: url('../images/icons/chevron.svg');
+			mask-repeat: no-repeat;
+			mask-position: center;
+			background-color: $white;
+		}
+	}
+	&__links {
+		display: flex;
+		align-items: center;
+		gap: 20px;
+	}
+	&__favorite {
+		width: 24px;
+		height: 24px;
+		display: block;
+		&::before {
+			content: '';
+			display: block;
+			flex-shrink: 0;
+			width: 24px;
+			height: 24px;
+			mask-image: url('../images/icons/favorite.svg');
+			background-color: $white;
+			mask-repeat: no-repeat;
+			mask-position: center;
+			mask-size: 24px 24px;
+		}
+	}
+	&__btn-auth {
+	}
+	&__btn-add {
+		gap: 10px;
+		&::after {
+			content: '';
+			flex-shrink: 0;
+			display: block;
+			width: 22px;
+			height: 22px;
+			mask-image: url('../images/icons/add-project.svg');
+			background-color: currentColor;
+			mask-repeat: no-repeat;
+			mask-position: center;
+			mask-size: 22px 22px;
+		}
+	}
+}
+
+body:not(.home) {
+	& .header .btn {
+		min-height: 45px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	& .header {
+		color: $gray-text;
+		&__btn-choice {
+			border-color: currentColor;
+			color: currentColor;
+			&::after {
+				background-color: currentColor;
+			}
+		}
+		&__favorite {
+			&::before {
+				background-color: currentColor;
+			}
+		}
+		&__btn-auth {
+			border-color: currentColor;
+			color: currentColor;
+		}
+		&__btn-add {
+			border-color: $orange;
+			color: $orange;
+		}
+	}
+}

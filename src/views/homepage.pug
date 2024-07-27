@@ -1,0 +1,18 @@
+extends ./layouts/default
+
+block variables 
+	- let pageTitle = "Главная"
+	- let bodyClass = "home"
+
+append styles 
+	link(href="/assets/styles/homepage.css" rel="stylesheet")
+prepend scripts 
+	//- script(src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.0.1/swiper-bundle.min.js") 
+
+block content 
+	include ./sections/main/main-screen
+	include ./sections/main/main-regions
+	include ./sections/main/main-news
+	include ./sections/main/main-features
+	include ./sections/main/main-hotels
+	include ./sections/main/main-content

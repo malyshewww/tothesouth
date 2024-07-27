@@ -1,0 +1,102 @@
+@use 'sass:math';
+@use '../../libs/swiper.scss';
+.main-news {
+	overflow: hidden;
+	padding: 61px 0 51px;
+	& .heading {
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 40px;
+	}
+	&__wrapper {
+		background-color: $gray-background;
+		padding: 102px 0;
+	}
+	&__slider {
+		overflow: visible;
+	}
+	&__body {
+		position: relative;
+	}
+}
+.container {
+}
+.heading {
+	&__title {
+	}
+}
+.news-card {
+	flex-shrink: 0;
+	border-radius: 10px 10px 0 0;
+	overflow: hidden;
+	width: 30%;
+	&__image {
+		border-radius: inherit;
+		height: 320px;
+	}
+	&__body {
+		padding: 20px 30px;
+		background-color: $white;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		border: 1px solid $gray-line;
+		border-radius: 0 0 10px 10px;
+	}
+	&__title {
+		font-weight: 700;
+		font-size: 18px;
+		line-height: 120%;
+	}
+	&__description {
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 140%;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 3;
+		overflow: hidden;
+		position: relative;
+		& p {
+			display: inline;
+		}
+		& span {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			width: 43%;
+			padding: 0 10px;
+		}
+	}
+	&__link {
+		text-decoration: underline;
+		color: $blue;
+		display: inline-block;
+	}
+	&__bottom {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 20px;
+		font-size: 14px;
+		line-height: 140%;
+		color: $gray-text;
+	}
+	&__date {
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 140%;
+		color: $gray-text;
+	}
+	&__badge {
+		border-radius: 5px;
+		padding: 5px 15px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		min-height: 34px;
+		width: 87px;
+		background: #eff2f8;
+	}
+}

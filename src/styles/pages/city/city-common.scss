@@ -1,0 +1,136 @@
+.city {
+	&__navigation {
+	}
+}
+.navigation-city {
+	border: 1px solid $gray-line;
+	border-radius: 10px;
+	padding: 12px 20px;
+	min-height: 65px;
+	background: $white;
+	margin-bottom: 30px;
+	position: relative;
+	&__list {
+		@include reset-list;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 7px;
+	}
+	&__item {
+		&.expanded {
+			& .navigation-city__link {
+				gap: 10px;
+				&::after {
+					content: '';
+					width: 20px;
+					height: 20px;
+					mask-image: url('../images/icons/plus.svg');
+					mask-repeat: no-repeat;
+					mask-position: center;
+					background-color: currentColor;
+				}
+			}
+		}
+	}
+	&__link {
+		padding: 10px 30px;
+		min-height: 41px;
+		border-radius: 5px;
+		font-size: 16px;
+		line-height: 130%;
+		text-align: center;
+		color: $black;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		&.active {
+			background-color: $blue-1;
+			color: $white;
+		}
+	}
+	&__sub-list {
+		@include reset-list;
+		position: absolute;
+		z-index: 5;
+		top: calc(100% + 33px);
+		right: 0;
+		border: 1px solid $gray-line;
+		border-radius: 10px;
+		padding: 19px 20px;
+		width: 207px;
+		box-shadow: 10px 4px 40px 0 rgba(53, 68, 85, 0.25);
+		background: white;
+		display: grid;
+		gap: 20px;
+	}
+	&__sub-link {
+		min-height: 41px;
+		display: grid;
+		place-items: center;
+		text-align: center;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 130%;
+		text-align: center;
+		color: $black;
+	}
+}
+
+.city-layout {
+	display: grid;
+	grid-template-columns: 270px 1fr;
+	align-items: start;
+	gap: 30px;
+}
+
+.city-wrapper {
+	display: grid;
+	grid-template-columns: 100%;
+	gap: 60px 0px;
+}
+
+.aside-navigation {
+	border: 1px solid $gray-line;
+	border-radius: 10px;
+	padding: 20px;
+	background: $white;
+	display: grid;
+	gap: 20px;
+	position: sticky;
+	top: 20px;
+	&__list {
+		@include reset-list;
+		display: grid;
+		gap: 20px;
+		align-items: start;
+	}
+	&__item {
+		&:not(:last-child) {
+			padding-bottom: 20px;
+			border-bottom: 1px solid $gray-line;
+		}
+	}
+	&__link {
+		font-size: 14px;
+		line-height: 140%;
+	}
+}
+.aside {
+	display: grid;
+	align-items: start;
+	gap: 20px;
+	&__caption {
+		font-weight: 700;
+		font-size: 20px;
+		line-height: 120%;
+		color: #000;
+	}
+}
+
+.aside-form {
+	border: 1px solid var(--gray-line);
+	border-radius: 10px;
+	padding: 19px 20px;
+	background: $white;
+}

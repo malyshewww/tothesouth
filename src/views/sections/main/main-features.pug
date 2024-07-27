@@ -1,0 +1,15 @@
+.main-features
+    .container 
+        .heading 
+            .heading__title Особенности аренды жилья для отдыха
+            .heading__sub-title Что следует учесть, планируя путешествие
+        .main-features__body 
+            .main-features__items 
+                each item in homePage.features
+                    .main-features__item 
+                        .main-features__icon
+                        .main-features__content
+                            .main-features__title= item.title
+                            .main-features__description= item.descr
+            .main-features__image.ibg
+                img(src="assets/images/homepage/main-features/img.jpg", alt="особенности")

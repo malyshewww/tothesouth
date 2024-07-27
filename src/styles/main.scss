@@ -1,0 +1,33 @@
+@use 'sass:math';
+
+@import 'config/variables';
+@import 'config/reset';
+@import 'config/mixins';
+// @import 'config/font-faces';
+
+@import 'utils/common';
+@import 'components/header';
+@import 'components/footer';
+@import 'components/breadcrumbs';
+@import 'components/pagination';
+
+.container {
+	max-width: $maxWidthContainer + px;
+	margin: 0 auto;
+	padding: 0 math.div($containerPadding, 2) + px;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.main {
+	flex: 1 1 auto;
+	padding-bottom: 120px;
+}
+
+.footer {
+	margin-top: auto;
+}

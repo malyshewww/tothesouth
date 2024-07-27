@@ -1,0 +1,32 @@
+extends ./layouts/default
+
+block variables 
+	- let pageTitle = "Алушта";
+	- let breadCrumbsList = [{"title": "Главная", "link": "/"}, {"title": "Крым", "link": "/"}];
+	- let currentPage = "Алушта"
+
+append styles 
+	link(href="/assets/styles/city-photos.css" rel="stylesheet")
+	link(href="/assets/styles/content.css" rel="stylesheet")
+
+block content 
+	.city-photos
+		.container 
+			.page-title= pageTitle
+			+cityNavigation(3)
+			.heading 
+				.heading__title.title-xs Фото Алушты
+			.city-wrapper
+				.city-photos__body
+					each photo in cityPage.photos
+						+cardPhoto(photo)
+				+pagination([...pagination], 3)
+				.city-photos__content 
+					.content-group 
+						.content
+							h2 Где остановиться в Алуште?
+							+facilitiesBlock([...cityPage.badgesList], true)
+								each hotel in cityPage.hotels
+									+facilityPreview(hotel, "city/city-main/hotels")
+							p Наверное, каждому знакомо фото горы Демерджи или Чатыр-Даг, которые манят туристов, отдыхающий по всему приморскому берегу. Для отдыхающих с ребенком в 2024 году особенно интересным будет посещение Алуштинского аквариума, парка миниатюр и дельфинария «Акварель». Также в непосредственной близости от города, в поселке Партенит, есть прекрасный парк «Айвазовское» и «поющие фонтаны», расположенные под открытым небом. Прекрасная возможность привести домой потрясающие фотографии!
+							p Еще одним популярным развлечением является музей катастроф на водах - сюда приезжают, в основном взрослые, которые интересуются историей или морским делом. Любителям природных достопримечательностей рекомендуем посетить долину приведений - скалистая местность, где любое фото выглядит незаурядно.

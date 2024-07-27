@@ -1,0 +1,10 @@
+@use 'sass:math';
+@import 'config/variables';
+
+@import 'pages/home/main-screen';
+@import 'pages/home/main-regions';
+@import 'pages/home/main-news';
+@import 'pages/home/main-features';
+@import 'pages/home/main-hotels';
+@import 'facility-preview';
+@import 'pages/home/main-content';

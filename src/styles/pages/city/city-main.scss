@@ -1,0 +1,8 @@
+.city {
+	&__image {
+		border-radius: 20px;
+		overflow: hidden;
+		padding-bottom: math.div(370, 1170) * 100%;
+		margin-bottom: 30px;
+	}
+}

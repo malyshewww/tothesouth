@@ -1,0 +1,55 @@
+.post-item {
+	border-radius: 10px;
+	background: $white;
+	&__body {
+		display: grid;
+		grid-template-columns: 300px 1fr;
+	}
+	&__image {
+		padding-bottom: math.div(259, 300) * 100%;
+	}
+	&__content {
+		padding: 50px 30px 50px 20px;
+		display: grid;
+		gap: 10px;
+		border: 1px solid $gray-line;
+		border-left: 0;
+	}
+	&__title {
+		font-weight: 700;
+		font-size: 18px;
+		line-height: 120%;
+		color: black;
+	}
+	&__description {
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 130%;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 3;
+		overflow: hidden;
+		& p {
+			display: inline;
+		}
+	}
+	&__bottom {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: 20px;
+	}
+	&__date {
+		font-size: 14px;
+		line-height: 140%;
+		color: $gray-text;
+	}
+	&__badge {
+		border-radius: 5px;
+		padding: 7px 15px;
+		background: #eff2f8;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 140%;
+		color: $gray-text;
+	}
+}

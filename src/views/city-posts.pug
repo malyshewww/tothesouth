@@ -1,0 +1,36 @@
+extends ./layouts/default
+
+block variables 
+	- let pageTitle = "Алушта";
+	- let breadCrumbsList = [{"title": "Главная", "link": "/"}, {"title": "Крым", "link": "/"}];
+	- let currentPage = "Алушта"
+
+append styles 
+	link(href="/assets/styles/city-posts.css" rel="stylesheet")
+
+block content 
+	.city-posts
+		.container 
+			.page-title= pageTitle
+			+cityNavigation(6)
+			.heading 
+				.heading__title.title-xs Статьи
+			.city-layout 
+				aside.aside 
+					+asideNavigation([...cityPage.asideCategories], "Категории")
+				.city-wrapper
+					ul.city-posts__list 
+						each post in cityPage.postList
+							li.city-posts__item.post-item
+								.post-item__body 
+									.post-item__image.ibg
+										img(src=`assets/images/city/city-posts/${post.img}.jpg`, alt="")
+									.post-item__content
+										.post-item__title Как добраться до Алушты?
+										.post-item__description 
+											p Самая крупная транспортная развязка на полуострове – город Симферополь (столица Крыма) находится в 48 км от Алушты. Большая часть туристов попадает на курорт с пересадкой, о самых удобных вариантах проезда вы узнаете далее..
+											+btnDetail("Подробнее")
+										.post-item__bottom 
+											.post-item__date 21.06.24
+											.post-item__badge.badges__link Новости
+					+pagination([...pagination], 3)

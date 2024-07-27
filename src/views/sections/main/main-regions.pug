@@ -1,0 +1,15 @@
+.main-regions
+	.container 
+		.main-regions__body 
+			each region in homePage.regions
+				.main-regions__group
+					.heading 
+						.heading__title= region.title
+						.heading__sub-title= region.subTitle
+					.main-regions__items 
+						each item in region.items
+							.main-regions__item
+								.main-regions__image.ibg
+									img(src=`/assets/images/homepage/main-regions/${region.key}-${item.image}.jpg`, alt=item.caption)
+								.main-regions__caption= item.caption
+					a(href="#").main-regions__link Показать еще

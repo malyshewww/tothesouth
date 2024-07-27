@@ -1,0 +1,41 @@
+extends ./layouts/default
+
+block variables 
+	- let pageTitle = "Алушта";
+	- let breadCrumbsList = [{"title": "Главная", "link": "/"}, {"title": "Крым", "link": "/"}];
+	- let currentPage = "Алушта"
+
+append styles 
+	link(href="/assets/styles/facilities.css" rel="stylesheet")
+	link(href="/assets/styles/forms.css" rel="stylesheet")
+
+append scripts 
+
+block content 
+	.city-facilities
+		.container
+			.page-title= pageTitle
+			+cityNavigation(7)
+			.heading 
+				.heading__title.title-xs Где можно пообедать в Алуште
+			.city-layout 
+				aside.aside 
+					+objectCard(otherObjcets[0], 'active')
+					.aside-form
+						form(action="#", method="post").form 
+							.form-groups 
+								+fieldGroup("Регион, город")
+									.form-group__items
+										+customDropdown([...dropdowns.region], "Крым")
+										+customDropdown([...dropdowns.city], "Алушта")
+								+fieldGroup("Раздел")
+									+customDropdown([...dropdowns.section], "Развлечения")
+								+fieldGroup("Категория")
+									.form-group__items
+										each item, index in filterCheckboxes.food
+											+checkbox(item, index, "food")
+				.city-wrapper 
+					.city-facilities__body
+						each item in cityPage.facilitiesList.food
+							+facilityCardPreview(item)
+					+pagination([...pagination], 3)

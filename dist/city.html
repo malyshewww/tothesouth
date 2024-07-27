@@ -1,0 +1,828 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Алушта</title>
+	<meta name="description">
+	<meta name="keywords" content="Перечень ключевых слов">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://example.com">
+	<meta property="og:title" content="Алушта">
+	<meta property="og:description">
+	<meta property="twitter:title" content="Алушта">
+	<meta property="twitter:description" content="description">
+	<link rel="canonical" href="https://example.com">
+	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap&_v=20240727160810" rel="stylesheet">
+	<link href="/assets/styles/main.css?_v=20240727160810" rel="stylesheet">
+	<link href="/assets/styles/city.css?_v=20240727160810" rel="stylesheet">
+	<link href="/assets/styles/content.css?_v=20240727160810" rel="stylesheet">
+	<link href="/assets/styles/images-widget.css?_v=20240727160810" rel="stylesheet">
+	<link href="/assets/styles/map-widget.css?_v=20240727160810" rel="stylesheet">
+	<link href="/assets/styles/facility-preview.css?_v=20240727160810" rel="stylesheet">
+	<link href="/assets/styles/weather-widget.css?_v=20240727160810" rel="stylesheet">
+	<meta name="theme-color" content="#fff">
+	<meta name="msapplication-navbutton-color" content="#fff">
+	<meta name="apple-mobile-web-app-status-bar-style" content="#fff">
+	<meta name="apple-mobile-web-app-title" content="Название">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="format-detection" content="address=no">
+	<meta name="format-detection" content="email=no">
+	<meta name="format-detection" content="date=no">
+	<link rel="shortcut icon" href="images/favicons/favicon.svg" type="image/x-icon">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="container">
+				<div class="header__body">
+					<div class="header__left">
+						<a class="header__logo logo" href="homepage.html">
+							<img src="/assets/images/logo-blue.svg" alt="логотип">
+						</a>
+						<div class="header__choices">
+							<button class="btn btn-transparent header__btn-choice" type="button">Выберите курорт</button>
+						</div>
+					</div>
+					<div class="header__links">
+						<a class="header__favorite" href="#"></a>
+						<a class="btn btn-transparent header__btn-auth" href="auth.html">Авторизация</a>
+						<a class="btn btn-white header__btn-add" href="add-project.html">Добавить проект</a>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="breadcrumbs">
+			<div class="container">
+				<nav class="breadcrumbs__navigation">
+					<ul class="breadcrumbs__list">
+						<li class="breadcrumbs__item">
+							<a class="breadcrumbs__link" href="/">Главная</a>
+						</li>
+						<li class="breadcrumbs__item">
+							<a class="breadcrumbs__link" href="/">Крым</a>
+						</li>
+						<li class="active breadcrumbs__item">Алушта</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+		<main class="main">
+			<div class="city">
+				<div class="container">
+					<div class="page-title">Алушта</div>
+					<nav class="city__navigation navigation-city">
+						<ul class="navigation-city__list">
+							<li class="navigation-city__item">
+								<a class="navigation-city__link active" href="city.html">Алушта</a>
+							</li>
+							<li class="navigation-city__item">
+								<a class="navigation-city__link" href="city-hotels.html">Жилье</a>
+							</li>
+							<li class="navigation-city__item">
+								<a class="navigation-city__link" href="testimonials.html">Отзывы (25)</a>
+							</li>
+							<li class="navigation-city__item">
+								<a class="navigation-city__link" href="city-photos.html">Фото</a>
+							</li>
+							<li class="navigation-city__item">
+								<a class="navigation-city__link" href="city-map.html">Карта</a>
+							</li>
+							<li class="navigation-city__item">
+								<a class="navigation-city__link" href="city-weather.html">Погода</a>
+							</li>
+							<li class="navigation-city__item">
+								<a class="navigation-city__link" href="city-posts.html">Статьи</a>
+							</li>
+							<li class="navigation-city__item expanded">
+								<a class="navigation-city__link" href="javascript:void(0);">Ещё</a>
+								<ul class="navigation-city__sub-list">
+									<li class="navigation-city__sub-item">
+										<a class="navigation-city__sub-link" href="city-food.html">Питание</a>
+									</li>
+									<li class="navigation-city__sub-item">
+										<a class="navigation-city__sub-link" href="city-transport.html">Транспорт</a>
+									</li>
+									<li class="navigation-city__sub-item">
+										<a class="navigation-city__sub-link" href="city-gaiety.html">Развлечения</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
+					<div class="city__wrapper">
+						<div class="ibg city__image">
+							<picture>
+								<source srcset="/assets/images/city/city-main/main.webp" type="image/webp">
+								<img src="/assets/images/city/city-main/main.jpg" alt="фото">
+							</picture>
+						</div>
+						<div class="city-layout city__body">
+							<aside class="aside">
+								<div class="aside-navigation">
+									<div class="aside__caption">Курорты рядом</div>
+									<nav>
+										<ul class="aside-navigation__list">
+											<li class="aside-navigation__item">
+												<a class="aside-navigation__link" href="#">Утес</a>
+											</li>
+											<li class="aside-navigation__item">
+												<a class="aside-navigation__link" href="#">Лазурное</a>
+											</li>
+											<li class="aside-navigation__item">
+												<a class="aside-navigation__link" href="#">Партенит</a>
+											</li>
+											<li class="aside-navigation__item">
+												<a class="aside-navigation__link" href="#">Сатера</a>
+											</li>
+											<li class="aside-navigation__item">
+												<a class="aside-navigation__link" href="#">Семидворье</a>
+											</li>
+											<li class="aside-navigation__item">
+												<a class="aside-navigation__link" href="#">Малый маяк</a>
+											</li>
+										</ul>
+									</nav>
+								</div>
+							</aside>
+							<div class="content-groups">
+								<div class="content-group">
+									<div class="content">
+										<h2>Отдых в Алуште 2024</h2>
+										<p>Алушта – курортный город, расположен на Южном берегу Крыма. Следует отметить великолепный ландшафт и уникальное расположение: город окружен горами, которые создают надежную защиту от ветра. Поэтому Алушта и привлекла кинематографистов: известный советский фильм «Кавказская пленница» снимался именно там, возле полуразрушенной крепости.</p>
+										<p>Климат средиземноморский, жаркий, но зимы в Алуште теплые и мягкие. Город имеет развитую инфраструктуру и единственный в Европе междугородний троллейбусный маршрут Симферополь-Алушта-Ялта.</p>
+										<div class="images-widget images2-widget">
+											<div class="ibg images-widget__image">
+												<picture>
+													<source srcset="assets/images/city/images-widget/1.webp" type="image/webp">
+													<img src="assets/images/city/images-widget/1.jpg" alt="изображение">
+												</picture>
+											</div>
+											<div class="ibg images-widget__image">
+												<picture>
+													<source srcset="assets/images/city/images-widget/2.webp" type="image/webp">
+													<img src="assets/images/city/images-widget/2.jpg" alt="изображение">
+												</picture>
+											</div>
+										</div>
+										<p>В свободное время рекомендуем посетить мыс Плака, музей природы Крымского заповедника, дом-музей Сергеева-Ценского, парк-музей князей Бороздиных-Гагариных.</p>
+										<p>Каждый год Алушта привлекает все больше и больше новых туристов.</p>
+										<div class="facilities-wrapper">
+											<div class="facilities-body">
+												<div class="card-preview">
+													<button class="button-favorite" type="button"> </button>
+													<div class="card-preview__body">
+														<div class="ibg card-preview__image">
+															<picture>
+																<source srcset="assets/images/city/city-main/hotels/hotel-1.webp" type="image/webp">
+																<img src="assets/images/city/city-main/hotels/hotel-1.jpg" alt="">
+															</picture>
+														</div>
+														<div class="card-preview__content">
+															<div class="card-preview__title">Гостевой дом “Маяк”</div>
+															<div class="card-preview__description">Голубицкая, ул. Красная, д. 178</div>
+															<div class="card-preview__bottom">
+																<div class="card-preview__price">от 875 ₽</div>
+																<div class="card-preview__sub-price">за чел. в сутки в июне</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="card-preview">
+													<button class="button-favorite" type="button"> </button>
+													<div class="card-preview__body">
+														<div class="ibg card-preview__image">
+															<picture>
+																<source srcset="assets/images/city/city-main/hotels/hotel-2.webp" type="image/webp">
+																<img src="assets/images/city/city-main/hotels/hotel-2.jpg" alt="">
+															</picture>
+														</div>
+														<div class="card-preview__content">
+															<div class="card-preview__title">Гостевой дом “Маяк”</div>
+															<div class="card-preview__description">Голубицкая, ул. Красная, д. 178</div>
+															<div class="card-preview__bottom">
+																<div class="card-preview__price">от 875 ₽</div>
+																<div class="card-preview__sub-price">за чел. в сутки в июне</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="card-preview">
+													<button class="button-favorite" type="button"> </button>
+													<div class="card-preview__body">
+														<div class="ibg card-preview__image">
+															<picture>
+																<source srcset="assets/images/city/city-main/hotels/hotel-3.webp" type="image/webp">
+																<img src="assets/images/city/city-main/hotels/hotel-3.jpg" alt="">
+															</picture>
+														</div>
+														<div class="card-preview__content">
+															<div class="card-preview__title">Гостевой дом “Маяк”</div>
+															<div class="card-preview__description">Голубицкая, ул. Красная, д. 178</div>
+															<div class="card-preview__bottom">
+																<div class="card-preview__price">от 875 ₽</div>
+																<div class="card-preview__sub-price">за чел. в сутки в июне</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="card-preview">
+													<button class="button-favorite" type="button"> </button>
+													<div class="card-preview__body">
+														<div class="ibg card-preview__image">
+															<picture>
+																<source srcset="assets/images/city/city-main/hotels/hotel-4.webp" type="image/webp">
+																<img src="assets/images/city/city-main/hotels/hotel-4.jpg" alt="">
+															</picture>
+														</div>
+														<div class="card-preview__content">
+															<div class="card-preview__title">Гостевой дом “Маяк”</div>
+															<div class="card-preview__description">Голубицкая, ул. Красная, д. 178</div>
+															<div class="card-preview__bottom">
+																<div class="card-preview__price">от 875 ₽</div>
+																<div class="card-preview__sub-price">за чел. в сутки в июне</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="card-preview">
+													<button class="button-favorite" type="button"> </button>
+													<div class="card-preview__body">
+														<div class="ibg card-preview__image">
+															<picture>
+																<source srcset="assets/images/city/city-main/hotels/hotel-5.webp" type="image/webp">
+																<img src="assets/images/city/city-main/hotels/hotel-5.jpg" alt="">
+															</picture>
+														</div>
+														<div class="card-preview__content">
+															<div class="card-preview__title">Гостевой дом “Маяк”</div>
+															<div class="card-preview__description">Голубицкая, ул. Красная, д. 178</div>
+															<div class="card-preview__bottom">
+																<div class="card-preview__price">от 875 ₽</div>
+																<div class="card-preview__sub-price">за чел. в сутки в июне</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="card-preview">
+													<button class="button-favorite" type="button"> </button>
+													<div class="card-preview__body">
+														<div class="ibg card-preview__image">
+															<picture>
+																<source srcset="assets/images/city/city-main/hotels/hotel-6.webp" type="image/webp">
+																<img src="assets/images/city/city-main/hotels/hotel-6.jpg" alt="">
+															</picture>
+														</div>
+														<div class="card-preview__content">
+															<div class="card-preview__title">Гостевой дом “Маяк”</div>
+															<div class="card-preview__description">Голубицкая, ул. Красная, д. 178</div>
+															<div class="card-preview__bottom">
+																<div class="card-preview__price">от 875 ₽</div>
+																<div class="card-preview__sub-price">за чел. в сутки в июне</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<a class="btn btn-blue-transparent btn-lg" href="#">Все предложения</a>
+											<div class="badges">
+												<ul class="badges__list">
+													<li class="badges__item">
+														<a class="badges__link" href="#">Отель</a>
+													</li>
+													<li class="badges__item">
+														<a class="badges__link" href="#">Гостиница</a>
+													</li>
+													<li class="badges__item">
+														<a class="badges__link" href="#">Пансионат</a>
+													</li>
+													<li class="badges__item">
+														<a class="badges__link" href="#">Гостевой дом</a>
+													</li>
+													<li class="badges__item">
+														<a class="badges__link" href="#">Мини-отель</a>
+													</li>
+													<li class="badges__item">
+														<a class="badges__link" href="#">Вилла</a>
+													</li>
+													<li class="badges__item">
+														<a class="badges__link" href="#">Апартаменты</a>
+													</li>
+													<li class="badges__item">
+														<a class="badges__link" href="#">Хостел</a>
+													</li>
+													<li class="badges__item">
+														<a class="badges__link" href="#">Туристический комплекс</a>
+													</li>
+													<li class="badges__item">
+														<a class="badges__link" href="#">База отдыха</a>
+													</li>
+													<li class="badges__item">
+														<a class="badges__link" href="#">Частный сектор</a>
+													</li>
+													<li class="badges__item">
+														<a class="badges__link" href="#">Апарт-отель</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="content-group">
+									<div class="content">
+										<h2>Жилье в Алуште</h2>
+										<p>Привлекательность Алушты для туристов очевидна с первого взгляда: город расположен у моря, цены на жилье сравнительно невысокие, климат мягкий и полезный для здоровья. Отдых в Алуште на берегу моря традиционно считался престижным, поэтому курорт пользуется большой популярностью и у современных туристов. Жилье для отдыха в Алуште найти несложно. При этом здесь уверенно себя будет чувствовать абсолютно любой турист: и отдыхающие с детьми, и пары, и самостоятельные путешественники. Ценовой диапазон очень разнообразный, как и уровень жилья и предоставляемого сервиса. Жить в городе можно как у самого моря, так и ближе к центру. Хотя большая часть вариантов недорогого жилья расположена в менее удобных районах.</p>
+										<p>В Алуште жилье можно снимать у хозяев без посредников, а можно обращаться в агентства по подбору квартир. Также здесь есть масса отелей, вилл и пансионатов, которые предлагают комплексные условия «все включено». Отдых с питанием будет особенно актуальным для семей с маленькими детьми, а также тех, кто ежедневно проводит дни на кухне. Бронирование можно осуществлять через Интернет - в таком случае нужно тщательно изучить фотографии и отзывы отдыхающих, чтобы отдых на берегу моря не стал разочарованием.</p>
+									</div>
+								</div>
+								<div class="content-group">
+									<div class="content">
+										<h2>Как добраться до Алушты? Карта проезда</h2>
+										<p>Самый эффективный, быстрый и приятный способ попасть на полуостров - прилететь сюда самолетом. Из Симферополя можно дешево доехать до города, поскольку в этом направлении ездит большое количество общественного транспорта. Есть и рейсовый автобусы, и частные маршрутные такси. Как правило, карта проезда наглядно демонстрирует как лучше добраться до жилья, поэтому несложно будет и тем, кто приехал на машине или взял здесь ее в аренду. К слову, бронирование автомобилей довольно популярно в Крыму, поскольку позволяет туристу увидеть не только город и его окраины, но еще и попутешествовать по полуострову. Отдых в Алуште в 2024 году обещает оставаться таким же популярным среди туристов, поэтому можно рассчитывать и на попутчиков, которые «подбросят» из Симферополя.</p>
+										<p>Интересно то, что в Алушту можно добраться также на троллейбусе. Есть рейсы прямо с автостанции возле аэропорта и с автостанции Курортная (на ж/д вокзале). Стоимость билета около 50 руб, что сравнительно недорого. Едва ли где-то еще можно прокатиться в течение полутора часов на городском троллейбусе, курсирующим между городами! Вот что называется отдыхать дешево, без посредников, и с массой впечатлений!</p>
+										<div class="map" id="map"></div>
+									</div>
+								</div>
+								<div class="content-group">
+									<div class="content">
+										<h2>Немного истории</h2>
+										<p>По приказу Византийского императора Юстиниана І была построена крепость, названа Алустон.</p>
+										<p>Впервые Алушта упоминается в середине Х века в письме хазарского царя Йосифа. А в середине ХІІ века, по данным арабского путешественника Абу Абдаллаха и его сочинения «Географические развлечения», она стала важным приморским городом. Но арабы тогда называли этот город Шалушта. В XV веке была основана генуэзская колония. Здесь находились генуэзский консул, епископ. Но вскоре Алушта перешла во владения Турции, город превратился в деревню в составе Судацкого кадилика.</p>
+										<div class="images-widget images4-widget">
+											<div class="ibg images-widget__image">
+												<picture>
+													<source srcset="assets/images/city/images-widget/3.webp" type="image/webp">
+													<img src="assets/images/city/images-widget/3.jpg" alt="изображение">
+												</picture>
+											</div>
+											<div class="ibg images-widget__image">
+												<picture>
+													<source srcset="assets/images/city/images-widget/4.webp" type="image/webp">
+													<img src="assets/images/city/images-widget/4.jpg" alt="изображение">
+												</picture>
+											</div>
+											<div class="ibg images-widget__image">
+												<picture>
+													<source srcset="assets/images/city/images-widget/5.webp" type="image/webp">
+													<img src="assets/images/city/images-widget/5.jpg" alt="изображение">
+												</picture>
+											</div>
+											<div class="ibg images-widget__image">
+												<picture>
+													<source srcset="assets/images/city/images-widget/6.webp" type="image/webp">
+													<img src="assets/images/city/images-widget/6.jpg" alt="изображение">
+												</picture>
+											</div>
+										</div>
+										<p>В XVIII веке итогом борьбы России и Турции стало присоединения Крыма к Российской империи. Алушта освободилась от влияния враждебной страны и стала центром волости Ялтинского уезда. Интересной является перепись населения 1897 года: население составляло 2187 человек (мужчин на 200 человек больше), две трети исповедовали ислам. Жители имели свой винокурный завод, церковь, 2 мечети, школу, аптеку.</p>
+										<p>В ХХ веке постепенно росло значение Алушты, как курортного города. Развивалась инфраструктура, привлекались туристы. Многие писатели искали вдохновение в Алуште, например, М. Горький, М. Коцюбинский, А. Куприн, К. Паустовский.</p>
+									</div>
+								</div>
+								<div class="content-group">
+									<div class="content">
+										<h2>Развлечения в Алуште</h2>
+										<p>Отдых в Алуште с детьми или без, на двоих или одного - это уже само по себе развлечение! Хотя, безусловно, город не скупится на всевозможные достопримечательности, зоны отдыха и места приятного времяпрепровождения. Самое главное развлечение на курорте, расположенном у самого моря, и есть это чудо природы: нежное, соленое, бурлящее море! Отзывы отдыхающих, как правило, начинаются именно с рассказов про море, и это логично, ведь в Алушту едут именно за этим. Однако, поскольку город очень древний и имеет богатую историю, здесь хорошо сохранились храмы и мечети, башни и дворцы, построенные еще в XII- XV веках.</p>
+										<p>На набережной много точек представителей турагентств, которые помогут выбрать интересный маршрут. Рекомендуем выбирать экскурсии по тарифу «все включено»: в стоимость уже включен проезд туда-обратно, услуги гида-экскурсовода, входные билеты на посещаемые объекты и, иногда, обед.</p>
+										<div class="images-widget images2-widget">
+											<div class="ibg images-widget__image">
+												<picture>
+													<source srcset="assets/images/city/images-widget/7.webp" type="image/webp">
+													<img src="assets/images/city/images-widget/7.jpg" alt="изображение">
+												</picture>
+											</div>
+											<div class="ibg images-widget__image">
+												<picture>
+													<source srcset="assets/images/city/images-widget/8.webp" type="image/webp">
+													<img src="assets/images/city/images-widget/8.jpg" alt="изображение">
+												</picture>
+											</div>
+										</div>
+										<div class="facilities-wrapper">
+											<div class="facilities-body">
+												<div class="card-preview recreation-card">
+													<button class="button-favorite" type="button"> </button>
+													<div class="card-preview__body">
+														<div class="ibg card-preview__image">
+															<picture>
+																<source srcset="assets/images/city/facilities/hotel-1.webp" type="image/webp">
+																<img src="assets/images/city/facilities/hotel-1.jpg" alt="">
+															</picture>
+														</div>
+														<div class="card-preview__content">
+															<div class="card-preview__title">Алуштинский Мультипарк</div>
+															<div class="card-preview__description">Голубицкая, ул. Красная, д. 178</div>
+														</div>
+													</div>
+												</div>
+												<div class="card-preview recreation-card">
+													<button class="button-favorite" type="button"> </button>
+													<div class="card-preview__body">
+														<div class="ibg card-preview__image">
+															<picture>
+																<source srcset="assets/images/city/facilities/hotel-2.webp" type="image/webp">
+																<img src="assets/images/city/facilities/hotel-2.jpg" alt="">
+															</picture>
+														</div>
+														<div class="card-preview__content">
+															<div class="card-preview__title">Алуштинский Мультипарк</div>
+															<div class="card-preview__description">Голубицкая, ул. Красная, д. 178</div>
+														</div>
+													</div>
+												</div>
+												<div class="card-preview recreation-card">
+													<button class="button-favorite" type="button"> </button>
+													<div class="card-preview__body">
+														<div class="ibg card-preview__image">
+															<picture>
+																<source srcset="assets/images/city/facilities/hotel-3.webp" type="image/webp">
+																<img src="assets/images/city/facilities/hotel-3.jpg" alt="">
+															</picture>
+														</div>
+														<div class="card-preview__content">
+															<div class="card-preview__title">Алуштинский Мультипарк</div>
+															<div class="card-preview__description">Голубицкая, ул. Красная, д. 178</div>
+														</div>
+													</div>
+												</div>
+												<div class="card-preview recreation-card">
+													<button class="button-favorite" type="button"> </button>
+													<div class="card-preview__body">
+														<div class="ibg card-preview__image">
+															<picture>
+																<source srcset="assets/images/city/facilities/hotel-4.webp" type="image/webp">
+																<img src="assets/images/city/facilities/hotel-4.jpg" alt="">
+															</picture>
+														</div>
+														<div class="card-preview__content">
+															<div class="card-preview__title">Алуштинский Мультипарк</div>
+															<div class="card-preview__description">Голубицкая, ул. Красная, д. 178</div>
+														</div>
+													</div>
+												</div>
+												<div class="card-preview recreation-card">
+													<button class="button-favorite" type="button"> </button>
+													<div class="card-preview__body">
+														<div class="ibg card-preview__image">
+															<picture>
+																<source srcset="assets/images/city/facilities/hotel-5.webp" type="image/webp">
+																<img src="assets/images/city/facilities/hotel-5.jpg" alt="">
+															</picture>
+														</div>
+														<div class="card-preview__content">
+															<div class="card-preview__title">Алуштинский Мультипарк</div>
+															<div class="card-preview__description">Голубицкая, ул. Красная, д. 178</div>
+														</div>
+													</div>
+												</div>
+												<div class="card-preview recreation-card">
+													<button class="button-favorite" type="button"> </button>
+													<div class="card-preview__body">
+														<div class="ibg card-preview__image">
+															<picture>
+																<source srcset="assets/images/city/facilities/hotel-6.webp" type="image/webp">
+																<img src="assets/images/city/facilities/hotel-6.jpg" alt="">
+															</picture>
+														</div>
+														<div class="card-preview__content">
+															<div class="card-preview__title">Алуштинский Мультипарк</div>
+															<div class="card-preview__description">Голубицкая, ул. Красная, д. 178</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="badges">
+												<ul class="badges__list">
+													<li class="badges__item">
+														<a class="badges__link" href="#">Развлечения</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+										<p>Наверное, каждому знакомо фото горы Демерджи или Чатыр-Даг, которые манят туристов, отдыхающий по всему приморскому берегу. Для отдыхающих с ребенком в 2024 году особенно интересным будет посещение Алуштинского аквариума, парка миниатюр и дельфинария «Акварель». Также в непосредственной близости от города, в поселке Партенит, есть прекрасный парк «Айвазовское» и «поющие фонтаны», расположенные под открытым небом. Прекрасная возможность привести домой потрясающие фотографии!</p>
+										<p>Еще одним популярным развлечением является музей катастроф на водах - сюда приезжают, в основном взрослые, которые интересуются историей или морским делом. Любителям природных достопримечательностей рекомендуем посетить долину приведений - скалистая местность, где любое фото выглядит незаурядно.</p>
+									</div>
+								</div>
+								<div class="content-group">
+									<div class="content">
+										<h2>Пляжи в Алуште</h2>
+										<p>Сама природа подарила этому городку потрясающие пляжи. Здесь они в основном, галечные, что очень удобно и полезно для здоровья. В отличие от песка, галька не очень сильно нагревается на солнце, а это значит, что по ней легко и удобно ходить. Кроме того, песок в ветреную погоду разносится воздушным порывами, попадает в глаза и рот, что особенно проблематично на отдыхе с ребенком у моря. Впрочем, в окрестностях Алушты есть и пляжи с песком.</p>
+										<p>Темный сланцевый песок делает здешние пляжи уникальными. Всем, у кого слабые места − дыхательная, нервная и сердечно-сосудистая система – врачи рекомендуют посетить Алушту с ее целебным воздухом. Тем более что большой выбор санаториев, их насчитывается около 78, удовлетворит любой вкус.</p>
+										<div class="images-widget images2-widget">
+											<div class="ibg images-widget__image">
+												<picture>
+													<source srcset="assets/images/city/images-widget/9.webp" type="image/webp">
+													<img src="assets/images/city/images-widget/9.jpg" alt="изображение">
+												</picture>
+											</div>
+											<div class="ibg images-widget__image">
+												<picture>
+													<source srcset="assets/images/city/images-widget/10.webp" type="image/webp">
+													<img src="assets/images/city/images-widget/10.jpg" alt="изображение">
+												</picture>
+											</div>
+										</div>
+										<p>В Алуште пляжи считаются самыми доступными: в городе и его ближайших окраинах есть много «городских», т.е. бесплатных пляжей. Некоторые из них оборудованы навесами, можно взять на день шезлонг, арендная стоимость которого составит около 100-150 руб.</p>
+										<p>Поскольку курорт очень популярный, количество отдыхающей на пляжах немаленькое. И, конечно же, чем дальше пляж находится от черты города или от центра, тем меньше людей его посещают.</p>
+									</div>
+								</div>
+								<div class="content-group">
+									<div class="content">
+										<h2>Климат</h2>
+										<p>Климат Алушты - это отдельная его достопримечательность. Температура очень комфортна здесь в течение всего года, и даже летом здесь совсем не жарко. В июле и августе, в среднем, градусники показывают около 30, а в сентябре и июне - около 25. Поэтому сезон здесь официально открыт с конца апреля по начало октября. Осенью, в основном, приезжают пары: отдых на двоих получается дешевле, а комфорта больше - свободные пляжи, тишина, недорого стоят номера с питанием.</p>
+										<p>Летом дожди бывают редко, в основном осадки выпадают в январе и феврале. Хотя кто сказал, что в Алушту нельзя приезжать зимой? Заснеженные кипарисы - зрелище на удивление красивое, а город живет своей размеренной, спокойной жизнью.</p>
+										<p>Температура воды в море наиболее пригодна для купания с июня по октябрь. В эти месяцы оно прогревается до 25-26 градусов. В мае море еще достаточно холодное, вода едва ли нагревается до 18 градусов. Поэтому пляжный отдых в Алуште в основном приходится на летние месяцы и начало осени - в это время в городе бушует жизнь, на пляжах нежатся отдыхающие, а по достопримечательностям прогуливаются туристы.</p>
+										<div class="weather-widget">
+											<div class="card-weather">
+												<div class="card-weather__header">
+													<div class="card-weather__main">
+														<div class="card-weather__image">
+															<img src="/assets/images/city/weather-widget/weather-1.svg" alt="">
+														</div>
+														<div class="card-weather__degrees">
+															<div class="card-weather__value">19</div>
+															<div class="card-weather__sup-value">°C / °F</div>
+														</div>
+														<div class="card-weather__info">
+															<p>Вероятность осадков: 0%</p>
+															<p>Влажность: 79%</p>
+															<p>Ветер: 4 м/с</p>
+														</div>
+													</div>
+													<div class="card-weather__today today-weather">
+														<div class="today-weather__title">Погода сегодня</div>
+														<div class="today-weather__values">
+															<div class="today-weather__value">Понедельник 15:00</div>
+															<div class="today-weather__value">Облачно</div>
+														</div>
+													</div>
+												</div>
+												<div class="card-weather__week">
+													<div class="card-weather__item active">
+														<div class="card-weather__caption">ПН</div>
+														<div class="card-weather__image">
+															<img src="/assets/images/city/weather-widget/weather-1.svg" alt="ПН">
+														</div>
+														<div class="card-weather__temp temp-weather">
+															<div class="temp-weather__value">19°</div>
+															<div class="temp-weather__value">14°</div>
+														</div>
+													</div>
+													<div class="card-weather__item">
+														<div class="card-weather__caption">ВТ</div>
+														<div class="card-weather__image">
+															<img src="/assets/images/city/weather-widget/weather-2.svg" alt="ВТ">
+														</div>
+														<div class="card-weather__temp temp-weather">
+															<div class="temp-weather__value">19°</div>
+															<div class="temp-weather__value">14°</div>
+														</div>
+													</div>
+													<div class="card-weather__item">
+														<div class="card-weather__caption">СР</div>
+														<div class="card-weather__image">
+															<img src="/assets/images/city/weather-widget/weather-3.svg" alt="СР">
+														</div>
+														<div class="card-weather__temp temp-weather">
+															<div class="temp-weather__value">19°</div>
+															<div class="temp-weather__value">14°</div>
+														</div>
+													</div>
+													<div class="card-weather__item">
+														<div class="card-weather__caption">ЧТ</div>
+														<div class="card-weather__image">
+															<img src="/assets/images/city/weather-widget/weather-4.svg" alt="ЧТ">
+														</div>
+														<div class="card-weather__temp temp-weather">
+															<div class="temp-weather__value">19°</div>
+															<div class="temp-weather__value">14°</div>
+														</div>
+													</div>
+													<div class="card-weather__item">
+														<div class="card-weather__caption">ПТ</div>
+														<div class="card-weather__image">
+															<img src="/assets/images/city/weather-widget/weather-5.svg" alt="ПТ">
+														</div>
+														<div class="card-weather__temp temp-weather">
+															<div class="temp-weather__value">19°</div>
+															<div class="temp-weather__value">14°</div>
+														</div>
+													</div>
+													<div class="card-weather__item">
+														<div class="card-weather__caption">СБ</div>
+														<div class="card-weather__image">
+															<img src="/assets/images/city/weather-widget/weather-6.svg" alt="СБ">
+														</div>
+														<div class="card-weather__temp temp-weather">
+															<div class="temp-weather__value">19°</div>
+															<div class="temp-weather__value">14°</div>
+														</div>
+													</div>
+													<div class="card-weather__item">
+														<div class="card-weather__caption">ВС</div>
+														<div class="card-weather__image">
+															<img src="/assets/images/city/weather-widget/weather-7.svg" alt="ВС">
+														</div>
+														<div class="card-weather__temp temp-weather">
+															<div class="temp-weather__value">19°</div>
+															<div class="temp-weather__value">14°</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="city-testimonials testimonials">
+							<div class="heading">
+								<div class="heading__title title-sm">Последние отзывы на отели Алушты</div>
+							</div>
+							<div class="testimonials__body">
+								<div class="testimonials__wrapper">
+									<div class="testimonials-item">
+										<div class="ibg testimonials-item__image">
+											<picture>
+												<source srcset="/assets/images/testimonials/1.webp" type="image/webp">
+												<img src="/assets/images/testimonials/1.jpg" alt="Гостиница “Южный Берег”">
+											</picture>
+										</div>
+										<div class="testimonials-item__body">
+											<div class="testimonials-item__place">Гостиница “Южный Берег”</div>
+											<address class="testimonials-item__address">Голубицкая, ул. Красная, д. 178</address>
+											<div class="testimonials-item__info">
+												<div class="testimonials-item__author">Марина</div>
+												<div class="testimonials-item__date">12.08.22</div>
+												<div class="rating">
+													<ul class="r-4 rating__list">
+														<li class="rating__item"> </li>
+														<li class="rating__item"> </li>
+														<li class="rating__item"> </li>
+														<li class="rating__item"> </li>
+														<li class="rating__item"> </li>
+													</ul>
+												</div>
+											</div>
+											<div class="testimonials-item__text">
+												<p>Шикарное расположение, прямо в самом-самом центре. Рядом остановка есть, до парка Краснодар удобно добираться. В хостеле есть разделение на женские и мужские номера. Контингент приличный. Белье чистое и в помещении для хостела тоже довольно чисто. Для бюджетного варианта с хорошим расположением самое то.</p>
+												<a class="btn-more testimonials-item__btn" href="#">Подробнее</a>
+											</div>
+										</div>
+									</div>
+									<div class="testimonials-item">
+										<div class="ibg testimonials-item__image">
+											<picture>
+												<source srcset="/assets/images/testimonials/2.webp" type="image/webp">
+												<img src="/assets/images/testimonials/2.jpg" alt="Гостиница “Летучая мышь”">
+											</picture>
+										</div>
+										<div class="testimonials-item__body">
+											<div class="testimonials-item__place">Гостиница “Летучая мышь”</div>
+											<address class="testimonials-item__address">Голубицкая, ул. Красная, д. 178</address>
+											<div class="testimonials-item__info">
+												<div class="testimonials-item__author">Анна</div>
+												<div class="testimonials-item__date">12.08.22</div>
+												<div class="rating">
+													<ul class="r-4 rating__list">
+														<li class="rating__item"> </li>
+														<li class="rating__item"> </li>
+														<li class="rating__item"> </li>
+														<li class="rating__item"> </li>
+														<li class="rating__item"> </li>
+													</ul>
+												</div>
+											</div>
+											<div class="testimonials-item__text">
+												<p>Шикарное расположение, прямо в самом-самом центре. Рядом остановка есть, до парка Краснодар удобно добираться. В хостеле есть разделение на женские и мужские номера. Контингент приличный. Белье чистое и в помещении для хостела тоже довольно чисто. Для бюджетного варианта с хорошим расположением самое то.</p>
+												<a class="btn-more testimonials-item__btn" href="#">Подробнее</a>
+											</div>
+										</div>
+									</div>
+									<div class="testimonials-item">
+										<div class="ibg testimonials-item__image">
+											<picture>
+												<source srcset="/assets/images/testimonials/3.webp" type="image/webp">
+												<img src="/assets/images/testimonials/3.jpg" alt="Гостиница «Южный Берег»">
+											</picture>
+										</div>
+										<div class="testimonials-item__body">
+											<div class="testimonials-item__place">Гостиница «Южный Берег»</div>
+											<address class="testimonials-item__address">Голубицкая, ул. Красная, д. 178</address>
+											<div class="testimonials-item__info">
+												<div class="testimonials-item__author">Павел</div>
+												<div class="testimonials-item__date">12.08.22</div>
+												<div class="rating">
+													<ul class="r-4 rating__list">
+														<li class="rating__item"> </li>
+														<li class="rating__item"> </li>
+														<li class="rating__item"> </li>
+														<li class="rating__item"> </li>
+														<li class="rating__item"> </li>
+													</ul>
+												</div>
+											</div>
+											<div class="testimonials-item__text">
+												<p>Шикарное расположение, прямо в самом-самом центре. Рядом остановка есть, до парка Краснодар удобно добираться. В хостеле есть разделение на женские и мужские номера. Контингент приличный. Белье чистое и в помещении для хостела тоже довольно чисто. Для бюджетного варианта с хорошим расположением самое то.</p>
+												<a class="btn-more testimonials-item__btn" href="#">Подробнее</a>
+											</div>
+										</div>
+									</div>
+									<div class="testimonials-item">
+										<div class="ibg testimonials-item__image">
+											<picture>
+												<source srcset="/assets/images/testimonials/4.webp" type="image/webp">
+												<img src="/assets/images/testimonials/4.jpg" alt="Отель “Море”">
+											</picture>
+										</div>
+										<div class="testimonials-item__body">
+											<div class="testimonials-item__place">Отель “Море”</div>
+											<address class="testimonials-item__address">Голубицкая, ул. Красная, д. 178</address>
+											<div class="testimonials-item__info">
+												<div class="testimonials-item__author">Игорь</div>
+												<div class="testimonials-item__date">12.08.22</div>
+												<div class="rating">
+													<ul class="r-4 rating__list">
+														<li class="rating__item"> </li>
+														<li class="rating__item"> </li>
+														<li class="rating__item"> </li>
+														<li class="rating__item"> </li>
+														<li class="rating__item"> </li>
+													</ul>
+												</div>
+											</div>
+											<div class="testimonials-item__text">
+												<p>Шикарное расположение, прямо в самом-самом центре. Рядом остановка есть, до парка Краснодар удобно добираться. В хостеле есть разделение на женские и мужские номера. Контингент приличный. Белье чистое и в помещении для хостела тоже довольно чисто. Для бюджетного варианта с хорошим расположением самое то.</p>
+												<a class="btn-more testimonials-item__btn" href="#">Подробнее</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<a class="btn btn-blue-transparent btn-lg" href="testimonials.html">Все отзывы</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer class="footer">
+			<div class="container">
+				<div class="footer__body">
+					<div class="footer__info info-footer">
+						<a class="footer__logo" href="homepage.html">
+							<img src="assets/images/logo.svg" alt="">
+						</a>
+						<div class="footer__copy">©На Юга, 2024</div>
+						<a class="footer__politic" href="#">Политика конфиденциальности</a>
+						<div class="footer__disclamer">Мы не предоставляем услуги бронирования. Всю информацию Вы можете найти на странице заинтресовавшего Вас обьекта Пишите, мы обязательно ответим</div>
+					</div>
+					<div class="footer__main main-footer">
+						<div class="footer__menu menu-footer">
+							<div class="menu-footer__label">Информация</div>
+							<ul class="menu-footer__list">
+								<li class="menu-footer__item">
+									<a class="menu-footer__link" href="about.html">О компании</a>
+								</li>
+								<li class="menu-footer__item">
+									<a class="menu-footer__link" href="#">Тарифы</a>
+								</li>
+								<li class="menu-footer__item">
+									<a class="menu-footer__link" href="faq.html">FAQ</a>
+								</li>
+								<li class="menu-footer__item">
+									<a class="menu-footer__link" href="contacts.html">Контакты</a>
+								</li>
+							</ul>
+							<ul class="menu-footer__list">
+								<li class="menu-footer__item">
+									<a class="menu-footer__link" href="#">Соглашение</a>
+								</li>
+								<li class="menu-footer__item">
+									<a class="menu-footer__link" href="#">Работа</a>
+								</li>
+								<li class="menu-footer__item">
+									<a class="menu-footer__link" href="#">Статистика</a>
+								</li>
+								<li class="menu-footer__item">
+									<a class="menu-footer__link" href="#">Карта сайта</a>
+								</li>
+							</ul>
+						</div>
+						<div class="footer__contacts">
+							<a class="footer__phone" href="tel:+79788029014">+7 (978) 802 90 14</a>
+							<a class="footer__email" href="mailto:info@na-uga.ru">info@na-uga.ru</a>
+							<a class="btn btn-orange-transparent footer__button" href="#">Добавить проект </a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<script src="/assets/scripts/main.js?_v=20240727160810" defer="defer"></script>
+	<script src="assets/scripts/map.js?_v=20240727160810"></script>
+</body>
+
+</html>

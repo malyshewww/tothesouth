@@ -1,0 +1,7 @@
+.main-hotels 
+	.container 
+		.heading 
+			.heading__title Последние добавленные отели
+		+facilitiesBlock([])
+			each hotel in homePage.hotels
+				+facilityPreview(hotel, "homepage/main-hotels")

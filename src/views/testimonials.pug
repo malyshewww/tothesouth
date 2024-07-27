@@ -1,0 +1,24 @@
+extends ./layouts/default
+
+block variables 
+	- let pageTitle = "Алушта";
+	- let breadCrumbsList = [{"title": "Главная", "link": "/"}, {"title": "Крым", "link": "/"}];
+	- let currentPage = "Алушта"
+
+append styles 
+	link(href="/assets/styles/testimonials.css" rel="stylesheet")
+
+block content 
+	.testimonials
+		.container 
+			.page-title= pageTitle
+			+cityNavigation(2)
+			.heading 
+				.heading__title.title-xs Отзывы на отели Алушты
+			.city-wrapper
+				.testimonials__wrapper 
+					.testimonials__body 
+						.testimonials__wrapper
+							each item in cityPage.testimonials 
+								+testimonialsIitem(item)
+				+pagination([...pagination], 3)
