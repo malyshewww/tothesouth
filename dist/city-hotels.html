@@ -15,9 +15,9 @@
 	<meta property="twitter:title" content="Алушта">
 	<meta property="twitter:description" content="description">
 	<link rel="canonical" href="https://example.com">
-	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap&_v=20240727162154" rel="stylesheet">
-	<link href="assets/styles/main.css?_v=20240727162154" rel="stylesheet">
-	<link href="assets/styles/city-hotels.css?_v=20240727162154" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet">
+	<link href="assets/styles/main.css" rel="stylesheet">
+	<link href="assets/styles/city-hotels.css" rel="stylesheet">
 	<meta name="theme-color" content="#fff">
 	<meta name="msapplication-navbutton-color" content="#fff">
 	<meta name="apple-mobile-web-app-status-bar-style" content="#fff">
@@ -61,13 +61,13 @@
 						<li class="breadcrumbs__item">
 							<a class="breadcrumbs__link" href="/">Крым</a>
 						</li>
-						<li class="breadcrumbs__item active">Алушта</li>
+						<li class="active breadcrumbs__item">Алушта</li>
 					</ul>
 				</nav>
 			</div>
 		</div>
 		<main class="main">
-			<div class="city">
+			<div class="city-hotels">
 				<div class="container">
 					<div class="page-title">Алушта</div>
 					<nav class="city__navigation navigation-city">
@@ -109,6 +109,521 @@
 							</li>
 						</ul>
 					</nav>
+					<div class="heading">
+						<div class="heading__title title-xs">Жилье в Алуште</div>
+						<div class="heading-sorting sorting">
+							<div class="sorting__caption">Сортировать:</div>
+							<ul class="sorting__list">
+								<li class="sorting__list-item">Популярность</li>
+								<li class="sorting__list-item">Рейтинг</li>
+								<li class="active sorting__list-item">Цена</li>
+							</ul>
+						</div>
+					</div>
+					<div class="city-layout">
+						<aside class="aside">
+							<div class="active object-card object-card--2">
+								<span class="object-card__icon"></span>
+								<span class="object-card__caption">54 найдено</span>
+							</div>
+							<div class="aside-form">
+								<form class="form" action="#" method="post">
+									<div class="form-groups">
+										<fieldset class="form-group">
+											<legend class="form-group__caption">Регион, город</legend>
+											<div class="form-group__items">
+												<div class="custom-dropdown">
+													<div class="custom-dropdown__wrapper" data-dropdown>
+														<div class="custom-dropdown__btn" data-dropdown-button>Крым</div>
+														<ul class="custom-dropdown__list select-list" data-dropdown-list>
+															<li class="select-list__item" data-value="Крым">Крым</li>
+															<li class="select-list__item" data-value="Сочи">Сочи</li>
+															<li class="select-list__item" data-value="Абхазия">Абхазия</li>
+														</ul>
+														<input class="custom-dropdown__input" type="hidden" value="">
+													</div>
+												</div>
+												<div class="custom-dropdown">
+													<div class="custom-dropdown__wrapper" data-dropdown>
+														<div class="custom-dropdown__btn" data-dropdown-button>Алушта</div>
+														<ul class="custom-dropdown__list select-list" data-dropdown-list>
+															<li class="select-list__item" data-value="Алушта">Алушта</li>
+															<li class="select-list__item" data-value="Алушта">Алушта</li>
+															<li class="select-list__item" data-value="Алушта">Алушта</li>
+														</ul>
+														<input class="custom-dropdown__input" type="hidden" value="">
+													</div>
+												</div>
+											</div>
+										</fieldset>slider
+										<fieldset class="form-group">
+											<legend class="form-group__caption">Тип жилья</legend>
+											<div class="form-group__items">
+												<div class="checkbox">
+													<input class="checkbox-input visuallyHidden" type="checkbox" name="type[]" id="type[]-0">
+													<label class="checkbox-label" for="type[]-0">Отели и мини отели<span> </span>
+													</label>
+												</div>
+												<div class="checkbox">
+													<input class="checkbox-input visuallyHidden" type="checkbox" name="type[]" id="type[]-1">
+													<label class="checkbox-label" for="type[]-1">Гостевые дома (как мини отели)<span> </span>
+													</label>
+												</div>
+												<div class="checkbox">
+													<input class="checkbox-input visuallyHidden" type="checkbox" name="type[]" id="type[]-2">
+													<label class="checkbox-label" for="type[]-2">Квартиры / Апартаменты<span> </span>
+													</label>
+												</div>
+												<div class="checkbox">
+													<input class="checkbox-input visuallyHidden" type="checkbox" name="type[]" id="type[]-3">
+													<label class="checkbox-label" for="type[]-3">Дома и коттеджи<span> </span>
+													</label>
+												</div>
+												<div class="checkbox">
+													<input class="checkbox-input visuallyHidden" type="checkbox" name="type[]" id="type[]-4" checked="checked">
+													<label class="checkbox-label" for="type[]-4">Базы отдыха и турбазы<span> </span>
+													</label>
+												</div>
+												<div class="checkbox">
+													<input class="checkbox-input visuallyHidden" type="checkbox" name="type[]" id="type[]-5">
+													<label class="checkbox-label" for="type[]-5">Хостелы<span> </span>
+													</label>
+												</div>
+												<div class="checkbox">
+													<input class="checkbox-input visuallyHidden" type="checkbox" name="type[]" id="type[]-6">
+													<label class="checkbox-label" for="type[]-6">Виллы (большой дом с территорией<span> </span>
+													</label>
+												</div>
+												<div class="checkbox">
+													<input class="checkbox-input visuallyHidden" type="checkbox" name="type[]" id="type[]-7">
+													<label class="checkbox-label" for="type[]-7">Комнаты в квартирах<span> </span>
+													</label>
+												</div>
+											</div>
+											<button class="form-group__btn-show" type="button">Показать еще (10)</button>
+										</fieldset>
+										<fieldset class="form-group">
+											<legend class="form-group__caption">Инфраструктура</legend>
+											<div class="form-group__items">
+												<div class="checkbox">
+													<input class="checkbox-input visuallyHidden" type="checkbox" name="objects[]" id="objects[]-0">
+													<label class="checkbox-label" for="objects[]-0">Парковка<span> </span>
+													</label>
+												</div>
+												<div class="checkbox">
+													<input class="checkbox-input visuallyHidden" type="checkbox" name="objects[]" id="objects[]-1">
+													<label class="checkbox-label" for="objects[]-1">Бассейн<span> </span>
+													</label>
+												</div>
+												<div class="checkbox">
+													<input class="checkbox-input visuallyHidden" type="checkbox" name="objects[]" id="objects[]-2">
+													<label class="checkbox-label" for="objects[]-2">Фитнес-центр<span> </span>
+													</label>
+												</div>
+												<div class="checkbox">
+													<input class="checkbox-input visuallyHidden" type="checkbox" name="objects[]" id="objects[]-3">
+													<label class="checkbox-label" for="objects[]-3">SPA<span> </span>
+													</label>
+												</div>
+												<div class="checkbox">
+													<input class="checkbox-input visuallyHidden" type="checkbox" name="objects[]" id="objects[]-4">
+													<label class="checkbox-label" for="objects[]-4">Детская игровая площадка<span> </span>
+													</label>
+												</div>
+												<div class="checkbox">
+													<input class="checkbox-input visuallyHidden" type="checkbox" name="objects[]" id="objects[]-5">
+													<label class="checkbox-label" for="objects[]-5">Детская игровая площадка<span> </span>
+													</label>
+												</div>
+											</div>
+											<button class="form-group__btn-show" type="button">Показать еще (10)</button>
+										</fieldset>
+										<fieldset class="form-group">
+											<legend class="form-group__caption">Питание</legend>
+											<div class="form-group__items">
+												<div class="checkbox">
+													<input class="checkbox-input visuallyHidden" type="checkbox" name="food[]" id="food[]-0">
+													<label class="checkbox-label" for="food[]-0">Ресторан<span> </span>
+													</label>
+												</div>
+												<div class="checkbox">
+													<input class="checkbox-input visuallyHidden" type="checkbox" name="food[]" id="food[]-1">
+													<label class="checkbox-label" for="food[]-1">Собственная кухня / мини кухня<span> </span>
+													</label>
+												</div>
+											</div>
+											<button class="form-group__btn-show" type="button">Показать еще (10)</button>
+										</fieldset>
+										<fieldset class="form-group">
+											<legend class="form-group__caption">Общие</legend>
+											<div class="form-group__items">
+												<div class="checkbox">
+													<input class="checkbox-input visuallyHidden" type="checkbox" name="common[]" id="common[]-0">
+													<label class="checkbox-label" for="common[]-0">Интернет<span> </span>
+													</label>
+												</div>
+												<div class="checkbox">
+													<input class="checkbox-input visuallyHidden" type="checkbox" name="common[]" id="common[]-1">
+													<label class="checkbox-label" for="common[]-1">Номера для некурящих<span> </span>
+													</label>
+												</div>
+											</div>
+											<button class="form-group__btn-show" type="button">Показать еще (10)</button>
+										</fieldset>
+									</div>
+								</form>
+							</div>
+							<div class="aside-navigation">
+								<div class="aside__caption">Курорты рядом</div>
+								<nav>
+									<ul class="aside-navigation__list">
+										<li class="aside-navigation__item">
+											<a class="aside-navigation__link" href="#">Утес</a>
+										</li>
+										<li class="aside-navigation__item">
+											<a class="aside-navigation__link" href="#">Лазурное</a>
+										</li>
+										<li class="aside-navigation__item">
+											<a class="aside-navigation__link" href="#">Партенит</a>
+										</li>
+										<li class="aside-navigation__item">
+											<a class="aside-navigation__link" href="#">Сатера</a>
+										</li>
+										<li class="aside-navigation__item">
+											<a class="aside-navigation__link" href="#">Семидворье</a>
+										</li>
+										<li class="aside-navigation__item">
+											<a class="aside-navigation__link" href="#">Малый маяк</a>
+										</li>
+									</ul>
+								</nav>
+							</div>
+						</aside>
+						<div class="city-wrapper">
+							<div class="hotel-card">
+								<div class="hotel-card__body">
+									<div class="hotel-card__image-wrap">
+										<div class="hotel-card__image ibg">
+											<img src="assets/images/city/city-hotels/1.jpg" alt="Гостевой дом “Маяк”">
+										</div>
+										<button class="button-favorite" type="button"> </button>
+										<div class="hotel-card__repast">Завтрак</div>
+									</div>
+									<div class="hotel-card__main">
+										<div class="hotel-card__main-header">
+											<div class="hotel-card__title">Гостевой дом “Маяк”</div>
+											<div class="hotel-card__features">
+												<div class="rating">
+													<ul class="r-4 rating__list">
+														<li class="rating__item"> </li>
+														<li class="rating__item"> </li>
+														<li class="rating__item"> </li>
+														<li class="rating__item"> </li>
+														<li class="rating__item"> </li>
+													</ul>
+												</div>
+												<a class="btn-detail" href="#">Показать на карте</a>
+												<ul class="hotel-card__parameters">
+													<li class="hotel-card__parametr">Wi-Fi</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="hotel-card__stats">
+										<div class="hotel-card__rating">
+											<div class="hotel-card__rating-caption">рейтинг</div>
+											<div class="hotel-card__rating-estimate">9,0</div>
+											<div class="hotel-card__rating-total">895 оценок</div>
+										</div>
+										<div class="hotel-card__prices">
+											<div class="hotel-card__old-price"></div>
+											<div class="hotel-card__price">от 875 ₽</div>
+											<div class="hotel-card__price-details">
+												<p>1 ночь, 2 взрослых</p>
+												<p>включая налоги и сборы</p>
+											</div>
+										</div>
+										<a class="hotel-card__btn-place" href="#">Наличие мест</a>
+									</div>
+								</div>
+							</div>
+							<div class="hotel-card">
+								<div class="hotel-card__body">
+									<div class="hotel-card__image-wrap">
+										<div class="hotel-card__image ibg">
+											<img src="assets/images/city/city-hotels/2.jpg" alt="Гостевой дом “Маяк”">
+										</div>
+										<button class="button-favorite" type="button"> </button>
+										<div class="hotel-card__repast">Завтрак</div>
+									</div>
+									<div class="hotel-card__main">
+										<div class="hotel-card__main-header">
+											<div class="hotel-card__title">Гостевой дом “Маяк”</div>
+											<div class="hotel-card__features">
+												<div class="rating">
+													<ul class="r-4 rating__list">
+														<li class="rating__item"> </li>
+														<li class="rating__item"> </li>
+														<li class="rating__item"> </li>
+														<li class="rating__item"> </li>
+														<li class="rating__item"> </li>
+													</ul>
+												</div>
+												<a class="btn-detail" href="#">Показать на карте</a>
+												<ul class="hotel-card__parameters">
+													<li class="hotel-card__parametr">Wi-Fi</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="hotel-card__stats">
+										<div class="hotel-card__rating">
+											<div class="hotel-card__rating-caption">рейтинг</div>
+											<div class="hotel-card__rating-estimate">9,0</div>
+											<div class="hotel-card__rating-total">895 оценок</div>
+										</div>
+										<div class="hotel-card__prices">
+											<div class="hotel-card__old-price"></div>
+											<div class="hotel-card__price">от 875 ₽</div>
+											<div class="hotel-card__price-details">
+												<p>1 ночь, 2 взрослых</p>
+												<p>включая налоги и сборы</p>
+											</div>
+										</div>
+										<a class="hotel-card__btn-place" href="#">Наличие мест</a>
+									</div>
+								</div>
+							</div>
+							<div class="hotel-card">
+								<div class="hotel-card__body">
+									<div class="hotel-card__image-wrap">
+										<div class="hotel-card__image ibg">
+											<img src="assets/images/city/city-hotels/3.jpg" alt="Гостевой дом “Маяк”">
+										</div>
+										<button class="button-favorite" type="button"> </button>
+										<div class="hotel-card__repast">Завтрак</div>
+									</div>
+									<div class="hotel-card__main">
+										<div class="hotel-card__main-header">
+											<div class="hotel-card__title">Гостевой дом “Маяк”</div>
+											<div class="hotel-card__features">
+												<div class="rating">
+													<ul class="r-4 rating__list">
+														<li class="rating__item"> </li>
+														<li class="rating__item"> </li>
+														<li class="rating__item"> </li>
+														<li class="rating__item"> </li>
+														<li class="rating__item"> </li>
+													</ul>
+												</div>
+												<a class="btn-detail" href="#">Показать на карте</a>
+												<ul class="hotel-card__parameters">
+													<li class="hotel-card__parametr">Wi-Fi</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="hotel-card__stats">
+										<div class="hotel-card__rating">
+											<div class="hotel-card__rating-caption">рейтинг</div>
+											<div class="hotel-card__rating-estimate">9,0</div>
+											<div class="hotel-card__rating-total">895 оценок</div>
+										</div>
+										<div class="hotel-card__prices">
+											<div class="hotel-card__old-price"></div>
+											<div class="hotel-card__price">от 875 ₽</div>
+											<div class="hotel-card__price-details">
+												<p>1 ночь, 2 взрослых</p>
+												<p>включая налоги и сборы</p>
+											</div>
+										</div>
+										<a class="hotel-card__btn-place" href="#">Наличие мест</a>
+									</div>
+								</div>
+							</div>
+							<div class="hotel-card">
+								<div class="hotel-card__body">
+									<div class="hotel-card__image-wrap">
+										<div class="hotel-card__image ibg">
+											<img src="assets/images/city/city-hotels/4.jpg" alt="Гостевой дом “Маяк”">
+										</div>
+										<button class="button-favorite" type="button"> </button>
+										<div class="hotel-card__repast">Завтрак</div>
+									</div>
+									<div class="hotel-card__main">
+										<div class="hotel-card__main-header">
+											<div class="hotel-card__title">Гостевой дом “Маяк”</div>
+											<div class="hotel-card__features">
+												<div class="rating">
+													<ul class="r-4 rating__list">
+														<li class="rating__item"> </li>
+														<li class="rating__item"> </li>
+														<li class="rating__item"> </li>
+														<li class="rating__item"> </li>
+														<li class="rating__item"> </li>
+													</ul>
+												</div>
+												<a class="btn-detail" href="#">Показать на карте</a>
+												<ul class="hotel-card__parameters">
+													<li class="hotel-card__parametr">Wi-Fi</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="hotel-card__stats">
+										<div class="hotel-card__rating">
+											<div class="hotel-card__rating-caption">рейтинг</div>
+											<div class="hotel-card__rating-estimate">9,0</div>
+											<div class="hotel-card__rating-total">895 оценок</div>
+										</div>
+										<div class="hotel-card__prices">
+											<div class="hotel-card__old-price"></div>
+											<div class="hotel-card__price">от 875 ₽</div>
+											<div class="hotel-card__price-details">
+												<p>1 ночь, 2 взрослых</p>
+												<p>включая налоги и сборы</p>
+											</div>
+										</div>
+										<a class="hotel-card__btn-place" href="#">Наличие мест</a>
+									</div>
+								</div>
+							</div>
+							<div class="hotel-card">
+								<div class="hotel-card__body">
+									<div class="hotel-card__image-wrap">
+										<div class="hotel-card__image ibg">
+											<img src="assets/images/city/city-hotels/5.jpg" alt="Гостевой дом “Маяк”">
+										</div>
+										<button class="button-favorite" type="button"> </button>
+										<div class="hotel-card__repast">Завтрак</div>
+									</div>
+									<div class="hotel-card__main">
+										<div class="hotel-card__main-header">
+											<div class="hotel-card__title">Гостевой дом “Маяк”</div>
+											<div class="hotel-card__features">
+												<div class="rating">
+													<ul class="r-4 rating__list">
+														<li class="rating__item"> </li>
+														<li class="rating__item"> </li>
+														<li class="rating__item"> </li>
+														<li class="rating__item"> </li>
+														<li class="rating__item"> </li>
+													</ul>
+												</div>
+												<a class="btn-detail" href="#">Показать на карте</a>
+												<ul class="hotel-card__parameters">
+													<li class="hotel-card__parametr">Wi-Fi</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="hotel-card__stats">
+										<div class="hotel-card__rating">
+											<div class="hotel-card__rating-caption">рейтинг</div>
+											<div class="hotel-card__rating-estimate">9,0</div>
+											<div class="hotel-card__rating-total">895 оценок</div>
+										</div>
+										<div class="hotel-card__prices">
+											<div class="hotel-card__old-price"></div>
+											<div class="hotel-card__price">от 875 ₽</div>
+											<div class="hotel-card__price-details">
+												<p>1 ночь, 2 взрослых</p>
+												<p>включая налоги и сборы</p>
+											</div>
+										</div>
+										<a class="hotel-card__btn-place" href="#">Наличие мест</a>
+									</div>
+								</div>
+							</div>
+							<div class="hotel-card">
+								<div class="hotel-card__body">
+									<div class="hotel-card__image-wrap">
+										<div class="hotel-card__image ibg">
+											<img src="assets/images/city/city-hotels/6.jpg" alt="Гостевой дом “Маяк”">
+										</div>
+										<button class="button-favorite" type="button"> </button>
+										<div class="hotel-card__repast">Завтрак</div>
+									</div>
+									<div class="hotel-card__main">
+										<div class="hotel-card__main-header">
+											<div class="hotel-card__title">Гостевой дом “Маяк”</div>
+											<div class="hotel-card__features">
+												<div class="rating">
+													<ul class="r-4 rating__list">
+														<li class="rating__item"> </li>
+														<li class="rating__item"> </li>
+														<li class="rating__item"> </li>
+														<li class="rating__item"> </li>
+														<li class="rating__item"> </li>
+													</ul>
+												</div>
+												<a class="btn-detail" href="#">Показать на карте</a>
+												<ul class="hotel-card__parameters">
+													<li class="hotel-card__parametr">Wi-Fi</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="hotel-card__stats">
+										<div class="hotel-card__rating">
+											<div class="hotel-card__rating-caption">рейтинг</div>
+											<div class="hotel-card__rating-estimate">9,0</div>
+											<div class="hotel-card__rating-total">895 оценок</div>
+										</div>
+										<div class="hotel-card__prices">
+											<div class="hotel-card__old-price"></div>
+											<div class="hotel-card__price">от 875 ₽</div>
+											<div class="hotel-card__price-details">
+												<p>1 ночь, 2 взрослых</p>
+												<p>включая налоги и сборы</p>
+											</div>
+										</div>
+										<a class="hotel-card__btn-place" href="#">Наличие мест</a>
+									</div>
+								</div>
+							</div>
+							<nav class="pagination-nav">
+								<ul class="pagination">
+									<li class="page-item page-item--prev">
+										<a class="page-link" href="#">Назад</a>
+									</li>
+									<li class="page-item">
+										<a class="page-link" href="#">1</a>
+									</li>
+									<li class="page-item">
+										<a class="page-link" href="#">...</a>
+									</li>
+									<li class="page-item">
+										<a class="page-link" href="#">11</a>
+									</li>
+									<li class="page-item active">
+										<a class="page-link" href="#">12</a>
+									</li>
+									<li class="page-item">
+										<a class="page-link" href="#">13</a>
+									</li>
+									<li class="page-item">
+										<a class="page-link" href="#">14</a>
+									</li>
+									<li class="page-item">
+										<a class="page-link" href="#">15</a>
+									</li>
+									<li class="page-item">
+										<a class="page-link" href="#">16</a>
+									</li>
+									<li class="page-item">
+										<a class="page-link" href="#">...</a>
+									</li>
+									<li class="page-item">
+										<a class="page-link" href="#">26</a>
+									</li>
+									<li class="page-item page-item--next">
+										<a class="page-link" href="#">Вперед</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+					</div>
 				</div>
 			</div>
 		</main>
@@ -165,7 +680,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="assets/scripts/main.js?_v=20240727162154" defer="defer"></script>
+	<script src="assets/scripts/main.js" defer="defer"></script>
 </body>
 
 </html>

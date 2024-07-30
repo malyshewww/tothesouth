@@ -31,6 +31,11 @@
 			color: $orange;
 		}
 	}
+	&--2 {
+		.object-card__icon::before {
+			mask-image: url('../images/objects/2.svg');
+		}
+	}
 	&--4 {
 		.object-card__icon::before {
 			mask-image: url('../images/objects/4.svg');

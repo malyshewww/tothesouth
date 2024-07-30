@@ -1,1 +1,7 @@
-.map{border-radius:10px;height:250px;overflow:hidden}
+/* src/styles/map-widget.scss */
+.map {
+  border-radius: 10px;
+  height: 250px;
+  overflow: hidden;
+}
+/*# sourceMappingURL=map-widget.css.map */

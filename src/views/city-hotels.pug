@@ -9,7 +9,51 @@ append styles
 	link(href="assets/styles/city-hotels.css" rel="stylesheet")
 
 block content 
-	.city 
+	.city-hotels
 		.container 
 			.page-title= pageTitle
 			+cityNavigation(1)
+			.heading 
+				.heading__title.title-xs Жилье в Алуште
+				.heading-sorting.sorting
+					.sorting__caption Сортировать:
+					ul.sorting__list
+						li.sorting__list-item Популярность
+						li.sorting__list-item Рейтинг
+						li.sorting__list-item.active Цена
+			.city-layout 
+				aside.aside 
+					+objectCard(otherObjcets[3], 'active')
+					.aside-form
+						form(action="#", method="post").form 
+							.form-groups 
+								+fieldGroup("Регион, город")
+									.form-group__items
+										+customDropdown([...dropdowns.region], "Крым")
+										+customDropdown([...dropdowns.city], "Алушта")
+								| slider
+								+fieldGroup("Тип жилья")
+									.form-group__items
+										each item, index in hotelCheckboxes.type
+											+checkbox(item, index, "type[]")
+									+btnShow
+								+fieldGroup("Инфраструктура")
+									.form-group__items
+										each item, index in hotelCheckboxes.objects
+											+checkbox(item, index, "objects[]")
+									+btnShow
+								+fieldGroup("Питание")
+									.form-group__items
+										each item, index in hotelCheckboxes.food
+											+checkbox(item, index, "food[]")
+									+btnShow
+								+fieldGroup("Общие")
+									.form-group__items
+										each item, index in hotelCheckboxes.common
+											+checkbox(item, index, "common[]")
+									+btnShow
+					+asideNavigation([...cityPage.resorts], "Курорты рядом")
+				.city-wrapper 
+					each item in cityPage.hotels
+						+hotelPreview(item)
+					+pagination([...pagination], 3)
