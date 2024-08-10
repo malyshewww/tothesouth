@@ -8,6 +8,10 @@ block variables
 append styles 
 	link(href="assets/styles/city-hotels.css" rel="stylesheet")
 
+append scripts 
+	script(src="assets/scripts/city.js")
+	script(src="assets/scripts/city-hotels.js")
+
 block content 
 	.city-hotels
 		.container 
@@ -20,7 +24,7 @@ block content
 					ul.sorting__list
 						li.sorting__list-item Популярность
 						li.sorting__list-item Рейтинг
-						li.sorting__list-item.active Цена
+						li(data-sort="up").sorting__list-item.active Цена
 			.city-layout 
 				aside.aside 
 					+objectCard(otherObjcets[3], 'active')
@@ -31,29 +35,42 @@ block content
 									.form-group__items
 										+customDropdown([...dropdowns.region], "Крым")
 										+customDropdown([...dropdowns.city], "Алушта")
-								| slider
+								+fieldGroup("Цена за сутки,₽")
+									.form-group__values 
+										.form-group__value 
+											span.form-group__value-caption от
+											input(type="number" name="range_from" data-min="0" value="0").form-group__value-input.min
+										.form-group__value 
+											span.form-group__value-caption до
+											input(type="number" name="range_to" data-max="10000" value="10000").form-group__value-input.max
+									.form-group-slider
 								+fieldGroup("Тип жилья")
 									.form-group__items
 										each item, index in hotelCheckboxes.type
-											+checkbox(item, index, "type[]")
+											+checkbox(item, index, "type")
 									+btnShow
 								+fieldGroup("Инфраструктура")
 									.form-group__items
 										each item, index in hotelCheckboxes.objects
-											+checkbox(item, index, "objects[]")
+											+checkbox(item, index, "objects")
 									+btnShow
 								+fieldGroup("Питание")
 									.form-group__items
 										each item, index in hotelCheckboxes.food
-											+checkbox(item, index, "food[]")
+											+checkbox(item, index, "food")
 									+btnShow
 								+fieldGroup("Общие")
 									.form-group__items
 										each item, index in hotelCheckboxes.common
-											+checkbox(item, index, "common[]")
+											+checkbox(item, index, "common")
 									+btnShow
+							.aside-form__bottom 
+								button(type="submit").btn-submit.btn.btn-blue Применить 
+								button(type="reset").btn-reset Сбросить 
 					+asideNavigation([...cityPage.resorts], "Курорты рядом")
 				.city-wrapper 
-					each item in cityPage.hotels
-						+hotelPreview(item)
+					.city-hotels__list
+						each item in cityPage.hotels
+							+hotelPreview(item)
 					+pagination([...pagination], 3)
+			include ./components/city-testimonials

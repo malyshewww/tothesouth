@@ -1,17 +1,37 @@
-doctype html
-html(lang='ru')
-	head
-		meta(charset="UTF-8")
-		meta(http-equiv="X-UA-Compatible", content="IE=edge")
-		meta(name="viewport", content="width=device-width, initial-scale=1.0")
-		title Start Template ESBuild + Pug + Typescript + SCSS
+extends ./layouts/default
 
-		link(rel='shortcut icon' href='assets/favicon.ico' type='image/x-icon')
-		link(rel="stylesheet", href="assets/styles/main.css")
-		script(defer, src="assets/scripts/main.js")
+block variables 
+	- let pageTitle = "Контакты офиса поддержки";
+	- let breadCrumbsList = [{"title": "Главная", "link": "/"}];
+	- let currentPage = "Контакты офиса поддержки"
 
-	body
-		.wrapper
-			h1(data-observ) Hello World Best Template
-			h1 Hello World Best Template
-			img(src="assets/images/1.webp", alt="Photo")
+append styles 
+	link(href="assets/styles/contacts.css" rel="stylesheet")
+
+append scripts 
+	script(src="assets/scripts/map.js")
+
+block content 
+	.contacts
+		.container 
+			.page-title= pageTitle
+			.contacts__wrapper 
+				.contacts__main.main-contacts
+					.main-contacts__items 
+						.main-contacts__item
+							.main-contacts__caption Адрес
+							.main-contacts__content 354200, Краснодарский край, г. Сочи, #[br] п. Лазаревское, ул. Партизанская 11
+						.main-contacts__item
+							.main-contacts__caption По вопросам публикации объявлений на нашем сайте
+							.main-contacts__content 
+								a(href="tel:+79788029014").main-contacts__link +7 (978) 802 90 14
+								.main-contacts__text с 09:00 до 18:00
+						.main-contacts__item
+							.main-contacts__caption Напишите нам
+							.main-contacts__content 
+								a(href="mailto:info@na-uga.ru").main-contacts__link info@na-uga.ru
+								.main-contacts__text по вопросам тех поддержки
+					.main-contacts__disclamer 
+						p Внимание! Размещение объявлений на нашем сайте самостоятельное. Вам нужно #[a(href="register.html") зарегистрироваться] и внести информацию о своем месте размещения. Поддержка осуществляется только по телефону.
+				.contacts__map 
+					.map#map

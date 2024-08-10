@@ -26,6 +26,17 @@
 
 .card-preview {
 	position: relative;
+	@media (any-hover: hover) {
+		&:hover {
+			cursor: pointer;
+			& .card-preview__title {
+				color: $orange;
+				& span {
+					background-size: 100% 1px;
+				}
+			}
+		}
+	}
 	&__body {
 		display: grid;
 		gap: 10px;
@@ -43,6 +54,14 @@
 		font-weight: 700;
 		font-size: 20px;
 		line-height: 120%;
+		transition: color $time linear;
+		& span {
+			transition: background-size $time cubic-bezier(0.645, 0.045, 0.355, 1);
+			background: linear-gradient(to bottom, rgba($orange, 1) 0%, rgba($orange, 1) 98%);
+			background-size: 0px 1px;
+			background-repeat: no-repeat;
+			background-position: left 100%;
+		}
 	}
 	&__description {
 		line-height: 130%;
@@ -86,5 +105,11 @@
 		font-size: 14px;
 		line-height: 140%;
 		color: $gray-text;
+	}
+}
+
+@keyframes animatedBackground {
+	to {
+		background-size: 100% 100%;
 	}
 }

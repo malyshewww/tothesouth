@@ -43,10 +43,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: color 0.3s;
 }
 .navigation-city__link.active {
   background-color: #18abc6;
   color: #fff;
+}
+.navigation-city__link.show + .navigation-city__sub-list {
+  opacity: 1;
+  top: calc(100% + 33px);
+  pointer-events: all;
 }
 .navigation-city__sub-list {
   padding: 0;
@@ -54,7 +60,7 @@
   list-style-type: none;
   position: absolute;
   z-index: 5;
-  top: calc(100% + 33px);
+  top: calc(100% + 53px);
   right: 0;
   border: 1px solid #e1e3eb;
   border-radius: 10px;
@@ -64,6 +70,9 @@
   background: white;
   display: grid;
   gap: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: top 0.3s, opacity 0.3s;
 }
 .navigation-city__sub-link {
   min-height: 41px;
@@ -75,6 +84,7 @@
   line-height: 130%;
   text-align: center;
   color: #08151a;
+  transition: color 0.3s;
 }
 .city-layout {
   display: grid;
@@ -259,6 +269,18 @@
   font-size: 20px;
   line-height: 120%;
   color: #08151a;
+  transition: color 0.3s linear;
+}
+.facility-preview__title span {
+  transition: background-size 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  background:
+    linear-gradient(
+      to bottom,
+      #ff6933 0%,
+      #ff6933 98%);
+  background-size: 0px 1px;
+  background-repeat: no-repeat;
+  background-position: left 100%;
 }
 .facility-preview__sub-title {
   font-size: 14px;
@@ -276,5 +298,22 @@
   color: #08151a;
   line-height: 140%;
   display: inline;
+}
+@media (any-hover: hover) {
+  .navigation-city__link:not(.active):hover {
+    color: #18abc6;
+  }
+  .navigation-city__sub-link:not(.active):hover {
+    color: #18abc6;
+  }
+  .facility-preview:hover {
+    cursor: pointer;
+  }
+  .facility-preview:hover .facility-preview__title {
+    color: #ff6933;
+  }
+  .facility-preview:hover .facility-preview__title span {
+    background-size: 100% 1px;
+  }
 }
 /*# sourceMappingURL=facilities.css.map */

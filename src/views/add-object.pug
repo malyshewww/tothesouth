@@ -1,0 +1,49 @@
+extends ./layouts/default
+
+block variables 
+	- let pageTitle = "Добавить объект на сайт на-Юга";
+	- let breadCrumbsList = [{"title": "Главная", "link": "/"}];
+	- let currentPage = "Добавить объект";
+
+append styles 
+	link(href="assets/styles/add-object.css" rel="stylesheet")
+append scripts 
+	script(src="assets/scripts/add-object.js" type="module") 
+
+block content 
+	.add-object 
+		.container 
+			+pageHeading(pageTitle)
+				.page-heading__sub-title 
+					p Для того, чтобы разместить свой объект на сайте на-Юга или узнать стоимость размещения объекта на сайте, заполните данную Заявку.
+					p #[strong Телефон менеджера по вопросам размещения: #[a(href="tel:+79788029014")  +7 (978) 802 90 14]] 
+			.add-object__body 
+				form(action="#").add-object__form.form-object
+					.form-object__items 
+						+formItem("text", "object_name", "Название объекта", null, "")
+						.form-item
+							.form-item__caption Регион/Район
+							+customDropdown([...objectPage.dropdown.region], "Выберите нужный регион")
+						+formItem("text", "object_city", "Город (поселок)")
+						+formItem("text", "object_address", "Адрес объекта")
+						+formItem("tel", "object_phone", "+7-900-000-00-00")
+						+formItem("text", "object_person", "Ваше имя")
+						+formItem("email", "object_email", "Email")
+					.form-object__bottom 
+						.form-object__bottom-title Я понимаю*
+						each item, index in objectPage.checkboxes
+							+checkbox(item, index, "agreement")
+						.form-object__buttons 
+							button(type="submit").form-object__btn-submit.btn.btn-blue Отправить
+							button(type="reset").form-object__btn-reset.btn.btn-blue-transparent Сбросить
+						.form-object__text 
+							| Нажимая кнопку “Отправить”, вы соглашаетесь с нашими #[a(href="#") Правилами и условиями] и #[a(href="#") Положением о конфиденциальности]
+				.add-object__info.info-object
+					.info-object__content-top 
+						p Реклама гостиницы на нашем сайте - это простой и выгодный способ найти новых клиентов. #[span 5687 гостиниц и гостевых домов]  уже выбрали нас и зарабатывают вместе с нами. #[span Присоединяйтесь!]
+					.info-object__image 
+						img(src="assets/images/add-object/woman.svg", alt="woman")
+					.info-object__content-bottom 
+						p Укажите свой телефон и e-mail, наш менеджер свяжется с Вами в ближайшее время и все Вам подробно расскажет.
+						p #[strong Размещение объектов на сайте платное. #[br] Цены в регионах отличаются.]
+

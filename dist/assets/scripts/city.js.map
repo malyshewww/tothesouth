@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../src/scripts/city.ts"],
+  "sourcesContent": ["import './modules/dropdown';\r\n\r\ndocument.addEventListener('DOMContentLoaded', () => {\r\n\tdocument.addEventListener('click', handleClicks);\r\n\r\n\tfunction handleClicks(e) {\r\n\t\tconst target = e.target as HTMLElement;\r\n\t\tif (target.matches('.navigation-city__link') && target.parentNode.classList.contains('expanded')) {\r\n\t\t\te.preventDefault();\r\n\t\t\tif (target.classList.contains('show')) {\r\n\t\t\t\ttarget.classList.remove('show');\r\n\t\t\t} else {\r\n\t\t\t\ttarget.classList.add('show');\r\n\t\t\t}\r\n\t\t}\r\n\t\tif (!target.matches('.navigation-city__link')) {\r\n\t\t\tconst links = document.querySelectorAll('.navigation-city__link') as HTMLCollection;\r\n\t\t\tlinks.forEach((link) => link.classList.remove('show'));\r\n\t\t}\r\n\t}\r\n});\r\n"],
+  "mappings": ";;;AAEA,SAAS,iBAAiB,oBAAoB,MAAM;AACnD,WAAS,iBAAiB,SAAS,YAAY;AAE/C,WAAS,aAAa,GAAG;AACxB,UAAM,SAAS,EAAE;AACjB,QAAI,OAAO,QAAQ,wBAAwB,KAAK,OAAO,WAAW,UAAU,SAAS,UAAU,GAAG;AACjG,QAAE,eAAe;AACjB,UAAI,OAAO,UAAU,SAAS,MAAM,GAAG;AACtC,eAAO,UAAU,OAAO,MAAM;AAAA,MAC/B,OAAO;AACN,eAAO,UAAU,IAAI,MAAM;AAAA,MAC5B;AAAA,IACD;AACA,QAAI,CAAC,OAAO,QAAQ,wBAAwB,GAAG;AAC9C,YAAM,QAAQ,SAAS,iBAAiB,wBAAwB;AAChE,YAAM,QAAQ,CAAC,SAAS,KAAK,UAAU,OAAO,MAAM,CAAC;AAAA,IACtD;AAAA,EACD;AACD,CAAC;",
+  "names": []
+}

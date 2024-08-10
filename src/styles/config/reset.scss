@@ -76,12 +76,20 @@ button {
 	color: inherit;
 	background-color: inherit;
 	@media (any-hover: hover) {
-		cursor: pointer;
+		&:hover {
+			cursor: pointer;
+		}
 	}
 }
 a {
 	color: inherit;
 	text-decoration: none;
+	cursor: default;
+	@media (any-hover: hover) {
+		&:hover {
+			cursor: pointer;
+		}
+	}
 }
 picture {
 	display: flex;

@@ -5,18 +5,158 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>Start Template ESBuild + Pug + Typescript + SCSS</title>
-	<link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
-	<link rel="stylesheet" href="assets/styles/main.css">
-	<script defer="defer" src="assets/scripts/main.js"></script>
+	<title>Контакты офиса поддержки</title>
+	<meta name="description">
+	<meta name="keywords" content="Перечень ключевых слов">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://example.com">
+	<meta property="og:title" content="Контакты офиса поддержки">
+	<meta property="og:description">
+	<meta property="twitter:title" content="Контакты офиса поддержки">
+	<meta property="twitter:description" content="description">
+	<link rel="canonical" href="https://example.com">
+	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet">
+	<link href="assets/styles/main.css" rel="stylesheet">
+	<link href="assets/styles/contacts.css" rel="stylesheet">
+	<meta name="theme-color" content="#fff">
+	<meta name="msapplication-navbutton-color" content="#fff">
+	<meta name="apple-mobile-web-app-status-bar-style" content="#fff">
+	<meta name="apple-mobile-web-app-title" content="Название">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="format-detection" content="address=no">
+	<meta name="format-detection" content="email=no">
+	<meta name="format-detection" content="date=no">
+	<link rel="shortcut icon" href="images/favicons/favicon.svg" type="image/x-icon">
 </head>
 
 <body>
 	<div class="wrapper">
-		<h1 data-observ>Hello World Best Template</h1>
-		<h1>Hello World Best Template</h1>
-		<img src="assets/images/1.webp" alt="Photo">
+		<header class="header">
+			<div class="container">
+				<div class="header__body">
+					<div class="header__left">
+						<a class="header__logo logo" href="homepage.html">
+							<img src="assets/images/logo-blue.svg" alt="логотип">
+						</a>
+						<div class="header__choices">
+							<button class="btn btn-transparent header__btn-choice" type="button">Выберите курорт</button>
+						</div>
+					</div>
+					<div class="header__links">
+						<a class="header__favorite" href="#"></a>
+						<a class="btn btn-transparent header__btn-auth" href="auth.html">Авторизация</a>
+						<a class="btn btn-white header__btn-add" href="add-project.html">Добавить проект</a>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="breadcrumbs">
+			<div class="container">
+				<nav class="breadcrumbs__navigation">
+					<ul class="breadcrumbs__list">
+						<li class="breadcrumbs__item">
+							<a class="breadcrumbs__link" href="/">Главная</a>
+						</li>
+						<li class="breadcrumbs__item active">Контакты офиса поддержки</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+		<main class="main">
+			<div class="contacts">
+				<div class="container">
+					<div class="page-title">Контакты офиса поддержки</div>
+					<div class="contacts__wrapper">
+						<div class="contacts__main main-contacts">
+							<div class="main-contacts__items">
+								<div class="main-contacts__item">
+									<div class="main-contacts__caption">Адрес</div>
+									<div class="main-contacts__content">354200, Краснодарский край, г. Сочи,
+										<br> п. Лазаревское, ул. Партизанская 11
+									</div>
+								</div>
+								<div class="main-contacts__item">
+									<div class="main-contacts__caption">По вопросам публикации объявлений на нашем сайте</div>
+									<div class="main-contacts__content">
+										<a class="main-contacts__link" href="tel:+79788029014">+7 (978) 802 90 14</a>
+										<div class="main-contacts__text">с 09:00 до 18:00</div>
+									</div>
+								</div>
+								<div class="main-contacts__item">
+									<div class="main-contacts__caption">Напишите нам</div>
+									<div class="main-contacts__content">
+										<a class="main-contacts__link" href="mailto:info@na-uga.ru">info@na-uga.ru</a>
+										<div class="main-contacts__text">по вопросам тех поддержки</div>
+									</div>
+								</div>
+							</div>
+							<div class="main-contacts__disclamer">
+								<p>Внимание! Размещение объявлений на нашем сайте самостоятельное. Вам нужно <a href="register.html">зарегистрироваться</a> и внести информацию о своем месте размещения. Поддержка осуществляется только по телефону.</p>
+							</div>
+						</div>
+						<div class="contacts__map">
+							<div class="map" id="map"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer class="footer">
+			<div class="container">
+				<div class="footer__body">
+					<div class="footer__info info-footer">
+						<a class="footer__logo" href="homepage.html">
+							<img src="assets/images/logo.svg" alt="">
+						</a>
+						<div class="footer__copy">©На Юга, 2024</div>
+						<a class="footer__politic" href="#">Политика конфиденциальности</a>
+						<div class="footer__disclamer">Мы не предоставляем услуги бронирования. Всю информацию Вы можете найти на странице заинтресовавшего Вас обьекта Пишите, мы обязательно ответим</div>
+					</div>
+					<div class="footer__main main-footer">
+						<div class="footer__menu menu-footer">
+							<div class="menu-footer__label">Информация</div>
+							<ul class="menu-footer__list">
+								<li class="menu-footer__item">
+									<a class="menu-footer__link" href="about.html">О компании</a>
+								</li>
+								<li class="menu-footer__item">
+									<a class="menu-footer__link" href="#">Тарифы</a>
+								</li>
+								<li class="menu-footer__item">
+									<a class="menu-footer__link" href="faq.html">FAQ</a>
+								</li>
+								<li class="menu-footer__item">
+									<a class="menu-footer__link" href="contacts.html">Контакты</a>
+								</li>
+							</ul>
+							<ul class="menu-footer__list">
+								<li class="menu-footer__item">
+									<a class="menu-footer__link" href="#">Соглашение</a>
+								</li>
+								<li class="menu-footer__item">
+									<a class="menu-footer__link" href="#">Работа</a>
+								</li>
+								<li class="menu-footer__item">
+									<a class="menu-footer__link" href="#">Статистика</a>
+								</li>
+								<li class="menu-footer__item">
+									<a class="menu-footer__link" href="#">Карта сайта</a>
+								</li>
+							</ul>
+						</div>
+						<div class="footer__contacts">
+							<a class="footer__phone" href="tel:+79788029014">+7 (978) 802 90 14</a>
+							<a class="footer__email" href="mailto:info@na-uga.ru">info@na-uga.ru</a>
+							<a class="btn btn-orange-transparent footer__button" href="#">Добавить проект </a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
 	</div>
+	<script src="assets/scripts/main.js" defer="defer"></script>
+	<script src="assets/scripts/map.js"></script>
 </body>
 
 </html>

@@ -116,7 +116,7 @@
 							<ul class="sorting__list">
 								<li class="sorting__list-item">Популярность</li>
 								<li class="sorting__list-item">Рейтинг</li>
-								<li class="active sorting__list-item">Цена</li>
+								<li class="active sorting__list-item" data-sort="up">Цена</li>
 							</ul>
 						</div>
 					</div>
@@ -148,55 +148,69 @@
 														<div class="custom-dropdown__btn" data-dropdown-button>Алушта</div>
 														<ul class="custom-dropdown__list select-list" data-dropdown-list>
 															<li class="select-list__item" data-value="Алушта">Алушта</li>
-															<li class="select-list__item" data-value="Алушта">Алушта</li>
-															<li class="select-list__item" data-value="Алушта">Алушта</li>
+															<li class="select-list__item" data-value="Геленджик">Геленджик</li>
+															<li class="select-list__item" data-value="Новороссийск">Новороссийск</li>
 														</ul>
 														<input class="custom-dropdown__input" type="hidden" value="">
 													</div>
 												</div>
 											</div>
-										</fieldset>slider
+										</fieldset>
+										<fieldset class="form-group">
+											<legend class="form-group__caption">Цена за сутки,₽</legend>
+											<div class="form-group__values">
+												<div class="form-group__value">
+													<span class="form-group__value-caption">от</span>
+													<input class="form-group__value-input min" type="number" name="range_from" data-min="0" value="0">
+												</div>
+												<div class="form-group__value">
+													<span class="form-group__value-caption">до</span>
+													<input class="form-group__value-input max" type="number" name="range_to" data-max="10000" value="10000">
+												</div>
+											</div>
+											<div class="form-group-slider"></div>
+										</fieldset>
 										<fieldset class="form-group">
 											<legend class="form-group__caption">Тип жилья</legend>
 											<div class="form-group__items">
 												<div class="checkbox">
-													<input class="checkbox-input visuallyHidden" type="checkbox" name="type[]" id="type[]-0">
-													<label class="checkbox-label" for="type[]-0">Отели и мини отели<span> </span>
+													<input class="checkbox-input visuallyHidden" type="checkbox" name="type" id="type-0">
+													<label class="checkbox-label" for="type-0">Отели и мини отели<span> </span>
 													</label>
 												</div>
 												<div class="checkbox">
-													<input class="checkbox-input visuallyHidden" type="checkbox" name="type[]" id="type[]-1">
-													<label class="checkbox-label" for="type[]-1">Гостевые дома (как мини отели)<span> </span>
+													<input class="checkbox-input visuallyHidden" type="checkbox" name="type" id="type-1">
+													<label class="checkbox-label" for="type-1">Гостевые дома (как мини отели)<span> </span>
 													</label>
 												</div>
 												<div class="checkbox">
-													<input class="checkbox-input visuallyHidden" type="checkbox" name="type[]" id="type[]-2">
-													<label class="checkbox-label" for="type[]-2">Квартиры / Апартаменты<span> </span>
+													<input class="checkbox-input visuallyHidden" type="checkbox" name="type" id="type-2">
+													<label class="checkbox-label" for="type-2">Квартиры / Апартаменты<span> </span>
 													</label>
 												</div>
 												<div class="checkbox">
-													<input class="checkbox-input visuallyHidden" type="checkbox" name="type[]" id="type[]-3">
-													<label class="checkbox-label" for="type[]-3">Дома и коттеджи<span> </span>
+													<input class="checkbox-input visuallyHidden" type="checkbox" name="type" id="type-3">
+													<label class="checkbox-label" for="type-3">Дома и коттеджи<span> </span>
 													</label>
 												</div>
 												<div class="checkbox">
-													<input class="checkbox-input visuallyHidden" type="checkbox" name="type[]" id="type[]-4" checked="checked">
-													<label class="checkbox-label" for="type[]-4">Базы отдыха и турбазы<span> </span>
+													<input class="checkbox-input visuallyHidden" type="checkbox" name="type" id="type-4" checked="checked">
+													<label class="checkbox-label" for="type-4">Базы отдыха и турбазы<span> </span>
 													</label>
 												</div>
 												<div class="checkbox">
-													<input class="checkbox-input visuallyHidden" type="checkbox" name="type[]" id="type[]-5">
-													<label class="checkbox-label" for="type[]-5">Хостелы<span> </span>
+													<input class="checkbox-input visuallyHidden" type="checkbox" name="type" id="type-5">
+													<label class="checkbox-label" for="type-5">Хостелы<span> </span>
 													</label>
 												</div>
 												<div class="checkbox">
-													<input class="checkbox-input visuallyHidden" type="checkbox" name="type[]" id="type[]-6">
-													<label class="checkbox-label" for="type[]-6">Виллы (большой дом с территорией<span> </span>
+													<input class="checkbox-input visuallyHidden" type="checkbox" name="type" id="type-6">
+													<label class="checkbox-label" for="type-6">Виллы (большой дом с территорией<span> </span>
 													</label>
 												</div>
 												<div class="checkbox">
-													<input class="checkbox-input visuallyHidden" type="checkbox" name="type[]" id="type[]-7">
-													<label class="checkbox-label" for="type[]-7">Комнаты в квартирах<span> </span>
+													<input class="checkbox-input visuallyHidden" type="checkbox" name="type" id="type-7">
+													<label class="checkbox-label" for="type-7">Комнаты в квартирах<span> </span>
 													</label>
 												</div>
 											</div>
@@ -206,33 +220,33 @@
 											<legend class="form-group__caption">Инфраструктура</legend>
 											<div class="form-group__items">
 												<div class="checkbox">
-													<input class="checkbox-input visuallyHidden" type="checkbox" name="objects[]" id="objects[]-0">
-													<label class="checkbox-label" for="objects[]-0">Парковка<span> </span>
+													<input class="checkbox-input visuallyHidden" type="checkbox" name="objects" id="objects-0">
+													<label class="checkbox-label" for="objects-0">Парковка<span> </span>
 													</label>
 												</div>
 												<div class="checkbox">
-													<input class="checkbox-input visuallyHidden" type="checkbox" name="objects[]" id="objects[]-1">
-													<label class="checkbox-label" for="objects[]-1">Бассейн<span> </span>
+													<input class="checkbox-input visuallyHidden" type="checkbox" name="objects" id="objects-1">
+													<label class="checkbox-label" for="objects-1">Бассейн<span> </span>
 													</label>
 												</div>
 												<div class="checkbox">
-													<input class="checkbox-input visuallyHidden" type="checkbox" name="objects[]" id="objects[]-2">
-													<label class="checkbox-label" for="objects[]-2">Фитнес-центр<span> </span>
+													<input class="checkbox-input visuallyHidden" type="checkbox" name="objects" id="objects-2">
+													<label class="checkbox-label" for="objects-2">Фитнес-центр<span> </span>
 													</label>
 												</div>
 												<div class="checkbox">
-													<input class="checkbox-input visuallyHidden" type="checkbox" name="objects[]" id="objects[]-3">
-													<label class="checkbox-label" for="objects[]-3">SPA<span> </span>
+													<input class="checkbox-input visuallyHidden" type="checkbox" name="objects" id="objects-3">
+													<label class="checkbox-label" for="objects-3">SPA<span> </span>
 													</label>
 												</div>
 												<div class="checkbox">
-													<input class="checkbox-input visuallyHidden" type="checkbox" name="objects[]" id="objects[]-4">
-													<label class="checkbox-label" for="objects[]-4">Детская игровая площадка<span> </span>
+													<input class="checkbox-input visuallyHidden" type="checkbox" name="objects" id="objects-4">
+													<label class="checkbox-label" for="objects-4">Детская игровая площадка<span> </span>
 													</label>
 												</div>
 												<div class="checkbox">
-													<input class="checkbox-input visuallyHidden" type="checkbox" name="objects[]" id="objects[]-5">
-													<label class="checkbox-label" for="objects[]-5">Детская игровая площадка<span> </span>
+													<input class="checkbox-input visuallyHidden" type="checkbox" name="objects" id="objects-5">
+													<label class="checkbox-label" for="objects-5">Детская игровая площадка<span> </span>
 													</label>
 												</div>
 											</div>
@@ -242,13 +256,13 @@
 											<legend class="form-group__caption">Питание</legend>
 											<div class="form-group__items">
 												<div class="checkbox">
-													<input class="checkbox-input visuallyHidden" type="checkbox" name="food[]" id="food[]-0">
-													<label class="checkbox-label" for="food[]-0">Ресторан<span> </span>
+													<input class="checkbox-input visuallyHidden" type="checkbox" name="food" id="food-0">
+													<label class="checkbox-label" for="food-0">Ресторан<span> </span>
 													</label>
 												</div>
 												<div class="checkbox">
-													<input class="checkbox-input visuallyHidden" type="checkbox" name="food[]" id="food[]-1">
-													<label class="checkbox-label" for="food[]-1">Собственная кухня / мини кухня<span> </span>
+													<input class="checkbox-input visuallyHidden" type="checkbox" name="food" id="food-1">
+													<label class="checkbox-label" for="food-1">Собственная кухня / мини кухня<span> </span>
 													</label>
 												</div>
 											</div>
@@ -258,18 +272,22 @@
 											<legend class="form-group__caption">Общие</legend>
 											<div class="form-group__items">
 												<div class="checkbox">
-													<input class="checkbox-input visuallyHidden" type="checkbox" name="common[]" id="common[]-0">
-													<label class="checkbox-label" for="common[]-0">Интернет<span> </span>
+													<input class="checkbox-input visuallyHidden" type="checkbox" name="common" id="common-0">
+													<label class="checkbox-label" for="common-0">Интернет<span> </span>
 													</label>
 												</div>
 												<div class="checkbox">
-													<input class="checkbox-input visuallyHidden" type="checkbox" name="common[]" id="common[]-1">
-													<label class="checkbox-label" for="common[]-1">Номера для некурящих<span> </span>
+													<input class="checkbox-input visuallyHidden" type="checkbox" name="common" id="common-1">
+													<label class="checkbox-label" for="common-1">Номера для некурящих<span> </span>
 													</label>
 												</div>
 											</div>
 											<button class="form-group__btn-show" type="button">Показать еще (10)</button>
 										</fieldset>
+									</div>
+									<div class="aside-form__bottom">
+										<button class="btn btn-blue btn-submit" type="submit">Применить </button>
+										<button class="btn-reset" type="reset">Сбросить </button>
 									</div>
 								</form>
 							</div>
@@ -300,285 +318,647 @@
 							</div>
 						</aside>
 						<div class="city-wrapper">
-							<div class="hotel-card">
-								<div class="hotel-card__body">
-									<div class="hotel-card__image-wrap">
-										<div class="hotel-card__image ibg">
-											<img src="assets/images/city/city-hotels/1.jpg" alt="Гостевой дом “Маяк”">
+							<div class="city-hotels__list">
+								<div class="hotel-card">
+									<div class="hotel-card__body">
+										<div class="hotel-card__image-wrap">
+											<div class="ibg hotel-card__image">
+												<img src="assets/images/city/city-hotels/1.jpg" alt="AVRASYAQUEEN HOTEL">
+											</div>
+											<button class="button-favorite" type="button"> </button>
+											<div class="hotel-card__repast">Завтрак</div>
 										</div>
-										<button class="button-favorite" type="button"> </button>
-										<div class="hotel-card__repast">Завтрак</div>
-									</div>
-									<div class="hotel-card__main">
-										<div class="hotel-card__main-header">
-											<div class="hotel-card__title">Гостевой дом “Маяк”</div>
-											<div class="hotel-card__features">
-												<div class="rating">
-													<ul class="r-4 rating__list">
-														<li class="rating__item"> </li>
-														<li class="rating__item"> </li>
-														<li class="rating__item"> </li>
-														<li class="rating__item"> </li>
-														<li class="rating__item"> </li>
-													</ul>
+										<div class="hotel-card__main">
+											<div class="hotel-card__main-wrapper">
+												<div class="hotel-card__main-header">
+													<div class="hotel-card__title">AVRASYAQUEEN HOTEL</div>
+													<div class="hotel-card__features">
+														<div class="rating">
+															<ul class="rating__list r-5">
+																<li class="rating__item"> </li>
+																<li class="rating__item"> </li>
+																<li class="rating__item"> </li>
+																<li class="rating__item"> </li>
+																<li class="rating__item"> </li>
+															</ul>
+														</div>
+														<a class="btn-detail" href="#">Показать на карте</a>
+														<ul class="hotel-card__parameters">
+															<li class="hotel-card__parametr">
+																Wi-Fi
+																<svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+																	<path d="M0 2.22056C1.83856 0.780743 4.13382 -0.00337279 6.5 1.09055e-05C8.96264 1.09055e-05 11.2241 0.831677 13 2.22056L12.2782 3.08501C10.6438 1.80505 8.60341 1.10803 6.5 1.11112C4.31092 1.11112 2.30115 1.85001 0.721839 3.08501L0 2.22056ZM1.80517 4.38167C3.1331 3.34167 4.79094 2.77531 6.5 2.77779C8.27816 2.77779 9.9115 3.37834 11.1948 4.38112L10.4724 5.24556C9.34876 4.36575 7.94602 3.88668 6.5 3.8889C4.9954 3.8889 3.61322 4.39723 2.52759 5.24556L1.80517 4.38112V4.38167ZM3.61092 6.54278C4.42807 5.90272 5.44826 5.55412 6.5 5.55556C7.59425 5.55556 8.59943 5.925 9.38908 6.54223L8.66667 7.40667C8.05379 6.9268 7.2887 6.66549 6.5 6.66667C5.67931 6.66667 4.92529 6.94389 4.33333 7.40667L3.61092 6.54223V6.54278ZM5.41667 8.70389C5.72302 8.46373 6.10558 8.33288 6.5 8.33334C6.91035 8.33334 7.28736 8.47223 7.58333 8.70334L6.5 10L5.41667 8.70334V8.70389Z" fill="#1C8CF3"></path>
+																</svg>
+															</li>
+														</ul>
+													</div>
+													<div class="hotel-card__limit">Ограниченное предложение</div>
 												</div>
-												<a class="btn-detail" href="#">Показать на карте</a>
-												<ul class="hotel-card__parameters">
-													<li class="hotel-card__parametr">Wi-Fi</li>
-												</ul>
+												<div class="hotel-card__main-content">
+													<div class="hotel-card__short-description">Двухместный номер эконом класса с 1 кроватью</div>
+													<div class="hotel-card__sub-description">1 двуспальная кровать</div>
+													<div class="hotel-card__text">
+														<p>Отель Al Khoory Courtyard расположен в Дубае, в 5 км от фонтана Дубай. К услугам гостей ресторан, бесплатная частная парковка</p>
+													</div>
+												</div>
+											</div>
+											<div class="hotel-card__stats">
+												<div class="hotel-card__rating">
+													<div class="hotel-card__rating-caption">рейтинг</div>
+													<div class="hotel-card__rating-estimate">9,0</div>
+													<div class="hotel-card__rating-total">895 оценок</div>
+												</div>
+												<div class="hotel-card__prices">
+													<div class="hotel-card__old-price">от 6500 <span>₽</span>
+													</div>
+													<div class="hotel-card__price">от 4 110 ₽</div>
+													<div class="hotel-card__price-details">
+														<p>1 ночь, 2 взрослых</p>
+														<p>включая налоги
+															<br> и сборы
+														</p>
+													</div>
+												</div>
+												<a class="hotel-card__btn-place" href="#">Наличие мест</a>
 											</div>
 										</div>
-									</div>
-									<div class="hotel-card__stats">
-										<div class="hotel-card__rating">
-											<div class="hotel-card__rating-caption">рейтинг</div>
-											<div class="hotel-card__rating-estimate">9,0</div>
-											<div class="hotel-card__rating-total">895 оценок</div>
-										</div>
-										<div class="hotel-card__prices">
-											<div class="hotel-card__old-price"></div>
-											<div class="hotel-card__price">от 875 ₽</div>
-											<div class="hotel-card__price-details">
-												<p>1 ночь, 2 взрослых</p>
-												<p>включая налоги и сборы</p>
-											</div>
-										</div>
-										<a class="hotel-card__btn-place" href="#">Наличие мест</a>
 									</div>
 								</div>
-							</div>
-							<div class="hotel-card">
-								<div class="hotel-card__body">
-									<div class="hotel-card__image-wrap">
-										<div class="hotel-card__image ibg">
-											<img src="assets/images/city/city-hotels/2.jpg" alt="Гостевой дом “Маяк”">
+								<div class="hotel-card">
+									<div class="hotel-card__body">
+										<div class="hotel-card__image-wrap">
+											<div class="ibg hotel-card__image">
+												<img src="assets/images/city/city-hotels/2.jpg" alt="Liberi Hotel Taksim">
+											</div>
+											<button class="button-favorite" type="button"> </button>
+											<div class="hotel-card__repast">Завтрак</div>
 										</div>
-										<button class="button-favorite" type="button"> </button>
-										<div class="hotel-card__repast">Завтрак</div>
-									</div>
-									<div class="hotel-card__main">
-										<div class="hotel-card__main-header">
-											<div class="hotel-card__title">Гостевой дом “Маяк”</div>
-											<div class="hotel-card__features">
-												<div class="rating">
-													<ul class="r-4 rating__list">
-														<li class="rating__item"> </li>
-														<li class="rating__item"> </li>
-														<li class="rating__item"> </li>
-														<li class="rating__item"> </li>
-														<li class="rating__item"> </li>
-													</ul>
+										<div class="hotel-card__main">
+											<div class="hotel-card__main-wrapper">
+												<div class="hotel-card__main-header">
+													<div class="hotel-card__title">Liberi Hotel Taksim</div>
+													<div class="hotel-card__features">
+														<div class="rating">
+															<ul class="rating__list r-4">
+																<li class="rating__item"> </li>
+																<li class="rating__item"> </li>
+																<li class="rating__item"> </li>
+																<li class="rating__item"> </li>
+																<li class="rating__item"> </li>
+															</ul>
+														</div>
+														<a class="btn-detail" href="#">Показать на карте</a>
+														<ul class="hotel-card__parameters">
+															<li class="hotel-card__parametr">
+																Wi-Fi
+																<svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+																	<path d="M0 2.22056C1.83856 0.780743 4.13382 -0.00337279 6.5 1.09055e-05C8.96264 1.09055e-05 11.2241 0.831677 13 2.22056L12.2782 3.08501C10.6438 1.80505 8.60341 1.10803 6.5 1.11112C4.31092 1.11112 2.30115 1.85001 0.721839 3.08501L0 2.22056ZM1.80517 4.38167C3.1331 3.34167 4.79094 2.77531 6.5 2.77779C8.27816 2.77779 9.9115 3.37834 11.1948 4.38112L10.4724 5.24556C9.34876 4.36575 7.94602 3.88668 6.5 3.8889C4.9954 3.8889 3.61322 4.39723 2.52759 5.24556L1.80517 4.38112V4.38167ZM3.61092 6.54278C4.42807 5.90272 5.44826 5.55412 6.5 5.55556C7.59425 5.55556 8.59943 5.925 9.38908 6.54223L8.66667 7.40667C8.05379 6.9268 7.2887 6.66549 6.5 6.66667C5.67931 6.66667 4.92529 6.94389 4.33333 7.40667L3.61092 6.54223V6.54278ZM5.41667 8.70389C5.72302 8.46373 6.10558 8.33288 6.5 8.33334C6.91035 8.33334 7.28736 8.47223 7.58333 8.70334L6.5 10L5.41667 8.70334V8.70389Z" fill="#1C8CF3"></path>
+																</svg>
+															</li>
+														</ul>
+													</div>
 												</div>
-												<a class="btn-detail" href="#">Показать на карте</a>
-												<ul class="hotel-card__parameters">
-													<li class="hotel-card__parametr">Wi-Fi</li>
-												</ul>
+												<div class="hotel-card__main-content">
+													<div class="hotel-card__short-description">Двухместный номер эконом класса с 1 кроватью</div>
+													<div class="hotel-card__sub-description">1 двуспальная кровать</div>
+													<div class="hotel-card__text">
+														<p>Отель Al Khoory Courtyard расположен в Дубае, в 5 км от фонтана Дубай. К услугам гостей ресторан, бесплатная частная парковка</p>
+													</div>
+												</div>
+											</div>
+											<div class="hotel-card__stats">
+												<div class="hotel-card__rating">
+													<div class="hotel-card__rating-caption">рейтинг</div>
+													<div class="hotel-card__rating-estimate">9,0</div>
+													<div class="hotel-card__rating-total">895 оценок</div>
+												</div>
+												<div class="hotel-card__prices">
+													<div class="hotel-card__old-price">от 6500 <span>₽</span>
+													</div>
+													<div class="hotel-card__price">от 4 110 ₽</div>
+													<div class="hotel-card__price-details">
+														<p>1 ночь, 2 взрослых</p>
+														<p>включая налоги
+															<br> и сборы
+														</p>
+													</div>
+												</div>
+												<a class="hotel-card__btn-place" href="#">Наличие мест</a>
 											</div>
 										</div>
-									</div>
-									<div class="hotel-card__stats">
-										<div class="hotel-card__rating">
-											<div class="hotel-card__rating-caption">рейтинг</div>
-											<div class="hotel-card__rating-estimate">9,0</div>
-											<div class="hotel-card__rating-total">895 оценок</div>
-										</div>
-										<div class="hotel-card__prices">
-											<div class="hotel-card__old-price"></div>
-											<div class="hotel-card__price">от 875 ₽</div>
-											<div class="hotel-card__price-details">
-												<p>1 ночь, 2 взрослых</p>
-												<p>включая налоги и сборы</p>
-											</div>
-										</div>
-										<a class="hotel-card__btn-place" href="#">Наличие мест</a>
 									</div>
 								</div>
-							</div>
-							<div class="hotel-card">
-								<div class="hotel-card__body">
-									<div class="hotel-card__image-wrap">
-										<div class="hotel-card__image ibg">
-											<img src="assets/images/city/city-hotels/3.jpg" alt="Гостевой дом “Маяк”">
+								<div class="hotel-card">
+									<div class="hotel-card__body">
+										<div class="hotel-card__image-wrap">
+											<div class="ibg hotel-card__image">
+												<img src="assets/images/city/city-hotels/3.jpg" alt="Ishak Pasa Hotel - Special Class">
+											</div>
+											<button class="button-favorite" type="button"> </button>
+											<div class="hotel-card__repast">Завтрак</div>
 										</div>
-										<button class="button-favorite" type="button"> </button>
-										<div class="hotel-card__repast">Завтрак</div>
-									</div>
-									<div class="hotel-card__main">
-										<div class="hotel-card__main-header">
-											<div class="hotel-card__title">Гостевой дом “Маяк”</div>
-											<div class="hotel-card__features">
-												<div class="rating">
-													<ul class="r-4 rating__list">
-														<li class="rating__item"> </li>
-														<li class="rating__item"> </li>
-														<li class="rating__item"> </li>
-														<li class="rating__item"> </li>
-														<li class="rating__item"> </li>
-													</ul>
+										<div class="hotel-card__main">
+											<div class="hotel-card__main-wrapper">
+												<div class="hotel-card__main-header">
+													<div class="hotel-card__title">Ishak Pasa Hotel - Special Class</div>
+													<div class="hotel-card__features">
+														<div class="rating">
+															<ul class="rating__list r-5">
+																<li class="rating__item"> </li>
+																<li class="rating__item"> </li>
+																<li class="rating__item"> </li>
+																<li class="rating__item"> </li>
+																<li class="rating__item"> </li>
+															</ul>
+														</div>
+														<a class="btn-detail" href="#">Показать на карте</a>
+														<ul class="hotel-card__parameters">
+															<li class="hotel-card__parametr">
+																Wi-Fi
+																<svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+																	<path d="M0 2.22056C1.83856 0.780743 4.13382 -0.00337279 6.5 1.09055e-05C8.96264 1.09055e-05 11.2241 0.831677 13 2.22056L12.2782 3.08501C10.6438 1.80505 8.60341 1.10803 6.5 1.11112C4.31092 1.11112 2.30115 1.85001 0.721839 3.08501L0 2.22056ZM1.80517 4.38167C3.1331 3.34167 4.79094 2.77531 6.5 2.77779C8.27816 2.77779 9.9115 3.37834 11.1948 4.38112L10.4724 5.24556C9.34876 4.36575 7.94602 3.88668 6.5 3.8889C4.9954 3.8889 3.61322 4.39723 2.52759 5.24556L1.80517 4.38112V4.38167ZM3.61092 6.54278C4.42807 5.90272 5.44826 5.55412 6.5 5.55556C7.59425 5.55556 8.59943 5.925 9.38908 6.54223L8.66667 7.40667C8.05379 6.9268 7.2887 6.66549 6.5 6.66667C5.67931 6.66667 4.92529 6.94389 4.33333 7.40667L3.61092 6.54223V6.54278ZM5.41667 8.70389C5.72302 8.46373 6.10558 8.33288 6.5 8.33334C6.91035 8.33334 7.28736 8.47223 7.58333 8.70334L6.5 10L5.41667 8.70334V8.70389Z" fill="#1C8CF3"></path>
+																</svg>
+															</li>
+														</ul>
+													</div>
 												</div>
-												<a class="btn-detail" href="#">Показать на карте</a>
-												<ul class="hotel-card__parameters">
-													<li class="hotel-card__parametr">Wi-Fi</li>
-												</ul>
+												<div class="hotel-card__main-content">
+													<div class="hotel-card__short-description">Двухместный номер эконом класса с 1 кроватью</div>
+													<div class="hotel-card__sub-description">1 двуспальная кровать</div>
+													<div class="hotel-card__text">
+														<p>Отель Al Khoory Courtyard расположен в Дубае, в 5 км от фонтана Дубай. К услугам гостей ресторан, бесплатная частная парковка</p>
+													</div>
+												</div>
+											</div>
+											<div class="hotel-card__stats">
+												<div class="hotel-card__rating">
+													<div class="hotel-card__rating-caption">рейтинг</div>
+													<div class="hotel-card__rating-estimate">9,0</div>
+													<div class="hotel-card__rating-total">895 оценок</div>
+												</div>
+												<div class="hotel-card__prices">
+													<div class="hotel-card__old-price">от 6500 <span>₽</span>
+													</div>
+													<div class="hotel-card__price">от 4 110 ₽</div>
+													<div class="hotel-card__price-details">
+														<p>1 ночь, 2 взрослых</p>
+														<p>включая налоги
+															<br> и сборы
+														</p>
+													</div>
+												</div>
+												<a class="hotel-card__btn-place" href="#">Наличие мест</a>
 											</div>
 										</div>
-									</div>
-									<div class="hotel-card__stats">
-										<div class="hotel-card__rating">
-											<div class="hotel-card__rating-caption">рейтинг</div>
-											<div class="hotel-card__rating-estimate">9,0</div>
-											<div class="hotel-card__rating-total">895 оценок</div>
-										</div>
-										<div class="hotel-card__prices">
-											<div class="hotel-card__old-price"></div>
-											<div class="hotel-card__price">от 875 ₽</div>
-											<div class="hotel-card__price-details">
-												<p>1 ночь, 2 взрослых</p>
-												<p>включая налоги и сборы</p>
-											</div>
-										</div>
-										<a class="hotel-card__btn-place" href="#">Наличие мест</a>
 									</div>
 								</div>
-							</div>
-							<div class="hotel-card">
-								<div class="hotel-card__body">
-									<div class="hotel-card__image-wrap">
-										<div class="hotel-card__image ibg">
-											<img src="assets/images/city/city-hotels/4.jpg" alt="Гостевой дом “Маяк”">
+								<div class="hotel-card">
+									<div class="hotel-card__body">
+										<div class="hotel-card__image-wrap">
+											<div class="ibg hotel-card__image">
+												<img src="assets/images/city/city-hotels/4.jpg" alt="Ishak Pasa Hotel - Special Class">
+											</div>
+											<button class="button-favorite" type="button"> </button>
+											<div class="hotel-card__repast">Завтрак</div>
 										</div>
-										<button class="button-favorite" type="button"> </button>
-										<div class="hotel-card__repast">Завтрак</div>
-									</div>
-									<div class="hotel-card__main">
-										<div class="hotel-card__main-header">
-											<div class="hotel-card__title">Гостевой дом “Маяк”</div>
-											<div class="hotel-card__features">
-												<div class="rating">
-													<ul class="r-4 rating__list">
-														<li class="rating__item"> </li>
-														<li class="rating__item"> </li>
-														<li class="rating__item"> </li>
-														<li class="rating__item"> </li>
-														<li class="rating__item"> </li>
-													</ul>
+										<div class="hotel-card__main">
+											<div class="hotel-card__main-wrapper">
+												<div class="hotel-card__main-header">
+													<div class="hotel-card__title">Ishak Pasa Hotel - Special Class</div>
+													<div class="hotel-card__features">
+														<div class="rating">
+															<ul class="rating__list r-5">
+																<li class="rating__item"> </li>
+																<li class="rating__item"> </li>
+																<li class="rating__item"> </li>
+																<li class="rating__item"> </li>
+																<li class="rating__item"> </li>
+															</ul>
+														</div>
+														<a class="btn-detail" href="#">Показать на карте</a>
+														<ul class="hotel-card__parameters">
+															<li class="hotel-card__parametr">
+																Wi-Fi
+																<svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+																	<path d="M0 2.22056C1.83856 0.780743 4.13382 -0.00337279 6.5 1.09055e-05C8.96264 1.09055e-05 11.2241 0.831677 13 2.22056L12.2782 3.08501C10.6438 1.80505 8.60341 1.10803 6.5 1.11112C4.31092 1.11112 2.30115 1.85001 0.721839 3.08501L0 2.22056ZM1.80517 4.38167C3.1331 3.34167 4.79094 2.77531 6.5 2.77779C8.27816 2.77779 9.9115 3.37834 11.1948 4.38112L10.4724 5.24556C9.34876 4.36575 7.94602 3.88668 6.5 3.8889C4.9954 3.8889 3.61322 4.39723 2.52759 5.24556L1.80517 4.38112V4.38167ZM3.61092 6.54278C4.42807 5.90272 5.44826 5.55412 6.5 5.55556C7.59425 5.55556 8.59943 5.925 9.38908 6.54223L8.66667 7.40667C8.05379 6.9268 7.2887 6.66549 6.5 6.66667C5.67931 6.66667 4.92529 6.94389 4.33333 7.40667L3.61092 6.54223V6.54278ZM5.41667 8.70389C5.72302 8.46373 6.10558 8.33288 6.5 8.33334C6.91035 8.33334 7.28736 8.47223 7.58333 8.70334L6.5 10L5.41667 8.70334V8.70389Z" fill="#1C8CF3"></path>
+																</svg>
+															</li>
+														</ul>
+													</div>
 												</div>
-												<a class="btn-detail" href="#">Показать на карте</a>
-												<ul class="hotel-card__parameters">
-													<li class="hotel-card__parametr">Wi-Fi</li>
-												</ul>
+												<div class="hotel-card__main-content">
+													<div class="hotel-card__short-description">Двухместный номер эконом класса с 1 кроватью</div>
+													<div class="hotel-card__sub-description">1 двуспальная кровать</div>
+													<div class="hotel-card__text">
+														<p>Отель Al Khoory Courtyard расположен в Дубае, в 5 км от фонтана Дубай. К услугам гостей ресторан, бесплатная частная парковка</p>
+													</div>
+												</div>
+											</div>
+											<div class="hotel-card__stats">
+												<div class="hotel-card__rating">
+													<div class="hotel-card__rating-caption">рейтинг</div>
+													<div class="hotel-card__rating-estimate">9,0</div>
+													<div class="hotel-card__rating-total">895 оценок</div>
+												</div>
+												<div class="hotel-card__prices">
+													<div class="hotel-card__old-price">от 6500 <span>₽</span>
+													</div>
+													<div class="hotel-card__price">от 4 110 ₽</div>
+													<div class="hotel-card__price-details">
+														<p>1 ночь, 2 взрослых</p>
+														<p>включая налоги
+															<br> и сборы
+														</p>
+													</div>
+												</div>
+												<a class="hotel-card__btn-place" href="#">Наличие мест</a>
 											</div>
 										</div>
-									</div>
-									<div class="hotel-card__stats">
-										<div class="hotel-card__rating">
-											<div class="hotel-card__rating-caption">рейтинг</div>
-											<div class="hotel-card__rating-estimate">9,0</div>
-											<div class="hotel-card__rating-total">895 оценок</div>
-										</div>
-										<div class="hotel-card__prices">
-											<div class="hotel-card__old-price"></div>
-											<div class="hotel-card__price">от 875 ₽</div>
-											<div class="hotel-card__price-details">
-												<p>1 ночь, 2 взрослых</p>
-												<p>включая налоги и сборы</p>
-											</div>
-										</div>
-										<a class="hotel-card__btn-place" href="#">Наличие мест</a>
 									</div>
 								</div>
-							</div>
-							<div class="hotel-card">
-								<div class="hotel-card__body">
-									<div class="hotel-card__image-wrap">
-										<div class="hotel-card__image ibg">
-											<img src="assets/images/city/city-hotels/5.jpg" alt="Гостевой дом “Маяк”">
+								<div class="hotel-card">
+									<div class="hotel-card__body">
+										<div class="hotel-card__image-wrap">
+											<div class="ibg hotel-card__image">
+												<img src="assets/images/city/city-hotels/5.jpg" alt="Ishak Pasa Hotel - Special Class">
+											</div>
+											<button class="button-favorite" type="button"> </button>
+											<div class="hotel-card__repast">Завтрак</div>
 										</div>
-										<button class="button-favorite" type="button"> </button>
-										<div class="hotel-card__repast">Завтрак</div>
-									</div>
-									<div class="hotel-card__main">
-										<div class="hotel-card__main-header">
-											<div class="hotel-card__title">Гостевой дом “Маяк”</div>
-											<div class="hotel-card__features">
-												<div class="rating">
-													<ul class="r-4 rating__list">
-														<li class="rating__item"> </li>
-														<li class="rating__item"> </li>
-														<li class="rating__item"> </li>
-														<li class="rating__item"> </li>
-														<li class="rating__item"> </li>
-													</ul>
+										<div class="hotel-card__main">
+											<div class="hotel-card__main-wrapper">
+												<div class="hotel-card__main-header">
+													<div class="hotel-card__title">Ishak Pasa Hotel - Special Class</div>
+													<div class="hotel-card__features">
+														<div class="rating">
+															<ul class="rating__list r-5">
+																<li class="rating__item"> </li>
+																<li class="rating__item"> </li>
+																<li class="rating__item"> </li>
+																<li class="rating__item"> </li>
+																<li class="rating__item"> </li>
+															</ul>
+														</div>
+														<a class="btn-detail" href="#">Показать на карте</a>
+														<ul class="hotel-card__parameters">
+															<li class="hotel-card__parametr">
+																Wi-Fi
+																<svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+																	<path d="M0 2.22056C1.83856 0.780743 4.13382 -0.00337279 6.5 1.09055e-05C8.96264 1.09055e-05 11.2241 0.831677 13 2.22056L12.2782 3.08501C10.6438 1.80505 8.60341 1.10803 6.5 1.11112C4.31092 1.11112 2.30115 1.85001 0.721839 3.08501L0 2.22056ZM1.80517 4.38167C3.1331 3.34167 4.79094 2.77531 6.5 2.77779C8.27816 2.77779 9.9115 3.37834 11.1948 4.38112L10.4724 5.24556C9.34876 4.36575 7.94602 3.88668 6.5 3.8889C4.9954 3.8889 3.61322 4.39723 2.52759 5.24556L1.80517 4.38112V4.38167ZM3.61092 6.54278C4.42807 5.90272 5.44826 5.55412 6.5 5.55556C7.59425 5.55556 8.59943 5.925 9.38908 6.54223L8.66667 7.40667C8.05379 6.9268 7.2887 6.66549 6.5 6.66667C5.67931 6.66667 4.92529 6.94389 4.33333 7.40667L3.61092 6.54223V6.54278ZM5.41667 8.70389C5.72302 8.46373 6.10558 8.33288 6.5 8.33334C6.91035 8.33334 7.28736 8.47223 7.58333 8.70334L6.5 10L5.41667 8.70334V8.70389Z" fill="#1C8CF3"></path>
+																</svg>
+															</li>
+														</ul>
+													</div>
 												</div>
-												<a class="btn-detail" href="#">Показать на карте</a>
-												<ul class="hotel-card__parameters">
-													<li class="hotel-card__parametr">Wi-Fi</li>
-												</ul>
+												<div class="hotel-card__main-content">
+													<div class="hotel-card__short-description">Двухместный номер эконом класса с 1 кроватью</div>
+													<div class="hotel-card__sub-description">1 двуспальная кровать</div>
+													<div class="hotel-card__text">
+														<p>Отель Al Khoory Courtyard расположен в Дубае, в 5 км от фонтана Дубай. К услугам гостей ресторан, бесплатная частная парковка</p>
+													</div>
+												</div>
+											</div>
+											<div class="hotel-card__stats">
+												<div class="hotel-card__rating">
+													<div class="hotel-card__rating-caption">рейтинг</div>
+													<div class="hotel-card__rating-estimate">9,0</div>
+													<div class="hotel-card__rating-total">895 оценок</div>
+												</div>
+												<div class="hotel-card__prices">
+													<div class="hotel-card__old-price">от 6500 <span>₽</span>
+													</div>
+													<div class="hotel-card__price">от 4 110 ₽</div>
+													<div class="hotel-card__price-details">
+														<p>1 ночь, 2 взрослых</p>
+														<p>включая налоги
+															<br> и сборы
+														</p>
+													</div>
+												</div>
+												<a class="hotel-card__btn-place" href="#">Наличие мест</a>
 											</div>
 										</div>
-									</div>
-									<div class="hotel-card__stats">
-										<div class="hotel-card__rating">
-											<div class="hotel-card__rating-caption">рейтинг</div>
-											<div class="hotel-card__rating-estimate">9,0</div>
-											<div class="hotel-card__rating-total">895 оценок</div>
-										</div>
-										<div class="hotel-card__prices">
-											<div class="hotel-card__old-price"></div>
-											<div class="hotel-card__price">от 875 ₽</div>
-											<div class="hotel-card__price-details">
-												<p>1 ночь, 2 взрослых</p>
-												<p>включая налоги и сборы</p>
-											</div>
-										</div>
-										<a class="hotel-card__btn-place" href="#">Наличие мест</a>
 									</div>
 								</div>
-							</div>
-							<div class="hotel-card">
-								<div class="hotel-card__body">
-									<div class="hotel-card__image-wrap">
-										<div class="hotel-card__image ibg">
-											<img src="assets/images/city/city-hotels/6.jpg" alt="Гостевой дом “Маяк”">
+								<div class="hotel-card">
+									<div class="hotel-card__body">
+										<div class="hotel-card__image-wrap">
+											<div class="ibg hotel-card__image">
+												<img src="assets/images/city/city-hotels/1.jpg" alt="AVRASYAQUEEN HOTEL">
+											</div>
+											<button class="button-favorite" type="button"> </button>
+											<div class="hotel-card__repast">Завтрак</div>
 										</div>
-										<button class="button-favorite" type="button"> </button>
-										<div class="hotel-card__repast">Завтрак</div>
-									</div>
-									<div class="hotel-card__main">
-										<div class="hotel-card__main-header">
-											<div class="hotel-card__title">Гостевой дом “Маяк”</div>
-											<div class="hotel-card__features">
-												<div class="rating">
-													<ul class="r-4 rating__list">
-														<li class="rating__item"> </li>
-														<li class="rating__item"> </li>
-														<li class="rating__item"> </li>
-														<li class="rating__item"> </li>
-														<li class="rating__item"> </li>
-													</ul>
+										<div class="hotel-card__main">
+											<div class="hotel-card__main-wrapper">
+												<div class="hotel-card__main-header">
+													<div class="hotel-card__title">AVRASYAQUEEN HOTEL</div>
+													<div class="hotel-card__features">
+														<div class="rating">
+															<ul class="rating__list r-5">
+																<li class="rating__item"> </li>
+																<li class="rating__item"> </li>
+																<li class="rating__item"> </li>
+																<li class="rating__item"> </li>
+																<li class="rating__item"> </li>
+															</ul>
+														</div>
+														<a class="btn-detail" href="#">Показать на карте</a>
+														<ul class="hotel-card__parameters">
+															<li class="hotel-card__parametr">
+																Wi-Fi
+																<svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+																	<path d="M0 2.22056C1.83856 0.780743 4.13382 -0.00337279 6.5 1.09055e-05C8.96264 1.09055e-05 11.2241 0.831677 13 2.22056L12.2782 3.08501C10.6438 1.80505 8.60341 1.10803 6.5 1.11112C4.31092 1.11112 2.30115 1.85001 0.721839 3.08501L0 2.22056ZM1.80517 4.38167C3.1331 3.34167 4.79094 2.77531 6.5 2.77779C8.27816 2.77779 9.9115 3.37834 11.1948 4.38112L10.4724 5.24556C9.34876 4.36575 7.94602 3.88668 6.5 3.8889C4.9954 3.8889 3.61322 4.39723 2.52759 5.24556L1.80517 4.38112V4.38167ZM3.61092 6.54278C4.42807 5.90272 5.44826 5.55412 6.5 5.55556C7.59425 5.55556 8.59943 5.925 9.38908 6.54223L8.66667 7.40667C8.05379 6.9268 7.2887 6.66549 6.5 6.66667C5.67931 6.66667 4.92529 6.94389 4.33333 7.40667L3.61092 6.54223V6.54278ZM5.41667 8.70389C5.72302 8.46373 6.10558 8.33288 6.5 8.33334C6.91035 8.33334 7.28736 8.47223 7.58333 8.70334L6.5 10L5.41667 8.70334V8.70389Z" fill="#1C8CF3"></path>
+																</svg>
+															</li>
+														</ul>
+													</div>
+													<div class="hotel-card__limit">Ограниченное предложение</div>
 												</div>
-												<a class="btn-detail" href="#">Показать на карте</a>
-												<ul class="hotel-card__parameters">
-													<li class="hotel-card__parametr">Wi-Fi</li>
-												</ul>
+												<div class="hotel-card__main-content">
+													<div class="hotel-card__short-description">Двухместный номер эконом класса с 1 кроватью</div>
+													<div class="hotel-card__sub-description">1 двуспальная кровать</div>
+													<div class="hotel-card__text">
+														<p>Отель Al Khoory Courtyard расположен в Дубае, в 5 км от фонтана Дубай. К услугам гостей ресторан, бесплатная частная парковка</p>
+													</div>
+												</div>
+											</div>
+											<div class="hotel-card__stats">
+												<div class="hotel-card__rating">
+													<div class="hotel-card__rating-caption">рейтинг</div>
+													<div class="hotel-card__rating-estimate">9,0</div>
+													<div class="hotel-card__rating-total">895 оценок</div>
+												</div>
+												<div class="hotel-card__prices">
+													<div class="hotel-card__old-price">от 6500 <span>₽</span>
+													</div>
+													<div class="hotel-card__price">от 4 110 ₽</div>
+													<div class="hotel-card__price-details">
+														<p>1 ночь, 2 взрослых</p>
+														<p>включая налоги
+															<br> и сборы
+														</p>
+													</div>
+												</div>
+												<a class="hotel-card__btn-place" href="#">Наличие мест</a>
 											</div>
 										</div>
 									</div>
-									<div class="hotel-card__stats">
-										<div class="hotel-card__rating">
-											<div class="hotel-card__rating-caption">рейтинг</div>
-											<div class="hotel-card__rating-estimate">9,0</div>
-											<div class="hotel-card__rating-total">895 оценок</div>
+								</div>
+								<div class="hotel-card">
+									<div class="hotel-card__body">
+										<div class="hotel-card__image-wrap">
+											<div class="ibg hotel-card__image">
+												<img src="assets/images/city/city-hotels/2.jpg" alt="Liberi Hotel Taksim">
+											</div>
+											<button class="button-favorite" type="button"> </button>
+											<div class="hotel-card__repast">Завтрак</div>
 										</div>
-										<div class="hotel-card__prices">
-											<div class="hotel-card__old-price"></div>
-											<div class="hotel-card__price">от 875 ₽</div>
-											<div class="hotel-card__price-details">
-												<p>1 ночь, 2 взрослых</p>
-												<p>включая налоги и сборы</p>
+										<div class="hotel-card__main">
+											<div class="hotel-card__main-wrapper">
+												<div class="hotel-card__main-header">
+													<div class="hotel-card__title">Liberi Hotel Taksim</div>
+													<div class="hotel-card__features">
+														<div class="rating">
+															<ul class="rating__list r-4">
+																<li class="rating__item"> </li>
+																<li class="rating__item"> </li>
+																<li class="rating__item"> </li>
+																<li class="rating__item"> </li>
+																<li class="rating__item"> </li>
+															</ul>
+														</div>
+														<a class="btn-detail" href="#">Показать на карте</a>
+														<ul class="hotel-card__parameters">
+															<li class="hotel-card__parametr">
+																Wi-Fi
+																<svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+																	<path d="M0 2.22056C1.83856 0.780743 4.13382 -0.00337279 6.5 1.09055e-05C8.96264 1.09055e-05 11.2241 0.831677 13 2.22056L12.2782 3.08501C10.6438 1.80505 8.60341 1.10803 6.5 1.11112C4.31092 1.11112 2.30115 1.85001 0.721839 3.08501L0 2.22056ZM1.80517 4.38167C3.1331 3.34167 4.79094 2.77531 6.5 2.77779C8.27816 2.77779 9.9115 3.37834 11.1948 4.38112L10.4724 5.24556C9.34876 4.36575 7.94602 3.88668 6.5 3.8889C4.9954 3.8889 3.61322 4.39723 2.52759 5.24556L1.80517 4.38112V4.38167ZM3.61092 6.54278C4.42807 5.90272 5.44826 5.55412 6.5 5.55556C7.59425 5.55556 8.59943 5.925 9.38908 6.54223L8.66667 7.40667C8.05379 6.9268 7.2887 6.66549 6.5 6.66667C5.67931 6.66667 4.92529 6.94389 4.33333 7.40667L3.61092 6.54223V6.54278ZM5.41667 8.70389C5.72302 8.46373 6.10558 8.33288 6.5 8.33334C6.91035 8.33334 7.28736 8.47223 7.58333 8.70334L6.5 10L5.41667 8.70334V8.70389Z" fill="#1C8CF3"></path>
+																</svg>
+															</li>
+														</ul>
+													</div>
+												</div>
+												<div class="hotel-card__main-content">
+													<div class="hotel-card__short-description">Двухместный номер эконом класса с 1 кроватью</div>
+													<div class="hotel-card__sub-description">1 двуспальная кровать</div>
+													<div class="hotel-card__text">
+														<p>Отель Al Khoory Courtyard расположен в Дубае, в 5 км от фонтана Дубай. К услугам гостей ресторан, бесплатная частная парковка</p>
+													</div>
+												</div>
+											</div>
+											<div class="hotel-card__stats">
+												<div class="hotel-card__rating">
+													<div class="hotel-card__rating-caption">рейтинг</div>
+													<div class="hotel-card__rating-estimate">9,0</div>
+													<div class="hotel-card__rating-total">895 оценок</div>
+												</div>
+												<div class="hotel-card__prices">
+													<div class="hotel-card__old-price">от 6500 <span>₽</span>
+													</div>
+													<div class="hotel-card__price">от 4 110 ₽</div>
+													<div class="hotel-card__price-details">
+														<p>1 ночь, 2 взрослых</p>
+														<p>включая налоги
+															<br> и сборы
+														</p>
+													</div>
+												</div>
+												<a class="hotel-card__btn-place" href="#">Наличие мест</a>
 											</div>
 										</div>
-										<a class="hotel-card__btn-place" href="#">Наличие мест</a>
+									</div>
+								</div>
+								<div class="hotel-card">
+									<div class="hotel-card__body">
+										<div class="hotel-card__image-wrap">
+											<div class="ibg hotel-card__image">
+												<img src="assets/images/city/city-hotels/3.jpg" alt="Ishak Pasa Hotel - Special Class">
+											</div>
+											<button class="button-favorite" type="button"> </button>
+											<div class="hotel-card__repast">Завтрак</div>
+										</div>
+										<div class="hotel-card__main">
+											<div class="hotel-card__main-wrapper">
+												<div class="hotel-card__main-header">
+													<div class="hotel-card__title">Ishak Pasa Hotel - Special Class</div>
+													<div class="hotel-card__features">
+														<div class="rating">
+															<ul class="rating__list r-5">
+																<li class="rating__item"> </li>
+																<li class="rating__item"> </li>
+																<li class="rating__item"> </li>
+																<li class="rating__item"> </li>
+																<li class="rating__item"> </li>
+															</ul>
+														</div>
+														<a class="btn-detail" href="#">Показать на карте</a>
+														<ul class="hotel-card__parameters">
+															<li class="hotel-card__parametr">
+																Wi-Fi
+																<svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+																	<path d="M0 2.22056C1.83856 0.780743 4.13382 -0.00337279 6.5 1.09055e-05C8.96264 1.09055e-05 11.2241 0.831677 13 2.22056L12.2782 3.08501C10.6438 1.80505 8.60341 1.10803 6.5 1.11112C4.31092 1.11112 2.30115 1.85001 0.721839 3.08501L0 2.22056ZM1.80517 4.38167C3.1331 3.34167 4.79094 2.77531 6.5 2.77779C8.27816 2.77779 9.9115 3.37834 11.1948 4.38112L10.4724 5.24556C9.34876 4.36575 7.94602 3.88668 6.5 3.8889C4.9954 3.8889 3.61322 4.39723 2.52759 5.24556L1.80517 4.38112V4.38167ZM3.61092 6.54278C4.42807 5.90272 5.44826 5.55412 6.5 5.55556C7.59425 5.55556 8.59943 5.925 9.38908 6.54223L8.66667 7.40667C8.05379 6.9268 7.2887 6.66549 6.5 6.66667C5.67931 6.66667 4.92529 6.94389 4.33333 7.40667L3.61092 6.54223V6.54278ZM5.41667 8.70389C5.72302 8.46373 6.10558 8.33288 6.5 8.33334C6.91035 8.33334 7.28736 8.47223 7.58333 8.70334L6.5 10L5.41667 8.70334V8.70389Z" fill="#1C8CF3"></path>
+																</svg>
+															</li>
+														</ul>
+													</div>
+												</div>
+												<div class="hotel-card__main-content">
+													<div class="hotel-card__short-description">Двухместный номер эконом класса с 1 кроватью</div>
+													<div class="hotel-card__sub-description">1 двуспальная кровать</div>
+													<div class="hotel-card__text">
+														<p>Отель Al Khoory Courtyard расположен в Дубае, в 5 км от фонтана Дубай. К услугам гостей ресторан, бесплатная частная парковка</p>
+													</div>
+												</div>
+											</div>
+											<div class="hotel-card__stats">
+												<div class="hotel-card__rating">
+													<div class="hotel-card__rating-caption">рейтинг</div>
+													<div class="hotel-card__rating-estimate">9,0</div>
+													<div class="hotel-card__rating-total">895 оценок</div>
+												</div>
+												<div class="hotel-card__prices">
+													<div class="hotel-card__old-price">от 6500 <span>₽</span>
+													</div>
+													<div class="hotel-card__price">от 4 110 ₽</div>
+													<div class="hotel-card__price-details">
+														<p>1 ночь, 2 взрослых</p>
+														<p>включая налоги
+															<br> и сборы
+														</p>
+													</div>
+												</div>
+												<a class="hotel-card__btn-place" href="#">Наличие мест</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="hotel-card">
+									<div class="hotel-card__body">
+										<div class="hotel-card__image-wrap">
+											<div class="ibg hotel-card__image">
+												<img src="assets/images/city/city-hotels/4.jpg" alt="Ishak Pasa Hotel - Special Class">
+											</div>
+											<button class="button-favorite" type="button"> </button>
+											<div class="hotel-card__repast">Завтрак</div>
+										</div>
+										<div class="hotel-card__main">
+											<div class="hotel-card__main-wrapper">
+												<div class="hotel-card__main-header">
+													<div class="hotel-card__title">Ishak Pasa Hotel - Special Class</div>
+													<div class="hotel-card__features">
+														<div class="rating">
+															<ul class="rating__list r-5">
+																<li class="rating__item"> </li>
+																<li class="rating__item"> </li>
+																<li class="rating__item"> </li>
+																<li class="rating__item"> </li>
+																<li class="rating__item"> </li>
+															</ul>
+														</div>
+														<a class="btn-detail" href="#">Показать на карте</a>
+														<ul class="hotel-card__parameters">
+															<li class="hotel-card__parametr">
+																Wi-Fi
+																<svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+																	<path d="M0 2.22056C1.83856 0.780743 4.13382 -0.00337279 6.5 1.09055e-05C8.96264 1.09055e-05 11.2241 0.831677 13 2.22056L12.2782 3.08501C10.6438 1.80505 8.60341 1.10803 6.5 1.11112C4.31092 1.11112 2.30115 1.85001 0.721839 3.08501L0 2.22056ZM1.80517 4.38167C3.1331 3.34167 4.79094 2.77531 6.5 2.77779C8.27816 2.77779 9.9115 3.37834 11.1948 4.38112L10.4724 5.24556C9.34876 4.36575 7.94602 3.88668 6.5 3.8889C4.9954 3.8889 3.61322 4.39723 2.52759 5.24556L1.80517 4.38112V4.38167ZM3.61092 6.54278C4.42807 5.90272 5.44826 5.55412 6.5 5.55556C7.59425 5.55556 8.59943 5.925 9.38908 6.54223L8.66667 7.40667C8.05379 6.9268 7.2887 6.66549 6.5 6.66667C5.67931 6.66667 4.92529 6.94389 4.33333 7.40667L3.61092 6.54223V6.54278ZM5.41667 8.70389C5.72302 8.46373 6.10558 8.33288 6.5 8.33334C6.91035 8.33334 7.28736 8.47223 7.58333 8.70334L6.5 10L5.41667 8.70334V8.70389Z" fill="#1C8CF3"></path>
+																</svg>
+															</li>
+														</ul>
+													</div>
+												</div>
+												<div class="hotel-card__main-content">
+													<div class="hotel-card__short-description">Двухместный номер эконом класса с 1 кроватью</div>
+													<div class="hotel-card__sub-description">1 двуспальная кровать</div>
+													<div class="hotel-card__text">
+														<p>Отель Al Khoory Courtyard расположен в Дубае, в 5 км от фонтана Дубай. К услугам гостей ресторан, бесплатная частная парковка</p>
+													</div>
+												</div>
+											</div>
+											<div class="hotel-card__stats">
+												<div class="hotel-card__rating">
+													<div class="hotel-card__rating-caption">рейтинг</div>
+													<div class="hotel-card__rating-estimate">9,0</div>
+													<div class="hotel-card__rating-total">895 оценок</div>
+												</div>
+												<div class="hotel-card__prices">
+													<div class="hotel-card__old-price">от 6500 <span>₽</span>
+													</div>
+													<div class="hotel-card__price">от 4 110 ₽</div>
+													<div class="hotel-card__price-details">
+														<p>1 ночь, 2 взрослых</p>
+														<p>включая налоги
+															<br> и сборы
+														</p>
+													</div>
+												</div>
+												<a class="hotel-card__btn-place" href="#">Наличие мест</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="hotel-card">
+									<div class="hotel-card__body">
+										<div class="hotel-card__image-wrap">
+											<div class="ibg hotel-card__image">
+												<img src="assets/images/city/city-hotels/5.jpg" alt="Ishak Pasa Hotel - Special Class">
+											</div>
+											<button class="button-favorite" type="button"> </button>
+											<div class="hotel-card__repast">Завтрак</div>
+										</div>
+										<div class="hotel-card__main">
+											<div class="hotel-card__main-wrapper">
+												<div class="hotel-card__main-header">
+													<div class="hotel-card__title">Ishak Pasa Hotel - Special Class</div>
+													<div class="hotel-card__features">
+														<div class="rating">
+															<ul class="rating__list r-5">
+																<li class="rating__item"> </li>
+																<li class="rating__item"> </li>
+																<li class="rating__item"> </li>
+																<li class="rating__item"> </li>
+																<li class="rating__item"> </li>
+															</ul>
+														</div>
+														<a class="btn-detail" href="#">Показать на карте</a>
+														<ul class="hotel-card__parameters">
+															<li class="hotel-card__parametr">
+																Wi-Fi
+																<svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+																	<path d="M0 2.22056C1.83856 0.780743 4.13382 -0.00337279 6.5 1.09055e-05C8.96264 1.09055e-05 11.2241 0.831677 13 2.22056L12.2782 3.08501C10.6438 1.80505 8.60341 1.10803 6.5 1.11112C4.31092 1.11112 2.30115 1.85001 0.721839 3.08501L0 2.22056ZM1.80517 4.38167C3.1331 3.34167 4.79094 2.77531 6.5 2.77779C8.27816 2.77779 9.9115 3.37834 11.1948 4.38112L10.4724 5.24556C9.34876 4.36575 7.94602 3.88668 6.5 3.8889C4.9954 3.8889 3.61322 4.39723 2.52759 5.24556L1.80517 4.38112V4.38167ZM3.61092 6.54278C4.42807 5.90272 5.44826 5.55412 6.5 5.55556C7.59425 5.55556 8.59943 5.925 9.38908 6.54223L8.66667 7.40667C8.05379 6.9268 7.2887 6.66549 6.5 6.66667C5.67931 6.66667 4.92529 6.94389 4.33333 7.40667L3.61092 6.54223V6.54278ZM5.41667 8.70389C5.72302 8.46373 6.10558 8.33288 6.5 8.33334C6.91035 8.33334 7.28736 8.47223 7.58333 8.70334L6.5 10L5.41667 8.70334V8.70389Z" fill="#1C8CF3"></path>
+																</svg>
+															</li>
+														</ul>
+													</div>
+												</div>
+												<div class="hotel-card__main-content">
+													<div class="hotel-card__short-description">Двухместный номер эконом класса с 1 кроватью</div>
+													<div class="hotel-card__sub-description">1 двуспальная кровать</div>
+													<div class="hotel-card__text">
+														<p>Отель Al Khoory Courtyard расположен в Дубае, в 5 км от фонтана Дубай. К услугам гостей ресторан, бесплатная частная парковка</p>
+													</div>
+												</div>
+											</div>
+											<div class="hotel-card__stats">
+												<div class="hotel-card__rating">
+													<div class="hotel-card__rating-caption">рейтинг</div>
+													<div class="hotel-card__rating-estimate">9,0</div>
+													<div class="hotel-card__rating-total">895 оценок</div>
+												</div>
+												<div class="hotel-card__prices">
+													<div class="hotel-card__old-price">от 6500 <span>₽</span>
+													</div>
+													<div class="hotel-card__price">от 4 110 ₽</div>
+													<div class="hotel-card__price-details">
+														<p>1 ночь, 2 взрослых</p>
+														<p>включая налоги
+															<br> и сборы
+														</p>
+													</div>
+												</div>
+												<a class="hotel-card__btn-place" href="#">Наличие мест</a>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -622,6 +1002,128 @@
 									</li>
 								</ul>
 							</nav>
+						</div>
+					</div>
+					<div class="city-testimonials testimonials">
+						<div class="heading">
+							<div class="heading__title title-sm">Последние отзывы на отели Алушты</div>
+						</div>
+						<div class="testimonials__body">
+							<div class="testimonials__wrapper">
+								<div class="testimonials-item">
+									<div class="ibg testimonials-item__image">
+										<img src="assets/images/testimonials/1.jpg" alt="Гостиница “Южный Берег”">
+									</div>
+									<div class="testimonials-item__body">
+										<div class="testimonials-item__place">
+											<span>Гостиница “Южный Берег”</span>
+										</div>
+										<address class="testimonials-item__address">Голубицкая, ул. Красная, д. 178</address>
+										<div class="testimonials-item__info">
+											<div class="testimonials-item__author">Марина</div>
+											<div class="testimonials-item__date">12.08.22</div>
+											<div class="rating">
+												<ul class="rating__list r-4">
+													<li class="rating__item"> </li>
+													<li class="rating__item"> </li>
+													<li class="rating__item"> </li>
+													<li class="rating__item"> </li>
+													<li class="rating__item"> </li>
+												</ul>
+											</div>
+										</div>
+										<div class="testimonials-item__text">
+											<p>Шикарное расположение, прямо в самом-самом центре. Рядом остановка есть, до парка Краснодар удобно добираться. В хостеле есть разделение на женские и мужские номера. Контингент приличный. Белье чистое и в помещении для хостела тоже довольно чисто. Для бюджетного варианта с хорошим расположением самое то.</p>
+											<a class="btn-more testimonials-item__btn" href="#">Подробнее</a>
+										</div>
+									</div>
+								</div>
+								<div class="testimonials-item">
+									<div class="ibg testimonials-item__image">
+										<img src="assets/images/testimonials/2.jpg" alt="Гостиница “Летучая мышь”">
+									</div>
+									<div class="testimonials-item__body">
+										<div class="testimonials-item__place">
+											<span>Гостиница “Летучая мышь”</span>
+										</div>
+										<address class="testimonials-item__address">Голубицкая, ул. Красная, д. 178</address>
+										<div class="testimonials-item__info">
+											<div class="testimonials-item__author">Анна</div>
+											<div class="testimonials-item__date">12.08.22</div>
+											<div class="rating">
+												<ul class="rating__list r-4">
+													<li class="rating__item"> </li>
+													<li class="rating__item"> </li>
+													<li class="rating__item"> </li>
+													<li class="rating__item"> </li>
+													<li class="rating__item"> </li>
+												</ul>
+											</div>
+										</div>
+										<div class="testimonials-item__text">
+											<p>Шикарное расположение, прямо в самом-самом центре. Рядом остановка есть, до парка Краснодар удобно добираться. В хостеле есть разделение на женские и мужские номера. Контингент приличный. Белье чистое и в помещении для хостела тоже довольно чисто. Для бюджетного варианта с хорошим расположением самое то.</p>
+											<a class="btn-more testimonials-item__btn" href="#">Подробнее</a>
+										</div>
+									</div>
+								</div>
+								<div class="testimonials-item">
+									<div class="ibg testimonials-item__image">
+										<img src="assets/images/testimonials/3.jpg" alt="Гостиница «Южный Берег»">
+									</div>
+									<div class="testimonials-item__body">
+										<div class="testimonials-item__place">
+											<span>Гостиница «Южный Берег»</span>
+										</div>
+										<address class="testimonials-item__address">Голубицкая, ул. Красная, д. 178</address>
+										<div class="testimonials-item__info">
+											<div class="testimonials-item__author">Павел</div>
+											<div class="testimonials-item__date">12.08.22</div>
+											<div class="rating">
+												<ul class="rating__list r-4">
+													<li class="rating__item"> </li>
+													<li class="rating__item"> </li>
+													<li class="rating__item"> </li>
+													<li class="rating__item"> </li>
+													<li class="rating__item"> </li>
+												</ul>
+											</div>
+										</div>
+										<div class="testimonials-item__text">
+											<p>Шикарное расположение, прямо в самом-самом центре. Рядом остановка есть, до парка Краснодар удобно добираться. В хостеле есть разделение на женские и мужские номера. Контингент приличный. Белье чистое и в помещении для хостела тоже довольно чисто. Для бюджетного варианта с хорошим расположением самое то.</p>
+											<a class="btn-more testimonials-item__btn" href="#">Подробнее</a>
+										</div>
+									</div>
+								</div>
+								<div class="testimonials-item">
+									<div class="ibg testimonials-item__image">
+										<img src="assets/images/testimonials/4.jpg" alt="Отель “Море”">
+									</div>
+									<div class="testimonials-item__body">
+										<div class="testimonials-item__place">
+											<span>Отель “Море”</span>
+										</div>
+										<address class="testimonials-item__address">Голубицкая, ул. Красная, д. 178</address>
+										<div class="testimonials-item__info">
+											<div class="testimonials-item__author">Игорь</div>
+											<div class="testimonials-item__date">12.08.22</div>
+											<div class="rating">
+												<ul class="rating__list r-4">
+													<li class="rating__item"> </li>
+													<li class="rating__item"> </li>
+													<li class="rating__item"> </li>
+													<li class="rating__item"> </li>
+													<li class="rating__item"> </li>
+												</ul>
+											</div>
+										</div>
+										<div class="testimonials-item__text">
+											<p>Шикарное расположение, прямо в самом-самом центре. Рядом остановка есть, до парка Краснодар удобно добираться. В хостеле есть разделение на женские и мужские номера. Контингент приличный. Белье чистое и в помещении для хостела тоже довольно чисто. Для бюджетного варианта с хорошим расположением самое то.</p>
+											<a class="btn-more testimonials-item__btn" href="#">Подробнее</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<a class="btn btn-blue-transparent btn-lg" href="testimonials.html">Все отзывы</a>
 						</div>
 					</div>
 				</div>
@@ -681,6 +1183,8 @@
 		</footer>
 	</div>
 	<script src="assets/scripts/main.js" defer="defer"></script>
+	<script src="assets/scripts/city.js"></script>
+	<script src="assets/scripts/city-hotels.js"></script>
 </body>
 
 </html>

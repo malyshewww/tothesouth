@@ -37,6 +37,18 @@
   font-weight: 700;
   font-size: 20px;
   line-height: 120%;
+  transition: color 0.3s linear;
+}
+.card-preview__title span {
+  transition: background-size 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  background:
+    linear-gradient(
+      to bottom,
+      #ff6933 0%,
+      #ff6933 98%);
+  background-size: 0px 1px;
+  background-repeat: no-repeat;
+  background-position: left 100%;
 }
 .card-preview__description {
   line-height: 130%;
@@ -75,5 +87,21 @@
   font-size: 14px;
   line-height: 140%;
   color: #8897b1;
+}
+@keyframes animatedBackground {
+  to {
+    background-size: 100% 100%;
+  }
+}
+@media (any-hover: hover) {
+  .card-preview:hover {
+    cursor: pointer;
+  }
+  .card-preview:hover .card-preview__title {
+    color: #ff6933;
+  }
+  .card-preview:hover .card-preview__title span {
+    background-size: 100% 1px;
+  }
 }
 /*# sourceMappingURL=facility-preview.css.map */

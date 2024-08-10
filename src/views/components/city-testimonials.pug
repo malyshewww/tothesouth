@@ -1,0 +1,8 @@
+.city-testimonials.testimonials
+	.heading
+		.heading__title.title-sm Последние отзывы на отели Алушты
+	.testimonials__body
+		.testimonials__wrapper 
+			each item in cityPage.testimonials 
+				+testimonialsIitem(item)
+		+btnShowMore("Все отзывы", "testimonials.html")

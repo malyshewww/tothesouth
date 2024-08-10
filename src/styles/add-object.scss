@@ -1,0 +1,57 @@
+@use 'sass:math';
+@import 'config/variables';
+@import 'config/mixins';
+
+@import 'forms';
+
+.add-object {
+	&__body {
+		border-radius: 10px;
+		padding: 40px 0px 40px 40px;
+		background: $white;
+		display: grid;
+		grid-template-columns: 1fr 0.93fr;
+		gap: 30px;
+	}
+}
+
+.info-object {
+	padding-top: 31px;
+	display: flex;
+	flex-direction: column;
+	&__content-top {
+		border-radius: 50px 50px 0 50px;
+		padding: 30px 23px;
+		max-width: 350px;
+		background: $gray-background;
+		font-size: 16px;
+		line-height: 130%;
+		text-align: center;
+		color: $black;
+		& span {
+			font-weight: 600;
+		}
+	}
+	&__image {
+		align-self: flex-end;
+		height: 452px;
+		margin-top: -48px;
+		margin-right: -33px;
+	}
+	&__content-bottom {
+		border-radius: 10px 0 0 10px;
+		padding: 30px;
+		background: $blue-1;
+		font-size: 16px;
+		line-height: 130%;
+		color: $white;
+		display: grid;
+		gap: 20px;
+		& p {
+			&:nth-child(2) {
+				font-size: 18px;
+				line-height: 120%;
+			}
+		}
+	}
+}

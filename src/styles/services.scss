@@ -1,0 +1,53 @@
+@use 'sass:math';
+@import 'config/variables';
+@import 'config/mixins';
+
+.services {
+	&__body {
+		border: 1px solid $gray-line;
+		border-radius: 16px;
+		padding: 30px;
+		background: $white;
+	}
+	&__table {
+		border-collapse: collapse;
+		& tr {
+			display: grid;
+			grid-template-columns: 1fr repeat(2, 260px);
+			gap: 20px;
+		}
+		& th {
+			display: grid;
+			align-items: center;
+			text-align: left;
+			min-height: 42px;
+			font-weight: 600;
+		}
+		& thead {
+			& tr {
+				padding-bottom: 20px;
+				border-bottom: 1px solid $gray-line;
+			}
+		}
+		& tbody {
+			tr {
+				min-height: 60px;
+				align-items: center;
+				padding: 20px 0;
+				&:not(:last-child) {
+					border-bottom: 1px solid $gray-line;
+				}
+				&:last-child {
+					padding-bottom: 0;
+				}
+			}
+		}
+	}
+}
+.container {
+}
+
+.page-title {
+}
+.thead {
+}

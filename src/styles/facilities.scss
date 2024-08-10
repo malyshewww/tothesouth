@@ -20,6 +20,17 @@
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
+	@media (any-hover: hover) {
+		&:hover {
+			cursor: pointer;
+			& .facility-preview__title {
+				color: $orange;
+				& span {
+					background-size: 100% 1px;
+				}
+			}
+		}
+	}
 	&__image-wrap {
 		position: relative;
 	}
@@ -37,6 +48,14 @@
 		font-size: 20px;
 		line-height: 120%;
 		color: $black;
+		transition: color $time linear;
+		& span {
+			transition: background-size $time cubic-bezier(0.645, 0.045, 0.355, 1);
+			background: linear-gradient(to bottom, rgba($orange, 1) 0%, rgba($orange, 1) 98%);
+			background-size: 0px 1px;
+			background-repeat: no-repeat;
+			background-position: left 100%;
+		}
 	}
 	&__sub-title {
 		font-size: 14px;

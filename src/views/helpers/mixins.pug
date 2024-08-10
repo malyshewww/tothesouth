@@ -6,7 +6,8 @@ mixin facilityPreview(item, imgPath, className)
 				img(src=`assets/images/${imgPath}/hotel-${item.img}.jpg`, alt="")
 			.card-preview__content 
 				if item.title
-					.card-preview__title= item.title 
+					.card-preview__title
+						span= item.title 
 				if item.descr
 					.card-preview__description= item.descr
 				if item.price
@@ -63,7 +64,8 @@ mixin testimonialsIitem(item)
 		.testimonials-item__image.ibg
 			img(src=`assets/images/testimonials/${item.img}.jpg`, alt=item.place)
 		.testimonials-item__body 
-			.testimonials-item__place= item.place
+			.testimonials-item__place
+				span= item.place
 			address.testimonials-item__address= item.address
 			.testimonials-item__info 
 				.testimonials-item__author= item.author
@@ -149,7 +151,8 @@ mixin facilityCardPreview(item)
 				img(src=`assets/images/facilities/${item.img}.jpg`, alt=item.title)
 			button(type="button").button-favorite 
 		.facility-preview__body
-			.facility-preview__title= item.title
+			.facility-preview__title
+				span= item.title
 			.facility-preview__sub-title= item.subTitle
 			.facility-preview__description
 				p #{item.descr}
@@ -165,30 +168,54 @@ mixin hotelPreview(item)
 				button(type="button").button-favorite 
 				.hotel-card__repast Завтрак
 			.hotel-card__main 
-				.hotel-card__main-header 
-					.hotel-card__title= item.title
-					.hotel-card__features 
-						+rating(item.rating) 
-						+btnDetail('Показать на карте')
-						ul.hotel-card__parameters 
-							li.hotel-card__parametr Wi-Fi
-				if item.apartments
-					.hotel-card__main-content 
-						.hotel-card__short-description= item.apartments.short_descr
-						.hotel-card__sub-description= item.apartments.sub_descr
-						.hotel-card__text 
-							p= item.apartments.descr
-			.hotel-card__stats 
-				.hotel-card__rating 
-					.hotel-card__rating-caption рейтинг
-					.hotel-card__rating-estimate 9,0
-					.hotel-card__rating-total 895 оценок
-				.hotel-card__prices 
-					.hotel-card__old-price= item.old_price
-					.hotel-card__price= item.price
-					.hotel-card__price-details 
-						p 1 ночь, 2 взрослых
-						p включая налоги и сборы
-				a(href="#").hotel-card__btn-place Наличие мест
-
+				.hotel-card__main-wrapper
+					.hotel-card__main-header 
+						.hotel-card__title= item.title
+						.hotel-card__features 
+							+rating(item.rating) 
+							+btnDetail('Показать на карте')
+							ul.hotel-card__parameters 
+								li.hotel-card__parametr 
+									| Wi-Fi
+									svg(width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg")
+										path(d="M0 2.22056C1.83856 0.780743 4.13382 -0.00337279 6.5 1.09055e-05C8.96264 1.09055e-05 11.2241 0.831677 13 2.22056L12.2782 3.08501C10.6438 1.80505 8.60341 1.10803 6.5 1.11112C4.31092 1.11112 2.30115 1.85001 0.721839 3.08501L0 2.22056ZM1.80517 4.38167C3.1331 3.34167 4.79094 2.77531 6.5 2.77779C8.27816 2.77779 9.9115 3.37834 11.1948 4.38112L10.4724 5.24556C9.34876 4.36575 7.94602 3.88668 6.5 3.8889C4.9954 3.8889 3.61322 4.39723 2.52759 5.24556L1.80517 4.38112V4.38167ZM3.61092 6.54278C4.42807 5.90272 5.44826 5.55412 6.5 5.55556C7.59425 5.55556 8.59943 5.925 9.38908 6.54223L8.66667 7.40667C8.05379 6.9268 7.2887 6.66549 6.5 6.66667C5.67931 6.66667 4.92529 6.94389 4.33333 7.40667L3.61092 6.54223V6.54278ZM5.41667 8.70389C5.72302 8.46373 6.10558 8.33288 6.5 8.33334C6.91035 8.33334 7.28736 8.47223 7.58333 8.70334L6.5 10L5.41667 8.70334V8.70389Z" fill="#1C8CF3")
+						if item.limit 
+							.hotel-card__limit Ограниченное предложение
+					if item.apartments
+						.hotel-card__main-content 
+							.hotel-card__short-description= item.apartments.short_descr
+							.hotel-card__sub-description= item.apartments.sub_descr
+							.hotel-card__text 
+								p= item.apartments.descr
+				.hotel-card__stats 
+					.hotel-card__rating 
+						.hotel-card__rating-caption рейтинг
+						.hotel-card__rating-estimate 9,0
+						.hotel-card__rating-total 895 оценок
+					.hotel-card__prices 
+						.hotel-card__old-price
+							| #{item.old_price} #[span ₽]
+						.hotel-card__price= item.price
+						.hotel-card__price-details 
+							p 1 ночь, 2 взрослых
+							p включая налоги #[br] и сборы
+					a(href="#").hotel-card__btn-place Наличие мест
+mixin pageHeading(pageTitle)
+	.page-heading 
+		.page-title= pageTitle 
+		if block 
+			block
+mixin formItem(formType, formName, helpText, caption, isError)
+	.form-item(class={error: isError})
+		if caption
+			.form-item__caption= caption
+		if formType === 'tel'
+			.form-item__field-phone
+				input(type=formType name=formName placeholder=helpText).form-input
+		else 
+			.form-item__field
+				input(type=formType name=formName id=formName placeholder="").form-input
+				label(for=formName).form-label= helpText
+		if isError
+			span.error-message= isError
 

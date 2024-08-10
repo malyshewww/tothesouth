@@ -15,6 +15,7 @@ append styles
 
 append scripts 
 	script(src="assets/scripts/map.js")
+	script(src="assets/scripts/city.js")
 
 block content 
 	.city 
@@ -84,11 +85,4 @@ block content
 								p Летом дожди бывают редко, в основном осадки выпадают в январе и феврале. Хотя кто сказал, что в Алушту нельзя приезжать зимой? Заснеженные кипарисы - зрелище на удивление красивое, а город живет своей размеренной, спокойной жизнью.
 								p Температура воды в море наиболее пригодна для купания с июня по октябрь. В эти месяцы оно прогревается до 25-26 градусов. В мае море еще достаточно холодное, вода едва ли нагревается до 18 градусов. Поэтому пляжный отдых в Алуште в основном приходится на летние месяцы и начало осени - в это время в городе бушует жизнь, на пляжах нежатся отдыхающие, а по достопримечательностям прогуливаются туристы.
 								include ./components/weather-widget
-				.city-testimonials.testimonials
-					.heading
-						.heading__title.title-sm Последние отзывы на отели Алушты
-					.testimonials__body
-						.testimonials__wrapper 
-							each item in cityPage.testimonials 
-								+testimonialsIitem(item)
-						+btnShowMore("Все отзывы", "testimonials.html")
+				include ./components/city-testimonials

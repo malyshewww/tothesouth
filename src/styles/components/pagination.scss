@@ -27,6 +27,21 @@
 	padding: 8px 12px;
 	display: grid;
 	place-items: center;
+	transition:
+		background-color $time,
+		color $time;
+	& .page-link {
+		padding: 0;
+		display: block;
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			& .page-link {
+				background-color: transparent;
+				color: $blue-1;
+			}
+		}
+	}
 }
 .page-item--prev {
 	margin-right: 16px;
@@ -44,4 +59,12 @@
 	text-align: center;
 	border-radius: 8px;
 	padding: 4px 8px;
+	transition:
+		background-color $time,
+		color $time;
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: #dcf0f3;
+		}
+	}
 }

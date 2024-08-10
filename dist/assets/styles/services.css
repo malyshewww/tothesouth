@@ -1,0 +1,38 @@
+/* src/styles/services.scss */
+.services__body {
+  border: 1px solid #e1e3eb;
+  border-radius: 16px;
+  padding: 30px;
+  background: #fff;
+}
+.services__table {
+  border-collapse: collapse;
+}
+.services__table tr {
+  display: grid;
+  grid-template-columns: 1fr repeat(2, 260px);
+  gap: 20px;
+}
+.services__table th {
+  display: grid;
+  align-items: center;
+  text-align: left;
+  min-height: 42px;
+  font-weight: 600;
+}
+.services__table thead tr {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e1e3eb;
+}
+.services__table tbody tr {
+  min-height: 60px;
+  align-items: center;
+  padding: 20px 0;
+}
+.services__table tbody tr:not(:last-child) {
+  border-bottom: 1px solid #e1e3eb;
+}
+.services__table tbody tr:last-child {
+  padding-bottom: 0;
+}
+/*# sourceMappingURL=services.css.map */

@@ -23,17 +23,22 @@
 		justify-content: space-between;
 		align-items: center;
 		gap: 20px;
+		transition:
+			border-color $time,
+			background-color $time;
 		@media (any-hover: hover) {
-			cursor: pointer;
+			&:hover {
+				cursor: pointer;
+			}
 		}
 		&.active {
 			&::after {
 				transform: rotate(180deg);
 			}
 			& + .select-list {
-				visibility: visible;
+				pointer-events: all;
 				opacity: 1;
-				top: calc(100% + 10px);
+				top: calc(100% + 5px);
 			}
 		}
 		&::after {
@@ -51,7 +56,8 @@
 		&:focus,
 		&.active {
 			outline: none;
-			box-shadow: 0 0 0 2px rgba($gray-text, 0.6);
+			border-color: #4765f1;
+			background-color: $gray-background;
 		}
 	}
 }
@@ -62,32 +68,53 @@
 	z-index: 5;
 	top: calc(100% + 20px);
 	width: 100%;
-	list-style-type: none;
+	list-style: none;
 	background-color: transparent;
 	border-radius: 5px;
 	background-color: $white;
-	box-shadow: 10px 4px 40px 0 rgba(53, 68, 85, 0.25);
-	visibility: hidden;
-	opacity: 0;
+	box-shadow: $shadowDropdown;
 	overflow: hidden;
-	padding: 10px;
+	padding: 5px 0px;
+	pointer-events: none;
+	opacity: 0;
 	transition:
-		opacity 250ms linear,
-		visibility 250ms linear,
-		top 250ms linear;
+		top $time linear,
+		opacity $time linear;
 	&__item {
-		min-height: 41px;
-		display: grid;
-		place-items: center;
-		text-align: center;
+		min-height: 40px;
+		text-align: left;
+		padding: 9px 15px;
 		font-weight: 400;
 		font-size: 14px;
 		line-height: 130%;
-		text-align: center;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 10px;
 		color: $black;
 		cursor: pointer;
-		transition: 220ms ease;
-		&:hover {
+		background-color: transparent;
+		transition: background-color $time ease;
+		&::after {
+			content: '';
+			display: block;
+			width: 24px;
+			height: 24px;
+			background-image: url('../images/icons/check-blue.svg');
+			background-repeat: no-repeat;
+			background-position: center;
+			opacity: 0;
+		}
+		&.current {
+			background-color: $gray-background;
+			&::after {
+				opacity: 1;
+			}
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: $gray-background;
+			}
 		}
 	}
 }

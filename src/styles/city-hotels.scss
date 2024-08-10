@@ -2,7 +2,27 @@
 @import 'config/variables';
 @import 'config/mixins';
 @import 'pages/city/city-common.scss';
+@import 'pages/city/city-testimonials.scss';
 
+@import 'components/sorting.scss';
 @import 'components/object-card.scss';
+@import 'components/hotel-item.scss';
+
+@import 'libs/nouislider.scss';
 
 @import 'forms';
+
+.city-hotels {
+	& .heading {
+		gap: 20px;
+	}
+	& .form-groups {
+		gap: 30px;
+	}
+	&__list {
+		display: grid;
+		grid-template-columns: 100%;
+		gap: 20px;
+		align-items: start;
+	}
+}

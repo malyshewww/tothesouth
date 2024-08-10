@@ -1,6 +1,14 @@
 .post-item {
 	border-radius: 10px;
 	background: $white;
+	overflow: hidden;
+	transition: box-shadow $time;
+	@media (any-hover: hover) {
+		&:hover {
+			cursor: pointer;
+			box-shadow: $shadow;
+		}
+	}
 	&__body {
 		display: grid;
 		grid-template-columns: 300px 1fr;
@@ -14,6 +22,7 @@
 		gap: 10px;
 		border: 1px solid $gray-line;
 		border-left: 0;
+		border-radius: 0 10px 10px 0;
 	}
 	&__title {
 		font-weight: 700;

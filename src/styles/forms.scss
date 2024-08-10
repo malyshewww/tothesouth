@@ -20,6 +20,87 @@
 		display: grid;
 		gap: 10px;
 	}
+	&__btn-show {
+		font-weight: 400;
+		font-size: 14px;
+		color: $blue;
+		display: inline-flex;
+		align-items: center;
+		gap: 4px;
+		box-shadow: 0px 1px 0px $blue;
+		margin-top: 10px;
+		&::after {
+			content: '';
+			display: block;
+			width: 8px;
+			height: 8px;
+			mask-image: url('../images/icons/arrow-blue.svg');
+			mask-position: center;
+			mask-repeat: no-repeat;
+			background-color: $blue;
+			transform: rotate(90deg);
+		}
+	}
+	&__values {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 26px;
+		margin-bottom: 19px;
+		position: relative;
+		&::before {
+			content: '';
+			position: absolute;
+			margin: auto;
+			top: calc(50% - 1px);
+			left: 0;
+			right: 0;
+			width: 10px;
+			height: 1px;
+			background-color: $gray-line;
+			pointer-events: none;
+		}
+	}
+	&__value {
+		position: relative;
+		width: 100%;
+	}
+	&__value-input {
+		width: 100%;
+		padding: 10px 15px;
+		padding-left: 33px;
+		height: 39px;
+		border-radius: 5px;
+		border: 1px solid $gray-line;
+		font-size: 14px;
+		line-height: 140%;
+		color: $black;
+	}
+	&__value-caption {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-44%);
+		left: 15px;
+		font-size: 14px;
+		line-height: 140%;
+	}
+}
+
+.aside-form {
+	&__bottom {
+		margin-top: 30px;
+		display: grid;
+		gap: 10px;
+		justify-items: center;
+	}
+}
+.btn-submit {
+	width: 100%;
+}
+.btn-reset {
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 130%;
+	color: $gray-text;
 }
 
 .checkbox {
@@ -37,7 +118,7 @@
 	}
 	label {
 		display: inline-flex;
-		align-items: center;
+		align-items: flex-start;
 		flex-direction: row-reverse;
 		gap: 10px;
 		font-weight: 400;
@@ -57,6 +138,7 @@
 			display: grid;
 			place-items: center;
 			position: relative;
+			top: 3px;
 			transition:
 				border math.div($time, 2) linear,
 				background-color math.div($time, 2) linear;
@@ -75,4 +157,223 @@
 			}
 		}
 	}
+}
+
+.form-object {
+	display: grid;
+	gap: 20px;
+	&__items {
+		display: grid;
+		gap: 10px;
+	}
+	&__bottom {
+		display: grid;
+		gap: 20px;
+	}
+	&__bottom-title {
+		font-weight: 700;
+		font-size: 18px;
+		line-height: 120%;
+		color: #000;
+	}
+	&__buttons {
+		display: flex;
+		gap: 10px;
+	}
+	&__btn-submit {
+		width: 204px;
+	}
+	&__btn-reset {
+		padding-left: 24px;
+		padding-right: 24px;
+	}
+	&__text {
+		font-size: 14px;
+		line-height: 140%;
+		color: $black;
+		// text-decoration or bg or box-shadow
+		& a {
+			color: $blue;
+		}
+	}
+	& .checkbox label {
+		font-size: 16px;
+		line-height: 130%;
+	}
+	& .custom-dropdown__btn {
+		min-height: 60px;
+		&::after {
+			background-color: $black;
+		}
+	}
+}
+.form-item {
+	width: 100%;
+	display: grid;
+	gap: 10px;
+	&__caption {
+		font-size: 14px;
+		line-height: 140%;
+		color: $gray-text;
+	}
+	&__field {
+		position: relative;
+	}
+	&__field-phone {
+		position: relative;
+		& input {
+			padding: 18.5px 20px 18.5px;
+			padding-left: 53px;
+		}
+		&::before {
+			content: '';
+			display: block;
+			width: 18px;
+			height: 12px;
+			background-image: url('../images/icons/flag.svg');
+			background-repeat: no-repeat;
+			background-position: center;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			left: 20px;
+		}
+	}
+	&.error {
+		& .form-input {
+			border-color: #f06363;
+			background-color: $gray-background;
+		}
+		& .form-label {
+			top: 19.5px;
+			font-size: 16px;
+		}
+	}
+	&.focus {
+		& .form-label {
+			top: 8.5px;
+			font-size: 14px;
+		}
+	}
+}
+.form-input {
+	border: 1px solid $gray-line;
+	border-radius: 5px;
+	padding: 29.5px 20px 7.5px;
+	width: 100%;
+	min-height: 60px;
+	color: $black;
+	font-size: 16px;
+	line-height: 130%;
+	transition:
+		background-color $time,
+		border-color $time;
+	&::placeholder {
+		font-size: 16px;
+		line-height: 130%;
+		color: $gray-text;
+		font-family: inherit;
+		transition: opacity $time / 2;
+	}
+	&:focus-visible {
+		border-color: $blue;
+		background-color: $gray-background;
+		&::placeholder {
+			opacity: 0;
+		}
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: $gray-background;
+		}
+	}
+}
+.form-label {
+	font-size: 16px;
+	line-height: 130%;
+	color: $gray-text;
+	position: absolute;
+	top: 19.5px;
+	left: 20px;
+	transition:
+		top $time,
+		font-size $time;
+}
+.error-message {
+	font-size: 12px;
+	line-height: 120%;
+	color: #f06363;
+}
+
+// noUiSlider
+.noUi-connect {
+	background: $blue-1;
+}
+.noUi-target {
+	width: 216px;
+	background: $gray-line;
+	border: none;
+	box-shadow: none;
+	position: relative;
+	margin-right: 11px;
+	margin-bottom: 7px;
+	// margin-left: 7.5px;
+	height: 2px;
+	&::before,
+	&::after {
+		content: '';
+		width: 10px;
+		height: 2px;
+		background: $gray-line;
+		position: absolute;
+		top: 0;
+	}
+	&::before {
+		content: none;
+		left: -7.5px;
+	}
+	&::after {
+		right: -10px;
+	}
+	@media screen and (max-width: $md) {
+		width: calc(100% - 20px);
+	}
+}
+.noUi-horizontal {
+	height: 2px;
+}
+.noUi-handle {
+	width: 15px;
+	height: 15px;
+	flex-shrink: 0;
+	border-radius: 50%;
+	box-shadow: none;
+	background-color: $white;
+	cursor: pointer;
+	border: 2px solid $white;
+	box-shadow: 0 4px 5px 0 rgba(42, 88, 115, 0.25);
+	&::before {
+		content: '';
+		display: block;
+		width: calc(100% - 2px);
+		height: calc(100% - 2px);
+		border-radius: 50%;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		background: $blue-1;
+	}
+	&::after {
+		content: none;
+	}
+}
+.noUi-horizontal .noUi-handle {
+	right: -15px;
+	width: 15px;
+	height: 15px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.noUi-connects {
+	border-radius: 0;
 }

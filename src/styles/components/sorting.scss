@@ -1,0 +1,58 @@
+.heading-sorting {
+}
+.sorting {
+	display: flex;
+	justify-content: flex-end;
+	width: 100%;
+	font-size: 14px;
+	line-height: 140%;
+	gap: 30px;
+	&__caption {
+		color: $gray-text;
+	}
+	&__list {
+		@include reset-list;
+		display: flex;
+		align-items: center;
+		gap: 20px;
+	}
+	&__list-item {
+		color: $black;
+		transition: color $time;
+		display: flex;
+		align-items: center;
+		gap: 5px;
+		&::after {
+			content: none;
+			display: block;
+			width: 10px;
+			height: 12px;
+			mask-image: url('../images/icons/sort-arrow.svg');
+			mask-repeat: no-repeat;
+			mask-position: center;
+			background-color: $blue-1;
+			opacity: 0;
+			transition: opacity $time;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				cursor: pointer;
+				color: $blue-1;
+			}
+		}
+		&[data-sort='down'] {
+			&::after {
+				transform: rotate(180deg);
+			}
+		}
+		&.active {
+			color: $blue-1;
+			&::after {
+				content: '';
+				opacity: 1;
+			}
+		}
+	}
+}
+.active {
+}
