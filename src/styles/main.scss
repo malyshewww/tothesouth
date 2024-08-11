@@ -10,6 +10,8 @@
 @import 'components/footer';
 @import 'components/breadcrumbs';
 @import 'components/pagination';
+@import 'components/badges';
+@import 'libs/fancybox';
 
 .container {
 	max-width: $maxWidthContainer + px;

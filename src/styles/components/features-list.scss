@@ -1,0 +1,72 @@
+.features-list {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 15px;
+	&__item {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		font-size: 14px;
+		line-height: 140%;
+		color: #1d2741;
+		&::before {
+			content: '';
+			display: block;
+			flex-shrink: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 20px;
+			height: 20px;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+	}
+	&.comform-features {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 20px 40px;
+	}
+}
+
+.parking {
+	&::before {
+		background-image: url('../images/icons/features/parking.svg');
+	}
+}
+.teracce {
+	&::before {
+		background-image: url('../images/icons/features/teracce.svg');
+	}
+}
+.guest {
+	&::before {
+		background-image: url('../images/icons/features/guest.svg');
+	}
+}
+.kitchen {
+	&::before {
+		background-image: url('../images/icons/features/kitchen.svg');
+	}
+}
+.wi-fi {
+	&::before {
+		background-image: url('../images/icons/features/wi-fi.svg');
+	}
+}
+.transfer {
+	&::before {
+		background-image: url('../images/icons/features/transfer.svg');
+	}
+}
+.bar {
+	&::before {
+		background-image: url('../images/icons/features/bar.svg');
+	}
+}
+.children {
+	&::before {
+		background-image: url('../images/icons/features/children.svg');
+	}
+}

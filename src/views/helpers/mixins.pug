@@ -218,4 +218,97 @@ mixin formItem(formType, formName, helpText, caption, isError)
 				label(for=formName).form-label= helpText
 		if isError
 			span.error-message= isError
+mixin headerCard(name, location)
+	.header-card
+		.header-card__info
+			+rating
+			.header-card__name= name 
+			.header-card__location= location
+		.header-card__actions
+			.header-card__actions-item
+				button(type="button").btn-shape
+					svg(width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg")
+						path(d="M20.1576 22.7455L9.85702 17.5952M9.84239 13.4121L20.1527 8.25698M29 24.8333C29 27.4107 26.9107 29.5 24.3333 29.5C21.756 29.5 19.6667 27.4107 19.6667 24.8333C19.6667 22.256 21.756 20.1667 24.3333 20.1667C26.9107 20.1667 29 22.256 29 24.8333ZM29 6.16667C29 8.744 26.9107 10.8333 24.3333 10.8333C21.756 10.8333 19.6667 8.744 19.6667 6.16667C19.6667 3.58934 21.756 1.5 24.3333 1.5C26.9107 1.5 29 3.58934 29 6.16667ZM10.3333 15.5C10.3333 18.0773 8.244 20.1667 5.66667 20.1667C3.08934 20.1667 1 18.0773 1 15.5C1 12.9227 3.08934 10.8333 5.66667 10.8333C8.244 10.8333 10.3333 12.9227 10.3333 15.5Z" stroke="#8897B1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round")
+			.header-card__actions-item
+				button(type="button").btn-favorite-plus
+					svg(width="30" height="29" viewBox="0 0 30 29" fill="none" xmlns="http://www.w3.org/2000/svg")
+						path(d="M26.9289 14.576C28.255 13.1578 29 11.2344 29 9.22878C29 5.05234 25.8342 1.66667 21.9289 1.66667C20.0536 1.66667 18.255 2.46339 16.9289 3.88156L15 5.94445L13.0711 3.88156C11.745 2.46339 9.94643 1.66667 8.07107 1.66667C4.16582 1.66667 1 5.05234 1 9.22878C1 11.2344 1.74498 13.1578 3.07107 14.576L15 27.3333L17.9822 24.144" stroke="#8897B1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round")
+						path(d="M23.168 16.8333V23.8333M19.668 20.3333H26.668" stroke="#8897B1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round")
+			button(type="button").btn.btn-blue Узнать цены
+mixin asideMap
+	.aside-map 
+		button(type="button").map-button.btn.btn-white Показать на карте
+mixin asideContacts(caption)
+	.aside-contacts
+		.aside-contacts__caption= caption
+		.aside-contacts__info 
+			.aside-contacts__item
+				.aside-contacts__name Михаил
+				a(href="tel:+79035619119").aside-contacts__phone +7 (903) 561-91-19
+				ul.aside-contacts__social.social-contacts 
+					li.social-contacts__item 
+						a(href="#" target="_blank").social-contacts__link.social-contacts__link--whatsapp
+					li.social-contacts__item 
+						a(href="#" target="_blank").social-contacts__link.social-contacts__link--viber
+					li.social-contacts__item 
+						a(href="#" target="_blank").social-contacts__link.social-contacts__link--telegram
+			.aside-contacts__item
+				.aside-contacts__name Алексей
+				a(href="tel:+79035619119").aside-contacts__phone +7 (903) 561-91-19
+				ul.aside-contacts__social.social-contacts 
+					li.social-contacts__item 
+						a(href="#" target="_blank").social-contacts__link.social-contacts__link--whatsapp
+		.aside-contacts__link-wrap 
+			a(href="http://more-udachi.ru/" target="_blank").aside-contacts__link http://more-udachi.ru/
+		.aside-contacts__text Сообщите владельцу, что нашли объявление на сервисе&nbsp; #[span na-uga.ru]
+mixin gallery([...arr])
+	.detail-card__gallery.gallery
+		.gallery-body 
+			.gallery-wrapper 
+				each item, index in arr
+					a(href=`assets/images/detail-card/gallery/${item.img}.jpg` data-fancybox="gallery").gallery-item 
+						.gallery-item__image.ibg
+							img(src=`assets/images/detail-card/gallery/${item.img}.jpg`, alt="фото")
+						if index === 5
+							.gallery-item__text Еще #[br] 48 фото
+mixin detailCardBox(title, subTitle, classNames)
+	section.detail-card__box.box-card(class=`${classNames ? `box-card--${classNames}` : ''}`)
+		.box-card__header
+			h2.box-card__title= title
+			if subTitle
+				.box-card__sub-title= subTitle
+		if block
+			block
+mixin roomCard(item)
+	.room-item
+		.room-item__image
+			img(src=`assets/images/detail-card/rooms/${item.img}.jpg`, alt=item.title)
+		.room-item__body 
+			.room-item__header 
+				.room-item__info 
+					.room-item__title= item.title 
+					.room-item__places.places-room
+						span.places-room__item 1 комната
+						span.places-room__item 3 места + 1 доп.
+				.room-item__prices 
+					.room-item__area= item.area
+					if item.price
+						.room-item__price= item.price
+					else 
+						.room-item__price-empty Цены уточняйте по телефону
+			.room-item__content 
+				if item.features
+					ul.features-list
+						each feature in item.features
+							li.features-list__item(class=`${feature.key}`)= feature.name
+			.room-item__footer 
+				a(href="#").room-item__detail
+					span Все подробности
+				a(href="hotel-book.html").btn.btn-blue Забронировать 
+
+
+
+
+
+
 

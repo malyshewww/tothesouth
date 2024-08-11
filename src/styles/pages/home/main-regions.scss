@@ -48,7 +48,6 @@
 		height: 100%;
 		padding-bottom: math.div(372, 570) * 100%;
 	}
-
 	&__caption {
 		position: relative;
 		height: 100%;
@@ -69,6 +68,7 @@
 		display: inline-flex;
 		align-items: center;
 		gap: 10px;
+		transition: color $time;
 		&::after {
 			content: '';
 			display: block;
@@ -78,6 +78,17 @@
 			mask-repeat: no-repeat;
 			mask-position: center;
 			background-color: currentColor;
+			transition:
+				background-color $time,
+				transform $time;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				color: $orange;
+				&::after {
+					transform: translateX(8px);
+				}
+			}
 		}
 	}
 }

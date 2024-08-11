@@ -1,0 +1,117 @@
+@use 'sass:math';
+@import 'config/variables';
+@import 'config/mixins';
+
+@import 'pages/detail-card/layout.scss';
+@import 'pages/detail-card/heading.scss';
+@import 'pages/detail-card/aside-contacts.scss';
+@import 'pages/detail-card/gallery.scss';
+@import 'pages/detail-card/conditions.scss';
+@import 'pages/detail-card/accordeon.scss';
+
+@import 'components/room-item.scss';
+@import 'components/features-list.scss';
+
+.aside-map {
+	border: 1px solid $gray-line;
+	border-radius: 10px;
+	min-height: 150px;
+	display: grid;
+	place-items: center;
+	background-image: url('../images/icons/map.svg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.map-button {
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	&::after {
+		content: '';
+		display: block;
+		width: 24px;
+		height: 24px;
+		mask-image: url('../images/icons/pin-location.svg');
+		mask-repeat: no-repeat;
+		mask-position: center;
+		background-color: currentColor;
+	}
+}
+
+.box-card {
+	padding: 39px;
+	border: 1px solid $gray-line;
+	border-radius: 10px;
+	background-color: $white;
+	display: grid;
+	grid-template-columns: 100%;
+	gap: 20px;
+	&__header {
+		padding-bottom: 20px;
+		border-bottom: 1px solid $gray-line;
+	}
+	&__title {
+		font-weight: 700;
+		font-size: 24px;
+		line-height: 120%;
+		&:not(:last-child) {
+			margin-bottom: 10px;
+		}
+	}
+	&__content {
+	}
+	&__sub-title {
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 130%;
+	}
+	&__map {
+		min-height: 250px;
+		display: grid;
+		place-items: center;
+		background-image: url('../images/icons/map.svg');
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	&__faq {
+		display: grid;
+		gap: 20px;
+	}
+}
+.box-card--location {
+}
+.places {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 40px;
+	&__item {
+		display: grid;
+		gap: 10px;
+	}
+	&__caption {
+		font-weight: 600;
+		font-size: 16px;
+		line-height: 130%;
+	}
+	&__list {
+		@include reset-list;
+		display: grid;
+		gap: 5px;
+	}
+	&__list-item {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		gap: 15px;
+		font-size: 14px;
+		line-height: 140%;
+		color: $gray-text;
+	}
+	&__name {
+	}
+	&__distance {
+		display: block;
+		flex-shrink: 0;
+	}
+}

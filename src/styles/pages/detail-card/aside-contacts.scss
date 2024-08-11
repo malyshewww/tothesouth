@@ -1,0 +1,91 @@
+.aside-contacts {
+	border: 1px solid $gray-line;
+	border-radius: 10px;
+	padding: 19px;
+	background: $white;
+	display: grid;
+	gap: 20px;
+	&__caption {
+		font-size: 14px;
+		line-height: 140%;
+		padding-bottom: 15px;
+		border-bottom: 1px solid $gray-line;
+	}
+	&__info {
+		display: grid;
+		gap: 30px;
+	}
+	&__item {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 10px;
+	}
+	&__name {
+		width: 100%;
+		font-weight: 600;
+		font-size: 16px;
+		line-height: 130%;
+	}
+	&__phone {
+		font-size: 16px;
+		line-height: 130%;
+	}
+	&__link-wrap {
+		padding: 19px 0;
+		border-top: 1px solid $gray-line;
+		border-bottom: 1px solid $gray-line;
+	}
+	&__link {
+		line-height: 130%;
+		color: $blue;
+	}
+	&__text {
+		font-size: 14px;
+		line-height: 140%;
+		& span {
+			font-weight: 600;
+		}
+	}
+}
+.social-contacts {
+	@include reset-list;
+	display: flex;
+	align-items: center;
+	gap: 7px;
+	flex-wrap: wrap;
+	&__item {
+	}
+	&__link {
+		flex-shrink: 0;
+		width: 19px;
+		height: 19px;
+		&::before {
+			content: '';
+			display: block;
+			width: 18px;
+			height: 18px;
+			mask-repeat: no-repeat;
+			mask-position: center;
+			background-color: $gray-text;
+			mask-size: 18px 18px;
+			transition: background-color $time;
+		}
+	}
+	&__link--whatsapp {
+		&::before {
+			mask-image: url('../images/icons/social/whatsapp.svg');
+		}
+	}
+	&__link--viber {
+		&::before {
+			mask-image: url('../images/icons/social/viber.svg');
+		}
+	}
+	&__link--telegram {
+		&::before {
+			mask-image: url('../images/icons/social/telegram.svg');
+		}
+	}
+}

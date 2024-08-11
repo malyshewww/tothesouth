@@ -31,4 +31,17 @@ document.addEventListener('DOMContentLoaded', () => {
 			},
 		});
 	}
+	function addFocusInput() {
+		let parent = this.closest('form');
+		parent.classList.add('focus');
+	}
+	function removeFocusInput() {
+		let parent = this.closest('form');
+		parent.classList.remove('focus');
+	}
+	const searchFormInput = document.querySelector('.search-form__input');
+	if (searchFormInput) {
+		searchFormInput.addEventListener('focus', addFocusInput);
+		searchFormInput.addEventListener('blur', removeFocusInput);
+	}
 });

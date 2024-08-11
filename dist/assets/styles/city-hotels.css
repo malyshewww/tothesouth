@@ -224,6 +224,9 @@
 .testimonials-item__text p:not(:last-child) {
   margin-bottom: 10px;
 }
+.testimonials-item .rating {
+  margin-left: auto;
+}
 .city-testimonials {
   margin-top: 70px;
 }
@@ -1411,6 +1414,13 @@
   }
   .checkbox label {
     cursor: pointer;
+  }
+  .checkbox label:hover span {
+    background-color: #a7e0eb;
+    border-color: #a7e0eb;
+  }
+  .checkbox label:hover span::before {
+    opacity: 1;
   }
   .form-input:hover {
     background-color: #f7f9fe;

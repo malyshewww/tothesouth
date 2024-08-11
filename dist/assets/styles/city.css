@@ -230,6 +230,9 @@
 .testimonials-item__text p:not(:last-child) {
   margin-bottom: 10px;
 }
+.testimonials-item .rating {
+  margin-left: auto;
+}
 .city-testimonials {
   margin-top: 70px;
 }

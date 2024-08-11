@@ -53,14 +53,28 @@
 		font-size: 14px;
 		line-height: 120%;
 		border-radius: 7px 0 0 7px;
+		transition: box-shadow $time;
 		&::placeholder {
 			font-family: $font-family;
 			font-weight: 400;
 			font-size: 14px;
 			color: $gray-text;
 		}
+		&:focus {
+		}
 	}
 	&__button {
 		border-radius: 0 7px 7px 0;
+		transition: box-shadow $time;
+	}
+	&.focus {
+		& .search-form {
+			&__input {
+				box-shadow: 0px 0px 0px 2px $blue-1;
+			}
+			&__button {
+				box-shadow: 0px 0px 0px 2px $blue-1;
+			}
+		}
 	}
 }

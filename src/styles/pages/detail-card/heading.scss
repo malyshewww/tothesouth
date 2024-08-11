@@ -1,0 +1,56 @@
+.header-card {
+	padding: 20px 30px 25px;
+	border: 1px solid $gray-line;
+	border-radius: 10px;
+	background: $white;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 20px;
+	&__info {
+		display: grid;
+		gap: 10px;
+	}
+	&__name {
+		font-weight: 700;
+		font-size: 24px;
+		line-height: 120%;
+	}
+	&__location {
+		font-size: 14px;
+		line-height: 140%;
+		display: flex;
+		align-items: center;
+		gap: 4px;
+		&::before {
+			content: '';
+			display: block;
+			width: 9px;
+			height: 13px;
+			background-image: url('../images/icons/location.svg');
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+	}
+	&__actions {
+		display: flex;
+		align-items: center;
+		gap: 25px;
+	}
+	&__actions-item {
+		padding-right: 25px;
+		position: relative;
+		&::after {
+			content: '';
+			display: block;
+			position: absolute;
+			right: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 1px;
+			height: 23px;
+			background-color: $gray-line;
+		}
+	}
+}

@@ -1,0 +1,28 @@
+.detail-card {
+	&__wrapper {
+	}
+	&__body {
+		display: grid;
+		grid-template-columns: 270px 1fr;
+		align-items: start;
+		gap: 30px;
+	}
+	&__aside {
+		display: grid;
+		gap: 20px;
+	}
+	&__main {
+		display: grid;
+		grid-template-columns: 100%;
+		gap: 20px;
+	}
+	&__gallery {
+	}
+	&__box {
+	}
+	&__rooms {
+		display: grid;
+		grid-template-columns: 100%;
+		gap: 20px;
+	}
+}

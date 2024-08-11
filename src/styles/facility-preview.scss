@@ -83,31 +83,6 @@
 	}
 }
 
-.badges {
-	&__list {
-		display: flex;
-		flex-flow: row wrap;
-		gap: 15px;
-		align-items: center;
-		list-style: none;
-		padding: 0;
-		margin: 0;
-	}
-	&__item {
-	}
-	&__link {
-		border-radius: 5px;
-		padding: 5px 15px;
-		min-height: 34px;
-		background: #eff2f8;
-		display: grid;
-		place-items: center;
-		font-size: 14px;
-		line-height: 140%;
-		color: $gray-text;
-	}
-}
-
 @keyframes animatedBackground {
 	to {
 		background-size: 100% 100%;

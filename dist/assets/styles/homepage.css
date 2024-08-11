@@ -55,6 +55,7 @@
   font-size: 14px;
   line-height: 120%;
   border-radius: 7px 0 0 7px;
+  transition: box-shadow 0.3s;
 }
 .search-form__input::-moz-placeholder {
   font-family: "Manrope", sans-serif;
@@ -70,6 +71,13 @@
 }
 .search-form__button {
   border-radius: 0 7px 7px 0;
+  transition: box-shadow 0.3s;
+}
+.search-form.focus .search-form__input {
+  box-shadow: 0px 0px 0px 2px #18abc6;
+}
+.search-form.focus .search-form__button {
+  box-shadow: 0px 0px 0px 2px #18abc6;
 }
 .main-regions {
   padding: 80px 0 61px;
@@ -144,6 +152,7 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
+  transition: color 0.3s;
 }
 .main-regions__link::after {
   content: "";
@@ -157,6 +166,7 @@
   -webkit-mask-position: center;
   mask-position: center;
   background-color: currentColor;
+  transition: background-color 0.3s, transform 0.3s;
 }
 .swiper {
   margin-left: auto;
@@ -461,26 +471,6 @@
   line-height: 140%;
   color: #8897b1;
 }
-.badges__list {
-  display: flex;
-  flex-flow: row wrap;
-  gap: 15px;
-  align-items: center;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.badges__link {
-  border-radius: 5px;
-  padding: 5px 15px;
-  min-height: 34px;
-  background: #eff2f8;
-  display: grid;
-  place-items: center;
-  font-size: 14px;
-  line-height: 140%;
-  color: #8897b1;
-}
 @keyframes animatedBackground {
   to {
     background-size: 100% 100%;
@@ -553,6 +543,12 @@
   background-color: #18abc6;
 }
 @media (any-hover: hover) {
+  .main-regions__link:hover {
+    color: #ff6933;
+  }
+  .main-regions__link:hover::after {
+    transform: translateX(8px);
+  }
   .card-preview:hover {
     cursor: pointer;
   }

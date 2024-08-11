@@ -224,6 +224,9 @@
 .testimonials-item__text p:not(:last-child) {
   margin-bottom: 10px;
 }
+.testimonials-item .rating {
+  margin-left: auto;
+}
 .testimonials .heading {
   margin-bottom: 40px;
 }

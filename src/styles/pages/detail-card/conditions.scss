@@ -1,0 +1,75 @@
+.conditions {
+	&__items {
+		display: grid;
+		gap: 20px;
+	}
+}
+.item-condition {
+	display: grid;
+	gap: 20px;
+	&__heading {
+		font-weight: 600;
+		font-size: 16px;
+		line-height: 130%;
+		color: $black;
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		&::before {
+			content: '';
+			display: block;
+			width: 16px;
+			height: 16px;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+	}
+	&:nth-child(1) {
+		& .item-condition__heading::before {
+			background-image: url('../images/icons/time.svg');
+		}
+	}
+	&:nth-child(2) {
+		& .item-condition__heading::before {
+			background-image: url('../images/icons/money.svg');
+		}
+	}
+	&__content {
+		display: grid;
+		gap: 10px;
+	}
+	&__list {
+		@include reset-list;
+		max-width: 427px;
+		display: flex;
+		justify-content: space-between;
+		gap: 20px;
+		flex-wrap: wrap;
+	}
+	&__list-item {
+		display: flex;
+		align-items: center;
+		gap: 30px;
+	}
+	&__label {
+		font-size: 14px;
+		line-height: 140%;
+	}
+	&__time {
+		font-size: 16px;
+		line-height: 130%;
+		font-weight: 600;
+	}
+	&__info {
+		font-size: 14px;
+		line-height: 140%;
+		color: $gray-text;
+	}
+	&__text {
+		font-size: 14px;
+		line-height: 140%;
+		& a {
+			color: $blue;
+		}
+	}
+}

@@ -9,6 +9,7 @@
 	},
 	"dependencies": {
 		"@archoleat/stylelint-config-extended-scss": "1.6.8",
+		"@fancyapps/ui": "^5.0.36",
 		"autoprefixer": "^10.4.19",
 		"browser-sync": "^3.0.2",
 		"chalk": "^5.3.0",
