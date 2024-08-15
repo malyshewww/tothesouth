@@ -1,3 +1,8 @@
+import {
+  Navigation,
+  Swiper
+} from "../chunks/chunk-WPE5DA5P.js";
+
 // node_modules/@fancyapps/ui/dist/index.esm.js
 var t = (t2, e2 = 1e4) => (t2 = parseFloat(t2 + "") || 0, Math.round((t2 + Number.EPSILON) * e2) / e2);
 var e = function(t2) {
@@ -3073,35 +3078,42 @@ var Oe = class _Oe extends g {
 Object.defineProperty(Oe, "version", { enumerable: true, configurable: true, writable: true, value: "5.0.36" }), Object.defineProperty(Oe, "defaults", { enumerable: true, configurable: true, writable: true, value: at }), Object.defineProperty(Oe, "Plugins", { enumerable: true, configurable: true, writable: true, value: te }), Object.defineProperty(Oe, "openers", { enumerable: true, configurable: true, writable: true, value: /* @__PURE__ */ new Map() });
 
 // src/scripts/modules/accordeon.ts
-var accordeon = document.querySelector(".accordeon");
-if (accordeon) {
-  let removeAccordeonOpen = function(index1) {
-    [...accordeonItems].forEach((item2, index2) => {
-      if (index1 != index2) {
-        item2.classList.remove("active");
-        let contentTwo = item2.querySelector(".accordeon__content");
-        contentTwo.style.height = "0px";
-      }
-    });
-  };
-  removeAccordeonOpen2 = removeAccordeonOpen;
-  const accordeonItems = accordeon.querySelectorAll(".accordeon__item");
-  [...accordeonItems].forEach((item, index) => {
-    const header = item.querySelector(".accordeon__header");
-    header.addEventListener("click", () => {
-      console.log("header");
-      item.classList.toggle("active");
-      let content = item.querySelector(".accordeon__content");
-      if (item.classList.contains("active")) {
-        content.style.height = `${content.scrollHeight}px`;
-      } else {
-        content.style.height = "0px";
-      }
-      removeAccordeonOpen(index);
-    });
+var accordeons = document.querySelectorAll(".accordeon");
+if (accordeons.length) {
+  [...accordeons].forEach((accordeon) => {
+    if (accordeon) {
+      let removeAccordeonOpen2 = function(index1) {
+        [...accordeonItems].forEach((item2, index2) => {
+          if (index1 != index2) {
+            item2.classList.remove("active");
+            let contentTwo = item2.querySelector(".accordeon__content");
+            contentTwo.style.height = "0px";
+          }
+        });
+      };
+      var removeAccordeonOpen = removeAccordeonOpen2;
+      const accordeonItems = accordeon.querySelectorAll(".accordeon__item");
+      [...accordeonItems].forEach((item, index) => {
+        const header = item.querySelector(".accordeon__header");
+        let content = item.querySelector(".accordeon__content");
+        if (accordeon.classList.contains("accordeon-price")) {
+          content.style.height = `${content.scrollHeight}px`;
+          item.classList.add("active");
+        }
+        header.addEventListener("click", () => {
+          console.log("header");
+          item.classList.toggle("active");
+          if (item.classList.contains("active")) {
+            content.style.height = `${content.scrollHeight}px`;
+          } else {
+            content.style.height = "0px";
+          }
+          removeAccordeonOpen2(index);
+        });
+      });
+    }
   });
 }
-var removeAccordeonOpen2;
 
 // src/scripts/detail-card.ts
 Oe.bind("[data-fancybox]", {
@@ -3123,5 +3135,65 @@ document.addEventListener("DOMContentLoaded", function() {
       });
     });
   }
+  const reviewsSlider = document.querySelector(".slider-reviews__body");
+  if (reviewsSlider) {
+    const buttonPrev = reviewsSlider.querySelector(".slider-button-prev");
+    const buttonNext = reviewsSlider.querySelector(".slider-button-next");
+    let newsSwiper = new Swiper(reviewsSlider, {
+      modules: [Navigation],
+      slidesPerView: 3,
+      speed: 800,
+      slideClass: "slider-reviews__item",
+      wrapperClass: "slider-reviews__wrapper",
+      spaceBetween: 20,
+      initialSlide: 0,
+      navigation: {
+        prevEl: buttonPrev,
+        nextEl: buttonNext
+      },
+      on: {
+        init: function(swiper) {
+          const slides = swiper.slides;
+          const sliderControls = buttonPrev?.parentNode || buttonNext?.parentNode;
+          if (slides.length <= swiper.passedParams.slidesPerView) {
+            swiper.navigation.destroy();
+            sliderControls?.remove();
+          }
+        },
+        progress: function(swiper) {
+          if (swiper.progress > 0) {
+            swiper.el.classList.add("progress");
+          } else {
+            swiper.el.classList.remove("progress");
+          }
+        }
+      }
+    });
+  }
+  const backgrounds = {
+    red: "#FF6933",
+    orange: "#FEBB02",
+    blue: "#1C8CF3",
+    green: "#18ABC6"
+  };
+  const progressItems = document.querySelectorAll(".progress-items");
+  [...progressItems].forEach((item) => {
+    const line = item.querySelector(".progress-bar span");
+    const value = line.dataset.value.replace(",", ".");
+    if (value === 0) return;
+    if (value > 0 && value <= 2.2) {
+      line.style.background = backgrounds["red"];
+      line.style.setProperty("background-color", backgrounds["red"]);
+    }
+    if (value > 2.2 && value <= 3.5) {
+      line.style.background = backgrounds["orange"];
+    }
+    if (value > 3.5 && value <= 4.2) {
+      line.style.background = backgrounds["blue"];
+    }
+    if (value > 4.2) {
+      line.style.background = backgrounds["green"];
+    }
+  });
 });
 //# sourceMappingURL=detail-card.js.map

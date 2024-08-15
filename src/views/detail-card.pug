@@ -30,7 +30,31 @@ block content
 								p В шаговой доступности находится центральный рынок, аквапарк «Наутилус», экскурсионные бюро, концертный зал ЦНК и места отдыха. И главное — до моря 5 — 10 минут спокойным шагом! Фонового шума в ночное время от кафе и дискотек с центральной набережной не слышно.
 								p Территория гостевого дома На Победе облагорожена: газоны, высажены тропические растения и пальмы. Для отдыхающих обустроена площадка для отдыха.
 								p Номерной фонд состоит из 2 и 3 местных номеров со всеми удобствами. В каждом номере: телевизор, кондиционер, холодильник, душ, санузел). Производится ежедневная уборка.
-						| table price
+						section.detail-card__box.box-card
+							.accordeon.accordeon-price
+								.accordeon__item
+									.accordeon__header 
+										| Цены на 2024 год
+										.accordeon__button
+											span Показать
+											span Скрыть
+											.accordeon__icon
+									.accordeon__content 
+										.table-price-wrap
+											table.table-price
+												thead.table-price__head
+													tr 	
+														th 
+														th 
+														- for (var x = 0; x < 5; x++)
+															th 21.05 - 30.06
+												tbody.table-price__body 
+													- for (var i = 0; i < 4; i++)
+														tr 
+															td Двухместный «Эконом» (2-й этаж)
+															td за комнату
+															- for (var x = 0; x < 5; x++)
+																td 1000
 						.detail-card__rooms
 							each item in cardPage.rooms
 								+roomCard(item)
@@ -48,6 +72,42 @@ block content
 													li.places__list-item
 														span.places__name= listItem.name
 														span.places__distance= listItem.distance
+						section.detail-card__box.box-card.box-reviews
+							.box-card__header 
+								h2.box-card__title Отзывы гостей
+								.box-reviews__stats 
+									.box-reviews__estimate 5,0
+									.box-reviews__text 
+										p Отлично
+										p на основании 895 оценок
+							.box-reviews__progress.progress-items
+								each item in cardPage.reviews.progress
+									.progress-item(class=`progress-item--${item.key}`)
+										.progress-item__caption= item.caption
+										.progress-bar 
+											.progress-bar__line 
+												span(style={'width': `${item.percent}%`} data-value=item.value)
+											.progress-bar__value= item.value
+							.box-reviews__slider.slider-reviews
+								.slider-reviews__title Что гостям понравилось:
+								.slider-reviews__body 
+									.slider-reviews__wrapper 
+										- for (var x = 0; x < 5; x++)
+											.slider-reviews__item.item-reviews
+												.item-reviews__header 
+													.item-reviews__logo
+														img(src="assets/images/detail-card/reviews/logo.png", alt="логотип")
+													+rating("3")
+													.item-reviews__author Анастасия
+												.item-reviews__content 
+													p Прекрасный отель. Вид из окна просто потрясающий. Вечером сидели в ресторане и любовались видом. Номер отличный, большой, чистый. Кровать очень большая. В душе всегда есть горячая вода. Персонал молодцы, какой вопрос не задашь, они всегда знаю...
+												.item-reviews__footer 
+													.item-reviews__date 12.08.22
+													a(href="#").item-reviews__btn.btn-detail Подробнее
+									.slider-controls 
+										button(type="button").slider-button.slider-button-prev
+										button(type="button").slider-button.slider-button-next
+								a(href="#").btn.btn-blue-transparent.btn-lg Читать все отзывы 
 						+detailCardBox("Удобства")
 							ul.features-list.comform-features
 								each feature in cardPage.comfort

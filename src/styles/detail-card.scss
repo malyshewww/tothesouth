@@ -8,6 +8,7 @@
 @import 'pages/detail-card/gallery.scss';
 @import 'pages/detail-card/conditions.scss';
 @import 'pages/detail-card/accordeon.scss';
+@import 'pages/detail-card/reviews.scss';
 
 @import 'components/room-item.scss';
 @import 'components/features-list.scss';
@@ -113,5 +114,54 @@
 	&__distance {
 		display: block;
 		flex-shrink: 0;
+	}
+}
+
+.table-price {
+	border-collapse: collapse;
+	display: flex;
+	flex-direction: column;
+	& tr {
+		min-height: 38px;
+		display: flex;
+		flex-grow: 1;
+	}
+	& th,
+	& td {
+		min-height: 38px;
+		padding: 11px 10px;
+		flex: 0 0 76px;
+		display: flex;
+		align-items: center;
+		font-weight: 400;
+		font-size: 12px;
+		line-height: 120%;
+		justify-content: flex-end;
+		&:not(:last-child) {
+			border-right: 1px solid $gray-line;
+		}
+		&:nth-child(1) {
+			flex: 0 0 270px;
+			justify-content: flex-start;
+		}
+		&:nth-child(2) {
+			flex: 0 0 140px;
+			justify-content: center;
+		}
+	}
+	& th {
+		padding: 5px 10px;
+		font-weight: 600;
+		text-align: right;
+		color: $gray-text;
+	}
+	&__head {
+	}
+	&__body {
+		& tr {
+			&:nth-child(odd) {
+				background-color: $gray-background;
+			}
+		}
 	}
 }

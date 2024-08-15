@@ -8,6 +8,14 @@
 				transform: rotate(0deg);
 				opacity: 0;
 			}
+			& .accordeon__button {
+				& span:nth-child(1) {
+					display: none;
+				}
+				& span:nth-child(2) {
+					display: block;
+				}
+			}
 		}
 	}
 	&__header {
@@ -62,7 +70,9 @@
 	&__content {
 		height: 0px;
 		overflow: hidden;
-		transition: height $time;
+		transition:
+			height $time,
+			margin $time;
 	}
 	&__text {
 		padding: 15px;
@@ -70,5 +80,56 @@
 		line-height: 130%;
 		border-radius: 5px;
 		background: $gray-background;
+	}
+	&__button {
+		display: flex;
+		align-items: center;
+		gap: 20px;
+		font-size: 16px;
+		line-height: 130%;
+		color: $blue-1;
+		font-weight: 400;
+		& span {
+			&:nth-child(1) {
+				display: block;
+			}
+			&:nth-child(2) {
+				display: none;
+			}
+		}
+	}
+}
+
+.accordeon-price {
+	& .accordeon {
+		&__header {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+			gap: 20px;
+			font-weight: 700;
+			font-size: 24px;
+			line-height: 120%;
+			padding-bottom: 20px;
+			border-bottom: 1px solid $gray-line;
+			&::before {
+				content: none;
+			}
+		}
+		&__icon {
+			&::before,
+			&::after {
+				background-color: $blue-1;
+			}
+		}
+		&__content {
+		}
+		&__item {
+			&.active {
+				& .accordeon__content {
+					margin-top: 20px;
+				}
+			}
+		}
 	}
 }
