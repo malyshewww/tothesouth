@@ -265,10 +265,13 @@ mixin formItem(formType, formName, helpText, caption, isError)
 mixin headerCard(name, location)
 	.header-card
 		.header-card__info
-			+rating
+			.header-card__info-top
+				+rating
 			.header-card__name= name 
 			.header-card__location= location
-		.header-card__actions
+			button(type="button").header-card__show-map.btn-detail
+				span Показать на карте
+		.header-card__actions(data-da=".header-card__info-top, 767.98, 1")
 			.header-card__actions-item
 				button(type="button").btn-shape
 					svg(width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg")
@@ -278,7 +281,7 @@ mixin headerCard(name, location)
 					svg(width="30" height="29" viewBox="0 0 30 29" fill="none" xmlns="http://www.w3.org/2000/svg")
 						path(d="M26.9289 14.576C28.255 13.1578 29 11.2344 29 9.22878C29 5.05234 25.8342 1.66667 21.9289 1.66667C20.0536 1.66667 18.255 2.46339 16.9289 3.88156L15 5.94445L13.0711 3.88156C11.745 2.46339 9.94643 1.66667 8.07107 1.66667C4.16582 1.66667 1 5.05234 1 9.22878C1 11.2344 1.74498 13.1578 3.07107 14.576L15 27.3333L17.9822 24.144" stroke="#8897B1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round")
 						path(d="M23.168 16.8333V23.8333M19.668 20.3333H26.668" stroke="#8897B1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round")
-			button(type="button").btn.btn-blue Узнать цены
+			button(type="button").btn.btn-blue.header-card__btn-price Узнать цены
 mixin asideMap
 	.aside-map 
 		button(type="button").map-button.btn.btn-white Показать на карте
@@ -306,15 +309,16 @@ mixin asideContacts(caption)
 			a(href="http://more-udachi.ru/" target="_blank").aside-contacts__link http://more-udachi.ru/
 		.aside-contacts__text Сообщите владельцу, что нашли объявление на сервисе&nbsp; #[span na-uga.ru]
 mixin gallery([...arr])
-	.detail-card__gallery.gallery
-		.gallery-body 
-			.gallery-wrapper 
+	.detail-card__gallery.gallery(data-da=".box-card--description, 767.98, 0")
+		.gallery-body.swiper
+			.gallery-wrapper.swiper-wrapper
 				each item, index in arr
 					a(href=`assets/images/detail-card/gallery/${item.img}.jpg` data-fancybox="gallery").gallery-item 
 						.gallery-item__image.ibg
 							img(src=`assets/images/detail-card/gallery/${item.img}.jpg`, alt="фото")
 						if index === 5
 							.gallery-item__text Еще #[br] 48 фото
+			.slider-pagination
 mixin detailCardBox(title, subTitle, classNames)
 	section.detail-card__box.box-card(class=`${classNames ? `box-card--${classNames}` : ''}`)
 		.box-card__header
@@ -325,7 +329,7 @@ mixin detailCardBox(title, subTitle, classNames)
 			block
 mixin roomCard(item)
 	.room-item
-		.room-item__image
+		.room-item__image.ibg
 			img(src=`assets/images/detail-card/rooms/${item.img}.jpg`, alt=item.title)
 		.room-item__body 
 			.room-item__header 
@@ -335,7 +339,9 @@ mixin roomCard(item)
 						span.places-room__item 1 комната
 						span.places-room__item 3 места + 1 доп.
 				.room-item__prices 
-					.room-item__area= item.area
+					.room-item__area 
+						| 18 
+						span м#[sup 2]
 					if item.price
 						.room-item__price= item.price
 					else 
@@ -348,6 +354,14 @@ mixin roomCard(item)
 			.room-item__footer 
 				a(href="#").room-item__detail
 					span Все подробности
+				.room-item__prices 
+					.room-item__area 
+						| 18 
+						span м#[sup 2]
+					if item.price
+						.room-item__price= item.price
+					else 
+						.room-item__price-empty Цены уточняйте по телефону
 				a(href="hotel-book.html").btn.btn-blue Забронировать 
 mixin buttonTpl(btnText, classNames)
 	button(type="button" class=classNames).btn

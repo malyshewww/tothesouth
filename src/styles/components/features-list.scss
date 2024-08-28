@@ -27,6 +27,12 @@
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 		gap: 20px 40px;
+		@media screen and (max-width: $md) {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 15px;
+			align-items: center;
+		}
 	}
 }
 

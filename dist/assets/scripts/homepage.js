@@ -1,7 +1,7 @@
 import {
   Navigation,
   Swiper
-} from "../chunks/chunk-WPE5DA5P.js";
+} from "../chunks/chunk-3GBN4BPZ.js";
 
 // src/scripts/homepage.ts
 document.addEventListener("DOMContentLoaded", () => {

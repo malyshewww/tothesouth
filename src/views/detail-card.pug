@@ -19,17 +19,20 @@ block content
 				.page-title= pageTitle 
 				+headerCard("Radisson Blu Hotel Kaliningrad ", "Калининград, пл. Победы, д. 10")
 				.detail-card__body 
-					aside.detail-card__aside.aside
+					aside.detail-card__aside.aside(data-da=".box-card-mobile, 767.98, 0")
 						+asideMap
 						+asideContacts("По вопросам бронирования")
 					.detail-card__main
 						+gallery([...cardPage.gallery])
-						+detailCardBox("Описание")
+						+detailCardBox("Описание", "", "description")
 							.box-card__content.content 
 								p Мы очень признательны Вам, что Вы обратили внимание на наш гостевой дом На Победе. Удобное место расположение его выгодно отличает о  других мест отдыха, находясь в центре поселка Лазаревское.
 								p В шаговой доступности находится центральный рынок, аквапарк «Наутилус», экскурсионные бюро, концертный зал ЦНК и места отдыха. И главное — до моря 5 — 10 минут спокойным шагом! Фонового шума в ночное время от кафе и дискотек с центральной набережной не слышно.
 								p Территория гостевого дома На Победе облагорожена: газоны, высажены тропические растения и пальмы. Для отдыхающих обустроена площадка для отдыха.
 								p Номерной фонд состоит из 2 и 3 местных номеров со всеми удобствами. В каждом номере: телевизор, кондиционер, холодильник, душ, санузел). Производится ежедневная уборка.
+							button(type="button").btn-detail.box-card__btn-show 
+								span Подробнее об отеле
+						.box-card-mobile
 						section.detail-card__box.box-card
 							.accordeon.accordeon-price
 								.accordeon__item
@@ -46,21 +49,20 @@ block content
 													tr 	
 														th 
 														th 
-														- for (var x = 0; x < 5; x++)
+														- for (var x = 0; x < 6; x++)
 															th 21.05 - 30.06
 												tbody.table-price__body 
 													- for (var i = 0; i < 4; i++)
 														tr 
 															td Двухместный «Эконом» (2-й этаж)
 															td за комнату
-															- for (var x = 0; x < 5; x++)
+															- for (var x = 0; x < 6; x++)
 																td 1000
 						.detail-card__rooms
 							each item in cardPage.rooms
 								+roomCard(item)
 						+detailCardBox("Расположение", "Калининград, пл. Победы, д. 10", "location")
 							.box-card__map 
-								//- .map#map-location
 								button(type="button").map-button.btn.btn-white Показать на карте
 							.box-card__places.places 
 								each item in cardPage.places
@@ -80,6 +82,7 @@ block content
 									.box-reviews__text 
 										p Отлично
 										p.box-reviews__text-small на основании 895 оценок
+										p.box-reviews__text-alternative 895 оценок
 							.box-reviews__progress.progress-items
 								each item in cardPage.reviews.progress
 									.progress-item(class=`progress-item--${item.key}`)
@@ -99,15 +102,15 @@ block content
 														img(src="assets/images/detail-card/reviews/logo.png", alt="логотип")
 													+rating("3")
 													.item-reviews__author Анастасия
-												.item-reviews__content 
+												.item-reviews__content.text-clamp
 													p Прекрасный отель. Вид из окна просто потрясающий. Вечером сидели в ресторане и любовались видом. Номер отличный, большой, чистый. Кровать очень большая. В душе всегда есть горячая вода. Персонал молодцы, какой вопрос не задашь, они всегда знаю...
 												.item-reviews__footer 
 													.item-reviews__date 12.08.22
-													a(href="#").item-reviews__btn.btn-detail Подробнее
+													+btnDetail("Подробнее")
 									.slider-controls 
 										button(type="button").slider-button.slider-button-prev
 										button(type="button").slider-button.slider-button-next
-								a(href="#").btn.btn-blue-transparent.btn-lg Читать все отзывы 
+								a(href="#").btn.btn-blue-transparent.btn-lg.box-reviews__btn-show Читать все отзывы 
 						+detailCardBox("Удобства")
 							ul.features-list.comform-features
 								each feature in cardPage.comfort
@@ -129,7 +132,7 @@ block content
 									.conditions__item.item-condition
 										.item-condition__heading Отмена / предоплата
 										.item-condition__content 
-											.item-condition__text Правила отмены бронирования и предоплаты зависят от типа выбранного варианта. Проверьте #[a(href="") условия бронирования] каждого варианта, прежде чем сделать выбор.
+											.item-condition__text Правила отмены бронирования и предоплаты зависят от типа выбранного варианта. Проверьте #[a(href="").text-link условия бронирования] каждого варианта, прежде чем сделать выбор.
 						+detailCardBox("Популярные вопросы")
 							.box-card__faq.accordeon
 								each item in cardPage.faq

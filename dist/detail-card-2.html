@@ -92,19 +92,24 @@
 						<div class="page-title">Дельфинарий «Карадагский»</div>
 						<div class="header-card">
 							<div class="header-card__info">
-								<div class="rating">
-									<ul class="r-4 rating__list">
-										<li class="rating__item"> </li>
-										<li class="rating__item"> </li>
-										<li class="rating__item"> </li>
-										<li class="rating__item"> </li>
-										<li class="rating__item"> </li>
-									</ul>
+								<div class="header-card__info-top">
+									<div class="rating">
+										<ul class="r-4 rating__list">
+											<li class="rating__item"> </li>
+											<li class="rating__item"> </li>
+											<li class="rating__item"> </li>
+											<li class="rating__item"> </li>
+											<li class="rating__item"> </li>
+										</ul>
+									</div>
 								</div>
 								<div class="header-card__name">Дельфинарий «Карадагский»</div>
 								<div class="header-card__location">пер. Береговой, 11, п. Курортное, г. Феодосия, Республика Крым, Россия</div>
+								<button class="btn-detail header-card__show-map" type="button">
+									<span>Показать на карте</span>
+								</button>
 							</div>
-							<div class="header-card__actions">
+							<div class="header-card__actions" data-da=".header-card__info-top, 767.98, 1">
 								<div class="header-card__actions-item">
 									<button class="btn-shape" type="button">
 										<svg width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -120,7 +125,7 @@
 										</svg>
 									</button>
 								</div>
-								<button class="btn btn-blue" type="button">Узнать цены</button>
+								<button class="btn btn-blue header-card__btn-price" type="button">Узнать цены</button>
 							</div>
 						</div>
 						<div class="detail-card__body">
@@ -164,9 +169,9 @@
 								</div>
 							</aside>
 							<div class="detail-card__main">
-								<div class="detail-card__gallery gallery">
-									<div class="gallery-body">
-										<div class="gallery-wrapper">
+								<div class="detail-card__gallery gallery" data-da=".box-card--description, 767.98, 0">
+									<div class="swiper gallery-body">
+										<div class="swiper-wrapper gallery-wrapper">
 											<a class="gallery-item" href="assets/images/detail-card/gallery/1.jpg" data-fancybox="gallery">
 												<div class="ibg gallery-item__image">
 													<img src="assets/images/detail-card/gallery/1.jpg" alt="фото">
@@ -201,6 +206,7 @@
 												</div>
 											</a>
 										</div>
+										<div class="slider-pagination"></div>
 									</div>
 								</div>
 								<section class="box-card detail-card__box">
@@ -419,8 +425,8 @@
 									</ul>
 								</div>
 								<div class="categories-slider">
-									<div class="categories-slider__body swiper">
-										<div class="categories-slider__wrapper swiper-wrapper">
+									<div class="swiper categories-slider__body">
+										<div class="swiper-wrapper categories-slider__wrapper">
 											<div class="categories-slider__item">
 												<div class="facility-preview">
 													<div class="facility-preview__image-wrap">

@@ -405,6 +405,7 @@ body.lock {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-shrink: 0;
 }
 .btn-shape svg,
 .btn-favorite-plus svg {
@@ -491,6 +492,10 @@ body.lock {
 }
 .text-clamp p {
   display: inline;
+}
+.text-link {
+  color: #1c8cf3;
+  transition: color 0.3s;
 }
 .header {
   padding: 10px 0;
@@ -732,6 +737,7 @@ body:not(.home) .header__btn-add {
   margin: 0;
   list-style-type: none;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 5px;
 }
@@ -2136,6 +2142,11 @@ html.with-fancybox body.hide-scrollbar {
   .heading {
     margin-bottom: 20px;
   }
+  .btn-shape,
+  .btn-favorite-plus {
+    width: 20px;
+    height: 20px;
+  }
   .footer {
     padding: 30px 0;
   }
@@ -2288,6 +2299,12 @@ html.with-fancybox body.hide-scrollbar {
     color: #fff;
     background-color: #18abc6;
     border-color: #18abc6;
+  }
+  .text-link:hover {
+    color: #309bfd;
+  }
+  .text-link:active {
+    color: #1685eb;
   }
   .header__btn-choice:hover {
     color: #fff;

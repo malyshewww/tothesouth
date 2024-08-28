@@ -1,0 +1,19 @@
+@import '../config/variables';
+@import '../libs/simplebar.scss';
+
+.simplebar-track.simplebar-horizontal {
+	height: 3px;
+	background-color: $gray-line;
+}
+.simplebar-track.simplebar-horizontal .simplebar-scrollbar {
+	background-color: $blue-1;
+}
+.simplebar-scrollbar.simplebar-hover {
+	cursor: pointer;
+}
+.simplebar-track.simplebar-horizontal {
+	pointer-events: all;
+}
+.simplebar-placeholder {
+	width: auto !important;
+}

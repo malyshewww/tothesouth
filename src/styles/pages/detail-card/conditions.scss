@@ -1,12 +1,19 @@
 .conditions {
 	&__items {
 		display: grid;
-		gap: 20px;
+		gap: 22px;
+		@media screen and (max-width: $md) {
+			margin-top: 10px;
+			gap: 20px;
+		}
 	}
 }
 .item-condition {
 	display: grid;
 	gap: 20px;
+	@media screen and (max-width: $md) {
+		gap: 15px;
+	}
 	&__heading {
 		font-weight: 600;
 		font-size: 16px;
@@ -45,6 +52,11 @@
 		justify-content: space-between;
 		gap: 20px;
 		flex-wrap: wrap;
+		@media screen and (max-width: $md) {
+			max-width: 100%;
+			flex-direction: column;
+			gap: 10px;
+		}
 	}
 	&__list-item {
 		display: flex;

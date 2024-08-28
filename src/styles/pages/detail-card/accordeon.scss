@@ -11,9 +11,15 @@
 			& .accordeon__button {
 				& span:nth-child(1) {
 					display: none;
+					@media screen and (max-width: $md) {
+						display: none;
+					}
 				}
 				& span:nth-child(2) {
 					display: block;
+					@media screen and (max-width: $md) {
+						display: none;
+					}
 				}
 			}
 		}
@@ -43,6 +49,9 @@
 				cursor: pointer;
 			}
 		}
+		@media screen and (max-width: $md) {
+			align-items: flex-start;
+		}
 	}
 	&__icon {
 		width: 14px;
@@ -62,9 +71,17 @@
 			transition:
 				transform $time,
 				opacity $time;
+			@media screen and (max-width: $md) {
+				width: 12px;
+			}
 		}
 		&::after {
 			transform: rotate(90deg);
+		}
+		@media screen and (max-width: $md) {
+			width: 12px;
+			height: 12px;
+			margin-top: 6px;
 		}
 	}
 	&__content {
@@ -80,6 +97,10 @@
 		line-height: 130%;
 		border-radius: 5px;
 		background: $gray-background;
+		@media screen and (max-width: $md) {
+			font-size: 14px;
+			line-height: 140%;
+		}
 	}
 	&__button {
 		display: flex;
@@ -115,12 +136,35 @@
 			&::before {
 				content: none;
 			}
+			@media screen and (max-width: $md) {
+				font-size: 18px;
+				height: 130%;
+				padding-bottom: 10px;
+				border: none;
+				align-items: center;
+			}
 		}
 		&__icon {
+			width: 14px;
+			height: 14px;
 			&::before,
 			&::after {
 				background-color: $blue-1;
+				@media screen and (max-width: $md) {
+					width: calc(100% - 4px);
+					inset: 0;
+					margin: auto;
+					background-color: $black;
+				}
 			}
+			@media screen and (max-width: $md) {
+				width: 18px;
+				height: 18px;
+			}
+			// &::after {
+			// 	transform: rotate(90deg) translateX(-50%);
+			// 	opacity: 1;
+			// }
 		}
 		&__content {
 		}
@@ -130,6 +174,33 @@
 					margin-top: 20px;
 				}
 			}
+		}
+		&__button {
+			gap: 20px;
+			@media screen and (max-width: $md) {
+				& span {
+					display: none;
+					&:nth-child(1) {
+						display: none;
+					}
+					&:nth-child(2) {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}
+.box-card__faq {
+	gap: 21px;
+	@media screen and (max-width: $md) {
+		gap: 10px;
+	}
+	& .accordeon__header {
+		padding-right: 4px;
+		padding-bottom: 23.5px;
+		@media screen and (max-width: $md) {
+			padding-bottom: 10px;
 		}
 	}
 }

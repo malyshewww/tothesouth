@@ -1,9 +1,9 @@
 import { Fancybox } from '@fancyapps/ui';
 import Swiper from 'swiper';
-import { Navigation } from 'swiper/modules';
+import { Navigation, Pagination } from 'swiper/modules';
 
 import './modules/accordeon';
-// import './modules/map-location';
+import './modules/custom-scrollbar';
 
 // Fancybox
 Fancybox.bind('[data-fancybox]', {
@@ -34,16 +34,24 @@ document.addEventListener('DOMContentLoaded', function () {
 		const buttonNext = reviewsSlider.querySelector('.slider-button-next');
 		let reviewsSwiper = new Swiper(reviewsSlider, {
 			modules: [Navigation],
-			slidesPerView: 3,
 			speed: 800,
 			slideClass: 'slider-reviews__item',
 			wrapperClass: 'slider-reviews__wrapper',
-			spaceBetween: 20,
 			initialSlide: 0,
 			grabCursor: true,
 			navigation: {
 				prevEl: buttonPrev,
 				nextEl: buttonNext,
+			},
+			breakpoints: {
+				300: {
+					slidesPerView: 1.5,
+					spaceBetween: 15,
+				},
+				767.98: {
+					slidesPerView: 3,
+					spaceBetween: 20,
+				},
 			},
 			on: {
 				init: function (swiper) {
@@ -64,34 +72,96 @@ document.addEventListener('DOMContentLoaded', function () {
 			},
 		});
 	}
-	const categoriesSliders = document.querySelectorAll('.categories-slider__body');
-	if (categoriesSliders.length) {
-		categoriesSliders.forEach((categoriesSlider) => {
-			const buttonPrev = categoriesSlider.parentNode.querySelector('.slider-button-prev');
-			const buttonNext = categoriesSlider.parentNode.querySelector('.slider-button-next');
-			let categoriesSwiper = new Swiper(categoriesSlider, {
-				modules: [Navigation],
-				slidesPerView: 4,
+	function initCategoriesSliders() {
+		let categoriesSwiper = null;
+		if (window.matchMedia('(min-width: 767.98px)').matches) {
+			const categoriesSliders = document.querySelectorAll('.categories-slider__body');
+			if (categoriesSliders.length) {
+				categoriesSliders.forEach((categoriesSlider) => {
+					const buttonPrev = categoriesSlider.parentNode.querySelector('.slider-button-prev');
+					const buttonNext = categoriesSlider.parentNode.querySelector('.slider-button-next');
+					categoriesSwiper = new Swiper(categoriesSlider, {
+						modules: [Navigation],
+						speed: 800,
+						slideClass: 'categories-slider__item',
+						spaceBetween: 30,
+						navigation: {
+							prevEl: buttonPrev,
+							nextEl: buttonNext,
+						},
+						breakpoints: {
+							300: {
+								slidesPerView: 3,
+								spaceBetween: 15,
+								slidesPerGroup: 3,
+							},
+							1024: {
+								slidesPerView: 4,
+								spaceBetween: 30,
+								slidesPerGroup: 4,
+							},
+						},
+						on: {
+							init: function (swiper) {
+								const slides = swiper.slides;
+								const sliderControls = buttonPrev?.parentNode || buttonNext?.parentNode;
+								if (slides.length <= swiper.passedParams.slidesPerView) {
+									swiper.navigation.destroy();
+									sliderControls?.remove();
+								}
+							},
+						},
+					});
+				});
+			}
+		} else {
+			if (categoriesSwiper !== null) {
+				categoriesSwiper.destroy();
+			}
+		}
+	}
+	initCategoriesSliders();
+
+	const gallerySlider = document.querySelector('.gallery-body');
+	let gallerySwiper = null;
+	function initializeSwiper() {
+		if (!gallerySwiper && gallerySlider) {
+			const sliderPagination = gallerySlider.querySelector('.slider-pagination');
+			gallerySwiper = new Swiper(gallerySlider, {
+				modules: [Pagination],
+				slideClass: 'gallery-item',
+				spaceBetween: 10,
+				slidesPerView: 1,
 				speed: 800,
-				slideClass: 'categories-slider__item',
-				spaceBetween: 30,
-				navigation: {
-					prevEl: buttonPrev,
-					nextEl: buttonNext,
-				},
-				on: {
-					init: function (swiper) {
-						const slides = swiper.slides;
-						const sliderControls = buttonPrev?.parentNode || buttonNext?.parentNode;
-						if (slides.length <= swiper.passedParams.slidesPerView) {
-							swiper.navigation.destroy();
-							sliderControls?.remove();
-						}
-					},
+				centeredSlides: true,
+				pagination: {
+					el: sliderPagination,
+					type: 'bullets',
+					clickable: true,
+					// dynamicBullets: true,
 				},
 			});
-		});
+		}
 	}
+	function destroySwiper() {
+		if (gallerySwiper) {
+			gallerySwiper.destroy();
+			gallerySwiper = null;
+		}
+	}
+	function checkScreenWidth() {
+		if (window.matchMedia('(max-width: 767.98px)').matches) {
+			// Инициализация Swiper, если ширина экрана меньше или равна 991.98 пикселей
+			initializeSwiper();
+		} else {
+			// Отмена инициализации Swiper, если ширина экрана больше 991.98 пикселей
+			destroySwiper();
+		}
+	}
+	// Проверяем при загрузке страницы
+	checkScreenWidth();
+	// Проверяем при изменении размера экрана
+	window.addEventListener('resize', checkScreenWidth);
 
 	// Смена цвета для прогресса в блоке отзывов
 	const backgrounds = {

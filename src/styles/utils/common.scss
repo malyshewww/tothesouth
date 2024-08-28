@@ -465,6 +465,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-shrink: 0;
 	& svg {
 		flex-shrink: 0;
 		display: block;
@@ -484,6 +485,10 @@ body {
 				stroke-width: 2px;
 			}
 		}
+	}
+	@media screen and (max-width: $md) {
+		width: 20px;
+		height: 20px;
 	}
 }
 
@@ -567,5 +572,18 @@ body {
 	position: relative;
 	& p {
 		display: inline;
+	}
+}
+
+.text-link {
+	color: $blue;
+	transition: color $time;
+	@media (any-hover: hover) {
+		&:hover {
+			color: #309bfd;
+		}
+		&:active {
+			color: #1685eb;
+		}
 	}
 }
