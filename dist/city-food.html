@@ -17,6 +17,7 @@
 	<link rel="canonical" href="https://example.com">
 	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet">
 	<link href="assets/styles/main.css" rel="stylesheet">
+	<link href="assets/styles/content.css" rel="stylesheet">
 	<link href="assets/styles/facilities.css" rel="stylesheet">
 	<link href="assets/styles/forms.css" rel="stylesheet">
 	<meta name="theme-color" content="#fff">
@@ -37,6 +38,13 @@
 			<div class="container">
 				<div class="header__body">
 					<div class="header__left">
+						<div class="header-burger">
+							<svg width="21" height="17" viewBox="0 0 21 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M1 1.61646H20" stroke="#8897B1" stroke-width="1.5" stroke-linecap="round"></path>
+								<path d="M1 8.61646H20" stroke="#8897B1" stroke-width="1.5" stroke-linecap="round"></path>
+								<path d="M1 15.6165L20 15.6165" stroke="#8897B1" stroke-width="1.5" stroke-linecap="round"></path>
+							</svg>
+						</div>
 						<a class="header__logo logo" href="homepage.html">
 							<img src="assets/images/logo-blue.svg" alt="логотип">
 						</a>
@@ -45,8 +53,13 @@
 						</div>
 					</div>
 					<div class="header__links">
-						<a class="header__favorite" href="#"></a>
-						<a class="btn btn-transparent header__btn-auth" href="auth.html">Авторизация</a>
+						<a class="header__favorite" href="favorites.html">
+							<svg width="26" height="23" viewBox="0 0 26 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M23.1494 2.85655C21.965 1.66785 20.3584 1 18.6831 1C17.0077 1 15.4011 1.66785 14.2167 2.85655L12.9997 4.07749L11.7826 2.85655C9.31597 0.38197 5.31669 0.381971 2.85001 2.85655C0.38333 5.33113 0.38333 9.34322 2.85001 11.8178L4.06705 13.0387L12.9997 22L21.9323 13.0387L23.1494 11.8178C24.3343 10.6297 25 9.01786 25 7.33718C25 5.6565 24.3343 4.0447 23.1494 2.85655Z" fill="#FF6933"></path>
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M13.6856 2.32707C15.0104 0.997456 16.808 0.25 18.6831 0.25C20.5581 0.25 22.3559 0.997503 23.6807 2.3272C25.0059 3.65616 25.75 5.45841 25.75 7.33718C25.75 9.21606 25.0058 11.0184 23.6804 12.3474L13.5309 22.5295C13.3902 22.6707 13.199 22.75 12.9997 22.75C12.8004 22.75 12.6092 22.6707 12.4685 22.5295L2.31883 12.3473C-0.439611 9.58001 -0.439611 5.09435 2.31883 2.32707C5.0786 -0.441535 9.55406 -0.441536 12.3138 2.32707L12.9997 3.01513L13.6856 2.32707C13.6856 2.32703 13.6855 2.32711 13.6856 2.32707ZM18.6831 1.75C17.2075 1.75 15.7919 2.3382 14.748 3.38591L13.5309 4.60698C13.3902 4.74815 13.199 4.82749 12.9997 4.82749C12.8004 4.82749 12.6092 4.74815 12.4685 4.60698L11.2515 3.38603C9.07788 1.20548 5.55478 1.20548 3.38119 3.38603C1.20627 5.56792 1.20627 9.10644 3.38119 11.2883L12.9997 20.9376L22.6182 11.2883C23.6626 10.241 24.25 8.81966 24.25 7.33718C24.25 5.8547 23.6628 4.43345 22.6183 3.38616C21.5744 2.33845 20.1586 1.75 18.6831 1.75Z" fill="#FF6933"></path>
+							</svg>
+						</a>
+						<a class="btn btn-transparent header__btn-auth" href="auth-registration.html">Авторизация</a>
 						<a class="btn btn-white header__btn-add" href="add-project.html">Добавить проект</a>
 					</div>
 				</div>
@@ -108,19 +121,35 @@
 									</li>
 								</ul>
 							</li>
+							<li class="navigation-city__item hidden">
+								<a class="navigation-city__link active" href="city-food.html">Питание</a>
+							</li>
+							<li class="navigation-city__item hidden">
+								<a class="navigation-city__link" href="city-transport.html">Транспорт</a>
+							</li>
+							<li class="navigation-city__item hidden">
+								<a class="navigation-city__link" href="city-gaiety.html">Развлечения</a>
+							</li>
 						</ul>
 					</nav>
-					<div class="heading">
+					<div class="city-heading heading">
 						<div class="heading__title title-xs">Где можно пообедать в Алуште</div>
 					</div>
+					<button class="filter-button" type="button">Фильтр</button>
 					<div class="city-layout">
 						<aside class="aside">
-							<div class="active object-card object-card--4">
-								<span class="object-card__icon"></span>
-								<span class="object-card__caption">3 найдено</span>
+							<div class="aside-object">
+								<div class="active object-card object-card--4">
+									<span class="object-card__icon"></span>
+									<span class="object-card__caption">3 найдено</span>
+								</div>
 							</div>
 							<div class="aside-form">
 								<form class="form" action="#" method="post">
+									<div class="form-heading">
+										<div class="form-heading__title">Фильтр</div>
+										<button class="btn-close form-heading__close" type="button"></button>
+									</div>
 									<div class="form-groups">
 										<fieldset class="form-group">
 											<legend class="form-group__caption">Регион, город</legend>
@@ -153,7 +182,7 @@
 											<legend class="form-group__caption">Раздел</legend>
 											<div class="custom-dropdown">
 												<div class="custom-dropdown__wrapper" data-dropdown>
-													<div class="custom-dropdown__btn" data-dropdown-button>Развлечения</div>
+													<div class="custom-dropdown__btn" data-dropdown-button>Питание</div>
 													<ul class="custom-dropdown__list select-list" data-dropdown-list>
 														<li class="select-list__item" data-value="Питание">Питание</li>
 														<li class="select-list__item" data-value="Транспорт">Транспорт</li>
@@ -184,6 +213,11 @@
 											</div>
 										</fieldset>
 									</div>
+									<div class="form__bottom-wrap">
+										<div class="form__bottom">
+											<button class="btn btn-blue btn-submit" type="button">Выбрать </button>
+										</div>
+									</div>
 								</form>
 							</div>
 						</aside>
@@ -194,16 +228,23 @@
 										<div class="facility-preview__image ibg">
 											<img src="assets/images/facilities/1.jpg" alt="Фаст-фуд «Sub&amp;Burger»">
 										</div>
-										<button class="button-favorite" type="button"> </button>
+										<button class="button-favorite" type="button">
+											<svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path fill-rule="evenodd" clip-rule="evenodd" d="M14.3434 2.16035C13.6031 1.41741 12.599 1 11.5519 1C10.5048 1 9.50068 1.41741 8.76046 2.16035L7.99981 2.92343L7.23916 2.16035C5.69748 0.613732 3.19793 0.613732 1.65626 2.16035C0.114581 3.70696 0.114581 6.21452 1.65626 7.76113L2.41691 8.52422L7.99981 14.125L13.5827 8.52422L14.3434 7.76113C15.0839 7.01854 15.5 6.01116 15.5 4.96074C15.5 3.91031 15.0839 2.90293 14.3434 2.16035Z" fill="#FF6933"></path>
+												<path fill-rule="evenodd" clip-rule="evenodd" d="M8.42847 1.82942C9.25648 0.99841 10.38 0.53125 11.5519 0.53125C12.7238 0.53125 13.8474 0.998439 14.6754 1.8295C15.5037 2.6601 15.9688 3.78651 15.9688 4.96074C15.9688 6.13504 15.5036 7.26151 14.6753 8.09213L8.33179 14.4559C8.24384 14.5442 8.12439 14.5937 7.99981 14.5937C7.87523 14.5937 7.75577 14.5442 7.66782 14.4559L1.32427 8.09205C-0.399757 6.3625 -0.399757 3.55897 1.32427 1.82942C3.04912 0.0990403 5.84629 0.0990402 7.57114 1.82942L7.99981 2.25946L8.42847 1.82942C8.4285 1.82939 8.42845 1.82945 8.42847 1.82942ZM11.5519 1.46875C10.6297 1.46875 9.74494 1.83638 9.09252 2.49119L8.33179 3.25436C8.24384 3.34259 8.12439 3.39218 7.99981 3.39218C7.87523 3.39218 7.75577 3.34259 7.66782 3.25436L6.90717 2.49127C5.54867 1.12842 3.34674 1.12842 1.98824 2.49127C0.628919 3.85495 0.628919 6.06653 1.98824 7.4302L7.99981 13.461L14.0114 7.4302C14.6641 6.77564 15.0312 5.88729 15.0312 4.96074C15.0312 4.03419 14.6642 3.14591 14.0115 2.49135C13.359 1.83653 12.4741 1.46875 11.5519 1.46875Z" fill="#FF6933"></path>
+											</svg>
+										</button>
 									</div>
 									<div class="facility-preview__body">
-										<div class="facility-preview__title">
+										<div class="anim-title facility-preview__title">
 											<span>Фаст-фуд «Sub&amp;Burger»</span>
 										</div>
 										<div class="facility-preview__sub-title">Голубицкая, ул. Красная, д. 178</div>
-										<div class="facility-preview__description">
+										<div class="facility-preview__description text-clamp">
 											<p>Sub&amp;Burger — это новое направление линии фаст-фуд в индустрии питания! Кафе нового образца, команда которого прилагает массу усилий для....</p>
-											<a class="btn-detail" href="#">Подобнее</a>
+											<a class="btn-detail" href="#">
+												<span>Подробнее</span>
+											</a>
 										</div>
 									</div>
 								</div>
@@ -212,16 +253,23 @@
 										<div class="facility-preview__image ibg">
 											<img src="assets/images/facilities/2.jpg" alt="Ресторан-пивоварня ФабрикантЪ">
 										</div>
-										<button class="button-favorite" type="button"> </button>
+										<button class="button-favorite" type="button">
+											<svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path fill-rule="evenodd" clip-rule="evenodd" d="M14.3434 2.16035C13.6031 1.41741 12.599 1 11.5519 1C10.5048 1 9.50068 1.41741 8.76046 2.16035L7.99981 2.92343L7.23916 2.16035C5.69748 0.613732 3.19793 0.613732 1.65626 2.16035C0.114581 3.70696 0.114581 6.21452 1.65626 7.76113L2.41691 8.52422L7.99981 14.125L13.5827 8.52422L14.3434 7.76113C15.0839 7.01854 15.5 6.01116 15.5 4.96074C15.5 3.91031 15.0839 2.90293 14.3434 2.16035Z" fill="#FF6933"></path>
+												<path fill-rule="evenodd" clip-rule="evenodd" d="M8.42847 1.82942C9.25648 0.99841 10.38 0.53125 11.5519 0.53125C12.7238 0.53125 13.8474 0.998439 14.6754 1.8295C15.5037 2.6601 15.9688 3.78651 15.9688 4.96074C15.9688 6.13504 15.5036 7.26151 14.6753 8.09213L8.33179 14.4559C8.24384 14.5442 8.12439 14.5937 7.99981 14.5937C7.87523 14.5937 7.75577 14.5442 7.66782 14.4559L1.32427 8.09205C-0.399757 6.3625 -0.399757 3.55897 1.32427 1.82942C3.04912 0.0990403 5.84629 0.0990402 7.57114 1.82942L7.99981 2.25946L8.42847 1.82942C8.4285 1.82939 8.42845 1.82945 8.42847 1.82942ZM11.5519 1.46875C10.6297 1.46875 9.74494 1.83638 9.09252 2.49119L8.33179 3.25436C8.24384 3.34259 8.12439 3.39218 7.99981 3.39218C7.87523 3.39218 7.75577 3.34259 7.66782 3.25436L6.90717 2.49127C5.54867 1.12842 3.34674 1.12842 1.98824 2.49127C0.628919 3.85495 0.628919 6.06653 1.98824 7.4302L7.99981 13.461L14.0114 7.4302C14.6641 6.77564 15.0312 5.88729 15.0312 4.96074C15.0312 4.03419 14.6642 3.14591 14.0115 2.49135C13.359 1.83653 12.4741 1.46875 11.5519 1.46875Z" fill="#FF6933"></path>
+											</svg>
+										</button>
 									</div>
 									<div class="facility-preview__body">
-										<div class="facility-preview__title">
+										<div class="anim-title facility-preview__title">
 											<span>Ресторан-пивоварня ФабрикантЪ</span>
 										</div>
 										<div class="facility-preview__sub-title">Голубицкая, ул. Красная, д. 178</div>
-										<div class="facility-preview__description">
+										<div class="facility-preview__description text-clamp">
 											<p>Ресторан-пивоварня ФабрикантЪ в Симферополе – островок уюта и комфорта в самом центре шумного города. Здесь все настоящее: пиво из</p>
-											<a class="btn-detail" href="#">Подобнее</a>
+											<a class="btn-detail" href="#">
+												<span>Подробнее</span>
+											</a>
 										</div>
 									</div>
 								</div>
@@ -230,16 +278,23 @@
 										<div class="facility-preview__image ibg">
 											<img src="assets/images/facilities/3.jpg" alt="23 Cafe Boulangerie">
 										</div>
-										<button class="button-favorite" type="button"> </button>
+										<button class="button-favorite" type="button">
+											<svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path fill-rule="evenodd" clip-rule="evenodd" d="M14.3434 2.16035C13.6031 1.41741 12.599 1 11.5519 1C10.5048 1 9.50068 1.41741 8.76046 2.16035L7.99981 2.92343L7.23916 2.16035C5.69748 0.613732 3.19793 0.613732 1.65626 2.16035C0.114581 3.70696 0.114581 6.21452 1.65626 7.76113L2.41691 8.52422L7.99981 14.125L13.5827 8.52422L14.3434 7.76113C15.0839 7.01854 15.5 6.01116 15.5 4.96074C15.5 3.91031 15.0839 2.90293 14.3434 2.16035Z" fill="#FF6933"></path>
+												<path fill-rule="evenodd" clip-rule="evenodd" d="M8.42847 1.82942C9.25648 0.99841 10.38 0.53125 11.5519 0.53125C12.7238 0.53125 13.8474 0.998439 14.6754 1.8295C15.5037 2.6601 15.9688 3.78651 15.9688 4.96074C15.9688 6.13504 15.5036 7.26151 14.6753 8.09213L8.33179 14.4559C8.24384 14.5442 8.12439 14.5937 7.99981 14.5937C7.87523 14.5937 7.75577 14.5442 7.66782 14.4559L1.32427 8.09205C-0.399757 6.3625 -0.399757 3.55897 1.32427 1.82942C3.04912 0.0990403 5.84629 0.0990402 7.57114 1.82942L7.99981 2.25946L8.42847 1.82942C8.4285 1.82939 8.42845 1.82945 8.42847 1.82942ZM11.5519 1.46875C10.6297 1.46875 9.74494 1.83638 9.09252 2.49119L8.33179 3.25436C8.24384 3.34259 8.12439 3.39218 7.99981 3.39218C7.87523 3.39218 7.75577 3.34259 7.66782 3.25436L6.90717 2.49127C5.54867 1.12842 3.34674 1.12842 1.98824 2.49127C0.628919 3.85495 0.628919 6.06653 1.98824 7.4302L7.99981 13.461L14.0114 7.4302C14.6641 6.77564 15.0312 5.88729 15.0312 4.96074C15.0312 4.03419 14.6642 3.14591 14.0115 2.49135C13.359 1.83653 12.4741 1.46875 11.5519 1.46875Z" fill="#FF6933"></path>
+											</svg>
+										</button>
 									</div>
 									<div class="facility-preview__body">
-										<div class="facility-preview__title">
+										<div class="anim-title facility-preview__title">
 											<span>23 Cafe Boulangerie</span>
 										</div>
 										<div class="facility-preview__sub-title">Голубицкая, ул. Красная, д. 178</div>
-										<div class="facility-preview__description">
+										<div class="facility-preview__description text-clamp">
 											<p>23 Cafe Boulangerie- это особое место, где витают ароматы свежей французской выпечки, где царит атмосфера уюта и домашнего тепла...</p>
-											<a class="btn-detail" href="#">Подобнее</a>
+											<a class="btn-detail" href="#">
+												<span>Подробнее</span>
+											</a>
 										</div>
 									</div>
 								</div>
@@ -248,16 +303,23 @@
 										<div class="facility-preview__image ibg">
 											<img src="assets/images/facilities/4.jpg" alt="Фаст-фуд «Sub&amp;Burger»">
 										</div>
-										<button class="button-favorite" type="button"> </button>
+										<button class="button-favorite" type="button">
+											<svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path fill-rule="evenodd" clip-rule="evenodd" d="M14.3434 2.16035C13.6031 1.41741 12.599 1 11.5519 1C10.5048 1 9.50068 1.41741 8.76046 2.16035L7.99981 2.92343L7.23916 2.16035C5.69748 0.613732 3.19793 0.613732 1.65626 2.16035C0.114581 3.70696 0.114581 6.21452 1.65626 7.76113L2.41691 8.52422L7.99981 14.125L13.5827 8.52422L14.3434 7.76113C15.0839 7.01854 15.5 6.01116 15.5 4.96074C15.5 3.91031 15.0839 2.90293 14.3434 2.16035Z" fill="#FF6933"></path>
+												<path fill-rule="evenodd" clip-rule="evenodd" d="M8.42847 1.82942C9.25648 0.99841 10.38 0.53125 11.5519 0.53125C12.7238 0.53125 13.8474 0.998439 14.6754 1.8295C15.5037 2.6601 15.9688 3.78651 15.9688 4.96074C15.9688 6.13504 15.5036 7.26151 14.6753 8.09213L8.33179 14.4559C8.24384 14.5442 8.12439 14.5937 7.99981 14.5937C7.87523 14.5937 7.75577 14.5442 7.66782 14.4559L1.32427 8.09205C-0.399757 6.3625 -0.399757 3.55897 1.32427 1.82942C3.04912 0.0990403 5.84629 0.0990402 7.57114 1.82942L7.99981 2.25946L8.42847 1.82942C8.4285 1.82939 8.42845 1.82945 8.42847 1.82942ZM11.5519 1.46875C10.6297 1.46875 9.74494 1.83638 9.09252 2.49119L8.33179 3.25436C8.24384 3.34259 8.12439 3.39218 7.99981 3.39218C7.87523 3.39218 7.75577 3.34259 7.66782 3.25436L6.90717 2.49127C5.54867 1.12842 3.34674 1.12842 1.98824 2.49127C0.628919 3.85495 0.628919 6.06653 1.98824 7.4302L7.99981 13.461L14.0114 7.4302C14.6641 6.77564 15.0312 5.88729 15.0312 4.96074C15.0312 4.03419 14.6642 3.14591 14.0115 2.49135C13.359 1.83653 12.4741 1.46875 11.5519 1.46875Z" fill="#FF6933"></path>
+											</svg>
+										</button>
 									</div>
 									<div class="facility-preview__body">
-										<div class="facility-preview__title">
+										<div class="anim-title facility-preview__title">
 											<span>Фаст-фуд «Sub&amp;Burger»</span>
 										</div>
 										<div class="facility-preview__sub-title">Голубицкая, ул. Красная, д. 178</div>
-										<div class="facility-preview__description">
+										<div class="facility-preview__description text-clamp">
 											<p>Sub&amp;Burger — это новое направление линии фаст-фуд в индустрии питания! Кафе нового образца, команда которого прилагает массу усилий для...</p>
-											<a class="btn-detail" href="#">Подобнее</a>
+											<a class="btn-detail" href="#">
+												<span>Подробнее</span>
+											</a>
 										</div>
 									</div>
 								</div>
@@ -266,16 +328,23 @@
 										<div class="facility-preview__image ibg">
 											<img src="assets/images/facilities/5.jpg" alt="Фаст-фуд «Sub&amp;Burger»">
 										</div>
-										<button class="button-favorite" type="button"> </button>
+										<button class="button-favorite" type="button">
+											<svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path fill-rule="evenodd" clip-rule="evenodd" d="M14.3434 2.16035C13.6031 1.41741 12.599 1 11.5519 1C10.5048 1 9.50068 1.41741 8.76046 2.16035L7.99981 2.92343L7.23916 2.16035C5.69748 0.613732 3.19793 0.613732 1.65626 2.16035C0.114581 3.70696 0.114581 6.21452 1.65626 7.76113L2.41691 8.52422L7.99981 14.125L13.5827 8.52422L14.3434 7.76113C15.0839 7.01854 15.5 6.01116 15.5 4.96074C15.5 3.91031 15.0839 2.90293 14.3434 2.16035Z" fill="#FF6933"></path>
+												<path fill-rule="evenodd" clip-rule="evenodd" d="M8.42847 1.82942C9.25648 0.99841 10.38 0.53125 11.5519 0.53125C12.7238 0.53125 13.8474 0.998439 14.6754 1.8295C15.5037 2.6601 15.9688 3.78651 15.9688 4.96074C15.9688 6.13504 15.5036 7.26151 14.6753 8.09213L8.33179 14.4559C8.24384 14.5442 8.12439 14.5937 7.99981 14.5937C7.87523 14.5937 7.75577 14.5442 7.66782 14.4559L1.32427 8.09205C-0.399757 6.3625 -0.399757 3.55897 1.32427 1.82942C3.04912 0.0990403 5.84629 0.0990402 7.57114 1.82942L7.99981 2.25946L8.42847 1.82942C8.4285 1.82939 8.42845 1.82945 8.42847 1.82942ZM11.5519 1.46875C10.6297 1.46875 9.74494 1.83638 9.09252 2.49119L8.33179 3.25436C8.24384 3.34259 8.12439 3.39218 7.99981 3.39218C7.87523 3.39218 7.75577 3.34259 7.66782 3.25436L6.90717 2.49127C5.54867 1.12842 3.34674 1.12842 1.98824 2.49127C0.628919 3.85495 0.628919 6.06653 1.98824 7.4302L7.99981 13.461L14.0114 7.4302C14.6641 6.77564 15.0312 5.88729 15.0312 4.96074C15.0312 4.03419 14.6642 3.14591 14.0115 2.49135C13.359 1.83653 12.4741 1.46875 11.5519 1.46875Z" fill="#FF6933"></path>
+											</svg>
+										</button>
 									</div>
 									<div class="facility-preview__body">
-										<div class="facility-preview__title">
+										<div class="anim-title facility-preview__title">
 											<span>Фаст-фуд «Sub&amp;Burger»</span>
 										</div>
 										<div class="facility-preview__sub-title">Голубицкая, ул. Красная, д. 178</div>
-										<div class="facility-preview__description">
+										<div class="facility-preview__description text-clamp">
 											<p>Sub&amp;Burger — это новое направление линии фаст-фуд в индустрии питания! Кафе нового образца, команда которого прилагает массу усилий для...</p>
-											<a class="btn-detail" href="#">Подобнее</a>
+											<a class="btn-detail" href="#">
+												<span>Подробнее</span>
+											</a>
 										</div>
 									</div>
 								</div>
@@ -284,16 +353,23 @@
 										<div class="facility-preview__image ibg">
 											<img src="assets/images/facilities/6.jpg" alt="Фаст-фуд «Sub&amp;Burger»">
 										</div>
-										<button class="button-favorite" type="button"> </button>
+										<button class="button-favorite" type="button">
+											<svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path fill-rule="evenodd" clip-rule="evenodd" d="M14.3434 2.16035C13.6031 1.41741 12.599 1 11.5519 1C10.5048 1 9.50068 1.41741 8.76046 2.16035L7.99981 2.92343L7.23916 2.16035C5.69748 0.613732 3.19793 0.613732 1.65626 2.16035C0.114581 3.70696 0.114581 6.21452 1.65626 7.76113L2.41691 8.52422L7.99981 14.125L13.5827 8.52422L14.3434 7.76113C15.0839 7.01854 15.5 6.01116 15.5 4.96074C15.5 3.91031 15.0839 2.90293 14.3434 2.16035Z" fill="#FF6933"></path>
+												<path fill-rule="evenodd" clip-rule="evenodd" d="M8.42847 1.82942C9.25648 0.99841 10.38 0.53125 11.5519 0.53125C12.7238 0.53125 13.8474 0.998439 14.6754 1.8295C15.5037 2.6601 15.9688 3.78651 15.9688 4.96074C15.9688 6.13504 15.5036 7.26151 14.6753 8.09213L8.33179 14.4559C8.24384 14.5442 8.12439 14.5937 7.99981 14.5937C7.87523 14.5937 7.75577 14.5442 7.66782 14.4559L1.32427 8.09205C-0.399757 6.3625 -0.399757 3.55897 1.32427 1.82942C3.04912 0.0990403 5.84629 0.0990402 7.57114 1.82942L7.99981 2.25946L8.42847 1.82942C8.4285 1.82939 8.42845 1.82945 8.42847 1.82942ZM11.5519 1.46875C10.6297 1.46875 9.74494 1.83638 9.09252 2.49119L8.33179 3.25436C8.24384 3.34259 8.12439 3.39218 7.99981 3.39218C7.87523 3.39218 7.75577 3.34259 7.66782 3.25436L6.90717 2.49127C5.54867 1.12842 3.34674 1.12842 1.98824 2.49127C0.628919 3.85495 0.628919 6.06653 1.98824 7.4302L7.99981 13.461L14.0114 7.4302C14.6641 6.77564 15.0312 5.88729 15.0312 4.96074C15.0312 4.03419 14.6642 3.14591 14.0115 2.49135C13.359 1.83653 12.4741 1.46875 11.5519 1.46875Z" fill="#FF6933"></path>
+											</svg>
+										</button>
 									</div>
 									<div class="facility-preview__body">
-										<div class="facility-preview__title">
+										<div class="anim-title facility-preview__title">
 											<span>Фаст-фуд «Sub&amp;Burger»</span>
 										</div>
 										<div class="facility-preview__sub-title">Голубицкая, ул. Красная, д. 178</div>
-										<div class="facility-preview__description">
+										<div class="facility-preview__description text-clamp">
 											<p>Sub&amp;Burger — это новое направление линии фаст-фуд в индустрии питания! Кафе нового образца, команда которого прилагает массу усилий для...</p>
-											<a class="btn-detail" href="#">Подобнее</a>
+											<a class="btn-detail" href="#">
+												<span>Подробнее</span>
+											</a>
 										</div>
 									</div>
 								</div>
@@ -302,16 +378,23 @@
 										<div class="facility-preview__image ibg">
 											<img src="assets/images/facilities/4.jpg" alt="Фаст-фуд «Sub&amp;Burger»">
 										</div>
-										<button class="button-favorite" type="button"> </button>
+										<button class="button-favorite" type="button">
+											<svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path fill-rule="evenodd" clip-rule="evenodd" d="M14.3434 2.16035C13.6031 1.41741 12.599 1 11.5519 1C10.5048 1 9.50068 1.41741 8.76046 2.16035L7.99981 2.92343L7.23916 2.16035C5.69748 0.613732 3.19793 0.613732 1.65626 2.16035C0.114581 3.70696 0.114581 6.21452 1.65626 7.76113L2.41691 8.52422L7.99981 14.125L13.5827 8.52422L14.3434 7.76113C15.0839 7.01854 15.5 6.01116 15.5 4.96074C15.5 3.91031 15.0839 2.90293 14.3434 2.16035Z" fill="#FF6933"></path>
+												<path fill-rule="evenodd" clip-rule="evenodd" d="M8.42847 1.82942C9.25648 0.99841 10.38 0.53125 11.5519 0.53125C12.7238 0.53125 13.8474 0.998439 14.6754 1.8295C15.5037 2.6601 15.9688 3.78651 15.9688 4.96074C15.9688 6.13504 15.5036 7.26151 14.6753 8.09213L8.33179 14.4559C8.24384 14.5442 8.12439 14.5937 7.99981 14.5937C7.87523 14.5937 7.75577 14.5442 7.66782 14.4559L1.32427 8.09205C-0.399757 6.3625 -0.399757 3.55897 1.32427 1.82942C3.04912 0.0990403 5.84629 0.0990402 7.57114 1.82942L7.99981 2.25946L8.42847 1.82942C8.4285 1.82939 8.42845 1.82945 8.42847 1.82942ZM11.5519 1.46875C10.6297 1.46875 9.74494 1.83638 9.09252 2.49119L8.33179 3.25436C8.24384 3.34259 8.12439 3.39218 7.99981 3.39218C7.87523 3.39218 7.75577 3.34259 7.66782 3.25436L6.90717 2.49127C5.54867 1.12842 3.34674 1.12842 1.98824 2.49127C0.628919 3.85495 0.628919 6.06653 1.98824 7.4302L7.99981 13.461L14.0114 7.4302C14.6641 6.77564 15.0312 5.88729 15.0312 4.96074C15.0312 4.03419 14.6642 3.14591 14.0115 2.49135C13.359 1.83653 12.4741 1.46875 11.5519 1.46875Z" fill="#FF6933"></path>
+											</svg>
+										</button>
 									</div>
 									<div class="facility-preview__body">
-										<div class="facility-preview__title">
+										<div class="anim-title facility-preview__title">
 											<span>Фаст-фуд «Sub&amp;Burger»</span>
 										</div>
 										<div class="facility-preview__sub-title">Голубицкая, ул. Красная, д. 178</div>
-										<div class="facility-preview__description">
+										<div class="facility-preview__description text-clamp">
 											<p>Sub&amp;Burger — это новое направление линии фаст-фуд в индустрии питания! Кафе нового образца, команда которого прилагает массу усилий для...</p>
-											<a class="btn-detail" href="#">Подобнее</a>
+											<a class="btn-detail" href="#">
+												<span>Подробнее</span>
+											</a>
 										</div>
 									</div>
 								</div>
@@ -320,16 +403,23 @@
 										<div class="facility-preview__image ibg">
 											<img src="assets/images/facilities/5.jpg" alt="Фаст-фуд «Sub&amp;Burger»">
 										</div>
-										<button class="button-favorite" type="button"> </button>
+										<button class="button-favorite" type="button">
+											<svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path fill-rule="evenodd" clip-rule="evenodd" d="M14.3434 2.16035C13.6031 1.41741 12.599 1 11.5519 1C10.5048 1 9.50068 1.41741 8.76046 2.16035L7.99981 2.92343L7.23916 2.16035C5.69748 0.613732 3.19793 0.613732 1.65626 2.16035C0.114581 3.70696 0.114581 6.21452 1.65626 7.76113L2.41691 8.52422L7.99981 14.125L13.5827 8.52422L14.3434 7.76113C15.0839 7.01854 15.5 6.01116 15.5 4.96074C15.5 3.91031 15.0839 2.90293 14.3434 2.16035Z" fill="#FF6933"></path>
+												<path fill-rule="evenodd" clip-rule="evenodd" d="M8.42847 1.82942C9.25648 0.99841 10.38 0.53125 11.5519 0.53125C12.7238 0.53125 13.8474 0.998439 14.6754 1.8295C15.5037 2.6601 15.9688 3.78651 15.9688 4.96074C15.9688 6.13504 15.5036 7.26151 14.6753 8.09213L8.33179 14.4559C8.24384 14.5442 8.12439 14.5937 7.99981 14.5937C7.87523 14.5937 7.75577 14.5442 7.66782 14.4559L1.32427 8.09205C-0.399757 6.3625 -0.399757 3.55897 1.32427 1.82942C3.04912 0.0990403 5.84629 0.0990402 7.57114 1.82942L7.99981 2.25946L8.42847 1.82942C8.4285 1.82939 8.42845 1.82945 8.42847 1.82942ZM11.5519 1.46875C10.6297 1.46875 9.74494 1.83638 9.09252 2.49119L8.33179 3.25436C8.24384 3.34259 8.12439 3.39218 7.99981 3.39218C7.87523 3.39218 7.75577 3.34259 7.66782 3.25436L6.90717 2.49127C5.54867 1.12842 3.34674 1.12842 1.98824 2.49127C0.628919 3.85495 0.628919 6.06653 1.98824 7.4302L7.99981 13.461L14.0114 7.4302C14.6641 6.77564 15.0312 5.88729 15.0312 4.96074C15.0312 4.03419 14.6642 3.14591 14.0115 2.49135C13.359 1.83653 12.4741 1.46875 11.5519 1.46875Z" fill="#FF6933"></path>
+											</svg>
+										</button>
 									</div>
 									<div class="facility-preview__body">
-										<div class="facility-preview__title">
+										<div class="anim-title facility-preview__title">
 											<span>Фаст-фуд «Sub&amp;Burger»</span>
 										</div>
 										<div class="facility-preview__sub-title">Голубицкая, ул. Красная, д. 178</div>
-										<div class="facility-preview__description">
+										<div class="facility-preview__description text-clamp">
 											<p>Sub&amp;Burger — это новое направление линии фаст-фуд в индустрии питания! Кафе нового образца, команда которого прилагает массу усилий для...</p>
-											<a class="btn-detail" href="#">Подобнее</a>
+											<a class="btn-detail" href="#">
+												<span>Подробнее</span>
+											</a>
 										</div>
 									</div>
 								</div>
@@ -338,60 +428,91 @@
 										<div class="facility-preview__image ibg">
 											<img src="assets/images/facilities/6.jpg" alt="Фаст-фуд «Sub&amp;Burger»">
 										</div>
-										<button class="button-favorite" type="button"> </button>
+										<button class="button-favorite" type="button">
+											<svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path fill-rule="evenodd" clip-rule="evenodd" d="M14.3434 2.16035C13.6031 1.41741 12.599 1 11.5519 1C10.5048 1 9.50068 1.41741 8.76046 2.16035L7.99981 2.92343L7.23916 2.16035C5.69748 0.613732 3.19793 0.613732 1.65626 2.16035C0.114581 3.70696 0.114581 6.21452 1.65626 7.76113L2.41691 8.52422L7.99981 14.125L13.5827 8.52422L14.3434 7.76113C15.0839 7.01854 15.5 6.01116 15.5 4.96074C15.5 3.91031 15.0839 2.90293 14.3434 2.16035Z" fill="#FF6933"></path>
+												<path fill-rule="evenodd" clip-rule="evenodd" d="M8.42847 1.82942C9.25648 0.99841 10.38 0.53125 11.5519 0.53125C12.7238 0.53125 13.8474 0.998439 14.6754 1.8295C15.5037 2.6601 15.9688 3.78651 15.9688 4.96074C15.9688 6.13504 15.5036 7.26151 14.6753 8.09213L8.33179 14.4559C8.24384 14.5442 8.12439 14.5937 7.99981 14.5937C7.87523 14.5937 7.75577 14.5442 7.66782 14.4559L1.32427 8.09205C-0.399757 6.3625 -0.399757 3.55897 1.32427 1.82942C3.04912 0.0990403 5.84629 0.0990402 7.57114 1.82942L7.99981 2.25946L8.42847 1.82942C8.4285 1.82939 8.42845 1.82945 8.42847 1.82942ZM11.5519 1.46875C10.6297 1.46875 9.74494 1.83638 9.09252 2.49119L8.33179 3.25436C8.24384 3.34259 8.12439 3.39218 7.99981 3.39218C7.87523 3.39218 7.75577 3.34259 7.66782 3.25436L6.90717 2.49127C5.54867 1.12842 3.34674 1.12842 1.98824 2.49127C0.628919 3.85495 0.628919 6.06653 1.98824 7.4302L7.99981 13.461L14.0114 7.4302C14.6641 6.77564 15.0312 5.88729 15.0312 4.96074C15.0312 4.03419 14.6642 3.14591 14.0115 2.49135C13.359 1.83653 12.4741 1.46875 11.5519 1.46875Z" fill="#FF6933"></path>
+											</svg>
+										</button>
 									</div>
 									<div class="facility-preview__body">
-										<div class="facility-preview__title">
+										<div class="anim-title facility-preview__title">
 											<span>Фаст-фуд «Sub&amp;Burger»</span>
 										</div>
 										<div class="facility-preview__sub-title">Голубицкая, ул. Красная, д. 178</div>
-										<div class="facility-preview__description">
+										<div class="facility-preview__description text-clamp">
 											<p>Sub&amp;Burger — это новое направление линии фаст-фуд в индустрии питания! Кафе нового образца, команда которого прилагает массу усилий для...</p>
-											<a class="btn-detail" href="#">Подобнее</a>
+											<a class="btn-detail" href="#">
+												<span>Подробнее</span>
+											</a>
 										</div>
 									</div>
 								</div>
 							</div>
-							<nav class="pagination-nav">
-								<ul class="pagination">
-									<li class="page-item page-item--prev">
-										<a class="page-link" href="#">Назад</a>
-									</li>
-									<li class="page-item">
-										<a class="page-link" href="#">1</a>
-									</li>
-									<li class="page-item">
-										<a class="page-link" href="#">...</a>
-									</li>
-									<li class="page-item">
-										<a class="page-link" href="#">11</a>
-									</li>
-									<li class="page-item active">
-										<a class="page-link" href="#">12</a>
-									</li>
-									<li class="page-item">
-										<a class="page-link" href="#">13</a>
-									</li>
-									<li class="page-item">
-										<a class="page-link" href="#">14</a>
-									</li>
-									<li class="page-item">
-										<a class="page-link" href="#">15</a>
-									</li>
-									<li class="page-item">
-										<a class="page-link" href="#">16</a>
-									</li>
-									<li class="page-item">
-										<a class="page-link" href="#">...</a>
-									</li>
-									<li class="page-item">
-										<a class="page-link" href="#">26</a>
-									</li>
-									<li class="page-item page-item--next">
-										<a class="page-link" href="#">Вперед</a>
-									</li>
-								</ul>
-							</nav>
+							<div class="pagination">
+								<nav class="pagination-nav">
+									<ul class="pagination__list">
+										<li class="page-item page-item--prev">
+											<a class="page-link" href="#">Назад</a>
+										</li>
+										<li class="page-item">
+											<a class="page-link" href="#">1</a>
+										</li>
+										<li class="page-item">
+											<a class="page-link" href="#">...</a>
+										</li>
+										<li class="page-item">
+											<a class="page-link" href="#">11</a>
+										</li>
+										<li class="page-item active">
+											<a class="page-link" href="#">12</a>
+										</li>
+										<li class="page-item">
+											<a class="page-link" href="#">13</a>
+										</li>
+										<li class="page-item">
+											<a class="page-link" href="#">14</a>
+										</li>
+										<li class="page-item">
+											<a class="page-link" href="#">15</a>
+										</li>
+										<li class="page-item">
+											<a class="page-link" href="#">16</a>
+										</li>
+										<li class="page-item">
+											<a class="page-link" href="#">...</a>
+										</li>
+										<li class="page-item">
+											<a class="page-link" href="#">26</a>
+										</li>
+										<li class="page-item page-item--next">
+											<a class="page-link" href="#">Вперед</a>
+										</li>
+									</ul>
+								</nav>
+								<nav class="pagination-nav-mobile">
+									<ul class="pagination__list">
+										<li class="page-item">
+											<a class="page-link" href="#">1</a>
+										</li>
+										<li class="page-item">
+											<a class="page-link" href="#">2</a>
+										</li>
+										<li class="page-item active">
+											<a class="page-link" href="#">3</a>
+										</li>
+										<li class="page-item">
+											<a class="page-link" href="#">4</a>
+										</li>
+										<li class="page-item">
+											<a class="page-link" href="#">...</a>
+										</li>
+										<li class="page-item">
+											<a class="page-link" href="#">15</a>
+										</li>
+									</ul>
+								</nav>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -402,11 +523,13 @@
 				<div class="footer__body">
 					<div class="footer__info info-footer">
 						<a class="footer__logo" href="homepage.html">
-							<img src="assets/images/logo.svg" alt="">
+							<img src="assets/images/logo.svg" alt="логотип">
 						</a>
-						<div class="footer__copy">©На Юга, 2024</div>
-						<a class="footer__politic" href="#">Политика конфиденциальности</a>
-						<div class="footer__disclamer">Мы не предоставляем услуги бронирования. Всю информацию Вы можете найти на странице заинтресовавшего Вас обьекта Пишите, мы обязательно ответим</div>
+						<div class="info-footer__inner" data-da=".main-footer, 767.98, 0">
+							<div class="footer__copy">©На Юга, 2024</div>
+							<a class="footer__politic" href="#">Политика конфиденциальности</a>
+							<div class="footer__disclamer">Мы не предоставляем услуги бронирования. Всю информацию Вы можете найти на странице заинтресовавшего Вас обьекта Пишите, мы обязательно ответим</div>
+						</div>
 					</div>
 					<div class="footer__main main-footer">
 						<div class="footer__menu menu-footer">
@@ -449,6 +572,7 @@
 				</div>
 			</div>
 		</footer>
+		<div class="overlay"></div>
 	</div>
 	<script src="assets/scripts/main.js" defer="defer"></script>
 	<script src="assets/scripts/city.js" type="module"></script>

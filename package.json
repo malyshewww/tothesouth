@@ -32,7 +32,8 @@
 		"postcss-sort-media-queries": "^5.2.0",
 		"stylelint": "16.3.1",
 		"stylelint-config-standard-scss": "13.1.0",
-		"swiper": "^11.1.4"
+		"swiper": "^11.1.4",
+		"vanilla-calendar-pro": "^2.9.9"
 	},
 	"devDependencies": {
 		"@types/browser-sync": "^2.29.0",

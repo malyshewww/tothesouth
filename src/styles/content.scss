@@ -8,12 +8,56 @@
 	h4,
 	h5,
 	h6 {
-		margin-bottom: 20px;
+		margin-bottom: 21px;
+		@media screen and (max-width: $md) {
+			margin-bottom: 10px;
+		}
+	}
+	h1 {
+		font-size: 48px;
+		line-height: 120%;
+		font-weight: 800;
+		@media screen and (max-width: $md) {
+			font-size: 40px;
+			line-height: 130%;
+		}
 	}
 	h2 {
+		font-weight: 800;
+		font-size: 40px;
+		line-height: 130%;
+		@media screen and (max-width: $md) {
+			font-size: 32px;
+		}
+	}
+	h3 {
+		font-weight: 800;
+		font-size: 32px;
+		line-height: 130%;
+		@media screen and (max-width: $md) {
+			font-size: 24px;
+			font-weight: 700;
+		}
+	}
+	h4 {
 		font-weight: 700;
 		font-size: 24px;
-		line-height: 120%;
+		line-height: 130%;
+		@media screen and (max-width: $md) {
+			font-size: 20px;
+		}
+	}
+	h5 {
+		font-weight: 700;
+		font-size: 20px;
+		line-height: 130%;
+		@media screen and (max-width: $md) {
+			font-size: 18px;
+		}
+	}
+	h6 {
+		font-size: 18px;
+		line-height: 130%;
 	}
 	p {
 		margin-bottom: 20px;
@@ -27,14 +71,29 @@
 
 .content-groups {
 	display: grid;
-	gap: 30px;
+	gap: 31px;
+	@media screen and (max-width: $md) {
+		gap: 10px;
+	}
 }
 
 .content-group {
 	border: 1px solid $gray-line;
 	border-radius: 10px;
-	padding: 40px;
+	padding: 39px;
 	background: $white;
+	@media screen and (max-width: $md) {
+		padding: 0;
+		border: none;
+		border-radius: 0;
+		margin: 0 -12px;
+		padding: 15px 12px;
+	}
+	& h4 {
+		@media screen and (max-width: $md) {
+			font-size: 24px;
+		}
+	}
 }
 
 @import './facility-preview.scss';

@@ -4,8 +4,10 @@ block variables
 	- let pageTitle = "Алушта";
 	- let breadCrumbsList = [{"title": "Главная", "link": "/"}, {"title": "Крым", "link": "/"}];
 	- let currentPage = "Алушта"
+	- let 
 
 append styles 
+	link(href="assets/styles/content.css" rel="stylesheet")
 	link(href="assets/styles/facilities.css" rel="stylesheet")
 	link(href="assets/styles/forms.css" rel="stylesheet")
 
@@ -16,27 +18,35 @@ block content
 	.city-facilities
 		.container
 			.page-title= pageTitle
-			+cityNavigation(7)
-			.heading 
+			+cityNavigation(7, 0)
+			.heading.city-heading
 				.heading__title.title-xs Где можно пообедать в Алуште
+			+filterButtonMobile("Фильтр")
 			.city-layout 
 				aside.aside 
-					+objectCard(otherObjcets[0], 'active')
+					.aside-object
+						+objectCard(otherObjcets[0], 'active')
 					.aside-form
 						form(action="#", method="post").form 
+							.form-heading
+								.form-heading__title Фильтр
+								button(type="button").form-heading__close.btn-close
 							.form-groups 
 								+fieldGroup("Регион, город")
 									.form-group__items
 										+customDropdown([...dropdowns.region], "Крым")
 										+customDropdown([...dropdowns.city], "Алушта")
 								+fieldGroup("Раздел")
-									+customDropdown([...dropdowns.section], "Развлечения")
+									+customDropdown([...dropdowns.section], "Питание")
 								+fieldGroup("Категория")
 									.form-group__items
 										each item, index in filterCheckboxes.food
 											+checkbox(item, index, "food")
+							.form__bottom-wrap
+								.form__bottom 
+									button(type="button").btn.btn-blue.btn-submit Выбрать 
 				.city-wrapper 
 					.city-facilities__body
 						each item in cityPage.facilitiesList.food
 							+facilityCardPreview(item)
-					+pagination([...pagination], 3)
+					+pagination([...pagination], [...paginationMobile], 3)

@@ -8,8 +8,16 @@
 		border: 1px solid $gray-line;
 		border-radius: 10px;
 		background: $white;
+		@media screen and (max-width: $md) {
+			margin: 0 -12px -30px;
+			border: none;
+			border-radius: 0;
+		}
 	}
 	& .weather-widget {
-		padding: 39px 40px;
+		padding: 39px 39px;
+		@media screen and (max-width: $md) {
+			padding: 20px 12px 30px;
+		}
 	}
 }

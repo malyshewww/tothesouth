@@ -6,6 +6,7 @@ block variables
 	- let currentPage = "Алушта"
 
 append styles 
+	link(href="assets/styles/content.css" rel="stylesheet")
 	link(href="assets/styles/facilities.css" rel="stylesheet")
 	link(href="assets/styles/forms.css" rel="stylesheet")
 
@@ -16,14 +17,19 @@ block content
 	.city-facilities
 		.container
 			.page-title= pageTitle
-			+cityNavigation(7)
-			.heading 
+			+cityNavigation(7, 2)
+			.heading.city-heading
 				.heading__title.title-xs Куда сходить развлечься
+			+filterButtonMobile("Фильтр")
 			.city-layout 
 				aside.aside 
-					+objectCard(otherObjcets[2], 'active')
+					.aside-object
+						+objectCard(otherObjcets[2], 'active')
 					.aside-form
 						form(action="#", method="post").form 
+							.form-heading
+								.form-heading__title Фильтр
+								button(type="button").form-heading__close.btn-close
 							.form-groups 
 								+fieldGroup("Регион, город")
 									.form-group__items
@@ -35,8 +41,11 @@ block content
 									.form-group__items
 										each item, index in filterCheckboxes.gaiety
 											+checkbox(item, index, "gaiety")
+							.form__bottom-wrap
+								.form__bottom 
+									button(type="button").btn.btn-blue.btn-submit Выбрать
 				.city-wrapper 
 					.city-facilities__body
 						each item in cityPage.facilitiesList.gaiety
 							+facilityCardPreview(item)
-					+pagination([...pagination], 3)
+					+pagination([...pagination], [...paginationMobile], 3)

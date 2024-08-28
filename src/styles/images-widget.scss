@@ -1,9 +1,9 @@
 @use 'sass:math';
-@use 'config/variables';
+@import 'config/variables';
 
 .images-widget {
 	display: grid;
-	gap: 30px;
+	gap: 20px 30px;
 	&__image {
 		border-radius: 10px;
 		overflow: hidden;
@@ -12,6 +12,15 @@
 	}
 	&:not(:last-child) {
 		margin-bottom: 20px;
+		@media screen and (max-width: $md) {
+			margin-bottom: 10px;
+		}
+	}
+}
+
+.content-group--beaches {
+	& .images2-widget {
+		margin-bottom: 42px;
 	}
 }
 
@@ -20,6 +29,10 @@
 }
 .images2-widget {
 	grid-template-columns: 280px 1fr;
+	@media screen and (max-width: $xl) {
+		grid-template-columns: 1fr;
+		gap: 15px;
+	}
 }
 .images3-widget {
 	grid-template-columns: 280px 1fr;
@@ -29,14 +42,37 @@
 }
 .images4-widget {
 	grid-template-columns: repeat(3, 1fr);
+	@media screen and (max-width: $xxl) {
+		grid-template-columns: repeat(9, 1fr);
+		gap: 15px;
+	}
+	@media screen and (max-width: $md) {
+		grid-template-columns: 1fr;
+		&:not(:last-child) {
+			margin-bottom: 20px;
+		}
+	}
 	& .images-widget__image {
 		&:nth-child(2),
 		&:nth-child(3) {
 			grid-column: span 2;
+			@media screen and (max-width: $xxl) {
+				grid-column: span 5;
+			}
+			@media screen and (max-width: $md) {
+				grid-column: initial;
+			}
 		}
 		&:nth-child(1),
 		&:nth-child(4) {
 			width: 280px;
+			@media screen and (max-width: $xxl) {
+				width: 100%;
+				grid-column: span 4;
+			}
+			@media screen and (max-width: $md) {
+				grid-column: initial;
+			}
 		}
 	}
 }

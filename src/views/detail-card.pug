@@ -17,7 +17,7 @@ block content
 		.detail-card__wrapper
 			.container
 				.page-title= pageTitle 
-				+headerCard("Дельфинарий «Карадагский»", "пер. Береговой, 11, п. Курортное, г. Феодосия, Республика Крым, Россия")
+				+headerCard("Radisson Blu Hotel Kaliningrad ", "Калининград, пл. Победы, д. 10")
 				.detail-card__body 
 					aside.detail-card__aside.aside
 						+asideMap
@@ -79,14 +79,14 @@ block content
 									.box-reviews__estimate 5,0
 									.box-reviews__text 
 										p Отлично
-										p на основании 895 оценок
+										p.box-reviews__text-small на основании 895 оценок
 							.box-reviews__progress.progress-items
 								each item in cardPage.reviews.progress
 									.progress-item(class=`progress-item--${item.key}`)
 										.progress-item__caption= item.caption
 										.progress-bar 
 											.progress-bar__line 
-												span(style={'width': `${item.percent}%`} data-value=item.value)
+												span(style={'width': `${item.percent}%`} data-value=item.value id=`progress_${item.key}`)
 											.progress-bar__value= item.value
 							.box-reviews__slider.slider-reviews
 								.slider-reviews__title Что гостям понравилось:
@@ -140,4 +140,27 @@ block content
 										.accordeon__content
 											.accordeon__text
 												p= item.content
+				.detail-card__categories.categories
+					section.categories-section
+						.heading
+							.heading__title Другие объекты в Алуште рядом
+						+badges([...cityPage.badgesList])
+						.categories-slider
+							.categories-slider__body.swiper
+								.categories-slider__wrapper.swiper-wrapper
+									each hotel in homePage.hotels
+										.categories-slider__item
+											+facilityPreview(hotel, "homepage/main-hotels")
+							.slider-controls 
+								button(type="button").slider-button.slider-button-prev 
+								button(type="button").slider-button.slider-button-next 
+					section.categories-section
+						.heading
+							.heading__title Алушта
+						+badges([...cityPage.badgesList])
+					section.categories-section
+						.heading
+							.heading__title Курорты
+						+badges([...cityPage.badgesList])
+
 

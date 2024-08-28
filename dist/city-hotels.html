@@ -36,6 +36,13 @@
 			<div class="container">
 				<div class="header__body">
 					<div class="header__left">
+						<div class="header-burger">
+							<svg width="21" height="17" viewBox="0 0 21 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M1 1.61646H20" stroke="#8897B1" stroke-width="1.5" stroke-linecap="round"></path>
+								<path d="M1 8.61646H20" stroke="#8897B1" stroke-width="1.5" stroke-linecap="round"></path>
+								<path d="M1 15.6165L20 15.6165" stroke="#8897B1" stroke-width="1.5" stroke-linecap="round"></path>
+							</svg>
+						</div>
 						<a class="header__logo logo" href="homepage.html">
 							<img src="assets/images/logo-blue.svg" alt="логотип">
 						</a>
@@ -44,8 +51,13 @@
 						</div>
 					</div>
 					<div class="header__links">
-						<a class="header__favorite" href="#"></a>
-						<a class="btn btn-transparent header__btn-auth" href="auth.html">Авторизация</a>
+						<a class="header__favorite" href="favorites.html">
+							<svg width="26" height="23" viewBox="0 0 26 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M23.1494 2.85655C21.965 1.66785 20.3584 1 18.6831 1C17.0077 1 15.4011 1.66785 14.2167 2.85655L12.9997 4.07749L11.7826 2.85655C9.31597 0.38197 5.31669 0.381971 2.85001 2.85655C0.38333 5.33113 0.38333 9.34322 2.85001 11.8178L4.06705 13.0387L12.9997 22L21.9323 13.0387L23.1494 11.8178C24.3343 10.6297 25 9.01786 25 7.33718C25 5.6565 24.3343 4.0447 23.1494 2.85655Z" fill="#FF6933"></path>
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M13.6856 2.32707C15.0104 0.997456 16.808 0.25 18.6831 0.25C20.5581 0.25 22.3559 0.997503 23.6807 2.3272C25.0059 3.65616 25.75 5.45841 25.75 7.33718C25.75 9.21606 25.0058 11.0184 23.6804 12.3474L13.5309 22.5295C13.3902 22.6707 13.199 22.75 12.9997 22.75C12.8004 22.75 12.6092 22.6707 12.4685 22.5295L2.31883 12.3473C-0.439611 9.58001 -0.439611 5.09435 2.31883 2.32707C5.0786 -0.441535 9.55406 -0.441536 12.3138 2.32707L12.9997 3.01513L13.6856 2.32707C13.6856 2.32703 13.6855 2.32711 13.6856 2.32707ZM18.6831 1.75C17.2075 1.75 15.7919 2.3382 14.748 3.38591L13.5309 4.60698C13.3902 4.74815 13.199 4.82749 12.9997 4.82749C12.8004 4.82749 12.6092 4.74815 12.4685 4.60698L11.2515 3.38603C9.07788 1.20548 5.55478 1.20548 3.38119 3.38603C1.20627 5.56792 1.20627 9.10644 3.38119 11.2883L12.9997 20.9376L22.6182 11.2883C23.6626 10.241 24.25 8.81966 24.25 7.33718C24.25 5.8547 23.6628 4.43345 22.6183 3.38616C21.5744 2.33845 20.1586 1.75 18.6831 1.75Z" fill="#FF6933"></path>
+							</svg>
+						</a>
+						<a class="btn btn-transparent header__btn-auth" href="auth-registration.html">Авторизация</a>
 						<a class="btn btn-white header__btn-add" href="add-project.html">Добавить проект</a>
 					</div>
 				</div>
@@ -107,27 +119,53 @@
 									</li>
 								</ul>
 							</li>
+							<li class="navigation-city__item hidden">
+								<a class="navigation-city__link" href="city-food.html">Питание</a>
+							</li>
+							<li class="navigation-city__item hidden">
+								<a class="navigation-city__link" href="city-transport.html">Транспорт</a>
+							</li>
+							<li class="navigation-city__item hidden">
+								<a class="navigation-city__link" href="city-gaiety.html">Развлечения</a>
+							</li>
 						</ul>
 					</nav>
-					<div class="heading">
+					<div class="heading city-heading">
 						<div class="heading__title title-xs">Жилье в Алуште</div>
-						<div class="heading-sorting sorting">
-							<div class="sorting__caption">Сортировать:</div>
-							<ul class="sorting__list">
-								<li class="sorting__list-item">Популярность</li>
-								<li class="sorting__list-item">Рейтинг</li>
-								<li class="active sorting__list-item" data-sort="up">Цена</li>
-							</ul>
+						<div class="heading-actions">
+							<div class="sorting">
+								<div class="sorting__caption">Сортировать:</div>
+								<button class="sorting-button-mobile" type="button">Сортировать </button>
+								<ul class="sorting__list">
+									<li class="sorting__list-item">Популярность</li>
+									<li class="sorting__list-item">Рейтинг</li>
+									<li class="active sorting__list-item" data-sort="up">Цена</li>
+								</ul>
+							</div>
+							<button class="filter-button-mobile" type="button">Фильтры</button>
+							<button class="map-button-mobile" type="button">Карта</button>
 						</div>
 					</div>
 					<div class="city-layout">
 						<aside class="aside">
-							<div class="active object-card object-card--2">
-								<span class="object-card__icon"></span>
-								<span class="object-card__caption">54 найдено</span>
+							<div class="aside-object">
+								<div class="active object-card object-card--2">
+									<span class="object-card__icon"></span>
+									<span class="object-card__caption">54 найдено</span>
+								</div>
+							</div>
+							<div class="aside-map">
+								<button class="btn btn-white map-button" type="button">Показать на карте</button>
 							</div>
 							<div class="aside-form">
 								<form class="form" action="#" method="post">
+									<div class="form-heading">
+										<div class="form-heading__title">Фильтры</div>
+										<div class="form-heading__actions">
+											<button class="btn-reset form-heading__button-reset" type="reset">Сбросить</button>
+											<button class="btn-close form-heading__close" type="button"></button>
+										</div>
+									</div>
 									<div class="form-groups">
 										<fieldset class="form-group">
 											<legend class="form-group__caption">Регион, город</legend>
@@ -214,7 +252,6 @@
 													</label>
 												</div>
 											</div>
-											<button class="form-group__btn-show" type="button">Показать еще (10)</button>
 										</fieldset>
 										<fieldset class="form-group">
 											<legend class="form-group__caption">Инфраструктура</legend>
@@ -244,11 +281,6 @@
 													<label class="checkbox-label" for="objects-4">Детская игровая площадка<span> </span>
 													</label>
 												</div>
-												<div class="checkbox">
-													<input class="checkbox-input visuallyHidden" type="checkbox" name="objects" id="objects-5">
-													<label class="checkbox-label" for="objects-5">Детская игровая площадка<span> </span>
-													</label>
-												</div>
 											</div>
 											<button class="form-group__btn-show" type="button">Показать еще (10)</button>
 										</fieldset>
@@ -266,7 +298,6 @@
 													</label>
 												</div>
 											</div>
-											<button class="form-group__btn-show" type="button">Показать еще (10)</button>
 										</fieldset>
 										<fieldset class="form-group">
 											<legend class="form-group__caption">Общие</legend>
@@ -282,11 +313,13 @@
 													</label>
 												</div>
 											</div>
-											<button class="form-group__btn-show" type="button">Показать еще (10)</button>
 										</fieldset>
 									</div>
 									<div class="aside-form__bottom">
-										<button class="btn btn-blue btn-submit" type="submit">Применить </button>
+										<button class="btn btn-blue btn-submit" type="submit">
+											<span class="btn-text-pc">Применить </span>
+											<span class="btn-text-mobile">Показать 81 результат </span>
+										</button>
 										<button class="btn-reset" type="reset">Сбросить </button>
 									</div>
 								</form>
@@ -325,7 +358,12 @@
 											<div class="ibg hotel-card__image">
 												<img src="assets/images/city/city-hotels/1.jpg" alt="AVRASYAQUEEN HOTEL">
 											</div>
-											<button class="button-favorite" type="button"> </button>
+											<button class="button-favorite" type="button">
+												<svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path fill-rule="evenodd" clip-rule="evenodd" d="M14.3434 2.16035C13.6031 1.41741 12.599 1 11.5519 1C10.5048 1 9.50068 1.41741 8.76046 2.16035L7.99981 2.92343L7.23916 2.16035C5.69748 0.613732 3.19793 0.613732 1.65626 2.16035C0.114581 3.70696 0.114581 6.21452 1.65626 7.76113L2.41691 8.52422L7.99981 14.125L13.5827 8.52422L14.3434 7.76113C15.0839 7.01854 15.5 6.01116 15.5 4.96074C15.5 3.91031 15.0839 2.90293 14.3434 2.16035Z" fill="#FF6933"></path>
+													<path fill-rule="evenodd" clip-rule="evenodd" d="M8.42847 1.82942C9.25648 0.99841 10.38 0.53125 11.5519 0.53125C12.7238 0.53125 13.8474 0.998439 14.6754 1.8295C15.5037 2.6601 15.9688 3.78651 15.9688 4.96074C15.9688 6.13504 15.5036 7.26151 14.6753 8.09213L8.33179 14.4559C8.24384 14.5442 8.12439 14.5937 7.99981 14.5937C7.87523 14.5937 7.75577 14.5442 7.66782 14.4559L1.32427 8.09205C-0.399757 6.3625 -0.399757 3.55897 1.32427 1.82942C3.04912 0.0990403 5.84629 0.0990402 7.57114 1.82942L7.99981 2.25946L8.42847 1.82942C8.4285 1.82939 8.42845 1.82945 8.42847 1.82942ZM11.5519 1.46875C10.6297 1.46875 9.74494 1.83638 9.09252 2.49119L8.33179 3.25436C8.24384 3.34259 8.12439 3.39218 7.99981 3.39218C7.87523 3.39218 7.75577 3.34259 7.66782 3.25436L6.90717 2.49127C5.54867 1.12842 3.34674 1.12842 1.98824 2.49127C0.628919 3.85495 0.628919 6.06653 1.98824 7.4302L7.99981 13.461L14.0114 7.4302C14.6641 6.77564 15.0312 5.88729 15.0312 4.96074C15.0312 4.03419 14.6642 3.14591 14.0115 2.49135C13.359 1.83653 12.4741 1.46875 11.5519 1.46875Z" fill="#FF6933"></path>
+												</svg>
+											</button>
 											<div class="hotel-card__repast">Завтрак</div>
 										</div>
 										<div class="hotel-card__main">
@@ -342,7 +380,9 @@
 																<li class="rating__item"> </li>
 															</ul>
 														</div>
-														<a class="btn-detail" href="#">Показать на карте</a>
+														<a class="btn-detail" href="#">
+															<span>Показать на карте</span>
+														</a>
 														<ul class="hotel-card__parameters">
 															<li class="hotel-card__parametr">
 																Wi-Fi
@@ -366,8 +406,19 @@
 												<div class="hotel-card__rating">
 													<div class="hotel-card__rating-caption">рейтинг</div>
 													<div class="hotel-card__rating-estimate">9,0</div>
-													<div class="hotel-card__rating-total">895 оценок</div>
+													<div class="hotel-card__rating-total">
+														<span>895 оценок</span>
+														<span>10 отзывов</span>
+													</div>
 												</div>
+												<ul class="hotel-card__parameters">
+													<li class="hotel-card__parametr">
+														Wi-Fi
+														<svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<path d="M0 2.22056C1.83856 0.780743 4.13382 -0.00337279 6.5 1.09055e-05C8.96264 1.09055e-05 11.2241 0.831677 13 2.22056L12.2782 3.08501C10.6438 1.80505 8.60341 1.10803 6.5 1.11112C4.31092 1.11112 2.30115 1.85001 0.721839 3.08501L0 2.22056ZM1.80517 4.38167C3.1331 3.34167 4.79094 2.77531 6.5 2.77779C8.27816 2.77779 9.9115 3.37834 11.1948 4.38112L10.4724 5.24556C9.34876 4.36575 7.94602 3.88668 6.5 3.8889C4.9954 3.8889 3.61322 4.39723 2.52759 5.24556L1.80517 4.38112V4.38167ZM3.61092 6.54278C4.42807 5.90272 5.44826 5.55412 6.5 5.55556C7.59425 5.55556 8.59943 5.925 9.38908 6.54223L8.66667 7.40667C8.05379 6.9268 7.2887 6.66549 6.5 6.66667C5.67931 6.66667 4.92529 6.94389 4.33333 7.40667L3.61092 6.54223V6.54278ZM5.41667 8.70389C5.72302 8.46373 6.10558 8.33288 6.5 8.33334C6.91035 8.33334 7.28736 8.47223 7.58333 8.70334L6.5 10L5.41667 8.70334V8.70389Z" fill="#1C8CF3"></path>
+														</svg>
+													</li>
+												</ul>
 												<div class="hotel-card__prices">
 													<div class="hotel-card__old-price">от 6500 <span>₽</span>
 													</div>
@@ -378,8 +429,12 @@
 															<br> и сборы
 														</p>
 													</div>
+													<div class="hotel-card__price-alternative-details">за чел. в сутки в июне</div>
 												</div>
-												<a class="hotel-card__btn-place" href="#">Наличие мест</a>
+												<a class="hotel-card__btn-place" href="#">
+													<span class="btn-text-pc">Наличие мест</span>
+													<span class="btn-text-mobile">Подробнее</span>
+												</a>
 											</div>
 										</div>
 									</div>
@@ -390,7 +445,12 @@
 											<div class="ibg hotel-card__image">
 												<img src="assets/images/city/city-hotels/2.jpg" alt="Liberi Hotel Taksim">
 											</div>
-											<button class="button-favorite" type="button"> </button>
+											<button class="button-favorite" type="button">
+												<svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path fill-rule="evenodd" clip-rule="evenodd" d="M14.3434 2.16035C13.6031 1.41741 12.599 1 11.5519 1C10.5048 1 9.50068 1.41741 8.76046 2.16035L7.99981 2.92343L7.23916 2.16035C5.69748 0.613732 3.19793 0.613732 1.65626 2.16035C0.114581 3.70696 0.114581 6.21452 1.65626 7.76113L2.41691 8.52422L7.99981 14.125L13.5827 8.52422L14.3434 7.76113C15.0839 7.01854 15.5 6.01116 15.5 4.96074C15.5 3.91031 15.0839 2.90293 14.3434 2.16035Z" fill="#FF6933"></path>
+													<path fill-rule="evenodd" clip-rule="evenodd" d="M8.42847 1.82942C9.25648 0.99841 10.38 0.53125 11.5519 0.53125C12.7238 0.53125 13.8474 0.998439 14.6754 1.8295C15.5037 2.6601 15.9688 3.78651 15.9688 4.96074C15.9688 6.13504 15.5036 7.26151 14.6753 8.09213L8.33179 14.4559C8.24384 14.5442 8.12439 14.5937 7.99981 14.5937C7.87523 14.5937 7.75577 14.5442 7.66782 14.4559L1.32427 8.09205C-0.399757 6.3625 -0.399757 3.55897 1.32427 1.82942C3.04912 0.0990403 5.84629 0.0990402 7.57114 1.82942L7.99981 2.25946L8.42847 1.82942C8.4285 1.82939 8.42845 1.82945 8.42847 1.82942ZM11.5519 1.46875C10.6297 1.46875 9.74494 1.83638 9.09252 2.49119L8.33179 3.25436C8.24384 3.34259 8.12439 3.39218 7.99981 3.39218C7.87523 3.39218 7.75577 3.34259 7.66782 3.25436L6.90717 2.49127C5.54867 1.12842 3.34674 1.12842 1.98824 2.49127C0.628919 3.85495 0.628919 6.06653 1.98824 7.4302L7.99981 13.461L14.0114 7.4302C14.6641 6.77564 15.0312 5.88729 15.0312 4.96074C15.0312 4.03419 14.6642 3.14591 14.0115 2.49135C13.359 1.83653 12.4741 1.46875 11.5519 1.46875Z" fill="#FF6933"></path>
+												</svg>
+											</button>
 											<div class="hotel-card__repast">Завтрак</div>
 										</div>
 										<div class="hotel-card__main">
@@ -407,7 +467,9 @@
 																<li class="rating__item"> </li>
 															</ul>
 														</div>
-														<a class="btn-detail" href="#">Показать на карте</a>
+														<a class="btn-detail" href="#">
+															<span>Показать на карте</span>
+														</a>
 														<ul class="hotel-card__parameters">
 															<li class="hotel-card__parametr">
 																Wi-Fi
@@ -430,8 +492,19 @@
 												<div class="hotel-card__rating">
 													<div class="hotel-card__rating-caption">рейтинг</div>
 													<div class="hotel-card__rating-estimate">9,0</div>
-													<div class="hotel-card__rating-total">895 оценок</div>
+													<div class="hotel-card__rating-total">
+														<span>895 оценок</span>
+														<span>10 отзывов</span>
+													</div>
 												</div>
+												<ul class="hotel-card__parameters">
+													<li class="hotel-card__parametr">
+														Wi-Fi
+														<svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<path d="M0 2.22056C1.83856 0.780743 4.13382 -0.00337279 6.5 1.09055e-05C8.96264 1.09055e-05 11.2241 0.831677 13 2.22056L12.2782 3.08501C10.6438 1.80505 8.60341 1.10803 6.5 1.11112C4.31092 1.11112 2.30115 1.85001 0.721839 3.08501L0 2.22056ZM1.80517 4.38167C3.1331 3.34167 4.79094 2.77531 6.5 2.77779C8.27816 2.77779 9.9115 3.37834 11.1948 4.38112L10.4724 5.24556C9.34876 4.36575 7.94602 3.88668 6.5 3.8889C4.9954 3.8889 3.61322 4.39723 2.52759 5.24556L1.80517 4.38112V4.38167ZM3.61092 6.54278C4.42807 5.90272 5.44826 5.55412 6.5 5.55556C7.59425 5.55556 8.59943 5.925 9.38908 6.54223L8.66667 7.40667C8.05379 6.9268 7.2887 6.66549 6.5 6.66667C5.67931 6.66667 4.92529 6.94389 4.33333 7.40667L3.61092 6.54223V6.54278ZM5.41667 8.70389C5.72302 8.46373 6.10558 8.33288 6.5 8.33334C6.91035 8.33334 7.28736 8.47223 7.58333 8.70334L6.5 10L5.41667 8.70334V8.70389Z" fill="#1C8CF3"></path>
+														</svg>
+													</li>
+												</ul>
 												<div class="hotel-card__prices">
 													<div class="hotel-card__old-price">от 6500 <span>₽</span>
 													</div>
@@ -442,8 +515,12 @@
 															<br> и сборы
 														</p>
 													</div>
+													<div class="hotel-card__price-alternative-details">за чел. в сутки в июне</div>
 												</div>
-												<a class="hotel-card__btn-place" href="#">Наличие мест</a>
+												<a class="hotel-card__btn-place" href="#">
+													<span class="btn-text-pc">Наличие мест</span>
+													<span class="btn-text-mobile">Подробнее</span>
+												</a>
 											</div>
 										</div>
 									</div>
@@ -454,7 +531,12 @@
 											<div class="ibg hotel-card__image">
 												<img src="assets/images/city/city-hotels/3.jpg" alt="Ishak Pasa Hotel - Special Class">
 											</div>
-											<button class="button-favorite" type="button"> </button>
+											<button class="button-favorite" type="button">
+												<svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path fill-rule="evenodd" clip-rule="evenodd" d="M14.3434 2.16035C13.6031 1.41741 12.599 1 11.5519 1C10.5048 1 9.50068 1.41741 8.76046 2.16035L7.99981 2.92343L7.23916 2.16035C5.69748 0.613732 3.19793 0.613732 1.65626 2.16035C0.114581 3.70696 0.114581 6.21452 1.65626 7.76113L2.41691 8.52422L7.99981 14.125L13.5827 8.52422L14.3434 7.76113C15.0839 7.01854 15.5 6.01116 15.5 4.96074C15.5 3.91031 15.0839 2.90293 14.3434 2.16035Z" fill="#FF6933"></path>
+													<path fill-rule="evenodd" clip-rule="evenodd" d="M8.42847 1.82942C9.25648 0.99841 10.38 0.53125 11.5519 0.53125C12.7238 0.53125 13.8474 0.998439 14.6754 1.8295C15.5037 2.6601 15.9688 3.78651 15.9688 4.96074C15.9688 6.13504 15.5036 7.26151 14.6753 8.09213L8.33179 14.4559C8.24384 14.5442 8.12439 14.5937 7.99981 14.5937C7.87523 14.5937 7.75577 14.5442 7.66782 14.4559L1.32427 8.09205C-0.399757 6.3625 -0.399757 3.55897 1.32427 1.82942C3.04912 0.0990403 5.84629 0.0990402 7.57114 1.82942L7.99981 2.25946L8.42847 1.82942C8.4285 1.82939 8.42845 1.82945 8.42847 1.82942ZM11.5519 1.46875C10.6297 1.46875 9.74494 1.83638 9.09252 2.49119L8.33179 3.25436C8.24384 3.34259 8.12439 3.39218 7.99981 3.39218C7.87523 3.39218 7.75577 3.34259 7.66782 3.25436L6.90717 2.49127C5.54867 1.12842 3.34674 1.12842 1.98824 2.49127C0.628919 3.85495 0.628919 6.06653 1.98824 7.4302L7.99981 13.461L14.0114 7.4302C14.6641 6.77564 15.0312 5.88729 15.0312 4.96074C15.0312 4.03419 14.6642 3.14591 14.0115 2.49135C13.359 1.83653 12.4741 1.46875 11.5519 1.46875Z" fill="#FF6933"></path>
+												</svg>
+											</button>
 											<div class="hotel-card__repast">Завтрак</div>
 										</div>
 										<div class="hotel-card__main">
@@ -471,7 +553,9 @@
 																<li class="rating__item"> </li>
 															</ul>
 														</div>
-														<a class="btn-detail" href="#">Показать на карте</a>
+														<a class="btn-detail" href="#">
+															<span>Показать на карте</span>
+														</a>
 														<ul class="hotel-card__parameters">
 															<li class="hotel-card__parametr">
 																Wi-Fi
@@ -494,8 +578,19 @@
 												<div class="hotel-card__rating">
 													<div class="hotel-card__rating-caption">рейтинг</div>
 													<div class="hotel-card__rating-estimate">9,0</div>
-													<div class="hotel-card__rating-total">895 оценок</div>
+													<div class="hotel-card__rating-total">
+														<span>895 оценок</span>
+														<span>10 отзывов</span>
+													</div>
 												</div>
+												<ul class="hotel-card__parameters">
+													<li class="hotel-card__parametr">
+														Wi-Fi
+														<svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<path d="M0 2.22056C1.83856 0.780743 4.13382 -0.00337279 6.5 1.09055e-05C8.96264 1.09055e-05 11.2241 0.831677 13 2.22056L12.2782 3.08501C10.6438 1.80505 8.60341 1.10803 6.5 1.11112C4.31092 1.11112 2.30115 1.85001 0.721839 3.08501L0 2.22056ZM1.80517 4.38167C3.1331 3.34167 4.79094 2.77531 6.5 2.77779C8.27816 2.77779 9.9115 3.37834 11.1948 4.38112L10.4724 5.24556C9.34876 4.36575 7.94602 3.88668 6.5 3.8889C4.9954 3.8889 3.61322 4.39723 2.52759 5.24556L1.80517 4.38112V4.38167ZM3.61092 6.54278C4.42807 5.90272 5.44826 5.55412 6.5 5.55556C7.59425 5.55556 8.59943 5.925 9.38908 6.54223L8.66667 7.40667C8.05379 6.9268 7.2887 6.66549 6.5 6.66667C5.67931 6.66667 4.92529 6.94389 4.33333 7.40667L3.61092 6.54223V6.54278ZM5.41667 8.70389C5.72302 8.46373 6.10558 8.33288 6.5 8.33334C6.91035 8.33334 7.28736 8.47223 7.58333 8.70334L6.5 10L5.41667 8.70334V8.70389Z" fill="#1C8CF3"></path>
+														</svg>
+													</li>
+												</ul>
 												<div class="hotel-card__prices">
 													<div class="hotel-card__old-price">от 6500 <span>₽</span>
 													</div>
@@ -506,8 +601,12 @@
 															<br> и сборы
 														</p>
 													</div>
+													<div class="hotel-card__price-alternative-details">за чел. в сутки в июне</div>
 												</div>
-												<a class="hotel-card__btn-place" href="#">Наличие мест</a>
+												<a class="hotel-card__btn-place" href="#">
+													<span class="btn-text-pc">Наличие мест</span>
+													<span class="btn-text-mobile">Подробнее</span>
+												</a>
 											</div>
 										</div>
 									</div>
@@ -518,7 +617,12 @@
 											<div class="ibg hotel-card__image">
 												<img src="assets/images/city/city-hotels/4.jpg" alt="Ishak Pasa Hotel - Special Class">
 											</div>
-											<button class="button-favorite" type="button"> </button>
+											<button class="button-favorite" type="button">
+												<svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path fill-rule="evenodd" clip-rule="evenodd" d="M14.3434 2.16035C13.6031 1.41741 12.599 1 11.5519 1C10.5048 1 9.50068 1.41741 8.76046 2.16035L7.99981 2.92343L7.23916 2.16035C5.69748 0.613732 3.19793 0.613732 1.65626 2.16035C0.114581 3.70696 0.114581 6.21452 1.65626 7.76113L2.41691 8.52422L7.99981 14.125L13.5827 8.52422L14.3434 7.76113C15.0839 7.01854 15.5 6.01116 15.5 4.96074C15.5 3.91031 15.0839 2.90293 14.3434 2.16035Z" fill="#FF6933"></path>
+													<path fill-rule="evenodd" clip-rule="evenodd" d="M8.42847 1.82942C9.25648 0.99841 10.38 0.53125 11.5519 0.53125C12.7238 0.53125 13.8474 0.998439 14.6754 1.8295C15.5037 2.6601 15.9688 3.78651 15.9688 4.96074C15.9688 6.13504 15.5036 7.26151 14.6753 8.09213L8.33179 14.4559C8.24384 14.5442 8.12439 14.5937 7.99981 14.5937C7.87523 14.5937 7.75577 14.5442 7.66782 14.4559L1.32427 8.09205C-0.399757 6.3625 -0.399757 3.55897 1.32427 1.82942C3.04912 0.0990403 5.84629 0.0990402 7.57114 1.82942L7.99981 2.25946L8.42847 1.82942C8.4285 1.82939 8.42845 1.82945 8.42847 1.82942ZM11.5519 1.46875C10.6297 1.46875 9.74494 1.83638 9.09252 2.49119L8.33179 3.25436C8.24384 3.34259 8.12439 3.39218 7.99981 3.39218C7.87523 3.39218 7.75577 3.34259 7.66782 3.25436L6.90717 2.49127C5.54867 1.12842 3.34674 1.12842 1.98824 2.49127C0.628919 3.85495 0.628919 6.06653 1.98824 7.4302L7.99981 13.461L14.0114 7.4302C14.6641 6.77564 15.0312 5.88729 15.0312 4.96074C15.0312 4.03419 14.6642 3.14591 14.0115 2.49135C13.359 1.83653 12.4741 1.46875 11.5519 1.46875Z" fill="#FF6933"></path>
+												</svg>
+											</button>
 											<div class="hotel-card__repast">Завтрак</div>
 										</div>
 										<div class="hotel-card__main">
@@ -535,7 +639,9 @@
 																<li class="rating__item"> </li>
 															</ul>
 														</div>
-														<a class="btn-detail" href="#">Показать на карте</a>
+														<a class="btn-detail" href="#">
+															<span>Показать на карте</span>
+														</a>
 														<ul class="hotel-card__parameters">
 															<li class="hotel-card__parametr">
 																Wi-Fi
@@ -558,8 +664,19 @@
 												<div class="hotel-card__rating">
 													<div class="hotel-card__rating-caption">рейтинг</div>
 													<div class="hotel-card__rating-estimate">9,0</div>
-													<div class="hotel-card__rating-total">895 оценок</div>
+													<div class="hotel-card__rating-total">
+														<span>895 оценок</span>
+														<span>10 отзывов</span>
+													</div>
 												</div>
+												<ul class="hotel-card__parameters">
+													<li class="hotel-card__parametr">
+														Wi-Fi
+														<svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<path d="M0 2.22056C1.83856 0.780743 4.13382 -0.00337279 6.5 1.09055e-05C8.96264 1.09055e-05 11.2241 0.831677 13 2.22056L12.2782 3.08501C10.6438 1.80505 8.60341 1.10803 6.5 1.11112C4.31092 1.11112 2.30115 1.85001 0.721839 3.08501L0 2.22056ZM1.80517 4.38167C3.1331 3.34167 4.79094 2.77531 6.5 2.77779C8.27816 2.77779 9.9115 3.37834 11.1948 4.38112L10.4724 5.24556C9.34876 4.36575 7.94602 3.88668 6.5 3.8889C4.9954 3.8889 3.61322 4.39723 2.52759 5.24556L1.80517 4.38112V4.38167ZM3.61092 6.54278C4.42807 5.90272 5.44826 5.55412 6.5 5.55556C7.59425 5.55556 8.59943 5.925 9.38908 6.54223L8.66667 7.40667C8.05379 6.9268 7.2887 6.66549 6.5 6.66667C5.67931 6.66667 4.92529 6.94389 4.33333 7.40667L3.61092 6.54223V6.54278ZM5.41667 8.70389C5.72302 8.46373 6.10558 8.33288 6.5 8.33334C6.91035 8.33334 7.28736 8.47223 7.58333 8.70334L6.5 10L5.41667 8.70334V8.70389Z" fill="#1C8CF3"></path>
+														</svg>
+													</li>
+												</ul>
 												<div class="hotel-card__prices">
 													<div class="hotel-card__old-price">от 6500 <span>₽</span>
 													</div>
@@ -570,8 +687,12 @@
 															<br> и сборы
 														</p>
 													</div>
+													<div class="hotel-card__price-alternative-details">за чел. в сутки в июне</div>
 												</div>
-												<a class="hotel-card__btn-place" href="#">Наличие мест</a>
+												<a class="hotel-card__btn-place" href="#">
+													<span class="btn-text-pc">Наличие мест</span>
+													<span class="btn-text-mobile">Подробнее</span>
+												</a>
 											</div>
 										</div>
 									</div>
@@ -582,7 +703,12 @@
 											<div class="ibg hotel-card__image">
 												<img src="assets/images/city/city-hotels/5.jpg" alt="Ishak Pasa Hotel - Special Class">
 											</div>
-											<button class="button-favorite" type="button"> </button>
+											<button class="button-favorite" type="button">
+												<svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path fill-rule="evenodd" clip-rule="evenodd" d="M14.3434 2.16035C13.6031 1.41741 12.599 1 11.5519 1C10.5048 1 9.50068 1.41741 8.76046 2.16035L7.99981 2.92343L7.23916 2.16035C5.69748 0.613732 3.19793 0.613732 1.65626 2.16035C0.114581 3.70696 0.114581 6.21452 1.65626 7.76113L2.41691 8.52422L7.99981 14.125L13.5827 8.52422L14.3434 7.76113C15.0839 7.01854 15.5 6.01116 15.5 4.96074C15.5 3.91031 15.0839 2.90293 14.3434 2.16035Z" fill="#FF6933"></path>
+													<path fill-rule="evenodd" clip-rule="evenodd" d="M8.42847 1.82942C9.25648 0.99841 10.38 0.53125 11.5519 0.53125C12.7238 0.53125 13.8474 0.998439 14.6754 1.8295C15.5037 2.6601 15.9688 3.78651 15.9688 4.96074C15.9688 6.13504 15.5036 7.26151 14.6753 8.09213L8.33179 14.4559C8.24384 14.5442 8.12439 14.5937 7.99981 14.5937C7.87523 14.5937 7.75577 14.5442 7.66782 14.4559L1.32427 8.09205C-0.399757 6.3625 -0.399757 3.55897 1.32427 1.82942C3.04912 0.0990403 5.84629 0.0990402 7.57114 1.82942L7.99981 2.25946L8.42847 1.82942C8.4285 1.82939 8.42845 1.82945 8.42847 1.82942ZM11.5519 1.46875C10.6297 1.46875 9.74494 1.83638 9.09252 2.49119L8.33179 3.25436C8.24384 3.34259 8.12439 3.39218 7.99981 3.39218C7.87523 3.39218 7.75577 3.34259 7.66782 3.25436L6.90717 2.49127C5.54867 1.12842 3.34674 1.12842 1.98824 2.49127C0.628919 3.85495 0.628919 6.06653 1.98824 7.4302L7.99981 13.461L14.0114 7.4302C14.6641 6.77564 15.0312 5.88729 15.0312 4.96074C15.0312 4.03419 14.6642 3.14591 14.0115 2.49135C13.359 1.83653 12.4741 1.46875 11.5519 1.46875Z" fill="#FF6933"></path>
+												</svg>
+											</button>
 											<div class="hotel-card__repast">Завтрак</div>
 										</div>
 										<div class="hotel-card__main">
@@ -599,7 +725,9 @@
 																<li class="rating__item"> </li>
 															</ul>
 														</div>
-														<a class="btn-detail" href="#">Показать на карте</a>
+														<a class="btn-detail" href="#">
+															<span>Показать на карте</span>
+														</a>
 														<ul class="hotel-card__parameters">
 															<li class="hotel-card__parametr">
 																Wi-Fi
@@ -622,8 +750,19 @@
 												<div class="hotel-card__rating">
 													<div class="hotel-card__rating-caption">рейтинг</div>
 													<div class="hotel-card__rating-estimate">9,0</div>
-													<div class="hotel-card__rating-total">895 оценок</div>
+													<div class="hotel-card__rating-total">
+														<span>895 оценок</span>
+														<span>10 отзывов</span>
+													</div>
 												</div>
+												<ul class="hotel-card__parameters">
+													<li class="hotel-card__parametr">
+														Wi-Fi
+														<svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<path d="M0 2.22056C1.83856 0.780743 4.13382 -0.00337279 6.5 1.09055e-05C8.96264 1.09055e-05 11.2241 0.831677 13 2.22056L12.2782 3.08501C10.6438 1.80505 8.60341 1.10803 6.5 1.11112C4.31092 1.11112 2.30115 1.85001 0.721839 3.08501L0 2.22056ZM1.80517 4.38167C3.1331 3.34167 4.79094 2.77531 6.5 2.77779C8.27816 2.77779 9.9115 3.37834 11.1948 4.38112L10.4724 5.24556C9.34876 4.36575 7.94602 3.88668 6.5 3.8889C4.9954 3.8889 3.61322 4.39723 2.52759 5.24556L1.80517 4.38112V4.38167ZM3.61092 6.54278C4.42807 5.90272 5.44826 5.55412 6.5 5.55556C7.59425 5.55556 8.59943 5.925 9.38908 6.54223L8.66667 7.40667C8.05379 6.9268 7.2887 6.66549 6.5 6.66667C5.67931 6.66667 4.92529 6.94389 4.33333 7.40667L3.61092 6.54223V6.54278ZM5.41667 8.70389C5.72302 8.46373 6.10558 8.33288 6.5 8.33334C6.91035 8.33334 7.28736 8.47223 7.58333 8.70334L6.5 10L5.41667 8.70334V8.70389Z" fill="#1C8CF3"></path>
+														</svg>
+													</li>
+												</ul>
 												<div class="hotel-card__prices">
 													<div class="hotel-card__old-price">от 6500 <span>₽</span>
 													</div>
@@ -634,8 +773,12 @@
 															<br> и сборы
 														</p>
 													</div>
+													<div class="hotel-card__price-alternative-details">за чел. в сутки в июне</div>
 												</div>
-												<a class="hotel-card__btn-place" href="#">Наличие мест</a>
+												<a class="hotel-card__btn-place" href="#">
+													<span class="btn-text-pc">Наличие мест</span>
+													<span class="btn-text-mobile">Подробнее</span>
+												</a>
 											</div>
 										</div>
 									</div>
@@ -646,7 +789,12 @@
 											<div class="ibg hotel-card__image">
 												<img src="assets/images/city/city-hotels/1.jpg" alt="AVRASYAQUEEN HOTEL">
 											</div>
-											<button class="button-favorite" type="button"> </button>
+											<button class="button-favorite" type="button">
+												<svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path fill-rule="evenodd" clip-rule="evenodd" d="M14.3434 2.16035C13.6031 1.41741 12.599 1 11.5519 1C10.5048 1 9.50068 1.41741 8.76046 2.16035L7.99981 2.92343L7.23916 2.16035C5.69748 0.613732 3.19793 0.613732 1.65626 2.16035C0.114581 3.70696 0.114581 6.21452 1.65626 7.76113L2.41691 8.52422L7.99981 14.125L13.5827 8.52422L14.3434 7.76113C15.0839 7.01854 15.5 6.01116 15.5 4.96074C15.5 3.91031 15.0839 2.90293 14.3434 2.16035Z" fill="#FF6933"></path>
+													<path fill-rule="evenodd" clip-rule="evenodd" d="M8.42847 1.82942C9.25648 0.99841 10.38 0.53125 11.5519 0.53125C12.7238 0.53125 13.8474 0.998439 14.6754 1.8295C15.5037 2.6601 15.9688 3.78651 15.9688 4.96074C15.9688 6.13504 15.5036 7.26151 14.6753 8.09213L8.33179 14.4559C8.24384 14.5442 8.12439 14.5937 7.99981 14.5937C7.87523 14.5937 7.75577 14.5442 7.66782 14.4559L1.32427 8.09205C-0.399757 6.3625 -0.399757 3.55897 1.32427 1.82942C3.04912 0.0990403 5.84629 0.0990402 7.57114 1.82942L7.99981 2.25946L8.42847 1.82942C8.4285 1.82939 8.42845 1.82945 8.42847 1.82942ZM11.5519 1.46875C10.6297 1.46875 9.74494 1.83638 9.09252 2.49119L8.33179 3.25436C8.24384 3.34259 8.12439 3.39218 7.99981 3.39218C7.87523 3.39218 7.75577 3.34259 7.66782 3.25436L6.90717 2.49127C5.54867 1.12842 3.34674 1.12842 1.98824 2.49127C0.628919 3.85495 0.628919 6.06653 1.98824 7.4302L7.99981 13.461L14.0114 7.4302C14.6641 6.77564 15.0312 5.88729 15.0312 4.96074C15.0312 4.03419 14.6642 3.14591 14.0115 2.49135C13.359 1.83653 12.4741 1.46875 11.5519 1.46875Z" fill="#FF6933"></path>
+												</svg>
+											</button>
 											<div class="hotel-card__repast">Завтрак</div>
 										</div>
 										<div class="hotel-card__main">
@@ -663,7 +811,9 @@
 																<li class="rating__item"> </li>
 															</ul>
 														</div>
-														<a class="btn-detail" href="#">Показать на карте</a>
+														<a class="btn-detail" href="#">
+															<span>Показать на карте</span>
+														</a>
 														<ul class="hotel-card__parameters">
 															<li class="hotel-card__parametr">
 																Wi-Fi
@@ -687,8 +837,19 @@
 												<div class="hotel-card__rating">
 													<div class="hotel-card__rating-caption">рейтинг</div>
 													<div class="hotel-card__rating-estimate">9,0</div>
-													<div class="hotel-card__rating-total">895 оценок</div>
+													<div class="hotel-card__rating-total">
+														<span>895 оценок</span>
+														<span>10 отзывов</span>
+													</div>
 												</div>
+												<ul class="hotel-card__parameters">
+													<li class="hotel-card__parametr">
+														Wi-Fi
+														<svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<path d="M0 2.22056C1.83856 0.780743 4.13382 -0.00337279 6.5 1.09055e-05C8.96264 1.09055e-05 11.2241 0.831677 13 2.22056L12.2782 3.08501C10.6438 1.80505 8.60341 1.10803 6.5 1.11112C4.31092 1.11112 2.30115 1.85001 0.721839 3.08501L0 2.22056ZM1.80517 4.38167C3.1331 3.34167 4.79094 2.77531 6.5 2.77779C8.27816 2.77779 9.9115 3.37834 11.1948 4.38112L10.4724 5.24556C9.34876 4.36575 7.94602 3.88668 6.5 3.8889C4.9954 3.8889 3.61322 4.39723 2.52759 5.24556L1.80517 4.38112V4.38167ZM3.61092 6.54278C4.42807 5.90272 5.44826 5.55412 6.5 5.55556C7.59425 5.55556 8.59943 5.925 9.38908 6.54223L8.66667 7.40667C8.05379 6.9268 7.2887 6.66549 6.5 6.66667C5.67931 6.66667 4.92529 6.94389 4.33333 7.40667L3.61092 6.54223V6.54278ZM5.41667 8.70389C5.72302 8.46373 6.10558 8.33288 6.5 8.33334C6.91035 8.33334 7.28736 8.47223 7.58333 8.70334L6.5 10L5.41667 8.70334V8.70389Z" fill="#1C8CF3"></path>
+														</svg>
+													</li>
+												</ul>
 												<div class="hotel-card__prices">
 													<div class="hotel-card__old-price">от 6500 <span>₽</span>
 													</div>
@@ -699,8 +860,12 @@
 															<br> и сборы
 														</p>
 													</div>
+													<div class="hotel-card__price-alternative-details">за чел. в сутки в июне</div>
 												</div>
-												<a class="hotel-card__btn-place" href="#">Наличие мест</a>
+												<a class="hotel-card__btn-place" href="#">
+													<span class="btn-text-pc">Наличие мест</span>
+													<span class="btn-text-mobile">Подробнее</span>
+												</a>
 											</div>
 										</div>
 									</div>
@@ -711,7 +876,12 @@
 											<div class="ibg hotel-card__image">
 												<img src="assets/images/city/city-hotels/2.jpg" alt="Liberi Hotel Taksim">
 											</div>
-											<button class="button-favorite" type="button"> </button>
+											<button class="button-favorite" type="button">
+												<svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path fill-rule="evenodd" clip-rule="evenodd" d="M14.3434 2.16035C13.6031 1.41741 12.599 1 11.5519 1C10.5048 1 9.50068 1.41741 8.76046 2.16035L7.99981 2.92343L7.23916 2.16035C5.69748 0.613732 3.19793 0.613732 1.65626 2.16035C0.114581 3.70696 0.114581 6.21452 1.65626 7.76113L2.41691 8.52422L7.99981 14.125L13.5827 8.52422L14.3434 7.76113C15.0839 7.01854 15.5 6.01116 15.5 4.96074C15.5 3.91031 15.0839 2.90293 14.3434 2.16035Z" fill="#FF6933"></path>
+													<path fill-rule="evenodd" clip-rule="evenodd" d="M8.42847 1.82942C9.25648 0.99841 10.38 0.53125 11.5519 0.53125C12.7238 0.53125 13.8474 0.998439 14.6754 1.8295C15.5037 2.6601 15.9688 3.78651 15.9688 4.96074C15.9688 6.13504 15.5036 7.26151 14.6753 8.09213L8.33179 14.4559C8.24384 14.5442 8.12439 14.5937 7.99981 14.5937C7.87523 14.5937 7.75577 14.5442 7.66782 14.4559L1.32427 8.09205C-0.399757 6.3625 -0.399757 3.55897 1.32427 1.82942C3.04912 0.0990403 5.84629 0.0990402 7.57114 1.82942L7.99981 2.25946L8.42847 1.82942C8.4285 1.82939 8.42845 1.82945 8.42847 1.82942ZM11.5519 1.46875C10.6297 1.46875 9.74494 1.83638 9.09252 2.49119L8.33179 3.25436C8.24384 3.34259 8.12439 3.39218 7.99981 3.39218C7.87523 3.39218 7.75577 3.34259 7.66782 3.25436L6.90717 2.49127C5.54867 1.12842 3.34674 1.12842 1.98824 2.49127C0.628919 3.85495 0.628919 6.06653 1.98824 7.4302L7.99981 13.461L14.0114 7.4302C14.6641 6.77564 15.0312 5.88729 15.0312 4.96074C15.0312 4.03419 14.6642 3.14591 14.0115 2.49135C13.359 1.83653 12.4741 1.46875 11.5519 1.46875Z" fill="#FF6933"></path>
+												</svg>
+											</button>
 											<div class="hotel-card__repast">Завтрак</div>
 										</div>
 										<div class="hotel-card__main">
@@ -728,7 +898,9 @@
 																<li class="rating__item"> </li>
 															</ul>
 														</div>
-														<a class="btn-detail" href="#">Показать на карте</a>
+														<a class="btn-detail" href="#">
+															<span>Показать на карте</span>
+														</a>
 														<ul class="hotel-card__parameters">
 															<li class="hotel-card__parametr">
 																Wi-Fi
@@ -751,8 +923,19 @@
 												<div class="hotel-card__rating">
 													<div class="hotel-card__rating-caption">рейтинг</div>
 													<div class="hotel-card__rating-estimate">9,0</div>
-													<div class="hotel-card__rating-total">895 оценок</div>
+													<div class="hotel-card__rating-total">
+														<span>895 оценок</span>
+														<span>10 отзывов</span>
+													</div>
 												</div>
+												<ul class="hotel-card__parameters">
+													<li class="hotel-card__parametr">
+														Wi-Fi
+														<svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<path d="M0 2.22056C1.83856 0.780743 4.13382 -0.00337279 6.5 1.09055e-05C8.96264 1.09055e-05 11.2241 0.831677 13 2.22056L12.2782 3.08501C10.6438 1.80505 8.60341 1.10803 6.5 1.11112C4.31092 1.11112 2.30115 1.85001 0.721839 3.08501L0 2.22056ZM1.80517 4.38167C3.1331 3.34167 4.79094 2.77531 6.5 2.77779C8.27816 2.77779 9.9115 3.37834 11.1948 4.38112L10.4724 5.24556C9.34876 4.36575 7.94602 3.88668 6.5 3.8889C4.9954 3.8889 3.61322 4.39723 2.52759 5.24556L1.80517 4.38112V4.38167ZM3.61092 6.54278C4.42807 5.90272 5.44826 5.55412 6.5 5.55556C7.59425 5.55556 8.59943 5.925 9.38908 6.54223L8.66667 7.40667C8.05379 6.9268 7.2887 6.66549 6.5 6.66667C5.67931 6.66667 4.92529 6.94389 4.33333 7.40667L3.61092 6.54223V6.54278ZM5.41667 8.70389C5.72302 8.46373 6.10558 8.33288 6.5 8.33334C6.91035 8.33334 7.28736 8.47223 7.58333 8.70334L6.5 10L5.41667 8.70334V8.70389Z" fill="#1C8CF3"></path>
+														</svg>
+													</li>
+												</ul>
 												<div class="hotel-card__prices">
 													<div class="hotel-card__old-price">от 6500 <span>₽</span>
 													</div>
@@ -763,8 +946,12 @@
 															<br> и сборы
 														</p>
 													</div>
+													<div class="hotel-card__price-alternative-details">за чел. в сутки в июне</div>
 												</div>
-												<a class="hotel-card__btn-place" href="#">Наличие мест</a>
+												<a class="hotel-card__btn-place" href="#">
+													<span class="btn-text-pc">Наличие мест</span>
+													<span class="btn-text-mobile">Подробнее</span>
+												</a>
 											</div>
 										</div>
 									</div>
@@ -775,7 +962,12 @@
 											<div class="ibg hotel-card__image">
 												<img src="assets/images/city/city-hotels/3.jpg" alt="Ishak Pasa Hotel - Special Class">
 											</div>
-											<button class="button-favorite" type="button"> </button>
+											<button class="button-favorite" type="button">
+												<svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path fill-rule="evenodd" clip-rule="evenodd" d="M14.3434 2.16035C13.6031 1.41741 12.599 1 11.5519 1C10.5048 1 9.50068 1.41741 8.76046 2.16035L7.99981 2.92343L7.23916 2.16035C5.69748 0.613732 3.19793 0.613732 1.65626 2.16035C0.114581 3.70696 0.114581 6.21452 1.65626 7.76113L2.41691 8.52422L7.99981 14.125L13.5827 8.52422L14.3434 7.76113C15.0839 7.01854 15.5 6.01116 15.5 4.96074C15.5 3.91031 15.0839 2.90293 14.3434 2.16035Z" fill="#FF6933"></path>
+													<path fill-rule="evenodd" clip-rule="evenodd" d="M8.42847 1.82942C9.25648 0.99841 10.38 0.53125 11.5519 0.53125C12.7238 0.53125 13.8474 0.998439 14.6754 1.8295C15.5037 2.6601 15.9688 3.78651 15.9688 4.96074C15.9688 6.13504 15.5036 7.26151 14.6753 8.09213L8.33179 14.4559C8.24384 14.5442 8.12439 14.5937 7.99981 14.5937C7.87523 14.5937 7.75577 14.5442 7.66782 14.4559L1.32427 8.09205C-0.399757 6.3625 -0.399757 3.55897 1.32427 1.82942C3.04912 0.0990403 5.84629 0.0990402 7.57114 1.82942L7.99981 2.25946L8.42847 1.82942C8.4285 1.82939 8.42845 1.82945 8.42847 1.82942ZM11.5519 1.46875C10.6297 1.46875 9.74494 1.83638 9.09252 2.49119L8.33179 3.25436C8.24384 3.34259 8.12439 3.39218 7.99981 3.39218C7.87523 3.39218 7.75577 3.34259 7.66782 3.25436L6.90717 2.49127C5.54867 1.12842 3.34674 1.12842 1.98824 2.49127C0.628919 3.85495 0.628919 6.06653 1.98824 7.4302L7.99981 13.461L14.0114 7.4302C14.6641 6.77564 15.0312 5.88729 15.0312 4.96074C15.0312 4.03419 14.6642 3.14591 14.0115 2.49135C13.359 1.83653 12.4741 1.46875 11.5519 1.46875Z" fill="#FF6933"></path>
+												</svg>
+											</button>
 											<div class="hotel-card__repast">Завтрак</div>
 										</div>
 										<div class="hotel-card__main">
@@ -792,7 +984,9 @@
 																<li class="rating__item"> </li>
 															</ul>
 														</div>
-														<a class="btn-detail" href="#">Показать на карте</a>
+														<a class="btn-detail" href="#">
+															<span>Показать на карте</span>
+														</a>
 														<ul class="hotel-card__parameters">
 															<li class="hotel-card__parametr">
 																Wi-Fi
@@ -815,8 +1009,19 @@
 												<div class="hotel-card__rating">
 													<div class="hotel-card__rating-caption">рейтинг</div>
 													<div class="hotel-card__rating-estimate">9,0</div>
-													<div class="hotel-card__rating-total">895 оценок</div>
+													<div class="hotel-card__rating-total">
+														<span>895 оценок</span>
+														<span>10 отзывов</span>
+													</div>
 												</div>
+												<ul class="hotel-card__parameters">
+													<li class="hotel-card__parametr">
+														Wi-Fi
+														<svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<path d="M0 2.22056C1.83856 0.780743 4.13382 -0.00337279 6.5 1.09055e-05C8.96264 1.09055e-05 11.2241 0.831677 13 2.22056L12.2782 3.08501C10.6438 1.80505 8.60341 1.10803 6.5 1.11112C4.31092 1.11112 2.30115 1.85001 0.721839 3.08501L0 2.22056ZM1.80517 4.38167C3.1331 3.34167 4.79094 2.77531 6.5 2.77779C8.27816 2.77779 9.9115 3.37834 11.1948 4.38112L10.4724 5.24556C9.34876 4.36575 7.94602 3.88668 6.5 3.8889C4.9954 3.8889 3.61322 4.39723 2.52759 5.24556L1.80517 4.38112V4.38167ZM3.61092 6.54278C4.42807 5.90272 5.44826 5.55412 6.5 5.55556C7.59425 5.55556 8.59943 5.925 9.38908 6.54223L8.66667 7.40667C8.05379 6.9268 7.2887 6.66549 6.5 6.66667C5.67931 6.66667 4.92529 6.94389 4.33333 7.40667L3.61092 6.54223V6.54278ZM5.41667 8.70389C5.72302 8.46373 6.10558 8.33288 6.5 8.33334C6.91035 8.33334 7.28736 8.47223 7.58333 8.70334L6.5 10L5.41667 8.70334V8.70389Z" fill="#1C8CF3"></path>
+														</svg>
+													</li>
+												</ul>
 												<div class="hotel-card__prices">
 													<div class="hotel-card__old-price">от 6500 <span>₽</span>
 													</div>
@@ -827,8 +1032,12 @@
 															<br> и сборы
 														</p>
 													</div>
+													<div class="hotel-card__price-alternative-details">за чел. в сутки в июне</div>
 												</div>
-												<a class="hotel-card__btn-place" href="#">Наличие мест</a>
+												<a class="hotel-card__btn-place" href="#">
+													<span class="btn-text-pc">Наличие мест</span>
+													<span class="btn-text-mobile">Подробнее</span>
+												</a>
 											</div>
 										</div>
 									</div>
@@ -839,7 +1048,12 @@
 											<div class="ibg hotel-card__image">
 												<img src="assets/images/city/city-hotels/4.jpg" alt="Ishak Pasa Hotel - Special Class">
 											</div>
-											<button class="button-favorite" type="button"> </button>
+											<button class="button-favorite" type="button">
+												<svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path fill-rule="evenodd" clip-rule="evenodd" d="M14.3434 2.16035C13.6031 1.41741 12.599 1 11.5519 1C10.5048 1 9.50068 1.41741 8.76046 2.16035L7.99981 2.92343L7.23916 2.16035C5.69748 0.613732 3.19793 0.613732 1.65626 2.16035C0.114581 3.70696 0.114581 6.21452 1.65626 7.76113L2.41691 8.52422L7.99981 14.125L13.5827 8.52422L14.3434 7.76113C15.0839 7.01854 15.5 6.01116 15.5 4.96074C15.5 3.91031 15.0839 2.90293 14.3434 2.16035Z" fill="#FF6933"></path>
+													<path fill-rule="evenodd" clip-rule="evenodd" d="M8.42847 1.82942C9.25648 0.99841 10.38 0.53125 11.5519 0.53125C12.7238 0.53125 13.8474 0.998439 14.6754 1.8295C15.5037 2.6601 15.9688 3.78651 15.9688 4.96074C15.9688 6.13504 15.5036 7.26151 14.6753 8.09213L8.33179 14.4559C8.24384 14.5442 8.12439 14.5937 7.99981 14.5937C7.87523 14.5937 7.75577 14.5442 7.66782 14.4559L1.32427 8.09205C-0.399757 6.3625 -0.399757 3.55897 1.32427 1.82942C3.04912 0.0990403 5.84629 0.0990402 7.57114 1.82942L7.99981 2.25946L8.42847 1.82942C8.4285 1.82939 8.42845 1.82945 8.42847 1.82942ZM11.5519 1.46875C10.6297 1.46875 9.74494 1.83638 9.09252 2.49119L8.33179 3.25436C8.24384 3.34259 8.12439 3.39218 7.99981 3.39218C7.87523 3.39218 7.75577 3.34259 7.66782 3.25436L6.90717 2.49127C5.54867 1.12842 3.34674 1.12842 1.98824 2.49127C0.628919 3.85495 0.628919 6.06653 1.98824 7.4302L7.99981 13.461L14.0114 7.4302C14.6641 6.77564 15.0312 5.88729 15.0312 4.96074C15.0312 4.03419 14.6642 3.14591 14.0115 2.49135C13.359 1.83653 12.4741 1.46875 11.5519 1.46875Z" fill="#FF6933"></path>
+												</svg>
+											</button>
 											<div class="hotel-card__repast">Завтрак</div>
 										</div>
 										<div class="hotel-card__main">
@@ -856,7 +1070,9 @@
 																<li class="rating__item"> </li>
 															</ul>
 														</div>
-														<a class="btn-detail" href="#">Показать на карте</a>
+														<a class="btn-detail" href="#">
+															<span>Показать на карте</span>
+														</a>
 														<ul class="hotel-card__parameters">
 															<li class="hotel-card__parametr">
 																Wi-Fi
@@ -879,8 +1095,19 @@
 												<div class="hotel-card__rating">
 													<div class="hotel-card__rating-caption">рейтинг</div>
 													<div class="hotel-card__rating-estimate">9,0</div>
-													<div class="hotel-card__rating-total">895 оценок</div>
+													<div class="hotel-card__rating-total">
+														<span>895 оценок</span>
+														<span>10 отзывов</span>
+													</div>
 												</div>
+												<ul class="hotel-card__parameters">
+													<li class="hotel-card__parametr">
+														Wi-Fi
+														<svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<path d="M0 2.22056C1.83856 0.780743 4.13382 -0.00337279 6.5 1.09055e-05C8.96264 1.09055e-05 11.2241 0.831677 13 2.22056L12.2782 3.08501C10.6438 1.80505 8.60341 1.10803 6.5 1.11112C4.31092 1.11112 2.30115 1.85001 0.721839 3.08501L0 2.22056ZM1.80517 4.38167C3.1331 3.34167 4.79094 2.77531 6.5 2.77779C8.27816 2.77779 9.9115 3.37834 11.1948 4.38112L10.4724 5.24556C9.34876 4.36575 7.94602 3.88668 6.5 3.8889C4.9954 3.8889 3.61322 4.39723 2.52759 5.24556L1.80517 4.38112V4.38167ZM3.61092 6.54278C4.42807 5.90272 5.44826 5.55412 6.5 5.55556C7.59425 5.55556 8.59943 5.925 9.38908 6.54223L8.66667 7.40667C8.05379 6.9268 7.2887 6.66549 6.5 6.66667C5.67931 6.66667 4.92529 6.94389 4.33333 7.40667L3.61092 6.54223V6.54278ZM5.41667 8.70389C5.72302 8.46373 6.10558 8.33288 6.5 8.33334C6.91035 8.33334 7.28736 8.47223 7.58333 8.70334L6.5 10L5.41667 8.70334V8.70389Z" fill="#1C8CF3"></path>
+														</svg>
+													</li>
+												</ul>
 												<div class="hotel-card__prices">
 													<div class="hotel-card__old-price">от 6500 <span>₽</span>
 													</div>
@@ -891,8 +1118,12 @@
 															<br> и сборы
 														</p>
 													</div>
+													<div class="hotel-card__price-alternative-details">за чел. в сутки в июне</div>
 												</div>
-												<a class="hotel-card__btn-place" href="#">Наличие мест</a>
+												<a class="hotel-card__btn-place" href="#">
+													<span class="btn-text-pc">Наличие мест</span>
+													<span class="btn-text-mobile">Подробнее</span>
+												</a>
 											</div>
 										</div>
 									</div>
@@ -903,7 +1134,12 @@
 											<div class="ibg hotel-card__image">
 												<img src="assets/images/city/city-hotels/5.jpg" alt="Ishak Pasa Hotel - Special Class">
 											</div>
-											<button class="button-favorite" type="button"> </button>
+											<button class="button-favorite" type="button">
+												<svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path fill-rule="evenodd" clip-rule="evenodd" d="M14.3434 2.16035C13.6031 1.41741 12.599 1 11.5519 1C10.5048 1 9.50068 1.41741 8.76046 2.16035L7.99981 2.92343L7.23916 2.16035C5.69748 0.613732 3.19793 0.613732 1.65626 2.16035C0.114581 3.70696 0.114581 6.21452 1.65626 7.76113L2.41691 8.52422L7.99981 14.125L13.5827 8.52422L14.3434 7.76113C15.0839 7.01854 15.5 6.01116 15.5 4.96074C15.5 3.91031 15.0839 2.90293 14.3434 2.16035Z" fill="#FF6933"></path>
+													<path fill-rule="evenodd" clip-rule="evenodd" d="M8.42847 1.82942C9.25648 0.99841 10.38 0.53125 11.5519 0.53125C12.7238 0.53125 13.8474 0.998439 14.6754 1.8295C15.5037 2.6601 15.9688 3.78651 15.9688 4.96074C15.9688 6.13504 15.5036 7.26151 14.6753 8.09213L8.33179 14.4559C8.24384 14.5442 8.12439 14.5937 7.99981 14.5937C7.87523 14.5937 7.75577 14.5442 7.66782 14.4559L1.32427 8.09205C-0.399757 6.3625 -0.399757 3.55897 1.32427 1.82942C3.04912 0.0990403 5.84629 0.0990402 7.57114 1.82942L7.99981 2.25946L8.42847 1.82942C8.4285 1.82939 8.42845 1.82945 8.42847 1.82942ZM11.5519 1.46875C10.6297 1.46875 9.74494 1.83638 9.09252 2.49119L8.33179 3.25436C8.24384 3.34259 8.12439 3.39218 7.99981 3.39218C7.87523 3.39218 7.75577 3.34259 7.66782 3.25436L6.90717 2.49127C5.54867 1.12842 3.34674 1.12842 1.98824 2.49127C0.628919 3.85495 0.628919 6.06653 1.98824 7.4302L7.99981 13.461L14.0114 7.4302C14.6641 6.77564 15.0312 5.88729 15.0312 4.96074C15.0312 4.03419 14.6642 3.14591 14.0115 2.49135C13.359 1.83653 12.4741 1.46875 11.5519 1.46875Z" fill="#FF6933"></path>
+												</svg>
+											</button>
 											<div class="hotel-card__repast">Завтрак</div>
 										</div>
 										<div class="hotel-card__main">
@@ -920,7 +1156,9 @@
 																<li class="rating__item"> </li>
 															</ul>
 														</div>
-														<a class="btn-detail" href="#">Показать на карте</a>
+														<a class="btn-detail" href="#">
+															<span>Показать на карте</span>
+														</a>
 														<ul class="hotel-card__parameters">
 															<li class="hotel-card__parametr">
 																Wi-Fi
@@ -943,8 +1181,19 @@
 												<div class="hotel-card__rating">
 													<div class="hotel-card__rating-caption">рейтинг</div>
 													<div class="hotel-card__rating-estimate">9,0</div>
-													<div class="hotel-card__rating-total">895 оценок</div>
+													<div class="hotel-card__rating-total">
+														<span>895 оценок</span>
+														<span>10 отзывов</span>
+													</div>
 												</div>
+												<ul class="hotel-card__parameters">
+													<li class="hotel-card__parametr">
+														Wi-Fi
+														<svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<path d="M0 2.22056C1.83856 0.780743 4.13382 -0.00337279 6.5 1.09055e-05C8.96264 1.09055e-05 11.2241 0.831677 13 2.22056L12.2782 3.08501C10.6438 1.80505 8.60341 1.10803 6.5 1.11112C4.31092 1.11112 2.30115 1.85001 0.721839 3.08501L0 2.22056ZM1.80517 4.38167C3.1331 3.34167 4.79094 2.77531 6.5 2.77779C8.27816 2.77779 9.9115 3.37834 11.1948 4.38112L10.4724 5.24556C9.34876 4.36575 7.94602 3.88668 6.5 3.8889C4.9954 3.8889 3.61322 4.39723 2.52759 5.24556L1.80517 4.38112V4.38167ZM3.61092 6.54278C4.42807 5.90272 5.44826 5.55412 6.5 5.55556C7.59425 5.55556 8.59943 5.925 9.38908 6.54223L8.66667 7.40667C8.05379 6.9268 7.2887 6.66549 6.5 6.66667C5.67931 6.66667 4.92529 6.94389 4.33333 7.40667L3.61092 6.54223V6.54278ZM5.41667 8.70389C5.72302 8.46373 6.10558 8.33288 6.5 8.33334C6.91035 8.33334 7.28736 8.47223 7.58333 8.70334L6.5 10L5.41667 8.70334V8.70389Z" fill="#1C8CF3"></path>
+														</svg>
+													</li>
+												</ul>
 												<div class="hotel-card__prices">
 													<div class="hotel-card__old-price">от 6500 <span>₽</span>
 													</div>
@@ -955,53 +1204,81 @@
 															<br> и сборы
 														</p>
 													</div>
+													<div class="hotel-card__price-alternative-details">за чел. в сутки в июне</div>
 												</div>
-												<a class="hotel-card__btn-place" href="#">Наличие мест</a>
+												<a class="hotel-card__btn-place" href="#">
+													<span class="btn-text-pc">Наличие мест</span>
+													<span class="btn-text-mobile">Подробнее</span>
+												</a>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-							<nav class="pagination-nav">
-								<ul class="pagination">
-									<li class="page-item page-item--prev">
-										<a class="page-link" href="#">Назад</a>
-									</li>
-									<li class="page-item">
-										<a class="page-link" href="#">1</a>
-									</li>
-									<li class="page-item">
-										<a class="page-link" href="#">...</a>
-									</li>
-									<li class="page-item">
-										<a class="page-link" href="#">11</a>
-									</li>
-									<li class="page-item active">
-										<a class="page-link" href="#">12</a>
-									</li>
-									<li class="page-item">
-										<a class="page-link" href="#">13</a>
-									</li>
-									<li class="page-item">
-										<a class="page-link" href="#">14</a>
-									</li>
-									<li class="page-item">
-										<a class="page-link" href="#">15</a>
-									</li>
-									<li class="page-item">
-										<a class="page-link" href="#">16</a>
-									</li>
-									<li class="page-item">
-										<a class="page-link" href="#">...</a>
-									</li>
-									<li class="page-item">
-										<a class="page-link" href="#">26</a>
-									</li>
-									<li class="page-item page-item--next">
-										<a class="page-link" href="#">Вперед</a>
-									</li>
-								</ul>
-							</nav>
+							<div class="pagination">
+								<nav class="pagination-nav">
+									<ul class="pagination__list">
+										<li class="page-item page-item--prev">
+											<a class="page-link" href="#">Назад</a>
+										</li>
+										<li class="page-item">
+											<a class="page-link" href="#">1</a>
+										</li>
+										<li class="page-item">
+											<a class="page-link" href="#">...</a>
+										</li>
+										<li class="page-item">
+											<a class="page-link" href="#">11</a>
+										</li>
+										<li class="page-item active">
+											<a class="page-link" href="#">12</a>
+										</li>
+										<li class="page-item">
+											<a class="page-link" href="#">13</a>
+										</li>
+										<li class="page-item">
+											<a class="page-link" href="#">14</a>
+										</li>
+										<li class="page-item">
+											<a class="page-link" href="#">15</a>
+										</li>
+										<li class="page-item">
+											<a class="page-link" href="#">16</a>
+										</li>
+										<li class="page-item">
+											<a class="page-link" href="#">...</a>
+										</li>
+										<li class="page-item">
+											<a class="page-link" href="#">26</a>
+										</li>
+										<li class="page-item page-item--next">
+											<a class="page-link" href="#">Вперед</a>
+										</li>
+									</ul>
+								</nav>
+								<nav class="pagination-nav-mobile">
+									<ul class="pagination__list">
+										<li class="page-item">
+											<a class="page-link" href="#">1</a>
+										</li>
+										<li class="page-item">
+											<a class="page-link" href="#">2</a>
+										</li>
+										<li class="page-item active">
+											<a class="page-link" href="#">3</a>
+										</li>
+										<li class="page-item">
+											<a class="page-link" href="#">4</a>
+										</li>
+										<li class="page-item">
+											<a class="page-link" href="#">...</a>
+										</li>
+										<li class="page-item">
+											<a class="page-link" href="#">15</a>
+										</li>
+									</ul>
+								</nav>
+							</div>
 						</div>
 					</div>
 					<div class="city-testimonials testimonials">
@@ -1015,7 +1292,7 @@
 										<img src="assets/images/testimonials/1.jpg" alt="Гостиница “Южный Берег”">
 									</div>
 									<div class="testimonials-item__body">
-										<div class="testimonials-item__place">
+										<div class="anim-title testimonials-item__place">
 											<span>Гостиница “Южный Берег”</span>
 										</div>
 										<address class="testimonials-item__address">Голубицкая, ул. Красная, д. 178</address>
@@ -1032,9 +1309,13 @@
 												</ul>
 											</div>
 										</div>
-										<div class="testimonials-item__text">
-											<p>Шикарное расположение, прямо в самом-самом центре. Рядом остановка есть, до парка Краснодар удобно добираться. В хостеле есть разделение на женские и мужские номера. Контингент приличный. Белье чистое и в помещении для хостела тоже довольно чисто. Для бюджетного варианта с хорошим расположением самое то.</p>
-											<a class="btn-more testimonials-item__btn" href="#">Подробнее</a>
+										<div class="testimonials-item__text-container">
+											<div class="testimonials-item__text text-clamp">
+												<p>Шикарное расположение, прямо в самом-самом центре. Рядом остановка есть, до парка Краснодар удобно добираться. В хостеле есть разделение на женские и мужские номера. Контингент приличный. Белье чистое и в помещении для хостела тоже довольно чисто. Для бюджетного варианта с хорошим расположением самое то...</p>
+												<a class="btn-detail testimonials-item__btn" href="#">
+													<span>Подробнее</span>
+												</a>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -1043,7 +1324,7 @@
 										<img src="assets/images/testimonials/2.jpg" alt="Гостиница “Летучая мышь”">
 									</div>
 									<div class="testimonials-item__body">
-										<div class="testimonials-item__place">
+										<div class="anim-title testimonials-item__place">
 											<span>Гостиница “Летучая мышь”</span>
 										</div>
 										<address class="testimonials-item__address">Голубицкая, ул. Красная, д. 178</address>
@@ -1060,9 +1341,13 @@
 												</ul>
 											</div>
 										</div>
-										<div class="testimonials-item__text">
-											<p>Шикарное расположение, прямо в самом-самом центре. Рядом остановка есть, до парка Краснодар удобно добираться. В хостеле есть разделение на женские и мужские номера. Контингент приличный. Белье чистое и в помещении для хостела тоже довольно чисто. Для бюджетного варианта с хорошим расположением самое то.</p>
-											<a class="btn-more testimonials-item__btn" href="#">Подробнее</a>
+										<div class="testimonials-item__text-container">
+											<div class="testimonials-item__text text-clamp">
+												<p>Шикарное расположение, прямо в самом-самом центре. Рядом остановка есть, до парка Краснодар удобно добираться. В хостеле есть разделение на женские и мужские номера. Контингент приличный. Белье чистое и в помещении для хостела тоже довольно чисто. Для бюджетного варианта с хорошим расположением самое то.</p>
+												<a class="btn-detail testimonials-item__btn" href="#">
+													<span>Подробнее</span>
+												</a>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -1071,7 +1356,7 @@
 										<img src="assets/images/testimonials/3.jpg" alt="Гостиница «Южный Берег»">
 									</div>
 									<div class="testimonials-item__body">
-										<div class="testimonials-item__place">
+										<div class="anim-title testimonials-item__place">
 											<span>Гостиница «Южный Берег»</span>
 										</div>
 										<address class="testimonials-item__address">Голубицкая, ул. Красная, д. 178</address>
@@ -1088,9 +1373,13 @@
 												</ul>
 											</div>
 										</div>
-										<div class="testimonials-item__text">
-											<p>Шикарное расположение, прямо в самом-самом центре. Рядом остановка есть, до парка Краснодар удобно добираться. В хостеле есть разделение на женские и мужские номера. Контингент приличный. Белье чистое и в помещении для хостела тоже довольно чисто. Для бюджетного варианта с хорошим расположением самое то.</p>
-											<a class="btn-more testimonials-item__btn" href="#">Подробнее</a>
+										<div class="testimonials-item__text-container">
+											<div class="testimonials-item__text text-clamp">
+												<p>Шикарное расположение, прямо в самом-самом центре. Рядом остановка есть, до парка Краснодар удобно добираться. В хостеле есть разделение на женские и мужские номера. Контингент приличный. Белье чистое и в помещении для хостела тоже довольно чисто. Для бюджетного варианта с хорошим расположением самое то.</p>
+												<a class="btn-detail testimonials-item__btn" href="#">
+													<span>Подробнее</span>
+												</a>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -1099,7 +1388,7 @@
 										<img src="assets/images/testimonials/4.jpg" alt="Отель “Море”">
 									</div>
 									<div class="testimonials-item__body">
-										<div class="testimonials-item__place">
+										<div class="anim-title testimonials-item__place">
 											<span>Отель “Море”</span>
 										</div>
 										<address class="testimonials-item__address">Голубицкая, ул. Красная, д. 178</address>
@@ -1116,9 +1405,13 @@
 												</ul>
 											</div>
 										</div>
-										<div class="testimonials-item__text">
-											<p>Шикарное расположение, прямо в самом-самом центре. Рядом остановка есть, до парка Краснодар удобно добираться. В хостеле есть разделение на женские и мужские номера. Контингент приличный. Белье чистое и в помещении для хостела тоже довольно чисто. Для бюджетного варианта с хорошим расположением самое то.</p>
-											<a class="btn-more testimonials-item__btn" href="#">Подробнее</a>
+										<div class="testimonials-item__text-container">
+											<div class="testimonials-item__text text-clamp">
+												<p>Шикарное расположение, прямо в самом-самом центре. Рядом остановка есть, до парка Краснодар удобно добираться. В хостеле есть разделение на женские и мужские номера. Контингент приличный. Белье чистое и в помещении для хостела тоже довольно чисто. Для бюджетного варианта с хорошим расположением самое то.</p>
+												<a class="btn-detail testimonials-item__btn" href="#">
+													<span>Подробнее</span>
+												</a>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -1134,11 +1427,13 @@
 				<div class="footer__body">
 					<div class="footer__info info-footer">
 						<a class="footer__logo" href="homepage.html">
-							<img src="assets/images/logo.svg" alt="">
+							<img src="assets/images/logo.svg" alt="логотип">
 						</a>
-						<div class="footer__copy">©На Юга, 2024</div>
-						<a class="footer__politic" href="#">Политика конфиденциальности</a>
-						<div class="footer__disclamer">Мы не предоставляем услуги бронирования. Всю информацию Вы можете найти на странице заинтресовавшего Вас обьекта Пишите, мы обязательно ответим</div>
+						<div class="info-footer__inner" data-da=".main-footer, 767.98, 0">
+							<div class="footer__copy">©На Юга, 2024</div>
+							<a class="footer__politic" href="#">Политика конфиденциальности</a>
+							<div class="footer__disclamer">Мы не предоставляем услуги бронирования. Всю информацию Вы можете найти на странице заинтресовавшего Вас обьекта Пишите, мы обязательно ответим</div>
+						</div>
 					</div>
 					<div class="footer__main main-footer">
 						<div class="footer__menu menu-footer">
@@ -1181,6 +1476,7 @@
 				</div>
 			</div>
 		</footer>
+		<div class="overlay"></div>
 	</div>
 	<script src="assets/scripts/main.js" defer="defer"></script>
 	<script src="assets/scripts/city.js" type="module"></script>

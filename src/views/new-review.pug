@@ -1,0 +1,68 @@
+extends ./layouts/default
+
+block variables 
+	- let pageTitle = "Новый отзыв";
+	- let breadCrumbsList = [{"title": "Главная", "link": "/"}, {"title": "Крым", "link": "/"},  {"title": "Алушта", "link": "city.html"}, {"title": "Жилье", "link": "city-hotels.html"}];
+	- let currentPage = "Новый отзыв"
+
+append styles 
+	link(href="assets/styles/new-review.css" rel="stylesheet")
+
+append scripts 
+	script(src="assets/scripts/new-review.js" type="module")
+
+block content
+	.new-review 
+		.container
+			.page-title= pageTitle 
+			.new-review__body 
+				form(action="#").new-review__form.review-form
+					.review-form__groups.groups-review
+						fieldset.group-review.group-review--about
+							legend.group-review__caption О вас
+							.group-review__items 
+								+formItem("text", "review_name", "Как вас зовут?*")
+								+formItem("text", "review_location", "Откуда вы?*")
+								+formItem("email", "review_email", "Email")
+						fieldset.group-review 
+							legend.group-review__caption Когда вы здесь отдыхали?
+							.group-review__items 
+								.form-item
+									.form-item__caption Месяц проживания
+									+customDropdown([...newReviewPage.dropdowns.month], "Выберите месяц")
+								.form-item
+									.form-item__caption Год проживания
+									+customDropdown([...newReviewPage.dropdowns.year], "Выберите год")
+						fieldset.group-review.group-review--estimate
+							legend.group-review__caption Дайте оценку этому объекту
+							.group-review__items 
+								.form-item
+									.form-item__caption Расположение
+									.form-item__buttons
+										each item, index in newReviewPage.radiobuttons.location
+											+customRadio(item, index, "estimate_location")
+								.form-item
+									.form-item__caption Цена/качество
+									.form-item__buttons
+										each item, index in newReviewPage.radiobuttons.price
+											+customRadio(item, index, "estimate_price")
+								.form-item
+									.form-item__caption Чистота
+									.form-item__buttons
+										each item, index in newReviewPage.radiobuttons.purity
+											+customRadio(item, index, "estimate_purity")
+								.form-item
+									.form-item__caption Обслуживание
+									.form-item__buttons
+										each item, index in newReviewPage.radiobuttons.service
+											+customRadio(item, index, "estimate_service")
+								.form-item
+									.form-item__field
+										textarea(name="estimate_message" id="estimate_message").form-textarea
+										label(for="estimate_message").form-label Текст отзыва*
+					.review-form__footer 
+						.review-form__buttons 
+							button(type="submit").btn.btn-blue Отправить отзыв 
+							button(type="reset").btn.btn-blue-transparent Отменить 
+						.review-form__text 
+							| Отправляя заявку, вы даете согласие на обработку своих персональных данных и принимаете условия #[a(href="#").btn-detail Политики конфидециальности] и #[a(href="#").btn-detail Пользовательского соглашения]

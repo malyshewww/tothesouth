@@ -1,4 +1,4 @@
-import "../chunks/chunk-FZKHDX4X.js";
+import "../chunks/chunk-D3KMJQV6.js";
 
 // src/scripts/city.ts
 document.addEventListener("DOMContentLoaded", () => {
@@ -18,5 +18,77 @@ document.addEventListener("DOMContentLoaded", () => {
       links.forEach((link) => link.classList.remove("show"));
     }
   }
+  document.addEventListener("click", documentActions);
+  const asideForm = document.querySelector(".aside-form");
+  const overlay = document.querySelector(".overlay");
+  const sortingBlock = document.querySelector(".sorting");
+  const filter = document.querySelector(".filter");
+  function documentActions(event) {
+    let target = event.target;
+    if (target.closest(".filter-button-mobile")) {
+      asideForm?.classList.add("active");
+      document.body.classList.add("lock");
+      overlay?.classList.add("active");
+    }
+    if (target.closest(".form-heading__close") || target.closest(".aside-form .btn-submit") || target.closest(".overlay") || target.closest(".filter .btn")) {
+      asideForm?.classList.remove("active");
+      document.body.classList.remove("lock");
+      overlay?.classList.remove("active");
+      filter?.classList.remove("active");
+    }
+    if (target.matches(".sorting-button-mobile")) {
+      sortingBlock?.classList.toggle("active");
+    }
+    if (!target.closest(".sorting") && sortingBlock?.classList.contains("active")) {
+      sortingBlock?.classList.remove("active");
+    }
+    if (target.closest(".sorting__list-item")) {
+      const sortingItems = document.querySelectorAll(".sorting__list-item.active");
+      if (sortingItems) {
+        sortingItems.forEach((item) => item.classList.remove("active"));
+      }
+      target.classList.add("active");
+      sortingBlock?.classList.remove("active");
+    }
+    if (target.closest(".filter-button")) {
+      asideForm?.classList.add("active");
+      filter?.classList.add("active");
+      document.body.classList.add("lock");
+      overlay?.classList.add("active");
+    }
+  }
+  if (asideForm) {
+    const form = asideForm.querySelector("form");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+    });
+  }
+  const navigationLinks = document.querySelectorAll(".navigation-city__link");
+  const navigationCity = document.querySelector(".navigation-city");
+  const navigationCityList = document.querySelector(".navigation-city__list");
+  const navigationItems = document.querySelectorAll(".navigation-city__item");
+  if (navigationLinks.length) {
+    navigationLinks.forEach((link) => {
+      if (link.classList.contains("active")) {
+        const offset = link.getBoundingClientRect().left - navigationCity?.getBoundingClientRect().left;
+        navigationCityList?.scrollTo(offset, 0);
+      }
+    });
+  }
+  function changePositionButton() {
+    const textClamps = document.querySelectorAll(".text-clamp");
+    if (textClamps) {
+      textClamps.forEach((text) => {
+        const button = text.querySelector(".btn-detail");
+        if (text?.scrollHeight > text?.getBoundingClientRect().height + 1) {
+          button?.classList.add("changed");
+        } else {
+          button?.classList.remove("changed");
+        }
+      });
+    }
+  }
+  changePositionButton();
+  window.addEventListener("resize", changePositionButton);
 });
 //# sourceMappingURL=city.js.map

@@ -1,0 +1,30 @@
+extends ./layouts/default
+
+block variables 
+	- let pageTitle = "Избранное";
+	- let breadCrumbsList = [{"title": "Главная", "link": "/"}];
+	- let currentPage = "Избранное";
+	- let isFavorites = true;
+
+append styles 
+	link(href="assets/styles/favorites.css" rel="stylesheet")
+
+append scripts 
+	script(src="assets/scripts/favorites.js" type="module")
+
+block content 
+	.favorites
+		.container
+			.page-title= pageTitle
+			.favorites__body 
+				aside.aside
+					.aside-navigation
+						.aside__caption Разделы
+						nav
+							ul.aside-navigation__list 
+								each item, index in favoritesPage.navigation
+									li.aside-navigation__item 
+										+checkbox(item, index, "section")
+				.favorites__cards 
+					- for (var x = 0; x < 5; x++)
+						+hotelPreview(cityPage.hotels[0], "active")

@@ -1,0 +1,26 @@
+.aside-map {
+	border: 1px solid $gray-line;
+	border-radius: 10px;
+	min-height: 150px;
+	display: grid;
+	place-items: center;
+	background-image: url('../images/icons/map.svg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.map-button {
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	&::after {
+		content: '';
+		display: block;
+		width: 24px;
+		height: 24px;
+		mask-image: url('../images/icons/pin-location.svg');
+		mask-repeat: no-repeat;
+		mask-position: center;
+		background-color: currentColor;
+	}
+}

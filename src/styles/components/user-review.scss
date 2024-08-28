@@ -1,0 +1,138 @@
+.reviews-item {
+	border: 1px solid $gray-line;
+	border-radius: 10px;
+	padding: 30px;
+	background: $white;
+	transition: box-shadow $time;
+	@media (any-hover: hover) {
+		&:hover {
+			cursor: pointer;
+			box-shadow: $shadow;
+			& .anim-title {
+				color: $orange;
+				& span {
+					background-size: 100% 1px;
+				}
+			}
+		}
+	}
+	&.expanded {
+		page-break-inside: avoid;
+		break-inside: avoid-column;
+		margin-bottom: 30px;
+	}
+	&__body {
+		display: grid;
+		grid-template-columns: 270px 1fr;
+		align-items: start;
+		gap: 30px;
+	}
+	&__header {
+		padding-bottom: 15px;
+		border-bottom: 1px solid $gray-line;
+		margin-bottom: 20px;
+	}
+	&__info {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: 10px;
+		.expanded & {
+			display: grid;
+			align-items: center;
+			grid-template-columns: 1fr auto;
+			grid-template-areas:
+				'author date'
+				'rating date';
+			width: 100%;
+		}
+	}
+	&__author {
+		font-weight: 700;
+		font-size: 20px;
+		line-height: 120%;
+		.expanded & {
+			grid-area: author;
+		}
+	}
+	&__date {
+		font-size: 14px;
+		line-height: 140%;
+		color: $gray-text;
+		.expanded & {
+			grid-area: date;
+		}
+	}
+	&__rating {
+		width: 100%;
+		.expanded & {
+			grid-area: rating;
+		}
+	}
+	&__text {
+		width: 100%;
+		font-size: 16px;
+		line-height: 130%;
+		& p {
+			&:not(:last-child) {
+				margin-bottom: 10px;
+			}
+		}
+		.expanded & {
+			font-size: 14px;
+			line-height: 140%;
+		}
+	}
+}
+.place-reviews {
+	display: grid;
+	gap: 5px;
+	.expanded & {
+		grid-template-columns: 60px 1fr;
+		gap: 5px 20px;
+		align-items: center;
+		grid-template-areas:
+			'img name'
+			'img address';
+		margin-bottom: 15px;
+	}
+	&__image {
+		padding-bottom: math.div(176, 270) * 100%;
+		overflow: hidden;
+		border-radius: 10px;
+		margin-bottom: 15px;
+		.expanded & {
+			grid-area: img;
+			padding-bottom: 0;
+			width: 60px;
+			height: 60px;
+			border-radius: 5px;
+			margin-bottom: 0;
+		}
+	}
+	&__name {
+		font-weight: 700;
+		font-size: 18px;
+		line-height: 120%;
+		.expanded & {
+			grid-area: name;
+			font-size: 16px;
+			line-height: 130%;
+			display: inline-grid;
+			justify-self: start;
+			align-self: end;
+		}
+	}
+	&__address {
+		font-size: 14px;
+		line-height: 140%;
+		color: $gray-text;
+		font-style: normal;
+		.expanded & {
+			grid-area: address;
+			display: inline-grid;
+			justify-self: start;
+			align-self: start;
+		}
+	}
+}

@@ -17,19 +17,30 @@ block content
 		.container 
 			.page-title= pageTitle
 			+cityNavigation(1)
-			.heading 
+			.heading.city-heading
 				.heading__title.title-xs Жилье в Алуште
-				.heading-sorting.sorting
-					.sorting__caption Сортировать:
-					ul.sorting__list
-						li.sorting__list-item Популярность
-						li.sorting__list-item Рейтинг
-						li(data-sort="up").sorting__list-item.active Цена
+				.heading-actions
+					.sorting
+						.sorting__caption Сортировать:
+						button(type="button").sorting-button-mobile Сортировать 
+						ul.sorting__list
+							li.sorting__list-item Популярность
+							li.sorting__list-item Рейтинг
+							li(data-sort="up").sorting__list-item.active Цена
+					button(type="button").filter-button-mobile Фильтры
+					button(type="button").map-button-mobile Карта
 			.city-layout 
-				aside.aside 
-					+objectCard(otherObjcets[3], 'active')
+				aside.aside
+					.aside-object
+						+objectCard(otherObjcets[3], 'active')
+					+asideMap
 					.aside-form
-						form(action="#", method="post").form 
+						form(action="#", method="post").form
+							.form-heading 
+								.form-heading__title Фильтры
+								.form-heading__actions 
+									button(type="reset").form-heading__button-reset.btn-reset Сбросить
+									button(type="button").form-heading__close.btn-close
 							.form-groups 
 								+fieldGroup("Регион, город")
 									.form-group__items
@@ -48,7 +59,7 @@ block content
 									.form-group__items
 										each item, index in hotelCheckboxes.type
 											+checkbox(item, index, "type")
-									+btnShow
+									//- +btnShow
 								+fieldGroup("Инфраструктура")
 									.form-group__items
 										each item, index in hotelCheckboxes.objects
@@ -58,19 +69,21 @@ block content
 									.form-group__items
 										each item, index in hotelCheckboxes.food
 											+checkbox(item, index, "food")
-									+btnShow
+									//- +btnShow
 								+fieldGroup("Общие")
 									.form-group__items
 										each item, index in hotelCheckboxes.common
 											+checkbox(item, index, "common")
-									+btnShow
+									//- +btnShow
 							.aside-form__bottom 
-								button(type="submit").btn-submit.btn.btn-blue Применить 
+								button(type="submit").btn-submit.btn.btn-blue 
+									span.btn-text-pc Применить 
+									span.btn-text-mobile Показать 81 результат 
 								button(type="reset").btn-reset Сбросить 
 					+asideNavigation([...cityPage.resorts], "Курорты рядом")
 				.city-wrapper 
 					.city-hotels__list
 						each item in cityPage.hotels
 							+hotelPreview(item)
-					+pagination([...pagination], 3)
+					+pagination([...pagination], [...paginationMobile], 3)
 			include ./components/city-testimonials

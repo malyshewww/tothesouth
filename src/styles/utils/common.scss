@@ -1,4 +1,5 @@
 body {
+	scrollbar-gutter: stable;
 	&.home {
 		background-color: $white;
 		& .header {
@@ -8,7 +9,14 @@ body {
 			left: 0;
 			width: 100%;
 			z-index: 2;
+			@media screen and (max-width: $xl) {
+				background-color: $white;
+				position: static;
+			}
 		}
+	}
+	&.lock {
+		overflow: hidden;
 	}
 }
 .btn {
@@ -24,10 +32,50 @@ body {
 	align-items: center;
 	font-size: 16px;
 	line-height: 130%;
+	position: relative;
+	overflow: hidden;
+	transition:
+		background-color $time,
+		color $time,
+		border-color $time;
+}
+
+.btn-circle {
+	position: absolute;
+	display: block;
+	width: 0;
+	height: 0;
+	border-radius: 50%;
+	transition:
+		width $time ease-in-out,
+		height $time ease-in-out;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	z-index: -1;
+}
+
+.btn-blue {
+	color: $white;
+	background-color: $blue-1;
+	border: none;
+	min-height: 51px;
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: #25bdd9;
+			border-color: #25bdd9;
+		}
+		&:active {
+			background-color: #0990a9;
+			border-color: #0990a9;
+		}
+	}
 }
 
 .btn-lg {
 	min-height: 61px;
+	@media screen and (max-width: $md) {
+		min-height: 51px;
+	}
 }
 
 .btn-xs {
@@ -38,23 +86,65 @@ body {
 	background-color: transparent;
 	border: 1px solid $white;
 	color: $white;
+	@media (any-hover: hover) {
+		&:hover {
+			color: $black;
+			border-color: transparent;
+			background-color: rgba($white, 0.6);
+		}
+		&:active {
+			color: $black;
+			border-color: $white;
+			background-color: $white;
+		}
+	}
 }
 
-.btn-blue {
-	color: $white;
-	background-color: $blue-1;
-	border: none;
-	min-height: 51px;
-}
 .btn-blue-transparent {
 	color: $blue-1;
 	background-color: transparent;
 	border: 1px solid $blue-1;
+	@media (any-hover: hover) {
+		&:hover {
+			color: $white;
+			border-color: #44bbd1;
+			background-color: #44bbd1;
+			&::after {
+				background-color: currentColor;
+			}
+		}
+		&:active {
+			color: $white;
+			border-color: $blue-1;
+			background-color: $blue-1;
+			&::after {
+				background-color: currentColor;
+			}
+		}
+	}
 }
 
 .btn-white {
 	background-color: $white;
 	color: $black;
+	@media (any-hover: hover) {
+		&:hover {
+			color: $white;
+			border-color: #ff8052;
+			background-color: #ff8052;
+			&::after {
+				background-color: currentColor;
+			}
+		}
+		&:active {
+			color: $white;
+			border-color: #ee5923;
+			background-color: #ee5923;
+			&::after {
+				background-color: currentColor;
+			}
+		}
+	}
 }
 
 .btn-orange-transparent {
@@ -72,6 +162,25 @@ body {
 		mask-repeat: no-repeat;
 		mask-position: center;
 		background-color: $orange;
+		transition: background-color $time;
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			color: $white;
+			border-color: #ff8052;
+			background-color: #ff8052;
+			&::after {
+				background-color: currentColor;
+			}
+		}
+		&:active {
+			color: $white;
+			border-color: #ee5923;
+			background-color: #ee5923;
+			&::after {
+				background-color: currentColor;
+			}
+		}
 	}
 }
 
@@ -86,6 +195,11 @@ body {
 	font-size: 40px;
 	line-height: 120%;
 	margin-bottom: 40px;
+	@media screen and (max-width: $md) {
+		margin-bottom: 20px;
+		font-size: 32px;
+		line-height: 130%;
+	}
 }
 
 .heading {
@@ -97,6 +211,10 @@ body {
 		font-weight: 800;
 		font-size: 40px;
 		line-height: 120%;
+		@media screen and (max-width: $md) {
+			font-size: 32px;
+			line-height: 130%;
+		}
 		&.title-sm {
 			font-size: 32px;
 		}
@@ -108,6 +226,13 @@ body {
 		font-size: 20px;
 		line-height: 140%;
 		color: $gray-text;
+		@media screen and (max-width: $md) {
+			font-size: 16px;
+			line-height: 130%;
+		}
+	}
+	@media screen and (max-width: $md) {
+		margin-bottom: 20px;
 	}
 }
 
@@ -128,27 +253,31 @@ body {
 	position: absolute;
 	left: 50%;
 	transform: translateX(-50%);
-	top: 36%;
+	top: 34.6%;
 	width: 100%;
-	max-width: 1500px;
+	max-width: 1520px;
 	padding: 0 20px;
 	margin: 0 auto;
 	z-index: 2;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	visibility: hidden;
 }
 
 .slider-button {
 	border-radius: 60px;
 	width: 60px;
 	height: 60px;
-	background: rgba($white, 0.8);
+	background-color: rgba($white, 0.8);
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	color: $black;
-	transition: opacity $time;
+	visibility: visible;
+	transition:
+		opacity $time,
+		background-color $time;
 	&::before {
 		content: '';
 		display: block;
@@ -158,6 +287,7 @@ body {
 		mask-repeat: no-repeat;
 		mask-position: center;
 		background-color: currentColor;
+		transition: background-color $time;
 	}
 	&-next {
 		&::before {
@@ -167,6 +297,14 @@ body {
 	&.swiper-button-disabled {
 		opacity: 0;
 		pointer-events: none;
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: $white;
+			&::before {
+				background-color: $blue-1;
+			}
+		}
 	}
 }
 
@@ -181,11 +319,28 @@ body {
 }
 
 .btn-detail {
-	display: inline;
+	display: inline-block;
 	color: $blue;
 	font-size: 14px;
 	line-height: 140%;
-	box-shadow: 0px 1px 0px $blue;
+	// box-shadow: 0px 1px 0px $blue;
+	transition: color $time;
+	bottom: 0px;
+	right: 0;
+	& span {
+		transition: background-size $time cubic-bezier(0.645, 0.045, 0.355, 1);
+		background: linear-gradient(to bottom, rgba($blue, 1) 0%, rgba($blue, 1) 100%);
+		background-size: 100% 1px;
+		background-repeat: no-repeat;
+		background-position: left 100%;
+		display: inline-block;
+	}
+
+	&.changed {
+		background: $white;
+		position: absolute;
+		padding: 0 5px;
+	}
 }
 
 .button-favorite {
@@ -199,16 +354,47 @@ body {
 	z-index: 2;
 	display: grid;
 	place-items: center;
-	&::before {
-		content: '';
-		display: block;
+	// &::before {
+	// 	content: '';
+	// 	display: block;
+	// 	width: 17px;
+	// 	height: 17px;
+	// 	mask-image: url('../images/icons/favorite.svg');
+	// 	mask-repeat: no-repeat;
+	// 	mask-position: center;
+	// 	mask-size: 17px 17px;
+	// 	background-color: $gray-text;
+	// }
+	& svg {
 		width: 17px;
 		height: 17px;
-		mask-image: url('../images/icons/favorite.svg');
-		mask-repeat: no-repeat;
-		mask-position: center;
-		mask-size: 17px 17px;
-		background-color: $gray-text;
+		display: block;
+		& path {
+			transition: fill $time;
+		}
+		& path:first-child {
+			fill: transparent;
+		}
+		& path:last-child {
+			fill: $gray-text;
+		}
+	}
+	&.active {
+		& svg {
+			& path:first-child {
+				fill: $orange;
+			}
+			& path:last-child {
+				fill: $orange;
+			}
+		}
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			& svg path {
+				fill: $gray-text;
+			}
+		}
 	}
 }
 
@@ -284,10 +470,102 @@ body {
 		display: block;
 		width: 100%;
 		height: 100%;
+		& path {
+			transition:
+				stroke $time,
+				stroke-width $time;
+		}
 	}
 	@media (any-hover: hover) {
 		&:hover {
 			cursor: pointer;
+			& svg path {
+				stroke: $blue-1;
+				stroke-width: 2px;
+			}
 		}
+	}
+}
+
+.btn-redact {
+	border: 1px solid $gray-text;
+	border-radius: 7px;
+	padding: 9px 19px;
+	min-height: 44px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 140%;
+	text-align: center;
+	color: $gray-text;
+	width: fit-content;
+	transition:
+		background-color $time,
+		border-color $time,
+		color $time;
+	&::after {
+		content: '';
+		display: block;
+		width: 24px;
+		height: 24px;
+		mask-image: url('../images/icons/redact.svg');
+		mask-repeat: no-repeat;
+		mask-position: center;
+		background-color: currentColor;
+		transition: background-color $time;
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			color: $white;
+			background-color: #44bbd1;
+			border-color: #44bbd1;
+		}
+		&:active {
+			color: $white;
+			background-color: $blue-1;
+			border-color: $blue-1;
+		}
+	}
+}
+
+.anim-title {
+	position: relative;
+	transition: color $time;
+	& span {
+		transition: background-size $time cubic-bezier(0.645, 0.045, 0.355, 1);
+		background: linear-gradient(to bottom, rgba($orange, 1) 0%, rgba($orange, 1) 98%);
+		background-size: 0px 1px;
+		background-repeat: no-repeat;
+		background-position: left 100%;
+	}
+}
+
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background-color: rgba($black, 0.7);
+	z-index: 5;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity $time;
+	&.active {
+		pointer-events: all;
+		opacity: 1;
+	}
+}
+
+.text-clamp {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 4;
+	overflow: hidden;
+	position: relative;
+	& p {
+		display: inline;
 	}
 }

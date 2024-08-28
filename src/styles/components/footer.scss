@@ -2,20 +2,33 @@
 	background-color: $black;
 	padding: 50px 0;
 	color: $white;
+	@media screen and (max-width: $md) {
+		padding: 30px 0;
+	}
 	&__body {
 		display: flex;
 		justify-content: space-between;
 		gap: 20px;
+		@media screen and (max-width: $md) {
+			flex-direction: column;
+		}
 	}
 	&__info {
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
 		max-width: 439px;
+		@media screen and (max-width: $md) {
+			max-width: 100%;
+			align-items: center;
+		}
 	}
 	&__logo {
 		display: inline-block;
 		margin-bottom: 37px;
+		@media screen and (max-width: $md) {
+			margin-bottom: 0;
+		}
 	}
 	&__copy {
 		font-size: 14px;
@@ -33,12 +46,25 @@
 		line-height: 140%;
 		color: $gray-text;
 		margin-top: 24px;
+		@media screen and (max-width: $md) {
+			margin-top: 10px;
+		}
 	}
 
 	&__main {
 		display: flex;
 		flex-shrink: 0;
-		gap: 0 100px;
+		gap: 0 97px;
+		@media screen and (max-width: $xl) {
+			gap: 0 30px;
+		}
+		@media screen and (max-width: $md) {
+			flex-direction: column-reverse;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			gap: 20px;
+		}
 	}
 	&__menu {
 	}
@@ -47,6 +73,10 @@
 		flex-direction: column;
 		align-items: flex-end;
 		gap: 13px;
+		@media screen and (max-width: $md) {
+			align-items: center;
+			width: 100%;
+		}
 	}
 	&__phone {
 		font-weight: 700;
@@ -58,16 +88,35 @@
 		font-size: 18px;
 		line-height: 120%;
 	}
+	&__phone,
+	&__email {
+		transition: color $time;
+		margin-right: 5px;
+		@media (any-hover: hover) {
+			&:hover {
+				color: $orange;
+			}
+		}
+		@media screen and (max-width: $xl) {
+			margin: 0;
+		}
+	}
 	&__button {
 		margin-top: auto;
+		@media screen and (max-width: $md) {
+			margin-top: 7px;
+			width: 100%;
+		}
 	}
 }
-.container {
-}
+
 .info-footer {
+	&__inner {
+		@media screen and (max-width: $md) {
+		}
+	}
 }
-.main-footer {
-}
+
 .menu-footer {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
@@ -75,6 +124,14 @@
 	gap: 0 100px;
 	height: 100%;
 	align-items: end;
+	@media screen and (max-width: $xl) {
+		gap: 0 30px;
+	}
+	@media screen and (max-width: $md) {
+		grid-template-columns: 1fr;
+		max-width: 100%;
+		gap: 10px;
+	}
 	&__label {
 		font-weight: 600;
 		font-size: 16px;
@@ -82,6 +139,9 @@
 		color: $gray-text;
 		grid-column: span 2;
 		margin-bottom: auto;
+		@media screen and (max-width: $md) {
+			display: none;
+		}
 	}
 	&__list {
 		@include reset-list;
@@ -89,14 +149,14 @@
 		flex-direction: column;
 		gap: 10px;
 	}
-	&__item {
-	}
 	&__link {
 		font-size: 16px;
 		line-height: 130%;
+		transition: color $time;
+		@media (any-hover: hover) {
+			&:hover {
+				color: $orange;
+			}
+		}
 	}
-}
-.btn {
-}
-.btn-orange-transparent {
 }

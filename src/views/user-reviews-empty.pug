@@ -1,0 +1,24 @@
+extends ./layouts/default
+
+block variables 
+	- let pageTitle = "Здравствуйте, меня зовут Гульнара!";
+	- let breadCrumbsList = [{"title": "Главная", "link": "/"}];
+	- let currentPage = "Здравствуйте, меня зовут Гульнара!";
+
+append styles 
+	link(href="assets/styles/user.css" rel="stylesheet")
+
+block content 
+	.user-page.user-page-reviews
+		.container 
+			.page-title= pageTitle
+			.user-page__body 
+				include ./components/userAside
+				.user-page__content 
+					+userNavigation([...userPage.navigation], 1)
+					.heading 
+						.heading__title.title-xs Отзывы гостей
+					.user-page__empty.empty-block
+						.empty-block__text Отзывов еще никто не оставлял
+						.empty-block__icon 
+							img(src="assets/images/icons/empty-reviews.svg", alt="иконка")

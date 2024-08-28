@@ -1,11 +1,22 @@
 .pagination-nav {
+	@media screen and (max-width: $md) {
+		display: none;
+	}
+}
+.pagination-nav-mobile {
+	display: none;
+	@media screen and (max-width: $md) {
+		display: block;
+	}
 }
 .pagination {
-	@include reset-list;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	gap: 8px;
+	&__list {
+		@include reset-list;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 8px;
+	}
 }
 .page-item {
 	width: 32px;

@@ -4,20 +4,34 @@
 	padding-bottom: 40px;
 	position: relative;
 	color: $white;
+	@media screen and (max-width: $xl) {
+		min-height: auto;
+		padding: 100px 0 22px;
+	}
 	&__body {
 		position: relative;
 		z-index: 2;
 		display: grid;
 		gap: 20px;
+		@media screen and (max-width: $md) {
+			gap: 10px;
+		}
 	}
 	&__title {
 		font-weight: 800;
 		font-size: 48px;
 		line-height: 120%;
+		@media screen and (max-width: $md) {
+			font-size: 40px;
+		}
 	}
 	&__subtitle {
 		font-size: 30px;
 		line-height: 120%;
+		@media screen and (max-width: $md) {
+			font-size: 20px;
+			line-height: 140%;
+		}
 	}
 	&__image {
 		position: absolute;
@@ -40,9 +54,19 @@
 	border: 5px solid rgba($white, 0.4);
 	box-shadow: 0 4px 30px 0 rgba(51, 101, 107, 0.25);
 	border-radius: 10px;
+	@media screen and (max-width: $md) {
+		margin-top: 20px;
+		background: rgba($white, 0.4);
+		padding: 5px;
+		border: none;
+	}
 	&__inner {
 		display: grid;
 		grid-template-columns: 1fr 131px;
+		@media screen and (max-width: $md) {
+			grid-template-columns: 100%;
+			gap: 5px;
+		}
 	}
 	&__input {
 		width: 100%;
@@ -62,10 +86,21 @@
 		}
 		&:focus {
 		}
+		@media screen and (max-width: $md) {
+			border-radius: 7px;
+			padding: 15px;
+			&::placeholder {
+				font-size: 12px;
+				line-height: 140%;
+			}
+		}
 	}
 	&__button {
 		border-radius: 0 7px 7px 0;
 		transition: box-shadow $time;
+		@media screen and (max-width: $md) {
+			border-radius: 7px;
+		}
 	}
 	&.focus {
 		& .search-form {
@@ -74,6 +109,9 @@
 			}
 			&__button {
 				box-shadow: 0px 0px 0px 2px $blue-1;
+				@media screen and (max-width: $md) {
+					box-shadow: none;
+				}
 			}
 		}
 	}

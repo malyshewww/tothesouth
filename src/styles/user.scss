@@ -1,0 +1,150 @@
+@use 'sass:math';
+@import 'config/variables';
+@import 'config/mixins';
+
+@import 'components/hotel-item.scss';
+
+@import 'components/user-review.scss';
+
+.user-page {
+	&__body {
+		display: grid;
+		grid-template-columns: 270px 1fr;
+		gap: 30px;
+	}
+	&__content {
+	}
+	&__cards {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 20px;
+	}
+	& .heading {
+		margin-bottom: 20px;
+	}
+	&__masonry {
+		column-count: 3;
+		column-width: 370px;
+		column-gap: 30px;
+	}
+	& .pagination {
+		margin-top: 60px;
+	}
+}
+.info-user {
+	border: 1px solid $gray-line;
+	border-radius: 10px;
+	padding: 40px 29px 40px;
+	background: $white;
+	display: grid;
+	justify-content: center;
+	gap: 10px;
+	text-align: center;
+	&__logo {
+		border-radius: 50%;
+		width: 150px;
+		height: 150px;
+		background-color: $gray-background;
+		display: grid;
+		place-items: center;
+		font-weight: 800;
+		font-size: 48px;
+		line-height: 120%;
+		text-align: center;
+		color: $gray-text;
+		margin: 0 auto 5px;
+	}
+	&__name {
+		font-weight: 700;
+		font-size: 24px;
+		line-height: 120%;
+		text-align: center;
+	}
+	&__date {
+		font-size: 14px;
+		line-height: 140%;
+	}
+	&__verified {
+		border: 1px solid $gray-line;
+		border-radius: 5px;
+		padding: 8px 9px;
+		min-height: 36px;
+		display: flex;
+		align-items: center;
+		gap: 7px;
+		font-size: 14px;
+		line-height: 140%;
+		color: $gray-text;
+		margin-top: 10px;
+		&::before {
+			content: '';
+			display: block;
+			width: 20px;
+			height: 20px;
+			background-image: url('../images/icons/verified.svg');
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+	}
+}
+.navigation-user {
+	border: 1px solid $gray-line;
+	border-radius: 10px;
+	padding: 12px 20px;
+	background: $white;
+	margin-bottom: 30px;
+	&__list {
+		@include reset-list;
+		display: flex;
+		align-items: center;
+		gap: 20px;
+	}
+	&__link {
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 130%;
+		text-align: center;
+		border-radius: 5px;
+		padding: 10px 30px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transition: color $time;
+		&.active {
+			color: $white;
+			background-color: $blue-1;
+		}
+		@media (any-hover: hover) {
+			&:hover:not(.active) {
+				color: $blue-1;
+			}
+		}
+	}
+}
+
+.empty-block {
+	border: 1px solid $gray-line;
+	border-radius: 10px;
+	padding: 29px;
+	background: $white;
+	display: flex;
+	justify-content: space-between;
+	&__text {
+		font-size: 16px;
+		line-height: 130%;
+		color: $gray-text;
+		max-width: 167px;
+	}
+	&__icon {
+		width: 158px;
+		height: 158px;
+		flex-shrink: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		.user-page-reviews & {
+			width: 223px;
+			height: 159px;
+		}
+	}
+}

@@ -1,0 +1,35 @@
+extends ./layouts/default
+
+block variables 
+	- let pageTitle = "Вход";
+	- let breadCrumbsList = [];
+
+append styles 
+	link(href="assets/styles/auth.css" rel="stylesheet")
+
+append scripts 
+	script(src="assets/scripts/auth.js" type="module")
+
+block content
+	.auth
+		.auth__header.header-auth
+			.container 
+				.header-auth__links
+					a(href="auth-login.html").header-auth__link.active Войти
+					a(href="auth-registration.html").header-auth__link Зарегистрироваться
+		.container
+			.auth__body 
+				form(action="#").auth-form 
+					.auth-form__items 
+						+formItem("email", "auth_email", "Email")
+						.form-item
+							.form-item__field.field-password 
+								input(type="password" name="auth_password" id="auth_password").form-input
+								label(for="auth_password").form-label Пароль
+								button(type="button").btn-password 
+									span
+						.form-item 
+							a(href="auth-password.html").auth-form__link.btn-detail Напомнить пароль 
+					.auth-form__footer 
+						button(type="submit").btn.btn-blue Зарегистрироваться 
+						.auth-form__text Входя в аккаунт или создавая новый, вы соглашаетесь с нашими #[a(href="#").btn-detail Правилами и условиями] и #[a(href="#").btn-detail Положением о конфиденциальности]

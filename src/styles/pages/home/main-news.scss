@@ -3,15 +3,25 @@
 .main-news {
 	overflow: hidden;
 	padding: 61px 0 51px;
+	@media screen and (max-width: $md) {
+		padding: 0 0 15px;
+	}
 	& .heading {
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
 		margin-bottom: 40px;
+		@media screen and (max-width: $md) {
+			margin-bottom: 20px;
+			display: block;
+		}
 	}
 	&__wrapper {
 		background-color: $gray-background;
-		padding: 102px 0;
+		padding: 100px 0 102px;
+		@media screen and (max-width: $md) {
+			padding: 30px 0;
+		}
 	}
 	&__slider {
 		overflow: visible;
@@ -19,11 +29,17 @@
 	&__body {
 		position: relative;
 	}
-}
-.container {
-}
-.heading {
-	&__title {
+	&__bottom {
+		display: none;
+		margin-top: 20px;
+		@media screen and (max-width: $md) {
+			display: block;
+		}
+	}
+	& .slider-controls {
+		@media screen and (max-width: $md) {
+			display: none;
+		}
 	}
 }
 .news-card {
@@ -31,18 +47,27 @@
 	border-radius: 10px 10px 0 0;
 	overflow: hidden;
 	width: 30%;
+	display: flex;
+	flex-direction: column;
 	&__image {
 		border-radius: inherit;
 		height: 320px;
+		@media screen and (max-width: $md) {
+			height: 250px;
+		}
 	}
 	&__body {
-		padding: 20px 30px;
+		padding: 19px 29px;
 		background-color: $white;
 		display: flex;
 		flex-direction: column;
 		gap: 10px;
 		border: 1px solid $gray-line;
 		border-radius: 0 0 10px 10px;
+		flex: 1 1 auto;
+		@media screen and (max-width: $md) {
+			padding: 10px 15px;
+		}
 	}
 	&__title {
 		font-weight: 700;
@@ -53,20 +78,9 @@
 		font-weight: 400;
 		font-size: 14px;
 		line-height: 140%;
-		display: -webkit-box;
-		-webkit-box-orient: vertical;
 		-webkit-line-clamp: 3;
-		overflow: hidden;
-		position: relative;
 		& p {
 			display: inline;
-		}
-		& span {
-			position: absolute;
-			bottom: 0;
-			right: 0;
-			width: 43%;
-			padding: 0 10px;
 		}
 	}
 	&__link {
@@ -82,6 +96,7 @@
 		font-size: 14px;
 		line-height: 140%;
 		color: $gray-text;
+		margin-top: auto;
 	}
 	&__date {
 		font-weight: 400;

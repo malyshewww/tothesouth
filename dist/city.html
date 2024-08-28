@@ -21,7 +21,6 @@
 	<link href="assets/styles/content.css" rel="stylesheet">
 	<link href="assets/styles/images-widget.css" rel="stylesheet">
 	<link href="assets/styles/map-widget.css" rel="stylesheet">
-	<link href="assets/styles/facility-preview.css" rel="stylesheet">
 	<link href="assets/styles/weather-widget.css" rel="stylesheet">
 	<meta name="theme-color" content="#fff">
 	<meta name="msapplication-navbutton-color" content="#fff">
@@ -41,6 +40,13 @@
 			<div class="container">
 				<div class="header__body">
 					<div class="header__left">
+						<div class="header-burger">
+							<svg width="21" height="17" viewBox="0 0 21 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M1 1.61646H20" stroke="#8897B1" stroke-width="1.5" stroke-linecap="round"></path>
+								<path d="M1 8.61646H20" stroke="#8897B1" stroke-width="1.5" stroke-linecap="round"></path>
+								<path d="M1 15.6165L20 15.6165" stroke="#8897B1" stroke-width="1.5" stroke-linecap="round"></path>
+							</svg>
+						</div>
 						<a class="header__logo logo" href="homepage.html">
 							<img src="assets/images/logo-blue.svg" alt="логотип">
 						</a>
@@ -49,8 +55,13 @@
 						</div>
 					</div>
 					<div class="header__links">
-						<a class="header__favorite" href="#"></a>
-						<a class="btn btn-transparent header__btn-auth" href="auth.html">Авторизация</a>
+						<a class="header__favorite" href="favorites.html">
+							<svg width="26" height="23" viewBox="0 0 26 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M23.1494 2.85655C21.965 1.66785 20.3584 1 18.6831 1C17.0077 1 15.4011 1.66785 14.2167 2.85655L12.9997 4.07749L11.7826 2.85655C9.31597 0.38197 5.31669 0.381971 2.85001 2.85655C0.38333 5.33113 0.38333 9.34322 2.85001 11.8178L4.06705 13.0387L12.9997 22L21.9323 13.0387L23.1494 11.8178C24.3343 10.6297 25 9.01786 25 7.33718C25 5.6565 24.3343 4.0447 23.1494 2.85655Z" fill="#FF6933"></path>
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M13.6856 2.32707C15.0104 0.997456 16.808 0.25 18.6831 0.25C20.5581 0.25 22.3559 0.997503 23.6807 2.3272C25.0059 3.65616 25.75 5.45841 25.75 7.33718C25.75 9.21606 25.0058 11.0184 23.6804 12.3474L13.5309 22.5295C13.3902 22.6707 13.199 22.75 12.9997 22.75C12.8004 22.75 12.6092 22.6707 12.4685 22.5295L2.31883 12.3473C-0.439611 9.58001 -0.439611 5.09435 2.31883 2.32707C5.0786 -0.441535 9.55406 -0.441536 12.3138 2.32707L12.9997 3.01513L13.6856 2.32707C13.6856 2.32703 13.6855 2.32711 13.6856 2.32707ZM18.6831 1.75C17.2075 1.75 15.7919 2.3382 14.748 3.38591L13.5309 4.60698C13.3902 4.74815 13.199 4.82749 12.9997 4.82749C12.8004 4.82749 12.6092 4.74815 12.4685 4.60698L11.2515 3.38603C9.07788 1.20548 5.55478 1.20548 3.38119 3.38603C1.20627 5.56792 1.20627 9.10644 3.38119 11.2883L12.9997 20.9376L22.6182 11.2883C23.6626 10.241 24.25 8.81966 24.25 7.33718C24.25 5.8547 23.6628 4.43345 22.6183 3.38616C21.5744 2.33845 20.1586 1.75 18.6831 1.75Z" fill="#FF6933"></path>
+							</svg>
+						</a>
+						<a class="btn btn-transparent header__btn-auth" href="auth-registration.html">Авторизация</a>
 						<a class="btn btn-white header__btn-add" href="add-project.html">Добавить проект</a>
 					</div>
 				</div>
@@ -72,7 +83,7 @@
 			</div>
 		</div>
 		<main class="main">
-			<div class="city">
+			<div class="city city-main">
 				<div class="container">
 					<div class="page-title">Алушта</div>
 					<nav class="city__navigation navigation-city">
@@ -112,14 +123,23 @@
 									</li>
 								</ul>
 							</li>
+							<li class="navigation-city__item hidden">
+								<a class="navigation-city__link" href="city-food.html">Питание</a>
+							</li>
+							<li class="navigation-city__item hidden">
+								<a class="navigation-city__link" href="city-transport.html">Транспорт</a>
+							</li>
+							<li class="navigation-city__item hidden">
+								<a class="navigation-city__link" href="city-gaiety.html">Развлечения</a>
+							</li>
 						</ul>
 					</nav>
 					<div class="city__wrapper">
-						<div class="ibg city__image">
+						<div class="ibg city__image" data-da=".content-group--about, 767.98, 0">
 							<img src="assets/images/city/city-main/main.jpg" alt="фото">
 						</div>
 						<div class="city-layout city__body">
-							<aside class="aside">
+							<aside class="aside" data-da=".city__wrapper, 1024, 3">
 								<div class="aside-navigation">
 									<div class="aside__caption">Курорты рядом</div>
 									<nav>
@@ -147,9 +167,9 @@
 								</div>
 							</aside>
 							<div class="content-groups">
-								<div class="content-group">
+								<div class="content-group content-group--about">
 									<div class="content">
-										<h2>Отдых в Алуште 2024</h2>
+										<h4>Отдых в Алуште 2024</h4>
 										<p>Алушта – курортный город, расположен на Южном берегу Крыма. Следует отметить великолепный ландшафт и уникальное расположение: город окружен горами, которые создают надежную защиту от ветра. Поэтому Алушта и привлекла кинематографистов: известный советский фильм «Кавказская пленница» снимался именно там, возле полуразрушенной крепости.</p>
 										<p>Климат средиземноморский, жаркий, но зимы в Алуште теплые и мягкие. Город имеет развитую инфраструктуру и единственный в Европе междугородний троллейбусный маршрут Симферополь-Алушта-Ялта.</p>
 										<div class="images-widget images2-widget">
@@ -165,170 +185,138 @@
 										<div class="facilities-wrapper">
 											<div class="facilities-body">
 												<div class="card-preview">
-													<button class="button-favorite" type="button"> </button>
+													<button class="button-favorite" type="button">
+														<svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<path fill-rule="evenodd" clip-rule="evenodd" d="M14.3434 2.16035C13.6031 1.41741 12.599 1 11.5519 1C10.5048 1 9.50068 1.41741 8.76046 2.16035L7.99981 2.92343L7.23916 2.16035C5.69748 0.613732 3.19793 0.613732 1.65626 2.16035C0.114581 3.70696 0.114581 6.21452 1.65626 7.76113L2.41691 8.52422L7.99981 14.125L13.5827 8.52422L14.3434 7.76113C15.0839 7.01854 15.5 6.01116 15.5 4.96074C15.5 3.91031 15.0839 2.90293 14.3434 2.16035Z" fill="#FF6933"></path>
+															<path fill-rule="evenodd" clip-rule="evenodd" d="M8.42847 1.82942C9.25648 0.99841 10.38 0.53125 11.5519 0.53125C12.7238 0.53125 13.8474 0.998439 14.6754 1.8295C15.5037 2.6601 15.9688 3.78651 15.9688 4.96074C15.9688 6.13504 15.5036 7.26151 14.6753 8.09213L8.33179 14.4559C8.24384 14.5442 8.12439 14.5937 7.99981 14.5937C7.87523 14.5937 7.75577 14.5442 7.66782 14.4559L1.32427 8.09205C-0.399757 6.3625 -0.399757 3.55897 1.32427 1.82942C3.04912 0.0990403 5.84629 0.0990402 7.57114 1.82942L7.99981 2.25946L8.42847 1.82942C8.4285 1.82939 8.42845 1.82945 8.42847 1.82942ZM11.5519 1.46875C10.6297 1.46875 9.74494 1.83638 9.09252 2.49119L8.33179 3.25436C8.24384 3.34259 8.12439 3.39218 7.99981 3.39218C7.87523 3.39218 7.75577 3.34259 7.66782 3.25436L6.90717 2.49127C5.54867 1.12842 3.34674 1.12842 1.98824 2.49127C0.628919 3.85495 0.628919 6.06653 1.98824 7.4302L7.99981 13.461L14.0114 7.4302C14.6641 6.77564 15.0312 5.88729 15.0312 4.96074C15.0312 4.03419 14.6642 3.14591 14.0115 2.49135C13.359 1.83653 12.4741 1.46875 11.5519 1.46875Z" fill="#FF6933"></path>
+														</svg>
+													</button>
 													<div class="card-preview__body">
 														<div class="ibg card-preview__image">
 															<img src="assets/images/city/city-main/hotels/hotel-1.jpg" alt="">
 														</div>
 														<div class="card-preview__content">
-															<div class="card-preview__title">
-																<span>AVRASYAQUEEN HOTEL</span>
+															<div class="anim-title card-preview__title">
+																<span>Гостевой дом “Маяк”</span>
 															</div>
+															<div class="card-preview__description">Голубицкая, ул. Красная, д. 178</div>
 															<div class="card-preview__bottom">
-																<div class="card-preview__price">от 4 110 ₽</div>
+																<div class="card-preview__price">от 875 ₽</div>
 																<div class="card-preview__sub-price">за чел. в сутки в июне</div>
 															</div>
 														</div>
 													</div>
 												</div>
 												<div class="card-preview">
-													<button class="button-favorite" type="button"> </button>
+													<button class="button-favorite" type="button">
+														<svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<path fill-rule="evenodd" clip-rule="evenodd" d="M14.3434 2.16035C13.6031 1.41741 12.599 1 11.5519 1C10.5048 1 9.50068 1.41741 8.76046 2.16035L7.99981 2.92343L7.23916 2.16035C5.69748 0.613732 3.19793 0.613732 1.65626 2.16035C0.114581 3.70696 0.114581 6.21452 1.65626 7.76113L2.41691 8.52422L7.99981 14.125L13.5827 8.52422L14.3434 7.76113C15.0839 7.01854 15.5 6.01116 15.5 4.96074C15.5 3.91031 15.0839 2.90293 14.3434 2.16035Z" fill="#FF6933"></path>
+															<path fill-rule="evenodd" clip-rule="evenodd" d="M8.42847 1.82942C9.25648 0.99841 10.38 0.53125 11.5519 0.53125C12.7238 0.53125 13.8474 0.998439 14.6754 1.8295C15.5037 2.6601 15.9688 3.78651 15.9688 4.96074C15.9688 6.13504 15.5036 7.26151 14.6753 8.09213L8.33179 14.4559C8.24384 14.5442 8.12439 14.5937 7.99981 14.5937C7.87523 14.5937 7.75577 14.5442 7.66782 14.4559L1.32427 8.09205C-0.399757 6.3625 -0.399757 3.55897 1.32427 1.82942C3.04912 0.0990403 5.84629 0.0990402 7.57114 1.82942L7.99981 2.25946L8.42847 1.82942C8.4285 1.82939 8.42845 1.82945 8.42847 1.82942ZM11.5519 1.46875C10.6297 1.46875 9.74494 1.83638 9.09252 2.49119L8.33179 3.25436C8.24384 3.34259 8.12439 3.39218 7.99981 3.39218C7.87523 3.39218 7.75577 3.34259 7.66782 3.25436L6.90717 2.49127C5.54867 1.12842 3.34674 1.12842 1.98824 2.49127C0.628919 3.85495 0.628919 6.06653 1.98824 7.4302L7.99981 13.461L14.0114 7.4302C14.6641 6.77564 15.0312 5.88729 15.0312 4.96074C15.0312 4.03419 14.6642 3.14591 14.0115 2.49135C13.359 1.83653 12.4741 1.46875 11.5519 1.46875Z" fill="#FF6933"></path>
+														</svg>
+													</button>
 													<div class="card-preview__body">
 														<div class="ibg card-preview__image">
 															<img src="assets/images/city/city-main/hotels/hotel-2.jpg" alt="">
 														</div>
 														<div class="card-preview__content">
-															<div class="card-preview__title">
-																<span>Liberi Hotel Taksim</span>
+															<div class="anim-title card-preview__title">
+																<span>Гостевой дом “Маяк”</span>
 															</div>
+															<div class="card-preview__description">Голубицкая, ул. Красная, д. 178</div>
 															<div class="card-preview__bottom">
-																<div class="card-preview__price">от 4 110 ₽</div>
+																<div class="card-preview__price">от 875 ₽</div>
 																<div class="card-preview__sub-price">за чел. в сутки в июне</div>
 															</div>
 														</div>
 													</div>
 												</div>
 												<div class="card-preview">
-													<button class="button-favorite" type="button"> </button>
+													<button class="button-favorite" type="button">
+														<svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<path fill-rule="evenodd" clip-rule="evenodd" d="M14.3434 2.16035C13.6031 1.41741 12.599 1 11.5519 1C10.5048 1 9.50068 1.41741 8.76046 2.16035L7.99981 2.92343L7.23916 2.16035C5.69748 0.613732 3.19793 0.613732 1.65626 2.16035C0.114581 3.70696 0.114581 6.21452 1.65626 7.76113L2.41691 8.52422L7.99981 14.125L13.5827 8.52422L14.3434 7.76113C15.0839 7.01854 15.5 6.01116 15.5 4.96074C15.5 3.91031 15.0839 2.90293 14.3434 2.16035Z" fill="#FF6933"></path>
+															<path fill-rule="evenodd" clip-rule="evenodd" d="M8.42847 1.82942C9.25648 0.99841 10.38 0.53125 11.5519 0.53125C12.7238 0.53125 13.8474 0.998439 14.6754 1.8295C15.5037 2.6601 15.9688 3.78651 15.9688 4.96074C15.9688 6.13504 15.5036 7.26151 14.6753 8.09213L8.33179 14.4559C8.24384 14.5442 8.12439 14.5937 7.99981 14.5937C7.87523 14.5937 7.75577 14.5442 7.66782 14.4559L1.32427 8.09205C-0.399757 6.3625 -0.399757 3.55897 1.32427 1.82942C3.04912 0.0990403 5.84629 0.0990402 7.57114 1.82942L7.99981 2.25946L8.42847 1.82942C8.4285 1.82939 8.42845 1.82945 8.42847 1.82942ZM11.5519 1.46875C10.6297 1.46875 9.74494 1.83638 9.09252 2.49119L8.33179 3.25436C8.24384 3.34259 8.12439 3.39218 7.99981 3.39218C7.87523 3.39218 7.75577 3.34259 7.66782 3.25436L6.90717 2.49127C5.54867 1.12842 3.34674 1.12842 1.98824 2.49127C0.628919 3.85495 0.628919 6.06653 1.98824 7.4302L7.99981 13.461L14.0114 7.4302C14.6641 6.77564 15.0312 5.88729 15.0312 4.96074C15.0312 4.03419 14.6642 3.14591 14.0115 2.49135C13.359 1.83653 12.4741 1.46875 11.5519 1.46875Z" fill="#FF6933"></path>
+														</svg>
+													</button>
 													<div class="card-preview__body">
 														<div class="ibg card-preview__image">
 															<img src="assets/images/city/city-main/hotels/hotel-3.jpg" alt="">
 														</div>
 														<div class="card-preview__content">
-															<div class="card-preview__title">
-																<span>Ishak Pasa Hotel - Special Class</span>
+															<div class="anim-title card-preview__title">
+																<span>Гостевой дом “Маяк”</span>
 															</div>
+															<div class="card-preview__description">Голубицкая, ул. Красная, д. 178</div>
 															<div class="card-preview__bottom">
-																<div class="card-preview__price">от 4 110 ₽</div>
+																<div class="card-preview__price">от 875 ₽</div>
 																<div class="card-preview__sub-price">за чел. в сутки в июне</div>
 															</div>
 														</div>
 													</div>
 												</div>
 												<div class="card-preview">
-													<button class="button-favorite" type="button"> </button>
+													<button class="button-favorite" type="button">
+														<svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<path fill-rule="evenodd" clip-rule="evenodd" d="M14.3434 2.16035C13.6031 1.41741 12.599 1 11.5519 1C10.5048 1 9.50068 1.41741 8.76046 2.16035L7.99981 2.92343L7.23916 2.16035C5.69748 0.613732 3.19793 0.613732 1.65626 2.16035C0.114581 3.70696 0.114581 6.21452 1.65626 7.76113L2.41691 8.52422L7.99981 14.125L13.5827 8.52422L14.3434 7.76113C15.0839 7.01854 15.5 6.01116 15.5 4.96074C15.5 3.91031 15.0839 2.90293 14.3434 2.16035Z" fill="#FF6933"></path>
+															<path fill-rule="evenodd" clip-rule="evenodd" d="M8.42847 1.82942C9.25648 0.99841 10.38 0.53125 11.5519 0.53125C12.7238 0.53125 13.8474 0.998439 14.6754 1.8295C15.5037 2.6601 15.9688 3.78651 15.9688 4.96074C15.9688 6.13504 15.5036 7.26151 14.6753 8.09213L8.33179 14.4559C8.24384 14.5442 8.12439 14.5937 7.99981 14.5937C7.87523 14.5937 7.75577 14.5442 7.66782 14.4559L1.32427 8.09205C-0.399757 6.3625 -0.399757 3.55897 1.32427 1.82942C3.04912 0.0990403 5.84629 0.0990402 7.57114 1.82942L7.99981 2.25946L8.42847 1.82942C8.4285 1.82939 8.42845 1.82945 8.42847 1.82942ZM11.5519 1.46875C10.6297 1.46875 9.74494 1.83638 9.09252 2.49119L8.33179 3.25436C8.24384 3.34259 8.12439 3.39218 7.99981 3.39218C7.87523 3.39218 7.75577 3.34259 7.66782 3.25436L6.90717 2.49127C5.54867 1.12842 3.34674 1.12842 1.98824 2.49127C0.628919 3.85495 0.628919 6.06653 1.98824 7.4302L7.99981 13.461L14.0114 7.4302C14.6641 6.77564 15.0312 5.88729 15.0312 4.96074C15.0312 4.03419 14.6642 3.14591 14.0115 2.49135C13.359 1.83653 12.4741 1.46875 11.5519 1.46875Z" fill="#FF6933"></path>
+														</svg>
+													</button>
 													<div class="card-preview__body">
 														<div class="ibg card-preview__image">
 															<img src="assets/images/city/city-main/hotels/hotel-4.jpg" alt="">
 														</div>
 														<div class="card-preview__content">
-															<div class="card-preview__title">
-																<span>Ishak Pasa Hotel - Special Class</span>
+															<div class="anim-title card-preview__title">
+																<span>Гостевой дом “Маяк”</span>
 															</div>
+															<div class="card-preview__description">Голубицкая, ул. Красная, д. 178</div>
 															<div class="card-preview__bottom">
-																<div class="card-preview__price">от 4 110 ₽</div>
+																<div class="card-preview__price">от 875 ₽</div>
 																<div class="card-preview__sub-price">за чел. в сутки в июне</div>
 															</div>
 														</div>
 													</div>
 												</div>
 												<div class="card-preview">
-													<button class="button-favorite" type="button"> </button>
+													<button class="button-favorite" type="button">
+														<svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<path fill-rule="evenodd" clip-rule="evenodd" d="M14.3434 2.16035C13.6031 1.41741 12.599 1 11.5519 1C10.5048 1 9.50068 1.41741 8.76046 2.16035L7.99981 2.92343L7.23916 2.16035C5.69748 0.613732 3.19793 0.613732 1.65626 2.16035C0.114581 3.70696 0.114581 6.21452 1.65626 7.76113L2.41691 8.52422L7.99981 14.125L13.5827 8.52422L14.3434 7.76113C15.0839 7.01854 15.5 6.01116 15.5 4.96074C15.5 3.91031 15.0839 2.90293 14.3434 2.16035Z" fill="#FF6933"></path>
+															<path fill-rule="evenodd" clip-rule="evenodd" d="M8.42847 1.82942C9.25648 0.99841 10.38 0.53125 11.5519 0.53125C12.7238 0.53125 13.8474 0.998439 14.6754 1.8295C15.5037 2.6601 15.9688 3.78651 15.9688 4.96074C15.9688 6.13504 15.5036 7.26151 14.6753 8.09213L8.33179 14.4559C8.24384 14.5442 8.12439 14.5937 7.99981 14.5937C7.87523 14.5937 7.75577 14.5442 7.66782 14.4559L1.32427 8.09205C-0.399757 6.3625 -0.399757 3.55897 1.32427 1.82942C3.04912 0.0990403 5.84629 0.0990402 7.57114 1.82942L7.99981 2.25946L8.42847 1.82942C8.4285 1.82939 8.42845 1.82945 8.42847 1.82942ZM11.5519 1.46875C10.6297 1.46875 9.74494 1.83638 9.09252 2.49119L8.33179 3.25436C8.24384 3.34259 8.12439 3.39218 7.99981 3.39218C7.87523 3.39218 7.75577 3.34259 7.66782 3.25436L6.90717 2.49127C5.54867 1.12842 3.34674 1.12842 1.98824 2.49127C0.628919 3.85495 0.628919 6.06653 1.98824 7.4302L7.99981 13.461L14.0114 7.4302C14.6641 6.77564 15.0312 5.88729 15.0312 4.96074C15.0312 4.03419 14.6642 3.14591 14.0115 2.49135C13.359 1.83653 12.4741 1.46875 11.5519 1.46875Z" fill="#FF6933"></path>
+														</svg>
+													</button>
 													<div class="card-preview__body">
 														<div class="ibg card-preview__image">
 															<img src="assets/images/city/city-main/hotels/hotel-5.jpg" alt="">
 														</div>
 														<div class="card-preview__content">
-															<div class="card-preview__title">
-																<span>Ishak Pasa Hotel - Special Class</span>
+															<div class="anim-title card-preview__title">
+																<span>Гостевой дом “Маяк”</span>
 															</div>
+															<div class="card-preview__description">Голубицкая, ул. Красная, д. 178</div>
 															<div class="card-preview__bottom">
-																<div class="card-preview__price">от 4 110 ₽</div>
+																<div class="card-preview__price">от 875 ₽</div>
 																<div class="card-preview__sub-price">за чел. в сутки в июне</div>
 															</div>
 														</div>
 													</div>
 												</div>
 												<div class="card-preview">
-													<button class="button-favorite" type="button"> </button>
+													<button class="button-favorite" type="button">
+														<svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<path fill-rule="evenodd" clip-rule="evenodd" d="M14.3434 2.16035C13.6031 1.41741 12.599 1 11.5519 1C10.5048 1 9.50068 1.41741 8.76046 2.16035L7.99981 2.92343L7.23916 2.16035C5.69748 0.613732 3.19793 0.613732 1.65626 2.16035C0.114581 3.70696 0.114581 6.21452 1.65626 7.76113L2.41691 8.52422L7.99981 14.125L13.5827 8.52422L14.3434 7.76113C15.0839 7.01854 15.5 6.01116 15.5 4.96074C15.5 3.91031 15.0839 2.90293 14.3434 2.16035Z" fill="#FF6933"></path>
+															<path fill-rule="evenodd" clip-rule="evenodd" d="M8.42847 1.82942C9.25648 0.99841 10.38 0.53125 11.5519 0.53125C12.7238 0.53125 13.8474 0.998439 14.6754 1.8295C15.5037 2.6601 15.9688 3.78651 15.9688 4.96074C15.9688 6.13504 15.5036 7.26151 14.6753 8.09213L8.33179 14.4559C8.24384 14.5442 8.12439 14.5937 7.99981 14.5937C7.87523 14.5937 7.75577 14.5442 7.66782 14.4559L1.32427 8.09205C-0.399757 6.3625 -0.399757 3.55897 1.32427 1.82942C3.04912 0.0990403 5.84629 0.0990402 7.57114 1.82942L7.99981 2.25946L8.42847 1.82942C8.4285 1.82939 8.42845 1.82945 8.42847 1.82942ZM11.5519 1.46875C10.6297 1.46875 9.74494 1.83638 9.09252 2.49119L8.33179 3.25436C8.24384 3.34259 8.12439 3.39218 7.99981 3.39218C7.87523 3.39218 7.75577 3.34259 7.66782 3.25436L6.90717 2.49127C5.54867 1.12842 3.34674 1.12842 1.98824 2.49127C0.628919 3.85495 0.628919 6.06653 1.98824 7.4302L7.99981 13.461L14.0114 7.4302C14.6641 6.77564 15.0312 5.88729 15.0312 4.96074C15.0312 4.03419 14.6642 3.14591 14.0115 2.49135C13.359 1.83653 12.4741 1.46875 11.5519 1.46875Z" fill="#FF6933"></path>
+														</svg>
+													</button>
 													<div class="card-preview__body">
 														<div class="ibg card-preview__image">
-															<img src="assets/images/city/city-main/hotels/hotel-1.jpg" alt="">
+															<img src="assets/images/city/city-main/hotels/hotel-6.jpg" alt="">
 														</div>
 														<div class="card-preview__content">
-															<div class="card-preview__title">
-																<span>AVRASYAQUEEN HOTEL</span>
+															<div class="anim-title card-preview__title">
+																<span>Гостевой дом “Маяк”</span>
 															</div>
+															<div class="card-preview__description">Голубицкая, ул. Красная, д. 178</div>
 															<div class="card-preview__bottom">
-																<div class="card-preview__price">от 4 110 ₽</div>
-																<div class="card-preview__sub-price">за чел. в сутки в июне</div>
-															</div>
-														</div>
-													</div>
-												</div>
-												<div class="card-preview">
-													<button class="button-favorite" type="button"> </button>
-													<div class="card-preview__body">
-														<div class="ibg card-preview__image">
-															<img src="assets/images/city/city-main/hotels/hotel-2.jpg" alt="">
-														</div>
-														<div class="card-preview__content">
-															<div class="card-preview__title">
-																<span>Liberi Hotel Taksim</span>
-															</div>
-															<div class="card-preview__bottom">
-																<div class="card-preview__price">от 4 110 ₽</div>
-																<div class="card-preview__sub-price">за чел. в сутки в июне</div>
-															</div>
-														</div>
-													</div>
-												</div>
-												<div class="card-preview">
-													<button class="button-favorite" type="button"> </button>
-													<div class="card-preview__body">
-														<div class="ibg card-preview__image">
-															<img src="assets/images/city/city-main/hotels/hotel-3.jpg" alt="">
-														</div>
-														<div class="card-preview__content">
-															<div class="card-preview__title">
-																<span>Ishak Pasa Hotel - Special Class</span>
-															</div>
-															<div class="card-preview__bottom">
-																<div class="card-preview__price">от 4 110 ₽</div>
-																<div class="card-preview__sub-price">за чел. в сутки в июне</div>
-															</div>
-														</div>
-													</div>
-												</div>
-												<div class="card-preview">
-													<button class="button-favorite" type="button"> </button>
-													<div class="card-preview__body">
-														<div class="ibg card-preview__image">
-															<img src="assets/images/city/city-main/hotels/hotel-4.jpg" alt="">
-														</div>
-														<div class="card-preview__content">
-															<div class="card-preview__title">
-																<span>Ishak Pasa Hotel - Special Class</span>
-															</div>
-															<div class="card-preview__bottom">
-																<div class="card-preview__price">от 4 110 ₽</div>
-																<div class="card-preview__sub-price">за чел. в сутки в июне</div>
-															</div>
-														</div>
-													</div>
-												</div>
-												<div class="card-preview">
-													<button class="button-favorite" type="button"> </button>
-													<div class="card-preview__body">
-														<div class="ibg card-preview__image">
-															<img src="assets/images/city/city-main/hotels/hotel-5.jpg" alt="">
-														</div>
-														<div class="card-preview__content">
-															<div class="card-preview__title">
-																<span>Ishak Pasa Hotel - Special Class</span>
-															</div>
-															<div class="card-preview__bottom">
-																<div class="card-preview__price">от 4 110 ₽</div>
+																<div class="card-preview__price">от 875 ₽</div>
 																<div class="card-preview__sub-price">за чел. в сутки в июне</div>
 															</div>
 														</div>
@@ -381,14 +369,14 @@
 								</div>
 								<div class="content-group">
 									<div class="content">
-										<h2>Жилье в Алуште</h2>
+										<h4>Жилье в Алуште</h4>
 										<p>Привлекательность Алушты для туристов очевидна с первого взгляда: город расположен у моря, цены на жилье сравнительно невысокие, климат мягкий и полезный для здоровья. Отдых в Алуште на берегу моря традиционно считался престижным, поэтому курорт пользуется большой популярностью и у современных туристов. Жилье для отдыха в Алуште найти несложно. При этом здесь уверенно себя будет чувствовать абсолютно любой турист: и отдыхающие с детьми, и пары, и самостоятельные путешественники. Ценовой диапазон очень разнообразный, как и уровень жилья и предоставляемого сервиса. Жить в городе можно как у самого моря, так и ближе к центру. Хотя большая часть вариантов недорогого жилья расположена в менее удобных районах.</p>
 										<p>В Алуште жилье можно снимать у хозяев без посредников, а можно обращаться в агентства по подбору квартир. Также здесь есть масса отелей, вилл и пансионатов, которые предлагают комплексные условия «все включено». Отдых с питанием будет особенно актуальным для семей с маленькими детьми, а также тех, кто ежедневно проводит дни на кухне. Бронирование можно осуществлять через Интернет - в таком случае нужно тщательно изучить фотографии и отзывы отдыхающих, чтобы отдых на берегу моря не стал разочарованием.</p>
 									</div>
 								</div>
 								<div class="content-group">
 									<div class="content">
-										<h2>Как добраться до Алушты? Карта проезда</h2>
+										<h4>Как добраться до Алушты? Карта проезда</h4>
 										<p>Самый эффективный, быстрый и приятный способ попасть на полуостров - прилететь сюда самолетом. Из Симферополя можно дешево доехать до города, поскольку в этом направлении ездит большое количество общественного транспорта. Есть и рейсовый автобусы, и частные маршрутные такси. Как правило, карта проезда наглядно демонстрирует как лучше добраться до жилья, поэтому несложно будет и тем, кто приехал на машине или взял здесь ее в аренду. К слову, бронирование автомобилей довольно популярно в Крыму, поскольку позволяет туристу увидеть не только город и его окраины, но еще и попутешествовать по полуострову. Отдых в Алуште в 2024 году обещает оставаться таким же популярным среди туристов, поэтому можно рассчитывать и на попутчиков, которые «подбросят» из Симферополя.</p>
 										<p>Интересно то, что в Алушту можно добраться также на троллейбусе. Есть рейсы прямо с автостанции возле аэропорта и с автостанции Курортная (на ж/д вокзале). Стоимость билета около 50 руб, что сравнительно недорого. Едва ли где-то еще можно прокатиться в течение полутора часов на городском троллейбусе, курсирующим между городами! Вот что называется отдыхать дешево, без посредников, и с массой впечатлений!</p>
 										<div class="map" id="map"></div>
@@ -396,9 +384,9 @@
 								</div>
 								<div class="content-group">
 									<div class="content">
-										<h2>Немного истории</h2>
+										<h4>Немного истории</h4>
 										<p>По приказу Византийского императора Юстиниана І была построена крепость, названа Алустон.</p>
-										<p>Впервые Алушта упоминается в середине Х века в письме хазарского царя Йосифа. А в середине ХІІ века, по данным арабского путешественника Абу Абдаллаха и его сочинения «Географические развлечения», она стала важным приморским городом. Но арабы тогда называли этот город Шалушта. В XV веке была основана генуэзская колония. Здесь находились генуэзский консул, епископ. Но вскоре Алушта перешла во владения Турции, город превратился в деревню в составе Судацкого кадилика.</p>
+										<p>Впервые Алушта упоминается в середине Х века в письме хазарского царя Йосифа. А в середине ХІІ века, по данным арабского путешественника Абу Абдаллаха и его сочинения «Географические развлечения», она стала важным приморским городом. Но арабы тогда называли этот город Шалушта. В XV веке была основана генуэзская колония. Здесь находились генуэзский консул, епископ. Но вскоре Алушта перешла во владения Турции, город превратился в деревню в составе Судацкого&nbsp;кадилика кадилика.</p>
 										<div class="images-widget images4-widget">
 											<div class="ibg images-widget__image">
 												<img src="assets/images/city/images-widget/3.jpg" alt="изображение">
@@ -417,9 +405,9 @@
 										<p>В ХХ веке постепенно росло значение Алушты, как курортного города. Развивалась инфраструктура, привлекались туристы. Многие писатели искали вдохновение в Алуште, например, М. Горький, М. Коцюбинский, А. Куприн, К. Паустовский.</p>
 									</div>
 								</div>
-								<div class="content-group">
+								<div class="content-group content-group--recreation">
 									<div class="content">
-										<h2>Развлечения в Алуште</h2>
+										<h4>Развлечения в Алуште</h4>
 										<p>Отдых в Алуште с детьми или без, на двоих или одного - это уже само по себе развлечение! Хотя, безусловно, город не скупится на всевозможные достопримечательности, зоны отдыха и места приятного времяпрепровождения. Самое главное развлечение на курорте, расположенном у самого моря, и есть это чудо природы: нежное, соленое, бурлящее море! Отзывы отдыхающих, как правило, начинаются именно с рассказов про море, и это логично, ведь в Алушту едут именно за этим. Однако, поскольку город очень древний и имеет богатую историю, здесь хорошо сохранились храмы и мечети, башни и дворцы, построенные еще в XII- XV веках.</p>
 										<p>На набережной много точек представителей турагентств, которые помогут выбрать интересный маршрут. Рекомендуем выбирать экскурсии по тарифу «все включено»: в стоимость уже включен проезд туда-обратно, услуги гида-экскурсовода, входные билеты на посещаемые объекты и, иногда, обед.</p>
 										<div class="images-widget images2-widget">
@@ -433,13 +421,18 @@
 										<div class="facilities-wrapper">
 											<div class="facilities-body">
 												<div class="card-preview recreation-card">
-													<button class="button-favorite" type="button"> </button>
+													<button class="button-favorite" type="button">
+														<svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<path fill-rule="evenodd" clip-rule="evenodd" d="M14.3434 2.16035C13.6031 1.41741 12.599 1 11.5519 1C10.5048 1 9.50068 1.41741 8.76046 2.16035L7.99981 2.92343L7.23916 2.16035C5.69748 0.613732 3.19793 0.613732 1.65626 2.16035C0.114581 3.70696 0.114581 6.21452 1.65626 7.76113L2.41691 8.52422L7.99981 14.125L13.5827 8.52422L14.3434 7.76113C15.0839 7.01854 15.5 6.01116 15.5 4.96074C15.5 3.91031 15.0839 2.90293 14.3434 2.16035Z" fill="#FF6933"></path>
+															<path fill-rule="evenodd" clip-rule="evenodd" d="M8.42847 1.82942C9.25648 0.99841 10.38 0.53125 11.5519 0.53125C12.7238 0.53125 13.8474 0.998439 14.6754 1.8295C15.5037 2.6601 15.9688 3.78651 15.9688 4.96074C15.9688 6.13504 15.5036 7.26151 14.6753 8.09213L8.33179 14.4559C8.24384 14.5442 8.12439 14.5937 7.99981 14.5937C7.87523 14.5937 7.75577 14.5442 7.66782 14.4559L1.32427 8.09205C-0.399757 6.3625 -0.399757 3.55897 1.32427 1.82942C3.04912 0.0990403 5.84629 0.0990402 7.57114 1.82942L7.99981 2.25946L8.42847 1.82942C8.4285 1.82939 8.42845 1.82945 8.42847 1.82942ZM11.5519 1.46875C10.6297 1.46875 9.74494 1.83638 9.09252 2.49119L8.33179 3.25436C8.24384 3.34259 8.12439 3.39218 7.99981 3.39218C7.87523 3.39218 7.75577 3.34259 7.66782 3.25436L6.90717 2.49127C5.54867 1.12842 3.34674 1.12842 1.98824 2.49127C0.628919 3.85495 0.628919 6.06653 1.98824 7.4302L7.99981 13.461L14.0114 7.4302C14.6641 6.77564 15.0312 5.88729 15.0312 4.96074C15.0312 4.03419 14.6642 3.14591 14.0115 2.49135C13.359 1.83653 12.4741 1.46875 11.5519 1.46875Z" fill="#FF6933"></path>
+														</svg>
+													</button>
 													<div class="card-preview__body">
 														<div class="ibg card-preview__image">
 															<img src="assets/images/city/facilities/hotel-1.jpg" alt="">
 														</div>
 														<div class="card-preview__content">
-															<div class="card-preview__title">
+															<div class="anim-title card-preview__title">
 																<span>Алуштинский Мультипарк</span>
 															</div>
 															<div class="card-preview__description">Голубицкая, ул. Красная, д. 178</div>
@@ -447,13 +440,18 @@
 													</div>
 												</div>
 												<div class="card-preview recreation-card">
-													<button class="button-favorite" type="button"> </button>
+													<button class="button-favorite" type="button">
+														<svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<path fill-rule="evenodd" clip-rule="evenodd" d="M14.3434 2.16035C13.6031 1.41741 12.599 1 11.5519 1C10.5048 1 9.50068 1.41741 8.76046 2.16035L7.99981 2.92343L7.23916 2.16035C5.69748 0.613732 3.19793 0.613732 1.65626 2.16035C0.114581 3.70696 0.114581 6.21452 1.65626 7.76113L2.41691 8.52422L7.99981 14.125L13.5827 8.52422L14.3434 7.76113C15.0839 7.01854 15.5 6.01116 15.5 4.96074C15.5 3.91031 15.0839 2.90293 14.3434 2.16035Z" fill="#FF6933"></path>
+															<path fill-rule="evenodd" clip-rule="evenodd" d="M8.42847 1.82942C9.25648 0.99841 10.38 0.53125 11.5519 0.53125C12.7238 0.53125 13.8474 0.998439 14.6754 1.8295C15.5037 2.6601 15.9688 3.78651 15.9688 4.96074C15.9688 6.13504 15.5036 7.26151 14.6753 8.09213L8.33179 14.4559C8.24384 14.5442 8.12439 14.5937 7.99981 14.5937C7.87523 14.5937 7.75577 14.5442 7.66782 14.4559L1.32427 8.09205C-0.399757 6.3625 -0.399757 3.55897 1.32427 1.82942C3.04912 0.0990403 5.84629 0.0990402 7.57114 1.82942L7.99981 2.25946L8.42847 1.82942C8.4285 1.82939 8.42845 1.82945 8.42847 1.82942ZM11.5519 1.46875C10.6297 1.46875 9.74494 1.83638 9.09252 2.49119L8.33179 3.25436C8.24384 3.34259 8.12439 3.39218 7.99981 3.39218C7.87523 3.39218 7.75577 3.34259 7.66782 3.25436L6.90717 2.49127C5.54867 1.12842 3.34674 1.12842 1.98824 2.49127C0.628919 3.85495 0.628919 6.06653 1.98824 7.4302L7.99981 13.461L14.0114 7.4302C14.6641 6.77564 15.0312 5.88729 15.0312 4.96074C15.0312 4.03419 14.6642 3.14591 14.0115 2.49135C13.359 1.83653 12.4741 1.46875 11.5519 1.46875Z" fill="#FF6933"></path>
+														</svg>
+													</button>
 													<div class="card-preview__body">
 														<div class="ibg card-preview__image">
 															<img src="assets/images/city/facilities/hotel-2.jpg" alt="">
 														</div>
 														<div class="card-preview__content">
-															<div class="card-preview__title">
+															<div class="anim-title card-preview__title">
 																<span>Алуштинский Мультипарк</span>
 															</div>
 															<div class="card-preview__description">Голубицкая, ул. Красная, д. 178</div>
@@ -461,13 +459,18 @@
 													</div>
 												</div>
 												<div class="card-preview recreation-card">
-													<button class="button-favorite" type="button"> </button>
+													<button class="button-favorite" type="button">
+														<svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<path fill-rule="evenodd" clip-rule="evenodd" d="M14.3434 2.16035C13.6031 1.41741 12.599 1 11.5519 1C10.5048 1 9.50068 1.41741 8.76046 2.16035L7.99981 2.92343L7.23916 2.16035C5.69748 0.613732 3.19793 0.613732 1.65626 2.16035C0.114581 3.70696 0.114581 6.21452 1.65626 7.76113L2.41691 8.52422L7.99981 14.125L13.5827 8.52422L14.3434 7.76113C15.0839 7.01854 15.5 6.01116 15.5 4.96074C15.5 3.91031 15.0839 2.90293 14.3434 2.16035Z" fill="#FF6933"></path>
+															<path fill-rule="evenodd" clip-rule="evenodd" d="M8.42847 1.82942C9.25648 0.99841 10.38 0.53125 11.5519 0.53125C12.7238 0.53125 13.8474 0.998439 14.6754 1.8295C15.5037 2.6601 15.9688 3.78651 15.9688 4.96074C15.9688 6.13504 15.5036 7.26151 14.6753 8.09213L8.33179 14.4559C8.24384 14.5442 8.12439 14.5937 7.99981 14.5937C7.87523 14.5937 7.75577 14.5442 7.66782 14.4559L1.32427 8.09205C-0.399757 6.3625 -0.399757 3.55897 1.32427 1.82942C3.04912 0.0990403 5.84629 0.0990402 7.57114 1.82942L7.99981 2.25946L8.42847 1.82942C8.4285 1.82939 8.42845 1.82945 8.42847 1.82942ZM11.5519 1.46875C10.6297 1.46875 9.74494 1.83638 9.09252 2.49119L8.33179 3.25436C8.24384 3.34259 8.12439 3.39218 7.99981 3.39218C7.87523 3.39218 7.75577 3.34259 7.66782 3.25436L6.90717 2.49127C5.54867 1.12842 3.34674 1.12842 1.98824 2.49127C0.628919 3.85495 0.628919 6.06653 1.98824 7.4302L7.99981 13.461L14.0114 7.4302C14.6641 6.77564 15.0312 5.88729 15.0312 4.96074C15.0312 4.03419 14.6642 3.14591 14.0115 2.49135C13.359 1.83653 12.4741 1.46875 11.5519 1.46875Z" fill="#FF6933"></path>
+														</svg>
+													</button>
 													<div class="card-preview__body">
 														<div class="ibg card-preview__image">
 															<img src="assets/images/city/facilities/hotel-3.jpg" alt="">
 														</div>
 														<div class="card-preview__content">
-															<div class="card-preview__title">
+															<div class="anim-title card-preview__title">
 																<span>Алуштинский Мультипарк</span>
 															</div>
 															<div class="card-preview__description">Голубицкая, ул. Красная, д. 178</div>
@@ -475,13 +478,18 @@
 													</div>
 												</div>
 												<div class="card-preview recreation-card">
-													<button class="button-favorite" type="button"> </button>
+													<button class="button-favorite" type="button">
+														<svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<path fill-rule="evenodd" clip-rule="evenodd" d="M14.3434 2.16035C13.6031 1.41741 12.599 1 11.5519 1C10.5048 1 9.50068 1.41741 8.76046 2.16035L7.99981 2.92343L7.23916 2.16035C5.69748 0.613732 3.19793 0.613732 1.65626 2.16035C0.114581 3.70696 0.114581 6.21452 1.65626 7.76113L2.41691 8.52422L7.99981 14.125L13.5827 8.52422L14.3434 7.76113C15.0839 7.01854 15.5 6.01116 15.5 4.96074C15.5 3.91031 15.0839 2.90293 14.3434 2.16035Z" fill="#FF6933"></path>
+															<path fill-rule="evenodd" clip-rule="evenodd" d="M8.42847 1.82942C9.25648 0.99841 10.38 0.53125 11.5519 0.53125C12.7238 0.53125 13.8474 0.998439 14.6754 1.8295C15.5037 2.6601 15.9688 3.78651 15.9688 4.96074C15.9688 6.13504 15.5036 7.26151 14.6753 8.09213L8.33179 14.4559C8.24384 14.5442 8.12439 14.5937 7.99981 14.5937C7.87523 14.5937 7.75577 14.5442 7.66782 14.4559L1.32427 8.09205C-0.399757 6.3625 -0.399757 3.55897 1.32427 1.82942C3.04912 0.0990403 5.84629 0.0990402 7.57114 1.82942L7.99981 2.25946L8.42847 1.82942C8.4285 1.82939 8.42845 1.82945 8.42847 1.82942ZM11.5519 1.46875C10.6297 1.46875 9.74494 1.83638 9.09252 2.49119L8.33179 3.25436C8.24384 3.34259 8.12439 3.39218 7.99981 3.39218C7.87523 3.39218 7.75577 3.34259 7.66782 3.25436L6.90717 2.49127C5.54867 1.12842 3.34674 1.12842 1.98824 2.49127C0.628919 3.85495 0.628919 6.06653 1.98824 7.4302L7.99981 13.461L14.0114 7.4302C14.6641 6.77564 15.0312 5.88729 15.0312 4.96074C15.0312 4.03419 14.6642 3.14591 14.0115 2.49135C13.359 1.83653 12.4741 1.46875 11.5519 1.46875Z" fill="#FF6933"></path>
+														</svg>
+													</button>
 													<div class="card-preview__body">
 														<div class="ibg card-preview__image">
 															<img src="assets/images/city/facilities/hotel-4.jpg" alt="">
 														</div>
 														<div class="card-preview__content">
-															<div class="card-preview__title">
+															<div class="anim-title card-preview__title">
 																<span>Алуштинский Мультипарк</span>
 															</div>
 															<div class="card-preview__description">Голубицкая, ул. Красная, д. 178</div>
@@ -489,13 +497,18 @@
 													</div>
 												</div>
 												<div class="card-preview recreation-card">
-													<button class="button-favorite" type="button"> </button>
+													<button class="button-favorite" type="button">
+														<svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<path fill-rule="evenodd" clip-rule="evenodd" d="M14.3434 2.16035C13.6031 1.41741 12.599 1 11.5519 1C10.5048 1 9.50068 1.41741 8.76046 2.16035L7.99981 2.92343L7.23916 2.16035C5.69748 0.613732 3.19793 0.613732 1.65626 2.16035C0.114581 3.70696 0.114581 6.21452 1.65626 7.76113L2.41691 8.52422L7.99981 14.125L13.5827 8.52422L14.3434 7.76113C15.0839 7.01854 15.5 6.01116 15.5 4.96074C15.5 3.91031 15.0839 2.90293 14.3434 2.16035Z" fill="#FF6933"></path>
+															<path fill-rule="evenodd" clip-rule="evenodd" d="M8.42847 1.82942C9.25648 0.99841 10.38 0.53125 11.5519 0.53125C12.7238 0.53125 13.8474 0.998439 14.6754 1.8295C15.5037 2.6601 15.9688 3.78651 15.9688 4.96074C15.9688 6.13504 15.5036 7.26151 14.6753 8.09213L8.33179 14.4559C8.24384 14.5442 8.12439 14.5937 7.99981 14.5937C7.87523 14.5937 7.75577 14.5442 7.66782 14.4559L1.32427 8.09205C-0.399757 6.3625 -0.399757 3.55897 1.32427 1.82942C3.04912 0.0990403 5.84629 0.0990402 7.57114 1.82942L7.99981 2.25946L8.42847 1.82942C8.4285 1.82939 8.42845 1.82945 8.42847 1.82942ZM11.5519 1.46875C10.6297 1.46875 9.74494 1.83638 9.09252 2.49119L8.33179 3.25436C8.24384 3.34259 8.12439 3.39218 7.99981 3.39218C7.87523 3.39218 7.75577 3.34259 7.66782 3.25436L6.90717 2.49127C5.54867 1.12842 3.34674 1.12842 1.98824 2.49127C0.628919 3.85495 0.628919 6.06653 1.98824 7.4302L7.99981 13.461L14.0114 7.4302C14.6641 6.77564 15.0312 5.88729 15.0312 4.96074C15.0312 4.03419 14.6642 3.14591 14.0115 2.49135C13.359 1.83653 12.4741 1.46875 11.5519 1.46875Z" fill="#FF6933"></path>
+														</svg>
+													</button>
 													<div class="card-preview__body">
 														<div class="ibg card-preview__image">
 															<img src="assets/images/city/facilities/hotel-5.jpg" alt="">
 														</div>
 														<div class="card-preview__content">
-															<div class="card-preview__title">
+															<div class="anim-title card-preview__title">
 																<span>Алуштинский Мультипарк</span>
 															</div>
 															<div class="card-preview__description">Голубицкая, ул. Красная, д. 178</div>
@@ -503,13 +516,18 @@
 													</div>
 												</div>
 												<div class="card-preview recreation-card">
-													<button class="button-favorite" type="button"> </button>
+													<button class="button-favorite" type="button">
+														<svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<path fill-rule="evenodd" clip-rule="evenodd" d="M14.3434 2.16035C13.6031 1.41741 12.599 1 11.5519 1C10.5048 1 9.50068 1.41741 8.76046 2.16035L7.99981 2.92343L7.23916 2.16035C5.69748 0.613732 3.19793 0.613732 1.65626 2.16035C0.114581 3.70696 0.114581 6.21452 1.65626 7.76113L2.41691 8.52422L7.99981 14.125L13.5827 8.52422L14.3434 7.76113C15.0839 7.01854 15.5 6.01116 15.5 4.96074C15.5 3.91031 15.0839 2.90293 14.3434 2.16035Z" fill="#FF6933"></path>
+															<path fill-rule="evenodd" clip-rule="evenodd" d="M8.42847 1.82942C9.25648 0.99841 10.38 0.53125 11.5519 0.53125C12.7238 0.53125 13.8474 0.998439 14.6754 1.8295C15.5037 2.6601 15.9688 3.78651 15.9688 4.96074C15.9688 6.13504 15.5036 7.26151 14.6753 8.09213L8.33179 14.4559C8.24384 14.5442 8.12439 14.5937 7.99981 14.5937C7.87523 14.5937 7.75577 14.5442 7.66782 14.4559L1.32427 8.09205C-0.399757 6.3625 -0.399757 3.55897 1.32427 1.82942C3.04912 0.0990403 5.84629 0.0990402 7.57114 1.82942L7.99981 2.25946L8.42847 1.82942C8.4285 1.82939 8.42845 1.82945 8.42847 1.82942ZM11.5519 1.46875C10.6297 1.46875 9.74494 1.83638 9.09252 2.49119L8.33179 3.25436C8.24384 3.34259 8.12439 3.39218 7.99981 3.39218C7.87523 3.39218 7.75577 3.34259 7.66782 3.25436L6.90717 2.49127C5.54867 1.12842 3.34674 1.12842 1.98824 2.49127C0.628919 3.85495 0.628919 6.06653 1.98824 7.4302L7.99981 13.461L14.0114 7.4302C14.6641 6.77564 15.0312 5.88729 15.0312 4.96074C15.0312 4.03419 14.6642 3.14591 14.0115 2.49135C13.359 1.83653 12.4741 1.46875 11.5519 1.46875Z" fill="#FF6933"></path>
+														</svg>
+													</button>
 													<div class="card-preview__body">
 														<div class="ibg card-preview__image">
 															<img src="assets/images/city/facilities/hotel-6.jpg" alt="">
 														</div>
 														<div class="card-preview__content">
-															<div class="card-preview__title">
+															<div class="anim-title card-preview__title">
 																<span>Алуштинский Мультипарк</span>
 															</div>
 															<div class="card-preview__description">Голубицкая, ул. Красная, д. 178</div>
@@ -529,9 +547,9 @@
 										<p>Еще одним популярным развлечением является музей катастроф на водах - сюда приезжают, в основном взрослые, которые интересуются историей или морским делом. Любителям природных достопримечательностей рекомендуем посетить долину приведений - скалистая местность, где любое фото выглядит незаурядно.</p>
 									</div>
 								</div>
-								<div class="content-group">
+								<div class="content-group content-group--beaches">
 									<div class="content">
-										<h2>Пляжи в Алуште</h2>
+										<h4>Пляжи в Алуште</h4>
 										<p>Сама природа подарила этому городку потрясающие пляжи. Здесь они в основном, галечные, что очень удобно и полезно для здоровья. В отличие от песка, галька не очень сильно нагревается на солнце, а это значит, что по ней легко и удобно ходить. Кроме того, песок в ветреную погоду разносится воздушным порывами, попадает в глаза и рот, что особенно проблематично на отдыхе с ребенком у моря. Впрочем, в окрестностях Алушты есть и пляжи с песком.</p>
 										<p>Темный сланцевый песок делает здешние пляжи уникальными. Всем, у кого слабые места − дыхательная, нервная и сердечно-сосудистая система – врачи рекомендуют посетить Алушту с ее целебным воздухом. Тем более что большой выбор санаториев, их насчитывается около 78, удовлетворит любой вкус.</p>
 										<div class="images-widget images2-widget">
@@ -548,7 +566,7 @@
 								</div>
 								<div class="content-group">
 									<div class="content">
-										<h2>Климат</h2>
+										<h4>Климат</h4>
 										<p>Климат Алушты - это отдельная его достопримечательность. Температура очень комфортна здесь в течение всего года, и даже летом здесь совсем не жарко. В июле и августе, в среднем, градусники показывают около 30, а в сентябре и июне - около 25. Поэтому сезон здесь официально открыт с конца апреля по начало октября. Осенью, в основном, приезжают пары: отдых на двоих получается дешевле, а комфорта больше - свободные пляжи, тишина, недорого стоят номера с питанием.</p>
 										<p>Летом дожди бывают редко, в основном осадки выпадают в январе и феврале. Хотя кто сказал, что в Алушту нельзя приезжать зимой? Заснеженные кипарисы - зрелище на удивление красивое, а город живет своей размеренной, спокойной жизнью.</p>
 										<p>Температура воды в море наиболее пригодна для купания с июня по октябрь. В эти месяцы оно прогревается до 25-26 градусов. В мае море еще достаточно холодное, вода едва ли нагревается до 18 градусов. Поэтому пляжный отдых в Алуште в основном приходится на летние месяцы и начало осени - в это время в городе бушует жизнь, на пляжах нежатся отдыхающие, а по достопримечательностям прогуливаются туристы.</p>
@@ -577,75 +595,77 @@
 														</div>
 													</div>
 												</div>
-												<div class="card-weather__week">
-													<div class="card-weather__item active">
-														<div class="card-weather__caption">ПН</div>
-														<div class="card-weather__image">
-															<img src="assets/images/city/weather-widget/weather-1.svg" alt="ПН">
+												<div class="card-weather__week-wrap">
+													<div class="card-weather__week">
+														<div class="card-weather__item active">
+															<div class="card-weather__caption">ПН</div>
+															<div class="card-weather__image">
+																<img src="assets/images/city/weather-widget/weather-1.svg" alt="ПН">
+															</div>
+															<div class="card-weather__temp temp-weather">
+																<div class="temp-weather__value">19°</div>
+																<div class="temp-weather__value">14°</div>
+															</div>
 														</div>
-														<div class="card-weather__temp temp-weather">
-															<div class="temp-weather__value">19°</div>
-															<div class="temp-weather__value">14°</div>
+														<div class="card-weather__item">
+															<div class="card-weather__caption">ВТ</div>
+															<div class="card-weather__image">
+																<img src="assets/images/city/weather-widget/weather-2.svg" alt="ВТ">
+															</div>
+															<div class="card-weather__temp temp-weather">
+																<div class="temp-weather__value">19°</div>
+																<div class="temp-weather__value">14°</div>
+															</div>
 														</div>
-													</div>
-													<div class="card-weather__item">
-														<div class="card-weather__caption">ВТ</div>
-														<div class="card-weather__image">
-															<img src="assets/images/city/weather-widget/weather-2.svg" alt="ВТ">
+														<div class="card-weather__item">
+															<div class="card-weather__caption">СР</div>
+															<div class="card-weather__image">
+																<img src="assets/images/city/weather-widget/weather-3.svg" alt="СР">
+															</div>
+															<div class="card-weather__temp temp-weather">
+																<div class="temp-weather__value">19°</div>
+																<div class="temp-weather__value">14°</div>
+															</div>
 														</div>
-														<div class="card-weather__temp temp-weather">
-															<div class="temp-weather__value">19°</div>
-															<div class="temp-weather__value">14°</div>
+														<div class="card-weather__item">
+															<div class="card-weather__caption">ЧТ</div>
+															<div class="card-weather__image">
+																<img src="assets/images/city/weather-widget/weather-4.svg" alt="ЧТ">
+															</div>
+															<div class="card-weather__temp temp-weather">
+																<div class="temp-weather__value">19°</div>
+																<div class="temp-weather__value">14°</div>
+															</div>
 														</div>
-													</div>
-													<div class="card-weather__item">
-														<div class="card-weather__caption">СР</div>
-														<div class="card-weather__image">
-															<img src="assets/images/city/weather-widget/weather-3.svg" alt="СР">
+														<div class="card-weather__item">
+															<div class="card-weather__caption">ПТ</div>
+															<div class="card-weather__image">
+																<img src="assets/images/city/weather-widget/weather-5.svg" alt="ПТ">
+															</div>
+															<div class="card-weather__temp temp-weather">
+																<div class="temp-weather__value">19°</div>
+																<div class="temp-weather__value">14°</div>
+															</div>
 														</div>
-														<div class="card-weather__temp temp-weather">
-															<div class="temp-weather__value">19°</div>
-															<div class="temp-weather__value">14°</div>
+														<div class="card-weather__item">
+															<div class="card-weather__caption">СБ</div>
+															<div class="card-weather__image">
+																<img src="assets/images/city/weather-widget/weather-6.svg" alt="СБ">
+															</div>
+															<div class="card-weather__temp temp-weather">
+																<div class="temp-weather__value">19°</div>
+																<div class="temp-weather__value">14°</div>
+															</div>
 														</div>
-													</div>
-													<div class="card-weather__item">
-														<div class="card-weather__caption">ЧТ</div>
-														<div class="card-weather__image">
-															<img src="assets/images/city/weather-widget/weather-4.svg" alt="ЧТ">
-														</div>
-														<div class="card-weather__temp temp-weather">
-															<div class="temp-weather__value">19°</div>
-															<div class="temp-weather__value">14°</div>
-														</div>
-													</div>
-													<div class="card-weather__item">
-														<div class="card-weather__caption">ПТ</div>
-														<div class="card-weather__image">
-															<img src="assets/images/city/weather-widget/weather-5.svg" alt="ПТ">
-														</div>
-														<div class="card-weather__temp temp-weather">
-															<div class="temp-weather__value">19°</div>
-															<div class="temp-weather__value">14°</div>
-														</div>
-													</div>
-													<div class="card-weather__item">
-														<div class="card-weather__caption">СБ</div>
-														<div class="card-weather__image">
-															<img src="assets/images/city/weather-widget/weather-6.svg" alt="СБ">
-														</div>
-														<div class="card-weather__temp temp-weather">
-															<div class="temp-weather__value">19°</div>
-															<div class="temp-weather__value">14°</div>
-														</div>
-													</div>
-													<div class="card-weather__item">
-														<div class="card-weather__caption">ВС</div>
-														<div class="card-weather__image">
-															<img src="assets/images/city/weather-widget/weather-7.svg" alt="ВС">
-														</div>
-														<div class="card-weather__temp temp-weather">
-															<div class="temp-weather__value">19°</div>
-															<div class="temp-weather__value">14°</div>
+														<div class="card-weather__item">
+															<div class="card-weather__caption">ВС</div>
+															<div class="card-weather__image">
+																<img src="assets/images/city/weather-widget/weather-7.svg" alt="ВС">
+															</div>
+															<div class="card-weather__temp temp-weather">
+																<div class="temp-weather__value">19°</div>
+																<div class="temp-weather__value">14°</div>
+															</div>
 														</div>
 													</div>
 												</div>
@@ -666,7 +686,7 @@
 											<img src="assets/images/testimonials/1.jpg" alt="Гостиница “Южный Берег”">
 										</div>
 										<div class="testimonials-item__body">
-											<div class="testimonials-item__place">
+											<div class="anim-title testimonials-item__place">
 												<span>Гостиница “Южный Берег”</span>
 											</div>
 											<address class="testimonials-item__address">Голубицкая, ул. Красная, д. 178</address>
@@ -683,9 +703,13 @@
 													</ul>
 												</div>
 											</div>
-											<div class="testimonials-item__text">
-												<p>Шикарное расположение, прямо в самом-самом центре. Рядом остановка есть, до парка Краснодар удобно добираться. В хостеле есть разделение на женские и мужские номера. Контингент приличный. Белье чистое и в помещении для хостела тоже довольно чисто. Для бюджетного варианта с хорошим расположением самое то.</p>
-												<a class="btn-more testimonials-item__btn" href="#">Подробнее</a>
+											<div class="testimonials-item__text-container">
+												<div class="testimonials-item__text text-clamp">
+													<p>Шикарное расположение, прямо в самом-самом центре. Рядом остановка есть, до парка Краснодар удобно добираться. В хостеле есть разделение на женские и мужские номера. Контингент приличный. Белье чистое и в помещении для хостела тоже довольно чисто. Для бюджетного варианта с хорошим расположением самое то...</p>
+													<a class="btn-detail testimonials-item__btn" href="#">
+														<span>Подробнее</span>
+													</a>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -694,7 +718,7 @@
 											<img src="assets/images/testimonials/2.jpg" alt="Гостиница “Летучая мышь”">
 										</div>
 										<div class="testimonials-item__body">
-											<div class="testimonials-item__place">
+											<div class="anim-title testimonials-item__place">
 												<span>Гостиница “Летучая мышь”</span>
 											</div>
 											<address class="testimonials-item__address">Голубицкая, ул. Красная, д. 178</address>
@@ -711,9 +735,13 @@
 													</ul>
 												</div>
 											</div>
-											<div class="testimonials-item__text">
-												<p>Шикарное расположение, прямо в самом-самом центре. Рядом остановка есть, до парка Краснодар удобно добираться. В хостеле есть разделение на женские и мужские номера. Контингент приличный. Белье чистое и в помещении для хостела тоже довольно чисто. Для бюджетного варианта с хорошим расположением самое то.</p>
-												<a class="btn-more testimonials-item__btn" href="#">Подробнее</a>
+											<div class="testimonials-item__text-container">
+												<div class="testimonials-item__text text-clamp">
+													<p>Шикарное расположение, прямо в самом-самом центре. Рядом остановка есть, до парка Краснодар удобно добираться. В хостеле есть разделение на женские и мужские номера. Контингент приличный. Белье чистое и в помещении для хостела тоже довольно чисто. Для бюджетного варианта с хорошим расположением самое то.</p>
+													<a class="btn-detail testimonials-item__btn" href="#">
+														<span>Подробнее</span>
+													</a>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -722,7 +750,7 @@
 											<img src="assets/images/testimonials/3.jpg" alt="Гостиница «Южный Берег»">
 										</div>
 										<div class="testimonials-item__body">
-											<div class="testimonials-item__place">
+											<div class="anim-title testimonials-item__place">
 												<span>Гостиница «Южный Берег»</span>
 											</div>
 											<address class="testimonials-item__address">Голубицкая, ул. Красная, д. 178</address>
@@ -739,9 +767,13 @@
 													</ul>
 												</div>
 											</div>
-											<div class="testimonials-item__text">
-												<p>Шикарное расположение, прямо в самом-самом центре. Рядом остановка есть, до парка Краснодар удобно добираться. В хостеле есть разделение на женские и мужские номера. Контингент приличный. Белье чистое и в помещении для хостела тоже довольно чисто. Для бюджетного варианта с хорошим расположением самое то.</p>
-												<a class="btn-more testimonials-item__btn" href="#">Подробнее</a>
+											<div class="testimonials-item__text-container">
+												<div class="testimonials-item__text text-clamp">
+													<p>Шикарное расположение, прямо в самом-самом центре. Рядом остановка есть, до парка Краснодар удобно добираться. В хостеле есть разделение на женские и мужские номера. Контингент приличный. Белье чистое и в помещении для хостела тоже довольно чисто. Для бюджетного варианта с хорошим расположением самое то.</p>
+													<a class="btn-detail testimonials-item__btn" href="#">
+														<span>Подробнее</span>
+													</a>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -750,7 +782,7 @@
 											<img src="assets/images/testimonials/4.jpg" alt="Отель “Море”">
 										</div>
 										<div class="testimonials-item__body">
-											<div class="testimonials-item__place">
+											<div class="anim-title testimonials-item__place">
 												<span>Отель “Море”</span>
 											</div>
 											<address class="testimonials-item__address">Голубицкая, ул. Красная, д. 178</address>
@@ -767,9 +799,13 @@
 													</ul>
 												</div>
 											</div>
-											<div class="testimonials-item__text">
-												<p>Шикарное расположение, прямо в самом-самом центре. Рядом остановка есть, до парка Краснодар удобно добираться. В хостеле есть разделение на женские и мужские номера. Контингент приличный. Белье чистое и в помещении для хостела тоже довольно чисто. Для бюджетного варианта с хорошим расположением самое то.</p>
-												<a class="btn-more testimonials-item__btn" href="#">Подробнее</a>
+											<div class="testimonials-item__text-container">
+												<div class="testimonials-item__text text-clamp">
+													<p>Шикарное расположение, прямо в самом-самом центре. Рядом остановка есть, до парка Краснодар удобно добираться. В хостеле есть разделение на женские и мужские номера. Контингент приличный. Белье чистое и в помещении для хостела тоже довольно чисто. Для бюджетного варианта с хорошим расположением самое то.</p>
+													<a class="btn-detail testimonials-item__btn" href="#">
+														<span>Подробнее</span>
+													</a>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -786,11 +822,13 @@
 				<div class="footer__body">
 					<div class="footer__info info-footer">
 						<a class="footer__logo" href="homepage.html">
-							<img src="assets/images/logo.svg" alt="">
+							<img src="assets/images/logo.svg" alt="логотип">
 						</a>
-						<div class="footer__copy">©На Юга, 2024</div>
-						<a class="footer__politic" href="#">Политика конфиденциальности</a>
-						<div class="footer__disclamer">Мы не предоставляем услуги бронирования. Всю информацию Вы можете найти на странице заинтресовавшего Вас обьекта Пишите, мы обязательно ответим</div>
+						<div class="info-footer__inner" data-da=".main-footer, 767.98, 0">
+							<div class="footer__copy">©На Юга, 2024</div>
+							<a class="footer__politic" href="#">Политика конфиденциальности</a>
+							<div class="footer__disclamer">Мы не предоставляем услуги бронирования. Всю информацию Вы можете найти на странице заинтресовавшего Вас обьекта Пишите, мы обязательно ответим</div>
+						</div>
 					</div>
 					<div class="footer__main main-footer">
 						<div class="footer__menu menu-footer">
@@ -833,6 +871,7 @@
 				</div>
 			</div>
 		</footer>
+		<div class="overlay"></div>
 	</div>
 	<script src="assets/scripts/main.js" defer="defer"></script>
 	<script src="assets/scripts/map.js"></script>

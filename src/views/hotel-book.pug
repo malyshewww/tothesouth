@@ -1,0 +1,73 @@
+extends ./layouts/default
+
+block variables 
+	- let pageTitle = "Заявка на бронирование";
+	- let breadCrumbsList = [{"title": "Главная", "link": "/"}, {"title": "Крым", "link": "/"},  {"title": "Алушта", "link": "city.html"}, {"title": "Жилье", "link": "city-hotels.html"}];
+	- let currentPage = "Заявка на бронирование"
+
+append styles 
+	link(href="assets/styles/hotel-book.css" rel="stylesheet")
+
+append scripts 
+	script(src="assets/scripts/hotel-book.js" type="module")
+
+block content 
+	.hotel-book
+		.container 
+			.page-title= pageTitle
+			.hotel-book__wrapper
+				.hotel-book__content
+					form.hotel-book__form 
+						.hotel-book__groups
+							fieldset.hotel-book__group
+								legend(hidden).hotel-book__group-caption
+								.hotel-book__form-items 
+									.form-item 
+										.form-item__caption Даты проживания
+										.custom-dropdown
+											input(type="hidden", name="date_from")
+											input(type="hidden", name="date_to")
+											input(type="hidden", name="count_night")
+											.custom-dropdown__btn-calendar#calendar-input 21 июня - 22 июня, 1 ночь
+									.form-item 
+										.form-item__caption Гостей в номере
+										.custom-dropdown
+											input(type="hidden", name="form_adults")
+											input(type="hidden", name="form_children")
+											.custom-dropdown__btn 
+												.custom-dropdown__btn-text
+													| #[span#form_adults 2] взрослых, #[span#form_children 0] детей
+											.custom-dropdown__choice.choice-dropdown
+												.choice-dropdown__items
+													.choice-dropdown__item 
+														button(type="button").choice-dropdown__button.button-minus
+																span
+														.choice-dropdown__count 0 взрослых
+														input(type="hidden", name="count_adults" value="0 взрослых").choice-dropdown__input
+														button(type="button").choice-dropdown__button.button-plus
+															span
+													.choice-dropdown__item 
+														button(type="button").choice-dropdown__button.button-minus
+															span
+														.choice-dropdown__count 0 детей
+														input(type="hidden", name="count_children" value="0 детей").choice-dropdown__input
+														button(type="button").choice-dropdown__button.button-plus
+															span
+													button(type="button").choice-dropdown__save-btn.btn.btn-blue Применить
+							fieldset.hotel-book__group
+								legend.hotel-book__group-caption Укажите контакты, по которым с вами можно связаться
+								.hotel-book__field-items 
+									+formItem("text", "person_name", "Ваше имя")
+									+formItem("tel", "person_phone", "+7-900-000-00-00")
+									+formItem("email", "person_email", "Email")
+									.form-item
+										.form-item__field
+											textarea(name="person_message" id="person_message").form-textarea
+											label(for="person_message").form-label Сообщение владельцу
+						.hotel-book__form-footer
+							.hotel-book__buttons 
+								button(type="submit").btn.btn-blue Отправить заявку 
+								button(type="reset").btn.btn-blue-transparent Отменить 
+							.hotel-book__form-text 
+								| Отправляя заявку, вы даете согласие на обработку своих персональных данных и принимаете условия #[a(href="#" class="btn-detail") Политики конфидециальности] и #[a(href="#" class="btn-detail") Пользовательского соглашения] 
+				include ./components/hotel-book-aside

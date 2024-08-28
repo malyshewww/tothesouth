@@ -4,80 +4,27 @@
 @import 'pages/city/city-common.scss';
 
 @import 'components/object-card.scss';
+@import 'components/filter-button.scss';
 
 .city-facilities {
+	& .heading__title {
+		font-weight: 700;
+	}
 	&__body {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		gap: 30px;
-	}
-}
-.facility-preview {
-	padding: 19px;
-	border: 1px solid $gray-line;
-	border-radius: 10px;
-	background: $white;
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
-	@media (any-hover: hover) {
-		&:hover {
-			cursor: pointer;
-			& .facility-preview__title {
-				color: $orange;
-				& span {
-					background-size: 100% 1px;
-				}
-			}
+		@media screen and (max-width: $xl) {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 20px;
+		}
+		@media screen and (max-width: $md) {
+			grid-template-columns: 100%;
 		}
 	}
-	&__image-wrap {
-		position: relative;
-	}
-	&__image {
-		padding-bottom: math.div(190, 230) * 100%;
-		border-radius: 10px;
-		overflow: hidden;
-	}
-	&__body {
-		display: grid;
-		gap: 5px;
-	}
-	&__title {
-		font-weight: 700;
-		font-size: 20px;
-		line-height: 120%;
-		color: $black;
-		transition: color $time linear;
-		& span {
-			transition: background-size $time cubic-bezier(0.645, 0.045, 0.355, 1);
-			background: linear-gradient(to bottom, rgba($orange, 1) 0%, rgba($orange, 1) 98%);
-			background-size: 0px 1px;
-			background-repeat: no-repeat;
-			background-position: left 100%;
+	& .filter-button {
+		@media screen and (max-width: $xl) {
+			margin-bottom: 20px;
 		}
 	}
-	&__sub-title {
-		font-size: 14px;
-		line-height: 140%;
-		color: $gray-text;
-	}
-	&__description {
-		margin-top: 5px;
-		-webkit-box-orient: vertical;
-		-webkit-line-clamp: 5;
-		overflow: hidden;
-		& p {
-			font-size: 14px;
-			color: $black;
-			line-height: 140%;
-			display: inline;
-		}
-	}
-}
-.ibg {
-}
-.button-favorite {
-}
-.btn-detail {
 }

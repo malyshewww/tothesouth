@@ -2,31 +2,43 @@
 
 .weather-widget {
 	padding: 30px;
+	@media screen and (max-width: $xl) {
+		padding: 0;
+	}
 }
 .content {
 	& .weather-widget {
 		margin-top: 40px;
+		@media screen and (max-width: $md) {
+			margin-top: 20px;
+		}
 	}
 }
 .card-weather {
 	display: grid;
-	gap: 20px;
+	gap: 18px;
 	&__header {
 		display: flex;
 		justify-content: space-between;
 		align-items: flex-start;
 		gap: 20px;
-		padding-bottom: 20px;
+		padding-bottom: 19px;
 		border-bottom: 1px solid $gray-line;
+		@media screen and (max-width: $xl) {
+			flex-direction: column;
+			gap: 15px;
+		}
 	}
 	&__main {
 		display: flex;
 		align-items: flex-start;
+		flex-wrap: wrap;
 		gap: 10px;
 	}
 	&__image {
 		width: 79px;
 		height: 59px;
+		flex-shrink: 0;
 		& img {
 			width: 100%;
 			height: 100%;
@@ -44,25 +56,47 @@
 	&__sup-value {
 		font-size: 16px;
 		line-height: 130%;
+		white-space: nowrap;
 	}
 	&__info {
 		display: flex;
 		flex-direction: column;
-		gap: 1px;
+		gap: 0px;
 		font-size: 14px;
 		line-height: 140%;
 		color: $gray-text;
 		margin-left: 8px;
+		@media screen and (max-width: $xl) {
+			margin-left: 0;
+		}
 		& p {
 			margin-bottom: 0;
+			font-size: 14px;
+			line-height: 140%;
 		}
 	}
 	&__today {
+	}
+	&__week-wrap {
+		overflow-y: hidden;
+		overflow-x: auto;
+		&::-webkit-scrollbar,
+		&::-webkit-scrollbar-track,
+		&::-webkit-scrollbar-thumb {
+			width: 0;
+			height: 0;
+			background: none;
+			display: none;
+		}
 	}
 	&__week {
 		display: grid;
 		grid-template-columns: repeat(7, 1fr);
 		gap: 20px;
+
+		@media screen and (max-width: $md) {
+			gap: 5px;
+		}
 	}
 	&__item {
 		min-height: 124px;
@@ -81,6 +115,10 @@
 		}
 		&.active {
 			background-color: #f9faff;
+		}
+		@media screen and (max-width: $md) {
+			width: 100px;
+			flex-shrink: 0;
 		}
 	}
 	&__caption {
@@ -106,6 +144,9 @@
 	display: grid;
 	gap: 7px;
 	text-align: right;
+	@media screen and (max-width: $xl) {
+		text-align: left;
+	}
 	&__title {
 		font-weight: 700;
 		font-size: 18px;
@@ -113,7 +154,7 @@
 	}
 	&__values {
 		display: grid;
-		gap: 5px;
+		gap: 3px;
 		font-size: 14px;
 		line-height: 140%;
 		color: $gray-text;

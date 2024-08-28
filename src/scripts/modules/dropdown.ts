@@ -6,7 +6,15 @@ function checkDropdownValue() {
 		const dropdownListItems = elem.querySelectorAll('.select-list__item');
 		[...dropdownListItems].forEach((listItem) => {
 			const dataValue = listItem.dataset.value;
-			if (dropdownButton.innerText !== dataValue) return;
+			const dataValueStr = dataValue
+				.toLowerCase()
+				.replace(/[\s.,%,(.+\)]/g, '')
+				.trim();
+			const dropdownButtonStr = dropdownButton.innerText
+				.toLowerCase()
+				.replace(/[\s.,%,(.+\)]/g, '')
+				.trim();
+			if (dropdownButtonStr !== dataValueStr) return;
 			listItem.classList.add('current');
 		});
 	});
@@ -15,18 +23,27 @@ checkDropdownValue();
 function deactivateAllDropdowns() {
 	const activeDropdownButtons = document.querySelectorAll('.custom-dropdown__btn.active');
 	[...activeDropdownButtons].forEach((elem) => {
+		let choice = elem.parentNode.querySelector('.custom-dropdown__choice');
 		elem.classList.remove('active');
 	});
 }
 function handleDropdownClicks(event) {
 	const target = event.target as HTMLElement;
+
 	if (target.matches('.custom-dropdown__btn')) {
 		if (target.classList.contains('active')) {
 			target.classList.remove('active');
 		} else {
-			deactivateAllDropdowns();
+			// deactivateAllDropdowns();
 			target.classList.add('active');
 		}
+	} else if (
+		target.matches('.choice-dropdown') ||
+		target.matches('.choice-dropdown__button') ||
+		target.matches('.choice-dropdown__count')
+	) {
+		console.log(target);
+		event.stopPropagation();
 	} else {
 		deactivateAllDropdowns();
 		// if (target.matches('.select-list *')) {
@@ -36,6 +53,9 @@ function handleDropdownClicks(event) {
 		// 	deactivateAllDropdowns();
 		// }
 	}
+	// if (target.closest('.choice-dropdown__save-btn')) {
+	// 	deactivateAllDropdowns();
+	// }
 	if (target.closest('.select-list__item')) {
 		const parent = target.closest('.custom-dropdown') as HTMLElement;
 		const dropdownButton = parent.querySelector('.custom-dropdown__btn') as HTMLElement;

@@ -1,0 +1,38 @@
+.filter-button {
+	width: 100%;
+	border: 1px solid $gray-line;
+	background-color: $white;
+	border-radius: 5px;
+	padding: 14px;
+	min-height: 51px;
+	font-size: 14px;
+	line-height: 140%;
+	color: $black;
+	align-items: center;
+	gap: 10px;
+	display: none;
+	@media screen and (max-width: $xl) {
+		display: flex;
+	}
+	&::before,
+	&::after {
+		content: '';
+		flex-shrink: 0;
+		mask-repeat: no-repeat;
+		mask-position: center;
+		background-color: currentColor;
+		pointer-events: none;
+	}
+	&::before {
+		width: 20px;
+		height: 21px;
+		mask-image: url('../images/icons/filter-icon.svg');
+	}
+	&::after {
+		margin-left: auto;
+		width: 10px;
+		height: 21px;
+		mask-image: url('../images/icons/arrow-right.svg');
+		mask-size: 6px 10px;
+	}
+}

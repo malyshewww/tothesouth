@@ -1,0 +1,488 @@
+@use 'sass:math';
+@import 'config/variables';
+@import 'config/mixins';
+
+@import 'libs/vanilla-calendar.min.scss';
+
+@import 'forms.scss';
+
+.vanilla-calendar {
+	padding: 16px 16px 12px 16px;
+	width: 664px;
+}
+.vanilla-calendar-header {
+	margin-bottom: 0;
+}
+[data-calendar-theme='light'] .vanilla-calendar-header__content,
+[data-calendar-theme='light'] .vanilla-calendar-month,
+[data-calendar-theme='light'] .vanilla-calendar-year {
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 133%;
+	color: $black;
+}
+.vanilla-calendar-arrow {
+	width: 32px;
+	height: 32px;
+	&::before {
+		background-size: 12px 12px;
+	}
+}
+.vanilla-calendar-week__day {
+	width: 40px;
+	height: 40px;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 133%;
+	text-align: center;
+}
+[data-calendar-theme='light'] .vanilla-calendar-week__day {
+	color: $gray-text;
+}
+.vanilla-calendar-week {
+	margin-bottom: 4px;
+}
+.vanilla-calendar-day {
+	width: 40px;
+	height: 40px;
+}
+.vanilla-calendar-day__btn {
+	font-size: 14px;
+	line-height: 171%;
+}
+
+.vanilla-calendar-days {
+	row-gap: 4px;
+}
+
+.vanilla-calendar-day_selected-first,
+.vanilla-calendar-day_selected-last {
+	border-radius: 8px;
+	position: relative;
+	z-index: 5;
+	color: $white;
+}
+[data-calendar-theme='light'] .vanilla-calendar-day_selected-intermediate .vanilla-calendar-day__btn_selected,
+[data-calendar-theme='light'] .vanilla-calendar-day_selected-intermediate .vanilla-calendar-day__btn_selected:hover {
+	background-color: $gray-background;
+	color: $blue-1;
+}
+[data-calendar-theme='light']
+	.vanilla-calendar-day_selected-intermediate
+	.vanilla-calendar-day__btn_weekend.vanilla-calendar-day__btn_selected,
+[data-calendar-theme='light']
+	.vanilla-calendar-day_selected-intermediate
+	.vanilla-calendar-day__btn_holiday.vanilla-calendar-day__btn_selected,
+[data-calendar-theme='light']
+	.vanilla-calendar-day_selected-intermediate
+	.vanilla-calendar-day__btn_weekend.vanilla-calendar-day__btn_selected:hover,
+[data-calendar-theme='light']
+	.vanilla-calendar-day_selected-intermediate
+	.vanilla-calendar-day__btn_holiday.vanilla-calendar-day__btn_selected:hover {
+	background: $gray-background;
+	color: $blue-1;
+}
+// [data-calendar-theme='light'] .vanilla-calendar-day__btn_today {
+// 	background-color: transparent;
+// }
+[data-calendar-theme='light'] .vanilla-calendar-day__btn_weekend.vanilla-calendar-day__btn_selected,
+[data-calendar-theme='light'] .vanilla-calendar-day__btn_holiday.vanilla-calendar-day__btn_selected,
+[data-calendar-theme='light'] .vanilla-calendar-day__btn_weekend.vanilla-calendar-day__btn_selected:hover {
+	background-color: $blue-1;
+	color: $white;
+}
+[data-calendar-theme='light'] .vanilla-calendar-day__btn_holiday.vanilla-calendar-day__btn_selected:hover,
+.vanilla-calendar-day_selected-last .vanilla-calendar-day__btn_selected {
+	border-radius: 8px;
+}
+.vanilla-calendar-day_selected-first .vanilla-calendar-day__btn_selected {
+	border-radius: 8px;
+}
+.vanilla-calendar-day_selected-last .vanilla-calendar-day__btn_selected {
+	border-radius: 8px;
+}
+
+[data-calendar-theme='light'] .vanilla-calendar-week__day_weekend {
+	color: $gray-text;
+}
+[data-calendar-theme='light'] .vanilla-calendar-day__btn_weekend,
+[data-calendar-theme='light'] .vanilla-calendar-day__btn_holiday {
+	color: $black;
+}
+[data-calendar-theme='light'] .vanilla-calendar-day__btn_weekend:hover,
+[data-calendar-theme='light'] .vanilla-calendar-day__btn_holiday:hover,
+[data-calendar-theme='light'] .vanilla-calendar-day__btn_weekend.vanilla-calendar-day__btn_hover,
+[data-calendar-theme='light'] .vanilla-calendar-day__btn_holiday.vanilla-calendar-day__btn_hover {
+	background-color: $gray-background;
+}
+.vanilla-calendar-choices {
+	width: 100%;
+	max-width: 392px;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	border: 1px solid $gray-line;
+	height: 56px;
+	border-radius: 12px;
+	position: relative;
+	margin-bottom: 24px;
+	&::before {
+		content: '';
+		height: 100%;
+		width: 50%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		border: 2px solid $blue-1;
+		border-radius: 12px;
+		z-index: 2;
+		transition: transform $time;
+	}
+	&.active {
+		&::before {
+			transform: translateX(100%);
+		}
+	}
+	&__item {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		padding: 12px 16px;
+	}
+	&__caption {
+		font-weight: 400;
+		font-size: 12px;
+		line-height: 133%;
+		color: $gray-text;
+	}
+	&__value {
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 171%;
+	}
+}
+.vanilla-calendar-footer {
+	margin-left: -16px;
+	margin-right: -16px;
+	margin-top: 32px;
+	padding-top: 12px;
+	display: flex;
+	justify-content: flex-end;
+	border-top: 0.5px solid #ebebeb;
+}
+.vanilla-calendar-footer__buttons {
+	margin-right: 16px;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+.vanilla-calendar-button {
+	padding: 8px 12px;
+	min-height: 32px;
+	font-weight: 600;
+	font-size: 12px;
+	line-height: 133%;
+	border-radius: 8px;
+}
+
+.hotel-book {
+	&__wrapper {
+		display: grid;
+		grid-template-columns: 1fr 372px;
+		gap: 30px;
+		align-items: start;
+	}
+	&__content {
+		border: 1px solid $gray-line;
+		border-radius: 10px;
+		padding: 40px;
+		background: $white;
+	}
+	&__form {
+		display: grid;
+		gap: 20px;
+	}
+	&__groups {
+		display: grid;
+		gap: 30px;
+	}
+	&__group-caption {
+		font-weight: 700;
+		font-size: 18px;
+		line-height: 120%;
+		margin-bottom: 20px;
+	}
+	&__form-items {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 30px;
+	}
+	&__field-items {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 30px;
+		& .form-item:first-child,
+		& .form-item:last-child {
+			grid-column: span 2;
+		}
+	}
+	&__form-footer {
+		display: grid;
+		gap: 30px;
+	}
+	&__buttons {
+		display: flex;
+		align-items: center;
+		gap: 20px;
+	}
+	&__form-text {
+		font-size: 14px;
+		line-height: 140%;
+		color: $gray-text;
+	}
+	& .custom-dropdown {
+		position: relative;
+	}
+	& .custom-dropdown__btn {
+		min-height: 60px;
+		font-size: 16px;
+		line-height: 130%;
+		&::after {
+			background-color: $black;
+		}
+		&.active {
+			& + .custom-dropdown__choice {
+				transform: translateY(0);
+				opacity: 1;
+				pointer-events: all;
+			}
+		}
+	}
+	&__notice {
+		border: 1px solid $gray-line;
+		border-radius: 10px;
+		padding: 39px;
+		background: $white;
+		font-weight: 700;
+		font-size: 18px;
+		line-height: 120%;
+	}
+}
+.custom-dropdown {
+	&__btn {
+	}
+	&__btn-text {
+		pointer-events: none;
+	}
+	&__choice {
+	}
+}
+
+.result-group {
+	&__inner {
+		display: flex;
+		justify-content: space-between;
+		position: relative;
+		margin-bottom: 30px;
+		&::before {
+			content: '';
+			width: 1px;
+			height: 100%;
+			position: absolute;
+			left: 50%;
+			transform: translate(-50%, 0);
+			top: 0;
+			background-color: $gray-line;
+		}
+	}
+	&__items {
+		display: flex;
+		justify-content: space-between;
+		gap: 80px;
+		width: 42%;
+	}
+	&__item {
+		display: grid;
+		gap: 5px;
+	}
+	&__caption {
+		font-size: 14px;
+		line-height: 140%;
+		color: $gray-text;
+	}
+	&__value {
+		font-weight: 600;
+		line-height: 130%;
+	}
+}
+
+.choice-dropdown {
+	position: absolute;
+	top: 100%;
+	border-radius: 10px;
+	padding: 20px;
+	width: 100%;
+	left: 0;
+	box-shadow: $shadow;
+	background: white;
+	z-index: 2;
+	transform: translateY(20%);
+	opacity: 0;
+	transition:
+		transform $time,
+		opacity $time;
+	pointer-events: none;
+	&__items {
+		display: grid;
+		gap: 10px;
+	}
+	&__item {
+		display: grid;
+		grid-template-columns: 50px 1fr 50px;
+		gap: 10px;
+		border: 1px solid $gray-line;
+		border-radius: 5px;
+		min-height: 53px;
+		background: $gray-background;
+	}
+	&__count {
+		width: 100%;
+		background-color: transparent;
+		// pointer-events: none;
+		font-size: 16px;
+		line-height: 130%;
+		text-align: center;
+		color: $black;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	&__input {
+		width: 100%;
+		background-color: transparent;
+		pointer-events: none;
+		font-size: 16px;
+		line-height: 130%;
+		text-align: center;
+		color: $black;
+		&::placeholder {
+			font-size: 16px;
+			line-height: 130%;
+			text-align: center;
+			color: $black;
+		}
+	}
+	&__save-btn {
+		min-height: 40px;
+		padding: 9px 16px;
+	}
+	&__button {
+		width: 100%;
+		height: 100%;
+		display: grid;
+		place-items: center;
+	}
+}
+
+.button-plus,
+.button-minus {
+	span {
+		width: 11px;
+		height: 11px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		pointer-events: none;
+		&::before {
+			content: '';
+			display: block;
+			width: 100%;
+			height: 100%;
+			mask-position: center;
+			mask-repeat: no-repeat;
+			background-color: $black;
+			transition: background-color $time;
+		}
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			& span::before {
+				background-color: $orange;
+			}
+		}
+	}
+}
+.button-plus {
+	& span::before {
+		mask-image: url('../images/icons/icon-plus.svg');
+	}
+}
+.button-minus {
+	& span::before {
+		mask-image: url('../images/icons/icon-minus.svg');
+	}
+}
+.hotel-book-preview {
+	border: 1px solid $gray-line;
+	border-radius: 10px;
+	padding: 40px;
+	background: $white;
+	display: grid;
+	gap: 20px;
+	&__header {
+		display: grid;
+		gap: 10px;
+	}
+	&__image {
+		padding-bottom: math.div(200, 292) * 100%;
+		overflow: hidden;
+		border-radius: 10px;
+	}
+	&__title {
+		font-weight: 700;
+		font-size: 18px;
+		line-height: 120%;
+	}
+	&__parameters {
+		@include reset-list;
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		flex-wrap: wrap;
+	}
+	&__parameter {
+		font-weight: 400;
+		font-size: 12px;
+		display: flex;
+		align-items: center;
+		gap: 5px;
+		svg {
+			display: block;
+			width: 13px;
+			height: 13px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+	&__prices {
+		display: grid;
+		gap: 5px;
+	}
+	&__price {
+		font-weight: 700;
+		font-size: 24px;
+		line-height: 120%;
+	}
+	&__sub-price {
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 140%;
+		color: $gray-text;
+	}
+	&__disclamer {
+		font-size: 14px;
+		line-height: 140%;
+		color: $gray-text;
+	}
+}

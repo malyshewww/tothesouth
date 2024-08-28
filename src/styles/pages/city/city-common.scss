@@ -1,7 +1,21 @@
+@import '../../components/aside-navigation.scss';
+
 .city {
 	&__navigation {
 	}
 }
+
+.city-heading {
+	& .heading__title {
+		@media screen and (max-width: $md) {
+			display: none;
+		}
+	}
+	@media screen and (max-width: $md) {
+		display: none;
+	}
+}
+
 .navigation-city {
 	border: 1px solid $gray-line;
 	border-radius: 10px;
@@ -10,26 +24,58 @@
 	background: $white;
 	margin-bottom: 30px;
 	position: relative;
+	@media screen and (max-width: $md) {
+		background-color: transparent;
+		padding: 2px 12px;
+		border: none;
+		margin: 0 -12px;
+		margin-bottom: 20px;
+		min-height: auto;
+	}
 	&__list {
 		@include reset-list;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		gap: 7px;
+		overflow-x: auto;
+		overflow-y: hidden;
+		scroll-snap-type: x mandatory;
+		&::-webkit-scrollbar,
+		&::-webkit-scrollbar-track,
+		&::-webkit-scrollbar-thumb {
+			width: 0;
+			height: 0;
+			background: none;
+			display: none;
+		}
+		@media screen and (max-width: $md) {
+			gap: 0;
+		}
 	}
 	&__item {
+		scroll-snap-align: start;
 		&.expanded {
 			& .navigation-city__link {
 				gap: 10px;
 				&::after {
 					content: '';
-					width: 20px;
-					height: 20px;
+					width: 19px;
+					height: 19px;
 					mask-image: url('../images/icons/plus.svg');
 					mask-repeat: no-repeat;
 					mask-position: center;
 					background-color: currentColor;
 				}
+			}
+			@media screen and (max-width: $md) {
+				display: none;
+			}
+		}
+		&.hidden {
+			display: none;
+			@media screen and (max-width: $md) {
+				display: block;
 			}
 		}
 	}
@@ -45,6 +91,7 @@
 		justify-content: center;
 		align-items: center;
 		transition: color $time;
+		white-space: nowrap;
 		&.active {
 			background-color: $blue-1;
 			color: $white;
@@ -53,6 +100,12 @@
 			&:not(.active):hover {
 				color: $blue-1;
 			}
+		}
+		@media screen and (max-width: $md) {
+			padding: 6px 20px;
+			font-size: 14px;
+			min-height: 32px;
+			font-weight: 400;
 		}
 		&.show + .navigation-city__sub-list {
 			opacity: 1;
@@ -102,42 +155,22 @@
 .city-layout {
 	display: grid;
 	grid-template-columns: 270px 1fr;
-	align-items: start;
+	// align-items: start;
 	gap: 30px;
+	@media screen and (max-width: $xl) {
+		display: block;
+	}
 }
 
 .city-wrapper {
 	display: grid;
 	grid-template-columns: 100%;
 	gap: 60px 0px;
+	@media screen and (max-width: $md) {
+		gap: 20px 0;
+	}
 }
 
-.aside-navigation {
-	border: 1px solid $gray-line;
-	border-radius: 10px;
-	padding: 20px;
-	background: $white;
-	display: grid;
-	gap: 20px;
-	position: sticky;
-	top: 20px;
-	&__list {
-		@include reset-list;
-		display: grid;
-		gap: 20px;
-		align-items: start;
-	}
-	&__item {
-		&:not(:last-child) {
-			padding-bottom: 20px;
-			border-bottom: 1px solid $gray-line;
-		}
-	}
-	&__link {
-		font-size: 14px;
-		line-height: 140%;
-	}
-}
 .aside {
 	display: grid;
 	align-items: start;
@@ -148,11 +181,181 @@
 		line-height: 120%;
 		color: #000;
 	}
+	@media screen and (max-width: $xl) {
+		// display: none;
+	}
+}
+
+.city-main {
+	@media screen and (max-width: $md) {
+		& .aside {
+			margin: 25px -12px 0;
+			background-color: $white;
+			padding: 20px 12px;
+		}
+		& .page-title {
+			margin-bottom: 30px;
+		}
+	}
+}
+
+.city-hotels {
+	& .city-layout {
+		align-items: start;
+	}
+	& .city-testimonials {
+		padding: 30px 12px;
+		margin: 30px -12px -30px;
+		background-color: $white;
+	}
+	& .city-heading {
+		@media screen and (max-width: $md) {
+			display: flex;
+		}
+	}
+}
+
+.city-weather .navigation-city {
+	@media screen and (max-width: $md) {
+		margin-bottom: 30px;
+	}
+}
+.city-facilities {
+	& .aside-object {
+		@media screen and (max-width: $xl) {
+			display: none;
+		}
+	}
+	& .city-layout {
+		align-items: start;
+	}
 }
 
 .aside-form {
-	border: 1px solid var(--gray-line);
+	border: 1px solid $gray-line;
 	border-radius: 10px;
 	padding: 19px 20px;
 	background: $white;
+	@media screen and (max-width: $xl) {
+		border: none;
+		border-radius: 0;
+		padding: 20px 20px 0;
+		position: fixed;
+		bottom: -100%;
+		left: 0;
+		width: 100%;
+		height: calc(100vh - 50px);
+		z-index: 10;
+		overflow-y: auto;
+		overflow-x: hidden;
+		transition: bottom $time * 2;
+		&::-webkit-scrollbar,
+		&::-webkit-scrollbar-track,
+		&::-webkit-scrollbar-thumb {
+			width: 0;
+			height: 0;
+			background: none;
+			display: none;
+		}
+		& .form {
+			display: grid;
+			grid-template-rows: auto auto 1fr;
+			height: 100%;
+		}
+		&.active {
+			bottom: 0;
+		}
+	}
+	& .form__bottom-wrap {
+		display: none;
+		@media screen and (max-width: $xl) {
+			display: flex;
+			align-items: flex-end;
+			justify-content: stretch;
+			position: sticky;
+			bottom: 0;
+			margin: 0 -12px;
+		}
+	}
+	& .form__bottom {
+		border-top: 1px solid $gray-line;
+		box-shadow: 0 -10px 10px 0 rgba(17, 29, 34, 0.05);
+		background: $white;
+		padding: 10px 12px;
+		margin-top: 20px;
+		width: 100%;
+		& .btn {
+			width: 100%;
+		}
+	}
+}
+.form-heading {
+	justify-content: space-between;
+	align-items: center;
+	gap: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid $gray-line;
+	margin-bottom: 30px;
+	display: none;
+	@media screen and (max-width: $xl) {
+		display: flex;
+	}
+	&__title {
+		font-size: 18px;
+		line-height: 130%;
+		font-weight: 700;
+	}
+	&__actions {
+		display: flex;
+		align-items: center;
+		gap: 18px;
+	}
+	&__close {
+		width: 20px;
+		height: 20px;
+		flex-shrink: 0;
+		&::before {
+			content: '';
+			display: block;
+			width: 100%;
+			height: 100%;
+			mask-image: url('../images/icons/close-gray.svg');
+			mask-repeat: no-repeat;
+			mask-position: center;
+			background-color: $gray-text;
+		}
+	}
+}
+
+.filter {
+	@media screen and (max-width: $xl) {
+		position: fixed;
+		bottom: -100%;
+		left: 0;
+		width: 100%;
+		height: calc(100vh - 50px);
+		background-color: $white;
+		z-index: 6;
+		padding: 20px 12px 0;
+		overflow-y: auto;
+		overflow-x: hidden;
+		transition: bottom $time * 2;
+		&.active {
+			bottom: 0;
+		}
+	}
+	&-form {
+		@media screen and (max-width: $xl) {
+			height: 100%;
+			display: grid;
+			grid-template-rows: auto auto 1fr;
+		}
+	}
+	& .form-heading {
+		display: none;
+		@media screen and (max-width: $xl) {
+			display: flex;
+			margin-bottom: 10px;
+		}
+	}
 }

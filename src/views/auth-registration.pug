@@ -1,0 +1,34 @@
+extends ./layouts/default
+
+block variables 
+	- let pageTitle = "Регистрация";
+	- let breadCrumbsList = [];
+
+append styles 
+	link(href="assets/styles/auth.css" rel="stylesheet")
+
+append scripts 
+	script(src="assets/scripts/auth.js" type="module")
+
+block content
+	.auth
+		.auth__header.header-auth
+			.container 
+				.header-auth__links
+					a(href="auth-login.html").header-auth__link Войти
+					a(href="auth-registration.html").header-auth__link.active Зарегистрироваться
+		.container
+			.auth__body 
+				form(action="#").auth-form 
+					.auth-form__items 
+						+formItem("email", "auth_email", "Email")
+						+formItem("tel", "auth_phone", "+7-900-000-00-00")
+						.form-item 
+							.form-item__field.field-password 
+								input(type="password" name="auth_password" id="auth_password").form-input
+								label(for="auth_password").form-label Придумайте пароль
+								button(type="button").btn-password 
+									span
+					.auth-form__footer 
+						button(type="submit").btn.btn-blue Зарегистрироваться 
+						.auth-form__text Входя в аккаунт или создавая новый, вы соглашаетесь с нашими #[a(href="#").btn-detail Правилами и условиями] и #[a(href="#").btn-detail Положением о конфиденциальности]

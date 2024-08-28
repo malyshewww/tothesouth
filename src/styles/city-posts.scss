@@ -4,11 +4,41 @@
 @import 'pages/city/city-common.scss';
 
 @import 'components/post-item.scss';
+@import 'components/dropdown.scss';
 
 .city-posts {
 	&__list {
 		@include reset-list;
 		display: grid;
-		gap: 20px;
+		gap: 30px;
+		@media screen and (max-width: $xl) {
+			gap: 20px;
+		}
+	}
+	& .aside {
+		@media screen and (max-width: $xl) {
+			display: none;
+		}
+	}
+	&__categories {
+		display: none;
+		@media screen and (max-width: $xl) {
+			display: grid;
+			gap: 10px;
+			margin-bottom: 20px;
+		}
+	}
+	&__categories-caption {
+		font-size: 14px;
+		line-height: 140%;
+		color: $gray-text;
+	}
+	& .custom-dropdown {
+		&__btn {
+			padding: 17px 20px;
+			min-height: 58px;
+			font-size: 14px;
+			line-height: 140%;
+		}
 	}
 }

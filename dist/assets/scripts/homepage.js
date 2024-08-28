@@ -11,10 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const buttonNext = newsSlider.closest(".main-news")?.querySelector(".slider-button-next");
     let newsSwiper = new Swiper(newsSlider, {
       modules: [Navigation],
-      slidesPerView: 3,
       speed: 800,
       slideClass: "news-card",
-      spaceBetween: 30,
       navigation: {
         prevEl: buttonPrev,
         nextEl: buttonNext
@@ -31,6 +29,20 @@ document.addEventListener("DOMContentLoaded", () => {
             sliderControls?.remove();
           }
         }
+      },
+      breakpoints: {
+        300: {
+          slidesPerView: 1.2,
+          spaceBetween: 15
+        },
+        767: {
+          slidesPerView: 2,
+          spaceBetween: 15
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 30
+        }
       }
     });
   }
@@ -46,6 +58,36 @@ document.addEventListener("DOMContentLoaded", () => {
   if (searchFormInput) {
     searchFormInput.addEventListener("focus", addFocusInput);
     searchFormInput.addEventListener("blur", removeFocusInput);
+  }
+  const textHiddenBlocks = document.querySelectorAll(".text-hidden");
+  if (textHiddenBlocks.length > 0) {
+    textHiddenBlocks.forEach((textHidden) => {
+      const itemContent = textHidden.querySelector(".text-hidden-content");
+      let heightOld = itemContent.clientHeight + "px";
+      let heightContent = itemContent.querySelector(".content").clientHeight + "px";
+      if (Number.parseInt(heightContent) === Number.parseInt(heightOld) || Number.parseInt(heightContent) < Number.parseInt(heightOld)) {
+        textHidden.querySelector(".text-hidden__btn").style.display = "none";
+        textHidden.classList.add("text-hidden--not-scroll");
+      } else {
+        let textHide2 = function() {
+          textHidden.classList.toggle("open");
+          if (textHidden.classList.contains("open")) {
+            itemContent.style.maxHeight = heightContent;
+            ScrollTrigger.refresh();
+          } else {
+            itemContent.style.maxHeight = heightOld;
+            ScrollTrigger.refresh();
+          }
+        };
+        var textHide = textHide2;
+        textHidden.querySelector(".text-hidden__btn").addEventListener("click", () => {
+          textHide2();
+        });
+        textHidden.querySelector(".text-hidden-content__gradient").addEventListener("click", () => {
+          textHide2();
+        });
+      }
+    });
   }
 });
 //# sourceMappingURL=homepage.js.map

@@ -6,17 +6,18 @@ block variables
 	- let currentPage = "Алушта"
 
 append styles 
+	link(href="assets/styles/content.css" rel="stylesheet")
 	link(href="assets/styles/city-weather.css" rel="stylesheet")
 	link(href="assets/styles/weather-widget.css" rel="stylesheet")
 append scripts 	
-	script(src="assets/scripts/city.js")
+	script(src="assets/scripts/city.js" type="module")
 
 block content 
 	.city-weather
 		.container 
 			.page-title= pageTitle
 			+cityNavigation(5)
-			.heading 
+			.heading.city-heading
 				.heading__title.title-xs Погода
 			.city-weather__body 
 				include ./components/weather-widget

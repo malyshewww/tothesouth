@@ -6,7 +6,9 @@ function checkDropdownValue() {
     const dropdownListItems = elem.querySelectorAll(".select-list__item");
     [...dropdownListItems].forEach((listItem) => {
       const dataValue = listItem.dataset.value;
-      if (dropdownButton.innerText !== dataValue) return;
+      const dataValueStr = dataValue.toLowerCase().replace(/[\s.,%,(.+\)]/g, "").trim();
+      const dropdownButtonStr = dropdownButton.innerText.toLowerCase().replace(/[\s.,%,(.+\)]/g, "").trim();
+      if (dropdownButtonStr !== dataValueStr) return;
       listItem.classList.add("current");
     });
   });
@@ -15,6 +17,7 @@ checkDropdownValue();
 function deactivateAllDropdowns() {
   const activeDropdownButtons = document.querySelectorAll(".custom-dropdown__btn.active");
   [...activeDropdownButtons].forEach((elem) => {
+    let choice = elem.parentNode.querySelector(".custom-dropdown__choice");
     elem.classList.remove("active");
   });
 }
@@ -24,9 +27,11 @@ function handleDropdownClicks(event) {
     if (target.classList.contains("active")) {
       target.classList.remove("active");
     } else {
-      deactivateAllDropdowns();
       target.classList.add("active");
     }
+  } else if (target.matches(".choice-dropdown") || target.matches(".choice-dropdown__button") || target.matches(".choice-dropdown__count")) {
+    console.log(target);
+    event.stopPropagation();
   } else {
     deactivateAllDropdowns();
   }
@@ -46,4 +51,4 @@ function handleDropdownClicks(event) {
   }
 }
 document.addEventListener("click", handleDropdownClicks, false);
-//# sourceMappingURL=chunk-FZKHDX4X.js.map
+//# sourceMappingURL=chunk-D3KMJQV6.js.map

@@ -8,15 +8,15 @@
 		border: 1px solid $gray-line;
 		border-radius: 5px;
 		padding: 13px 15px;
-		min-height: 48px;
+		min-height: 60px;
 		background: $white;
 		position: relative;
 		display: block;
 		width: 100%;
 		text-align: left;
 		font-weight: 400;
-		font-size: 14px;
-		line-height: 140%;
+		font-size: 16px;
+		line-height: 130%;
 		color: $black;
 		transition: $time ease;
 		display: flex;
@@ -29,6 +29,7 @@
 		@media (any-hover: hover) {
 			&:hover {
 				cursor: pointer;
+				background-color: $gray-background;
 			}
 		}
 		&.active {
@@ -46,18 +47,38 @@
 			display: block;
 			width: 10px;
 			height: 10px;
-			background-color: $gray-text;
+			background-color: $black;
 			mask-image: url('../images/icons/icon-arrow-gray.svg');
 			mask-repeat: no-repeat;
 			mask-position: center;
 			pointer-events: none;
 			transition: $time ease;
+			margin-left: auto;
 		}
 		&:focus,
 		&.active {
 			outline: none;
 			border-color: #4765f1;
 			background-color: $gray-background;
+		}
+	}
+	&__btn-calendar {
+		@extend .custom-dropdown__btn;
+	}
+}
+
+.aside {
+	& .custom-dropdown__btn {
+		min-height: 48px;
+		font-size: 14px;
+		line-height: 140%;
+		&::after {
+			background-color: $gray-text;
+		}
+	}
+	& .select-list {
+		&__item {
+			font-size: 14px;
 		}
 	}
 }
@@ -78,14 +99,14 @@
 	pointer-events: none;
 	opacity: 0;
 	transition:
-		top $time linear,
-		opacity $time linear;
+		top $time ease,
+		opacity $time ease;
 	&__item {
 		min-height: 40px;
 		text-align: left;
 		padding: 9px 15px;
 		font-weight: 400;
-		font-size: 14px;
+		font-size: 16px;
 		line-height: 130%;
 		display: flex;
 		align-items: center;

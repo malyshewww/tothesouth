@@ -8,22 +8,88 @@
 @import 'components/sorting.scss';
 @import 'components/object-card.scss';
 @import 'components/hotel-item.scss';
+@import 'components/aside-map.scss';
 
 @import 'libs/nouislider.scss';
 
 @import 'forms';
 
 .city-hotels {
+	& .aside-object,
+	& .aside-map,
+	& .aside-navigation {
+		@media screen and (max-width: $xl) {
+			display: none;
+		}
+	}
 	& .heading {
 		gap: 20px;
+		&-actions {
+			@media screen and (max-width: $xl) {
+				display: flex;
+				justify-content: flex-end;
+				flex-wrap: wrap;
+				gap: 17px;
+				padding: 9px 0;
+				border-top: 1px solid $gray-line;
+				border-bottom: 1px solid $gray-line;
+			}
+		}
 	}
 	& .form-groups {
-		gap: 30px;
+		gap: 31px;
 	}
 	&__list {
 		display: grid;
 		grid-template-columns: 100%;
 		gap: 20px;
 		align-items: start;
+		@media screen and (max-width: $xl) {
+			grid-template-columns: repeat(2, 1fr);
+			align-items: stretch;
+		}
+		@media screen and (max-width: $md) {
+			grid-template-columns: 1fr;
+		}
+	}
+}
+
+.sorting-button-mobile,
+.filter-button-mobile,
+.map-button-mobile {
+	font-size: 14px;
+	line-height: 130%;
+	color: $gray-text;
+	display: none;
+	&::after {
+		content: '';
+		display: block;
+		width: 20px;
+		height: 20px;
+		flex-shrink: 0;
+		mask-repeat: no-repeat;
+		mask-position: center;
+		background-color: currentColor;
+	}
+	@media screen and (max-width: $xl) {
+		display: flex;
+		gap: 5px;
+		align-items: center;
+	}
+}
+
+.filter-button-mobile {
+	&::after {
+		mask-image: url('../images/icons/filter-icon.svg');
+	}
+}
+.map-button-mobile {
+	&::after {
+		mask-image: url('../images/icons/map-icon.svg');
+	}
+}
+.sorting-button-mobile {
+	&::after {
+		mask-image: url('../images/icons/sorting-icon.svg');
 	}
 }

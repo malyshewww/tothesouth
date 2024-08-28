@@ -1,0 +1,19 @@
+extends ./layouts/default
+
+block variables 
+	- let pageTitle = "Заявка на бронирование";
+	- let breadCrumbsList = [{"title": "Главная", "link": "/"}, {"title": "Крым", "link": "/"},  {"title": "Алушта", "link": "city.html"}, {"title": "Жилье", "link": "city-hotels.html"}];
+	- let currentPage = "Заявка на бронирование"
+
+append styles 
+	link(href="assets/styles/hotel-book.css" rel="stylesheet")
+
+append scripts 
+	//- script(src="assets/scripts/hotel-book.js" type="module")
+
+block content 
+	.hotel-book
+		.container 
+			.page-title= pageTitle
+			.hotel-book__notice
+				p Спасибо! Ваша заявка принята, ожидайте, с вами свяжется владелец для подтверждения заявки

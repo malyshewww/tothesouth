@@ -2,6 +2,6 @@
 	.container 
 		.heading 
 			.heading__title Последние добавленные отели
-		+facilitiesBlock([])
+		+facilitiesBlock([], "Посмотреть все предложения")
 			each hotel in homePage.hotels
 				+facilityPreview(hotel, "homepage/main-hotels")

@@ -1,0 +1,45 @@
+.aside-navigation {
+	border: 1px solid $gray-line;
+	border-radius: 10px;
+	padding: 20px 19px;
+	background: $white;
+	display: grid;
+	gap: 20px;
+	position: sticky;
+	top: 20px;
+	@media screen and (max-width: $xl) {
+		position: static;
+	}
+	@media screen and (max-width: $md) {
+		padding: 0;
+		border: none;
+		border-radius: 0;
+	}
+	&__list {
+		@include reset-list;
+		display: grid;
+		gap: 20px;
+		align-items: start;
+	}
+	&__item {
+		&:not(:last-child) {
+			padding-bottom: 20px;
+			border-bottom: 1px solid $gray-line;
+		}
+	}
+	&__link {
+		font-size: 14px;
+		line-height: 140%;
+		transition:
+			color $time,
+			box-shadow $time;
+		@media (any-hover: hover) {
+			&:hover {
+				color: $blue-1;
+			}
+			&:active {
+				box-shadow: 0 1px 0 $blue-1;
+			}
+		}
+	}
+}

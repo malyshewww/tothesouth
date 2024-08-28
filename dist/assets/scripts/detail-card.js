@@ -3139,7 +3139,7 @@ document.addEventListener("DOMContentLoaded", function() {
   if (reviewsSlider) {
     const buttonPrev = reviewsSlider.querySelector(".slider-button-prev");
     const buttonNext = reviewsSlider.querySelector(".slider-button-next");
-    let newsSwiper = new Swiper(reviewsSlider, {
+    let reviewsSwiper = new Swiper(reviewsSlider, {
       modules: [Navigation],
       slidesPerView: 3,
       speed: 800,
@@ -3147,6 +3147,7 @@ document.addEventListener("DOMContentLoaded", function() {
       wrapperClass: "slider-reviews__wrapper",
       spaceBetween: 20,
       initialSlide: 0,
+      grabCursor: true,
       navigation: {
         prevEl: buttonPrev,
         nextEl: buttonNext
@@ -3170,30 +3171,71 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     });
   }
+  const categoriesSliders = document.querySelectorAll(".categories-slider__body");
+  if (categoriesSliders.length) {
+    categoriesSliders.forEach((categoriesSlider) => {
+      const buttonPrev = categoriesSlider.parentNode.querySelector(".slider-button-prev");
+      const buttonNext = categoriesSlider.parentNode.querySelector(".slider-button-next");
+      let categoriesSwiper = new Swiper(categoriesSlider, {
+        modules: [Navigation],
+        slidesPerView: 4,
+        speed: 800,
+        slideClass: "categories-slider__item",
+        spaceBetween: 30,
+        navigation: {
+          prevEl: buttonPrev,
+          nextEl: buttonNext
+        },
+        on: {
+          init: function(swiper) {
+            const slides = swiper.slides;
+            const sliderControls = buttonPrev?.parentNode || buttonNext?.parentNode;
+            if (slides.length <= swiper.passedParams.slidesPerView) {
+              swiper.navigation.destroy();
+              sliderControls?.remove();
+            }
+          }
+        }
+      });
+    });
+  }
   const backgrounds = {
     red: "#FF6933",
     orange: "#FEBB02",
     blue: "#1C8CF3",
     green: "#18ABC6"
   };
-  const progressItems = document.querySelectorAll(".progress-items");
-  [...progressItems].forEach((item) => {
-    const line = item.querySelector(".progress-bar span");
-    const value = line.dataset.value.replace(",", ".");
+  function getBackgroundLine(target) {
+    let value = target.dataset.value.replace(",", ".");
     if (value === 0) return;
     if (value > 0 && value <= 2.2) {
-      line.style.background = backgrounds["red"];
-      line.style.setProperty("background-color", backgrounds["red"]);
+      target.style.background = backgrounds["red"];
     }
     if (value > 2.2 && value <= 3.5) {
-      line.style.background = backgrounds["orange"];
+      target.style.background = backgrounds["orange"];
     }
     if (value > 3.5 && value <= 4.2) {
-      line.style.background = backgrounds["blue"];
+      target.style.background = backgrounds["blue"];
     }
     if (value > 4.2) {
-      line.style.background = backgrounds["green"];
+      target.style.background = backgrounds["green"];
     }
-  });
+  }
+  const progressLocation = document.getElementById("progress_location");
+  if (progressLocation) {
+    getBackgroundLine(progressLocation);
+  }
+  const progressPrice = document.getElementById("progress_price");
+  if (progressPrice) {
+    getBackgroundLine(progressPrice);
+  }
+  const progressPurity = document.getElementById("progress_purity");
+  if (progressPurity) {
+    getBackgroundLine(progressPurity);
+  }
+  const progressService = document.getElementById("progress_service");
+  if (progressService) {
+    getBackgroundLine(progressService);
+  }
 });
 //# sourceMappingURL=detail-card.js.map

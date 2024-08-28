@@ -15,12 +15,13 @@ block content
 		.container 
 			.page-title= pageTitle
 			+cityNavigation(2)
-			.heading 
+			.heading.city-heading
 				.heading__title.title-xs Отзывы на отели Алушты
 			.city-wrapper
 				.testimonials__wrapper 
 					.testimonials__body 
 						.testimonials__wrapper
-							each item in cityPage.testimonials 
-								+testimonialsIitem(item)
-				+pagination([...pagination], 3)
+							- for (var x = 0; x < 2; x++)
+								each item in cityPage.testimonials 
+									+testimonialsIitem(item)
+				+pagination([...pagination], [...paginationMobile], 3)

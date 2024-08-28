@@ -9,20 +9,31 @@ append styles
 	link(href="assets/styles/city-map.css" rel="stylesheet")
 
 append scripts 
-	script(src="assets/scripts/map.js")
 	script(src="assets/scripts/city.js" type="module")
+	script(src="assets/scripts/city-map.js" type="module")
 
 block content 
 	.city-map
 		.container 
 			.page-title= pageTitle
 			+cityNavigation(4)
-			.heading 
+			.heading.city-heading
 				.heading__title.title-xs Карта
 			.city-map__body 
 				.heading.heading__title.title-xs Выберите тип объекта для отображения на карте
-				.objects 
-					each item, index in checkboxObjects
-						+object(item, index)
+				+filterButtonMobile("Выбрать тип объекта")
+				.filter
+					form(action="#").filter-form.form
+						.form-heading
+							.form-heading__title Выбрать тип объекта
+							button(type="button").form-heading__close.btn-close
+						.objects 
+							each item, index in checkboxObjects
+								+object(item, index)
+						.form__bottom-wrap
+							.form__bottom 
+								button(type="button").btn.btn-blue Выбрать 
 				.city-map__container
+					.city-map__hotel.hotel-box
+						+hotelPreview(cityPage.hotels[0])
 					.map#map

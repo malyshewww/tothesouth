@@ -1,14 +1,38 @@
 .hotel-card {
-	padding: 15px;
+	padding: 14px;
 	padding-right: 20px;
 	border: 1px solid $gray-line;
 	border-radius: 10px;
 	background: white;
 	transition: box-shadow $time;
+	@media screen and (max-width: $xl) {
+		padding: 0;
+		border: none;
+		box-shadow: none;
+		display: grid;
+	}
+	.hotel-box & {
+		width: 296px;
+		padding: 20px;
+		border: none;
+		box-shadow: none;
+		display: grid;
+		box-shadow: $shadow;
+		box-shadow: 0 4px 40px 0 rgba(42, 49, 83, 0.25);
+		background: $white;
+		@media screen and (max-width: $md) {
+			width: 262px;
+			padding: 10px 10px 20px;
+		}
+	}
 	@media (any-hover: hover) {
 		&:hover {
 			box-shadow: $shadow;
 		}
+	}
+	& .btn-detail {
+		font-size: 12px;
+		line-height: 130%;
 	}
 	& .rating {
 		margin-left: 0;
@@ -17,25 +41,52 @@
 		display: grid;
 		grid-template-columns: 216px 1fr;
 		align-items: start;
-		gap: 22px;
+		gap: 23px;
+		@media screen and (max-width: $xl) {
+			grid-template-columns: 1fr;
+			grid-template-rows: auto 1fr;
+			gap: 10px;
+			width: 100%;
+		}
+		.hotel-box & {
+			grid-template-columns: 1fr;
+			grid-template-rows: auto 1fr;
+			gap: 10px;
+			width: 100%;
+		}
 	}
 	&__image-wrap {
 		overflow: hidden;
 		border-radius: 10px;
 		position: relative;
 		align-self: stretch;
+		@media screen and (max-width: $xl) {
+			border-radius: 10px 10px 0 0;
+		}
+		.hotel-box & {
+			border-radius: 10px;
+		}
 	}
 
 	&__image {
 		padding-bottom: math.div(228, 216) * 100%;
 		height: 100%;
+		@media screen and (max-width: $xl) {
+			padding-bottom: math.div(212, 296) * 100%;
+		}
+		.hotel-box & {
+			padding-bottom: math.div(212, 256) * 100%;
+			@media screen and (max-width: $md) {
+				padding-bottom: math.div(132, 242) * 100%;
+			}
+		}
 	}
 	&__repast {
 		position: absolute;
 		bottom: 0;
 		left: 0;
 		min-height: 30px;
-		padding: 4px 18px;
+		padding: 4px 15px 4px 20px;
 		display: grid;
 		place-items: center;
 		text-align: center;
@@ -44,12 +95,32 @@
 		color: $white;
 		background-color: $blue-1;
 		border-radius: 0 5px;
+		@media screen and (max-width: $xl) {
+			border-radius: 0 5px 0 0px;
+		}
+		.hotel-box & {
+			display: none;
+		}
 	}
 	&__main {
 		display: grid;
-		grid-template-columns: 1fr 219px;
+		grid-template-columns: 1fr minmax(150px, 219px);
 		gap: 21px;
 		height: 100%;
+		@media screen and (max-width: $xl) {
+			padding: 0px 20px 20px;
+			grid-template-columns: 1fr;
+			grid-template-rows: auto 1fr;
+			gap: 15px;
+			width: 100%;
+		}
+		.hotel-box & {
+			padding: 0;
+			grid-template-columns: 1fr;
+			grid-template-rows: auto 1fr;
+			gap: 15px;
+			width: 100%;
+		}
 	}
 	&__main-wrapper {
 		display: flex;
@@ -58,6 +129,12 @@
 	}
 	&__main-header {
 		padding-right: 20px;
+		@media screen and (max-width: $xxl) {
+			padding: 0;
+		}
+		.hotel-box & {
+			padding: 0;
+		}
 	}
 	&__main-content {
 		margin-top: auto;
@@ -68,18 +145,49 @@
 		line-height: 143%;
 		color: $black;
 		padding-bottom: 13px;
+		@media screen and (max-width: $xl) {
+			display: none;
+		}
+		.hotel-box & {
+			display: none;
+		}
 	}
 	&__title {
 		font-weight: 700;
 		font-size: 20px;
 		line-height: 120%;
 		color: $black;
+		@media screen and (max-width: $md) {
+			line-height: 130%;
+		}
+		.hotel-box & {
+			line-height: 130%;
+		}
 	}
 	&__features {
 		display: flex;
 		align-items: center;
-		gap: 10px;
+		flex-wrap: wrap;
+		gap: 15px;
 		min-height: 20px;
+		margin-top: 3px;
+		@media screen and (max-width: $xl) {
+			justify-content: space-between;
+		}
+		& .hotel-card__parameters {
+			@media screen and (max-width: $xl) {
+				display: none;
+			}
+		}
+		.hotel-box & .hotel-card__parameters {
+			display: none;
+		}
+		.hotel-box & {
+			justify-content: space-between;
+			@media screen and (max-width: $md) {
+				margin-top: 5px;
+			}
+		}
 	}
 	&__parameters {
 		@include reset-list;
@@ -96,6 +204,12 @@
 		display: flex;
 		align-items: center;
 		gap: 5px;
+		& svg {
+			width: 13px;
+			height: 13px;
+			display: block;
+			flex-shrink: 0;
+		}
 	}
 	&__limit {
 		border-radius: 4px;
@@ -111,6 +225,19 @@
 		align-items: center;
 		text-align: center;
 		margin-top: 11px;
+		@media screen and (max-width: $xxl) {
+			padding: 2px 5px;
+		}
+		@media screen and (max-width: $md) {
+			margin-top: 10px;
+		}
+		.hotel-box & {
+			padding: 2px 5px;
+			margin-top: 10px;
+			@media screen and (max-width: $md) {
+				display: none;
+			}
+		}
 	}
 	&__short-description {
 		font-weight: 600;
@@ -126,35 +253,80 @@
 		flex-wrap: wrap;
 		gap: 30px 13px;
 		padding-top: 3px;
+		& .hotel-card__parameters {
+			display: none;
+			@media screen and (max-width: $xl) {
+				display: block;
+			}
+		}
+		.hotel-box & .hotel-card__parameters {
+			display: block;
+		}
+		@media screen and (max-width: $xl) {
+			padding: 0;
+			gap: 15px 10px;
+			display: grid;
+			align-items: center;
+			grid-template-columns: 1fr 0.7fr;
+			margin-top: auto;
+		}
+		.hotel-box & {
+			padding: 0;
+			gap: 15px 10px;
+			display: grid;
+			align-items: center;
+			grid-template-columns: 1fr 0.7fr;
+			margin-top: auto;
+		}
 	}
 	&__rating {
 		display: flex;
-		flex-direction: column;
 		align-items: center;
-		gap: 7px;
-		padding: 0 15px;
-		position: relative;
-		&::before,
-		&::after {
-			content: '';
-			position: absolute;
-			top: 50%;
-			transform: translateY(-50%);
-			width: 1px;
-			height: 75px;
-			background-color: $gray-line;
-			display: block;
+		gap: 10px;
+		@media screen and (min-width: $xl) {
+			flex-direction: column;
+			align-items: center;
+			gap: 7px;
+			padding: 0 15px;
+			position: relative;
+			margin-left: auto;
+			&::before,
+			&::after {
+				content: '';
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				width: 1px;
+				height: 75px;
+				background-color: $gray-line;
+				display: block;
+			}
+			&::before {
+				left: 0;
+			}
+			&::after {
+				right: 0;
+			}
 		}
-		&::before {
-			left: 0;
-		}
-		&::after {
-			right: 0;
+		.hotel-box & {
+			flex-direction: row;
+			padding: 0;
+			margin: 0;
+			&::before,
+			&::after {
+				content: none;
+			}
 		}
 	}
 	&__rating-caption {
 		font-size: 14px;
 		line-height: 140%;
+		@media screen and (max-width: $xl) {
+			display: none;
+		}
+		.hotel-box & {
+			display: none;
+		}
 	}
 	&__rating-estimate {
 		border-radius: 8px 8px 8px 0;
@@ -168,18 +340,81 @@
 		font-size: 16px;
 		line-height: 125%;
 		color: $white;
+		@media screen and (max-width: $md) {
+			width: 40px;
+			min-height: 26px;
+			padding: 2px;
+			font-size: 11px;
+			line-height: 125%;
+		}
+		.hotel-box & {
+			width: 40px;
+			min-height: 26px;
+			padding: 2px;
+			font-size: 11px;
+			line-height: 125%;
+		}
 	}
 	&__rating-total {
 		font-size: 12px;
 		line-height: 167%;
 		color: $gray-text;
+		& span {
+			&:nth-child(2) {
+				display: none;
+			}
+		}
+		@media screen and (max-width: $xl) {
+			& span {
+				&:nth-child(1) {
+					display: none;
+				}
+			}
+			& span {
+				&:nth-child(2) {
+					display: block;
+				}
+			}
+		}
+		@media screen and (max-width: $md) {
+			color: $black;
+			font-size: 14px;
+			line-height: 140%;
+		}
+		.hotel-box & {
+			font-size: 14px;
+			line-height: 140%;
+			color: $black;
+			& span {
+				&:nth-child(1) {
+					display: none;
+				}
+			}
+			& span {
+				&:nth-child(2) {
+					display: block;
+				}
+			}
+		}
 	}
 	&__prices {
 		display: flex;
 		flex-direction: column;
-		align-items: flex-end;
-		text-align: right;
 		gap: 2px;
+		@media screen and (min-width: $xl) {
+			align-items: flex-end;
+			text-align: right;
+			margin-left: auto;
+		}
+		@media screen and (max-width: $xl) {
+			gap: 5px;
+		}
+		.hotel-box & {
+			align-items: flex-start;
+			text-align: left;
+			margin: 0;
+			gap: 5px;
+		}
 	}
 	&__old-price {
 		font-weight: 400;
@@ -190,13 +425,33 @@
 		& span {
 			font-weight: 700;
 		}
+		@media screen and (max-width: $xl) {
+			display: none;
+		}
+		.hotel-box & {
+			display: none;
+			& span {
+				font-weight: 700;
+			}
+		}
 	}
 	&__price {
 		font-weight: 700;
 		font-size: 24px;
 		line-height: 120%;
-		text-align: right;
 		color: $black;
+		@media screen and (min-width: $xl) {
+			text-align: right;
+		}
+		@media screen and (max-width: $md) {
+			font-size: 18px;
+			line-height: 130%;
+		}
+		.hotel-box & {
+			text-align: left;
+			font-size: 18px;
+			line-height: 130%;
+		}
 	}
 	&__price-details {
 		font-weight: 400;
@@ -207,8 +462,26 @@
 		flex-direction: column;
 		align-items: flex-end;
 		gap: 2px;
+		@media screen and (max-width: $xl) {
+			display: none;
+		}
+		.hotel-box & {
+			display: none;
+		}
 		& p {
-			line-height: 133%;
+			line-height: 130%;
+		}
+	}
+	&__price-alternative-details {
+		display: none;
+		font-size: 12px;
+		line-height: 130%;
+		color: $gray-text;
+		@media screen and (max-width: $xl) {
+			display: block;
+		}
+		.hotel-box & {
+			display: block;
 		}
 	}
 	&__btn-place {
@@ -231,28 +504,65 @@
 		transition:
 			background-color $time,
 			color $time;
-		&::after {
-			content: '';
-			display: block;
-			width: 7px;
-			height: 13px;
-			mask-image: url('../images/icons/arrow-blue.svg');
-			mask-repeat: no-repeat;
-			mask-size: 7px 13px;
-			background-color: currentColor;
+		& .btn-text-mobile {
+			display: none;
+			@media screen and (max-width: $xl) {
+				display: block;
+			}
 		}
-		&::before {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background-color: $blue-1;
-			transform: scaleX(0);
-			transform-origin: bottom right;
-			transition: transform $time;
-			z-index: -1;
+		& .btn-text-pc {
+			@media screen and (max-width: $xl) {
+				display: none;
+			}
+		}
+		.hotel-box & .btn-text-pc {
+			display: none;
+		}
+		.hotel-box & .btn-text-mobile {
+			display: block;
+		}
+		@media screen and (max-width: $xl) {
+			align-self: end;
+			justify-content: center;
+			text-align: center;
+			max-width: 104px;
+			margin-left: auto;
+		}
+		@media screen and (min-width: $xl) {
+			&::after {
+				content: '';
+				display: block;
+				width: 7px;
+				height: 13px;
+				mask-image: url('../images/icons/arrow-blue.svg');
+				mask-repeat: no-repeat;
+				mask-size: 7px 13px;
+				background-color: currentColor;
+			}
+			&::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: $blue-1;
+				transform: scaleX(0);
+				transform-origin: bottom right;
+				transition: transform $time;
+				z-index: -1;
+			}
+		}
+		@media screen and (max-width: $md) {
+			padding: 9px;
+			min-height: 40px;
+		}
+		.hotel-box & {
+			padding: 9px;
+			min-height: 40px;
+			&::after {
+				content: none;
+			}
 		}
 		@media (any-hover: hover) {
 			&:hover {
@@ -265,19 +575,4 @@
 			}
 		}
 	}
-}
-.ibg {
-}
-.button-favorite {
-}
-.rating {
-	&__list {
-	}
-
-	&__item {
-	}
-}
-.r-4 {
-}
-.btn-detail {
 }

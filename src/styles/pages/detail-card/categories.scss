@@ -1,0 +1,44 @@
+.categories {
+	margin-top: 30px;
+	display: grid;
+	grid-template-columns: 100%;
+	gap: 80px;
+	& .heading {
+		margin-bottom: 0;
+	}
+	&-section {
+		display: grid;
+		grid-template-columns: 100%;
+		text-align: left;
+		gap: 30px;
+	}
+	& .badges__link {
+		background-color: $white;
+		@media (any-hover: hover) {
+			&:hover {
+				color: $white;
+				background-color: $blue-1;
+			}
+		}
+	}
+}
+
+.categories-slider {
+	position: relative;
+	&__body {
+		padding: 20px;
+		margin: -20px;
+	}
+	&__item {
+		display: flex;
+		flex-shrink: 0;
+	}
+	& .card-preview {
+		width: 100%;
+	}
+	.slider-controls {
+		top: 25%;
+		width: 1370px;
+		padding: 0;
+	}
+}

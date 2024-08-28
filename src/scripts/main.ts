@@ -2,6 +2,10 @@
 
 // BaseHelpers.addLoadedClass();
 
+// import { DynamicAdaptive } from './modules/dynamic-adapt';
+import { DynamicAdapt } from './modules/dynamic_adapt';
+
 document.addEventListener('DOMContentLoaded', () => {
-	console.log('main init');
+	const da = new DynamicAdapt('max');
+	da.init();
 });

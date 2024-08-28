@@ -16,11 +16,14 @@ block content
 		.container 
 			.page-title= pageTitle
 			+cityNavigation(6)
-			.heading 
+			.heading.city-heading
 				.heading__title.title-xs Статьи
 			.city-layout 
 				aside.aside 
 					+asideNavigation([...cityPage.asideCategories], "Категории")
+				.city-posts__categories 
+					.city-posts__categories-caption Категории
+					+customDropdown([...postsPage.dropdownCategories], "Новости (23)")
 				.city-wrapper
 					ul.city-posts__list 
 						each post in cityPage.postList
@@ -30,10 +33,10 @@ block content
 										img(src=`assets/images/city/city-posts/${post.img}.jpg`, alt="")
 									.post-item__content
 										.post-item__title Как добраться до Алушты?
-										.post-item__description 
+										.post-item__description.text-clamp 
 											p Самая крупная транспортная развязка на полуострове – город Симферополь (столица Крыма) находится в 48 км от Алушты. Большая часть туристов попадает на курорт с пересадкой, о самых удобных вариантах проезда вы узнаете далее..
 											+btnDetail("Подробнее")
 										.post-item__bottom 
 											.post-item__date 21.06.24
 											.post-item__badge.badges__link Новости
-					+pagination([...pagination], 3)
+					+pagination([...pagination], [...paginationMobile], 3)

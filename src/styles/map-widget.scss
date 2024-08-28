@@ -1,5 +1,13 @@
+@import 'config/variables';
 .map {
 	border-radius: 10px;
 	height: 250px;
+	width: 100%;
 	overflow: hidden;
+	& ymaps {
+		width: 100% !important;
+	}
+	@media screen and (max-width: $md) {
+		height: 360px;
+	}
 }

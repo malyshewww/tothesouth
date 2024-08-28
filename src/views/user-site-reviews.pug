@@ -1,0 +1,33 @@
+extends ./layouts/default
+
+block variables 
+	- let pageTitle = "Отзывы владельцев о работе сайта в сезоне 2024 года";
+	- let breadCrumbsList = [{"title": "Главная", "link": "/"}];
+	- let currentPage = "Отзывы владельцев о работе сайта в сезоне 2024 года";
+
+append styles 
+	link(href="assets/styles/user.css" rel="stylesheet")
+
+block content 
+	.user-page.user-site-reviews
+		.container 
+			.page-title= pageTitle
+			+userNavigation([...userPage.yearNavigation], 0)
+			.user-page__masonry
+				each item, index in userPage.masonryReviews
+					.reviews-item.expanded
+						.reviews-item__header 
+							.reviews-item__info 
+								.reviews-item__author= item.author
+								.reviews-item__date= item.date
+								.reviews-item__rating 
+									+rating(item.rating)
+						.reviews-item__place.place-reviews
+							.place-reviews__image
+								img(src=`assets/images/user/reviews/place-${index+1}.jpg`, alt=item.placeName)
+							.place-reviews__name.anim-title
+								span= item.placeName
+							address.place-reviews__address= item.placeAddress
+						.reviews-item__text 
+							p= item.text
+			+pagination([...pagination], [...paginationMobile], 3)

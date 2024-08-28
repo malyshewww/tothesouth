@@ -2,7 +2,13 @@
 	&__image {
 		border-radius: 20px;
 		overflow: hidden;
-		padding-bottom: math.div(370, 1170) * 100%;
+		padding-bottom: math.div(350, 1170) * 100%;
 		margin-bottom: 30px;
+		@media screen and (max-width: $xl) {
+			padding-bottom: math.div(200, 296) * 100%;
+		}
+		@media screen and (max-width: $md) {
+			margin-bottom: 20px;
+		}
 	}
 }

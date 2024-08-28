@@ -1,0 +1,117 @@
+extends ./layouts/default
+
+block variables 
+	- let pageTitle = "Дельфинарий «Карадагский»";
+	- let breadCrumbsList = [{"title": "Главная", "link": "/"}, {"title": "Крым", "link": "/"},  {"title": "Алушта", "link": "city.html"}, {"title": "Развлечения", "link": "city-gaiety.html"}];
+	- let currentPage = "Дельфинарий «Карадагский»"
+
+append styles 
+	link(href="assets/styles/content.css" rel="stylesheet")
+	link(href="assets/styles/detail-card.css" rel="stylesheet")
+
+append scripts 
+	script(src="assets/scripts/detail-card.js" type="module")
+
+block content 
+	.detail-card 
+		.detail-card__wrapper
+			.container
+				.page-title= pageTitle 
+				+headerCard("Дельфинарий «Карадагский»", "пер. Береговой, 11, п. Курортное, г. Феодосия, Республика Крым, Россия")
+				.detail-card__body 
+					aside.detail-card__aside.aside
+						+asideMap
+						+asideContacts("Контакты")
+					.detail-card__main
+						+gallery([...cardPage.gallery])
+						+detailCardBox("Описание")
+							.box-card__content.content 
+								p Карадагский дельфинарий находится между Феодосией и Судаком в районе поселка Курортное на территории Карадагского природного заповедника.
+								p Научно-демонстрационная программа с участием черноморских дельфинов афалин и северных морских котиков не оставит равнодушными не только детей, но и взрослых. В период с июня по сентябрь включительно у Вас есть возможность посетить наш дельфинарий. Начало представлений в 11 и в 15 часов. Продолжительность представления около часа
+								p Начало представлений в 11:00 и 15:00.
+								p(style="font-weight: 600;") Ежедневно кроме понедельника.
+								ul 
+									li Шоу программа
+									li Фото с дельфином
+									li Плавание с дельфинами
+						section.detail-card__box.box-card
+							.accordeon.accordeon-price
+								.accordeon__item
+									.accordeon__header 
+										| Цены на 2024 год
+										.accordeon__button
+											span Показать
+											span Скрыть
+											.accordeon__icon
+									.accordeon__content 
+										.table-price-wrap
+											table.table-price.table-price-services
+												thead.table-price__head
+													tr 	
+														th Услуга
+														th Цена, ₽ 
+												tbody.table-price__body 
+													tr 
+														td Взрослый билет
+														td 1300
+													tr 
+														td Детский билет (от 6 до 12 лет)
+														td 800
+						+detailCardBox("Дополнительная информация")
+							.box-card__content.content 
+								p Детям до 6 лет в сопровождении взрослых - бесплатно.
+						+detailCardBox("Расположение", "Калининград, пл. Победы, д. 10", "location")
+							.box-card__map 
+								//- .map#map-location
+								button(type="button").map-button.btn.btn-white Показать на карте
+							.box-card__places.places 
+								each item in cardPage.places
+									.places__item
+										.places__caption= item.caption
+										if item.list
+											ul.places__list 
+												each listItem in item.list
+													li.places__list-item
+														span.places__name= listItem.name
+														span.places__distance= listItem.distance
+						section.detail-card__box.box-card.box-reviews.empty
+							.box-card__header 
+								h2.box-card__title Отзывы гостей
+								.box-reviews__stats 
+									.box-reviews__text 
+										p Отзывов еще нет
+										p.box-reviews__text-appeal Вы можете #[a(href="#").box-reviews__text-link стать первым!] 
+						+detailCardBox("Популярные вопросы")
+							.box-card__faq.accordeon
+								each item in cardPage.faq
+									.accordeon__item
+										.accordeon__header 
+											| #{item.header}
+											span.accordeon__icon
+										.accordeon__content
+											.accordeon__text
+												p= item.content
+				.detail-card__categories.categories
+					section.categories-section
+						.heading
+							.heading__title Другие развлечения в Алуште рядом
+						+badges([...cityPage.badgesList])
+						.categories-slider
+							.categories-slider__body.swiper
+								.categories-slider__wrapper.swiper-wrapper
+									each item in cityPage.facilitiesList.gaiety
+										.categories-slider__item
+											+facilityCardPreview(item)
+							.slider-controls 
+								button(type="button").slider-button.slider-button-prev 
+								button(type="button").slider-button.slider-button-next 
+					section.categories-section
+						.heading
+							.heading__title Алушта
+						+badges([...cityPage.badgesList])
+					section.categories-section
+						.heading
+							.heading__title Развлечения
+						+badges([...cityPage.badgesList])
+
+

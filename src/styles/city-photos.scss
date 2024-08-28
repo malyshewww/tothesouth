@@ -8,17 +8,35 @@
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		gap: 30px;
-	}
-	&__item {
-	}
-	& .content {
-		& h2 {
-			font-size: 32px;
-			font-weight: 800;
+		@media screen and (max-width: $xl) {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 20px;
+		}
+		@media screen and (max-width: $md) {
+			grid-template-columns: 100%;
 		}
 	}
 	& .content-group .facilities-body {
 		grid-template-columns: repeat(4, 1fr);
+		margin-right: 28px;
+		@media screen and (max-width: $xl) {
+			grid-template-columns: repeat(2, 1fr);
+			margin: 0;
+		}
+		@media screen and (max-width: $md) {
+			grid-template-columns: 100%;
+		}
+	}
+	& .content-group {
+		@media screen and (max-width: $md) {
+			padding: 30px 12px 30px;
+			margin-bottom: -30px;
+		}
+		& .facilities-wrapper:not(:last-child) {
+			@media screen and (max-width: $md) {
+				margin-bottom: 20px;
+			}
+		}
 	}
 }
 .card-photo {
@@ -26,10 +44,24 @@
 	gap: 10px;
 	align-content: start;
 	align-items: start;
+	@media (any-hover: hover) {
+		&:hover {
+			cursor: pointer;
+			& .card-photo__image img {
+				transform: scale(1.3);
+			}
+		}
+	}
 	&__image {
 		padding-bottom: math.div(220, 370) * 100%;
 		border-radius: 10px;
 		overflow: hidden;
+		& img {
+			transition: transform $time * 2 cubic-bezier(0.17, 0.67, 0.83, 0.87);
+		}
+		@media screen and (max-width: $md) {
+			padding-bottom: math.div(220, 296) * 100%;
+		}
 	}
 	&__caption {
 		font-size: 16px;

@@ -8,18 +8,27 @@
 	&__body {
 		display: grid;
 		gap: 40px;
+		@media screen and (max-width: $md) {
+			gap: 20px;
+		}
 	}
 }
 .testimonials-item {
 	border: 1px solid $gray-line;
 	border-radius: 10px;
-	padding: 39px 40px;
+	padding: 39px 43px 39px 39px;
 	background: $white;
 	min-height: 300px;
-	display: flex;
-	align-items: flex-start;
+	display: grid;
+	grid-template-columns: 330px 1fr;
+	align-items: start;
 	gap: 30px;
 	transition: box-shadow $time;
+	@media screen and (max-width: $md) {
+		padding: 0;
+		gap: 10px;
+		grid-template-columns: 1fr;
+	}
 	@media (any-hover: hover) {
 		&:hover {
 			cursor: pointer;
@@ -39,24 +48,27 @@
 		flex-shrink: 0;
 		height: 220px;
 		width: 330px;
+		@media screen and (max-width: $md) {
+			width: 100%;
+			padding-bottom: math.div(210, 296) * 100%;
+			border-radius: 10px 10px 0px 0px;
+		}
 	}
 	&__body {
 		display: grid;
 		justify-items: start;
 		gap: 10px;
+		@media screen and (max-width: $md) {
+			padding: 0 20px 20px;
+		}
 	}
 	&__place {
 		font-weight: 700;
 		font-size: 24px;
 		line-height: 120%;
-		transition: color $time linear;
-		position: relative;
-		& span {
-			transition: background-size $time cubic-bezier(0.645, 0.045, 0.355, 1);
-			background: linear-gradient(to bottom, rgba($orange, 1) 0%, rgba($orange, 1) 98%);
-			background-size: 0px 1px;
-			background-repeat: no-repeat;
-			background-position: left 100%;
+		@media screen and (max-width: $md) {
+			font-size: 20px;
+			line-height: 130%;
 		}
 	}
 	&__address {
@@ -64,17 +76,32 @@
 		font-size: 14px;
 		line-height: 140%;
 		color: $gray-text;
+		width: 100%;
+		@media screen and (max-width: $md) {
+			padding-bottom: 15px;
+			border-bottom: 1px solid $gray-line;
+		}
 	}
 	&__info {
 		display: flex;
 		align-items: center;
-		gap: 20px;
+		flex-wrap: wrap;
+		gap: 10px 20px;
 		width: 100%;
+		margin-top: 12px;
+		@media screen and (max-width: $md) {
+			margin-top: 5px;
+			justify-content: space-between;
+		}
 	}
 	&__author {
 		font-weight: 700;
 		font-size: 20px;
 		line-height: 120%;
+		@media screen and (max-width: $md) {
+			font-size: 18px;
+			line-height: 130%;
+		}
 	}
 	&__date {
 		font-size: 14px;
@@ -84,17 +111,16 @@
 	&__text {
 		font-size: 16px;
 		line-height: 130%;
-		-webkit-box-orient: vertical;
-		-webkit-line-clamp: 4;
-		overflow: hidden;
-		& p {
-			display: inline;
-			&:not(:last-child) {
-				margin-bottom: 10px;
-			}
-		}
+	}
+	&__btn {
+		font-size: 16px;
+		line-height: 130%;
 	}
 	& .rating {
 		margin-left: auto;
+		@media screen and (max-width: $md) {
+			margin: 0;
+			width: 100%;
+		}
 	}
 }

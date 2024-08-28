@@ -1,12 +1,24 @@
 .main-hotels {
 	padding: 61px 0;
+	@media screen and (max-width: $md) {
+		padding: 15px 0;
+	}
 	& .heading {
 		margin-bottom: 40px;
 		&__title {
 			max-width: 455px;
+			@media screen and (max-width: $md) {
+				max-width: 100%;
+			}
+		}
+		@media screen and (max-width: $md) {
+			margin-bottom: 20px;
 		}
 	}
-	& .hotels-wrapper {
+	& .facilities-wrapper {
 		gap: 40px;
+		@media screen and (max-width: $md) {
+			gap: 20px;
+		}
 	}
 }

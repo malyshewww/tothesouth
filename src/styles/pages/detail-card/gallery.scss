@@ -17,6 +17,9 @@
 	@media (any-hover: hover) {
 		&:hover {
 			cursor: pointer;
+			& .gallery-item__image img {
+				transform: scale(1.3);
+			}
 		}
 	}
 	&:nth-child(1) {
@@ -33,6 +36,9 @@
 		overflow: hidden;
 		padding-bottom: math.div(352, 670) * 100%;
 		height: 100%;
+		& img {
+			transition: transform $time * 2 cubic-bezier(0.17, 0.67, 0.83, 0.87);
+		}
 	}
 	&:last-child {
 		&::before {

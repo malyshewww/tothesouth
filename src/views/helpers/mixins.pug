@@ -1,12 +1,15 @@
 mixin facilityPreview(item, imgPath, className)
 	.card-preview(class=className)
-		button(type="button").button-favorite 
+		button(type="button").button-favorite
+			svg(width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg")
+				path(fill-rule="evenodd" clip-rule="evenodd" d="M14.3434 2.16035C13.6031 1.41741 12.599 1 11.5519 1C10.5048 1 9.50068 1.41741 8.76046 2.16035L7.99981 2.92343L7.23916 2.16035C5.69748 0.613732 3.19793 0.613732 1.65626 2.16035C0.114581 3.70696 0.114581 6.21452 1.65626 7.76113L2.41691 8.52422L7.99981 14.125L13.5827 8.52422L14.3434 7.76113C15.0839 7.01854 15.5 6.01116 15.5 4.96074C15.5 3.91031 15.0839 2.90293 14.3434 2.16035Z" fill="#FF6933")
+				path(fill-rule="evenodd" clip-rule="evenodd" d="M8.42847 1.82942C9.25648 0.99841 10.38 0.53125 11.5519 0.53125C12.7238 0.53125 13.8474 0.998439 14.6754 1.8295C15.5037 2.6601 15.9688 3.78651 15.9688 4.96074C15.9688 6.13504 15.5036 7.26151 14.6753 8.09213L8.33179 14.4559C8.24384 14.5442 8.12439 14.5937 7.99981 14.5937C7.87523 14.5937 7.75577 14.5442 7.66782 14.4559L1.32427 8.09205C-0.399757 6.3625 -0.399757 3.55897 1.32427 1.82942C3.04912 0.0990403 5.84629 0.0990402 7.57114 1.82942L7.99981 2.25946L8.42847 1.82942C8.4285 1.82939 8.42845 1.82945 8.42847 1.82942ZM11.5519 1.46875C10.6297 1.46875 9.74494 1.83638 9.09252 2.49119L8.33179 3.25436C8.24384 3.34259 8.12439 3.39218 7.99981 3.39218C7.87523 3.39218 7.75577 3.34259 7.66782 3.25436L6.90717 2.49127C5.54867 1.12842 3.34674 1.12842 1.98824 2.49127C0.628919 3.85495 0.628919 6.06653 1.98824 7.4302L7.99981 13.461L14.0114 7.4302C14.6641 6.77564 15.0312 5.88729 15.0312 4.96074C15.0312 4.03419 14.6642 3.14591 14.0115 2.49135C13.359 1.83653 12.4741 1.46875 11.5519 1.46875Z" fill="#FF6933")
 		.card-preview__body
 			.card-preview__image.ibg
 				img(src=`assets/images/${imgPath}/hotel-${item.img}.jpg`, alt="")
 			.card-preview__content 
 				if item.title
-					.card-preview__title
+					.card-preview__title.anim-title
 						span= item.title 
 				if item.descr
 					.card-preview__description= item.descr
@@ -48,7 +51,7 @@ mixin facilitiesBlock([...badges], link)
 			if block 
 				block
 		if link
-			a(href="#").btn.btn-lg.btn-blue-transparent Все предложения
+			a(href="#").btn.btn-lg.btn-blue-transparent= link
 		if badges && badges.length
 			+badges(badges)
 mixin rating(value = 4)
@@ -64,19 +67,20 @@ mixin testimonialsIitem(item)
 		.testimonials-item__image.ibg
 			img(src=`assets/images/testimonials/${item.img}.jpg`, alt=item.place)
 		.testimonials-item__body 
-			.testimonials-item__place
+			.testimonials-item__place.anim-title
 				span= item.place
 			address.testimonials-item__address= item.address
 			.testimonials-item__info 
 				.testimonials-item__author= item.author
 				.testimonials-item__date= item.date   
 				+rating
-			.testimonials-item__text 
-				p= item.text
-				a(href="#").testimonials-item__btn.btn-more Подробнее
+			.testimonials-item__text-container
+				.testimonials-item__text.text-clamp
+					p= item.text
+					+btnDetail("Подробнее", "testimonials-item__btn")
 mixin btnShowMore(title, link)
 	a(href=link).btn.btn-lg.btn-blue-transparent= title
-mixin cityNavigation(currentIndex)
+mixin cityNavigation(currentIndex, mobileIndex)
 	nav.city__navigation.navigation-city
 		ul.navigation-city__list 
 			each item, index in cityPage.navigation
@@ -87,21 +91,38 @@ mixin cityNavigation(currentIndex)
 							each subItem in item.subList
 								li.navigation-city__sub-item
 									a(href=subItem.link).navigation-city__sub-link= subItem.title
+			each item, index in cityPage.navigation
+				if item.subList
+					each subItem, subIndex in item.subList
+						li.navigation-city__item.hidden
+							a(href=subItem.link class={active: subIndex === mobileIndex}).navigation-city__link= subItem.title
+mixin userNavigation([...arr], currentIndex)
+	nav.user-page__navigation.navigation-user
+		ul.navigation-user__list 
+			each item, index in arr
+				li.navigation-user__item 
+					a(href=item.link class={active: index == currentIndex}).navigation-user__link= item.title
 mixin cardPhoto(item)
 	figure.city-photos__item.card-photo
 		.card-photo__image.ibg
 			img(src=`assets/images/city/city-photos/${item.img}.jpg`, alt=item.caption)
 		figcaption.card-photo__caption= item.caption
-mixin pagination([...arr], activeIndex)
-	nav.pagination-nav 
-		ul.pagination
-			li.page-item.page-item--prev
-				a(href="#").page-link Назад
-			each item, index in arr
-				li.page-item(class={active: index === activeIndex})
-					a(href="#").page-link= item
-			li.page-item.page-item--next
-				a(href="#").page-link Вперед
+mixin pagination([...paginationPc], [...paginationMobile], activeIndex, activeMobIndex = 2)
+	.pagination
+		nav.pagination-nav 
+			ul.pagination__list
+				li.page-item.page-item--prev
+					a(href="#").page-link Назад
+				each item, index in paginationPc
+					li.page-item(class={active: index === activeIndex})
+						a(href="#").page-link= item
+				li.page-item.page-item--next
+					a(href="#").page-link Вперед
+		nav.pagination-nav-mobile
+			ul.pagination__list
+				each item, index in paginationMobile
+					li.page-item(class={active: index === activeMobIndex})
+						a(href="#").page-link= item
 mixin object(item, idx)
 	.object
 		input(type="checkbox" name="object" id=`object-${idx}` checked=item.checked).input-object.visuallyHidden
@@ -119,8 +140,9 @@ mixin asideNavigation([...arrLinks], caption)
 				each item in arrLinks
 					li.aside-navigation__item 
 						a(href=item.link).aside-navigation__link= item.title
-mixin btnDetail(text = "Подробнее")
-	a(href="#").btn-detail= text 
+mixin btnDetail(text = "Подробнее", classNames)
+	a(href="#" class=classNames).btn-detail
+		span= text 
 mixin objectCard(item, classNames)
 	.object-card(class=[`object-card--${item.icon} ${classNames}`])
 		span.object-card__icon
@@ -144,28 +166,40 @@ mixin checkbox(item, idx, name)
 		label(for=`${name}-${idx}`).checkbox-label
 			| #{item.title}
 			span 
+		if name == 'section'
+			span.checkbox-count= item.count
+mixin customRadio(item, idx, name)
+	.custom-radio
+		input(type="radio" name=name id=`${name}-${idx}` checked=item.checked).visuallyHidden
+		label(for=`${name}-${idx}`) #{item.title}
 mixin facilityCardPreview(item)
 	.facility-preview
 		.facility-preview__image-wrap
 			.facility-preview__image.ibg
 				img(src=`assets/images/facilities/${item.img}.jpg`, alt=item.title)
-			button(type="button").button-favorite 
+			button(type="button").button-favorite
+				svg(width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg")
+					path(fill-rule="evenodd" clip-rule="evenodd" d="M14.3434 2.16035C13.6031 1.41741 12.599 1 11.5519 1C10.5048 1 9.50068 1.41741 8.76046 2.16035L7.99981 2.92343L7.23916 2.16035C5.69748 0.613732 3.19793 0.613732 1.65626 2.16035C0.114581 3.70696 0.114581 6.21452 1.65626 7.76113L2.41691 8.52422L7.99981 14.125L13.5827 8.52422L14.3434 7.76113C15.0839 7.01854 15.5 6.01116 15.5 4.96074C15.5 3.91031 15.0839 2.90293 14.3434 2.16035Z" fill="#FF6933")
+					path(fill-rule="evenodd" clip-rule="evenodd" d="M8.42847 1.82942C9.25648 0.99841 10.38 0.53125 11.5519 0.53125C12.7238 0.53125 13.8474 0.998439 14.6754 1.8295C15.5037 2.6601 15.9688 3.78651 15.9688 4.96074C15.9688 6.13504 15.5036 7.26151 14.6753 8.09213L8.33179 14.4559C8.24384 14.5442 8.12439 14.5937 7.99981 14.5937C7.87523 14.5937 7.75577 14.5442 7.66782 14.4559L1.32427 8.09205C-0.399757 6.3625 -0.399757 3.55897 1.32427 1.82942C3.04912 0.0990403 5.84629 0.0990402 7.57114 1.82942L7.99981 2.25946L8.42847 1.82942C8.4285 1.82939 8.42845 1.82945 8.42847 1.82942ZM11.5519 1.46875C10.6297 1.46875 9.74494 1.83638 9.09252 2.49119L8.33179 3.25436C8.24384 3.34259 8.12439 3.39218 7.99981 3.39218C7.87523 3.39218 7.75577 3.34259 7.66782 3.25436L6.90717 2.49127C5.54867 1.12842 3.34674 1.12842 1.98824 2.49127C0.628919 3.85495 0.628919 6.06653 1.98824 7.4302L7.99981 13.461L14.0114 7.4302C14.6641 6.77564 15.0312 5.88729 15.0312 4.96074C15.0312 4.03419 14.6642 3.14591 14.0115 2.49135C13.359 1.83653 12.4741 1.46875 11.5519 1.46875Z" fill="#FF6933")
 		.facility-preview__body
-			.facility-preview__title
+			.facility-preview__title.anim-title
 				span= item.title
 			.facility-preview__sub-title= item.subTitle
-			.facility-preview__description
+			.facility-preview__description.text-clamp
 				p #{item.descr}
-				+btnDetail("Подобнее")
+				+btnDetail("Подробнее")
 mixin btnShow 
 	button(type="button").form-group__btn-show Показать еще (10)
-mixin hotelPreview(item)
+mixin hotelPreview(item, isActive)
 	.hotel-card
 		.hotel-card__body 
 			.hotel-card__image-wrap 
 				.hotel-card__image.ibg
 					img(src=`assets/images/city/city-hotels/${item.img}.jpg`, alt=item.title)
-				button(type="button").button-favorite 
+				button(type="button" class={active: isActive}).button-favorite 
+					svg(width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg")
+						path(fill-rule="evenodd" clip-rule="evenodd" d="M14.3434 2.16035C13.6031 1.41741 12.599 1 11.5519 1C10.5048 1 9.50068 1.41741 8.76046 2.16035L7.99981 2.92343L7.23916 2.16035C5.69748 0.613732 3.19793 0.613732 1.65626 2.16035C0.114581 3.70696 0.114581 6.21452 1.65626 7.76113L2.41691 8.52422L7.99981 14.125L13.5827 8.52422L14.3434 7.76113C15.0839 7.01854 15.5 6.01116 15.5 4.96074C15.5 3.91031 15.0839 2.90293 14.3434 2.16035Z" fill="#FF6933")
+						path(fill-rule="evenodd" clip-rule="evenodd" d="M8.42847 1.82942C9.25648 0.99841 10.38 0.53125 11.5519 0.53125C12.7238 0.53125 13.8474 0.998439 14.6754 1.8295C15.5037 2.6601 15.9688 3.78651 15.9688 4.96074C15.9688 6.13504 15.5036 7.26151 14.6753 8.09213L8.33179 14.4559C8.24384 14.5442 8.12439 14.5937 7.99981 14.5937C7.87523 14.5937 7.75577 14.5442 7.66782 14.4559L1.32427 8.09205C-0.399757 6.3625 -0.399757 3.55897 1.32427 1.82942C3.04912 0.0990403 5.84629 0.0990402 7.57114 1.82942L7.99981 2.25946L8.42847 1.82942C8.4285 1.82939 8.42845 1.82945 8.42847 1.82942ZM11.5519 1.46875C10.6297 1.46875 9.74494 1.83638 9.09252 2.49119L8.33179 3.25436C8.24384 3.34259 8.12439 3.39218 7.99981 3.39218C7.87523 3.39218 7.75577 3.34259 7.66782 3.25436L6.90717 2.49127C5.54867 1.12842 3.34674 1.12842 1.98824 2.49127C0.628919 3.85495 0.628919 6.06653 1.98824 7.4302L7.99981 13.461L14.0114 7.4302C14.6641 6.77564 15.0312 5.88729 15.0312 4.96074C15.0312 4.03419 14.6642 3.14591 14.0115 2.49135C13.359 1.83653 12.4741 1.46875 11.5519 1.46875Z" fill="#FF6933")
 				.hotel-card__repast Завтрак
 			.hotel-card__main 
 				.hotel-card__main-wrapper
@@ -191,7 +225,14 @@ mixin hotelPreview(item)
 					.hotel-card__rating 
 						.hotel-card__rating-caption рейтинг
 						.hotel-card__rating-estimate 9,0
-						.hotel-card__rating-total 895 оценок
+						.hotel-card__rating-total 
+							span 895 оценок
+							span 10 отзывов
+					ul.hotel-card__parameters 
+						li.hotel-card__parametr 
+							| Wi-Fi
+							svg(width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg")
+								path(d="M0 2.22056C1.83856 0.780743 4.13382 -0.00337279 6.5 1.09055e-05C8.96264 1.09055e-05 11.2241 0.831677 13 2.22056L12.2782 3.08501C10.6438 1.80505 8.60341 1.10803 6.5 1.11112C4.31092 1.11112 2.30115 1.85001 0.721839 3.08501L0 2.22056ZM1.80517 4.38167C3.1331 3.34167 4.79094 2.77531 6.5 2.77779C8.27816 2.77779 9.9115 3.37834 11.1948 4.38112L10.4724 5.24556C9.34876 4.36575 7.94602 3.88668 6.5 3.8889C4.9954 3.8889 3.61322 4.39723 2.52759 5.24556L1.80517 4.38112V4.38167ZM3.61092 6.54278C4.42807 5.90272 5.44826 5.55412 6.5 5.55556C7.59425 5.55556 8.59943 5.925 9.38908 6.54223L8.66667 7.40667C8.05379 6.9268 7.2887 6.66549 6.5 6.66667C5.67931 6.66667 4.92529 6.94389 4.33333 7.40667L3.61092 6.54223V6.54278ZM5.41667 8.70389C5.72302 8.46373 6.10558 8.33288 6.5 8.33334C6.91035 8.33334 7.28736 8.47223 7.58333 8.70334L6.5 10L5.41667 8.70334V8.70389Z" fill="#1C8CF3")
 					.hotel-card__prices 
 						.hotel-card__old-price
 							| #{item.old_price} #[span ₽]
@@ -199,7 +240,10 @@ mixin hotelPreview(item)
 						.hotel-card__price-details 
 							p 1 ночь, 2 взрослых
 							p включая налоги #[br] и сборы
-					a(href="#").hotel-card__btn-place Наличие мест
+						.hotel-card__price-alternative-details за чел. в сутки в июне
+					a(href="#").hotel-card__btn-place 
+						span.btn-text-pc Наличие мест
+						span.btn-text-mobile Подробнее
 mixin pageHeading(pageTitle)
 	.page-heading 
 		.page-title= pageTitle 
@@ -305,8 +349,16 @@ mixin roomCard(item)
 				a(href="#").room-item__detail
 					span Все подробности
 				a(href="hotel-book.html").btn.btn-blue Забронировать 
-
-
+mixin buttonTpl(btnText, classNames)
+	button(type="button" class=classNames).btn
+		span.btn-circle
+		| #{btnText}
+mixin linkTpl(linkText, classNames, attrHref)
+	a(href=attrHref class=classNames).btn
+		| #{linkText}
+		span.btn-circle
+mixin filterButtonMobile(btnText)
+	button(type="button").filter-button= btnText
 
 
 

@@ -22,12 +22,19 @@
 .wrapper {
 	display: flex;
 	flex-direction: column;
-	height: 100%;
+	min-height: 100%;
+	overflow: clip;
 }
 
 .main {
 	flex: 1 1 auto;
 	padding-bottom: 120px;
+	@media screen and (max-width: $xl) {
+		padding-bottom: 60px;
+	}
+	@media screen and (max-width: $md) {
+		padding-bottom: 30px;
+	}
 }
 
 .footer {
