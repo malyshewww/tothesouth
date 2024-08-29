@@ -89,6 +89,8 @@
 		overflow: hidden;
 		transition:
 			height $time,
+			min-height $time,
+			max-height $time,
 			margin $time;
 	}
 	&__text {
@@ -167,11 +169,19 @@
 			// }
 		}
 		&__content {
+			// @media screen and (max-width: $md) {
+			// 	display: none;
+			// 	height: 100%;
+			// 	overflow: visible;
+			// }
 		}
 		&__item {
 			&.active {
 				& .accordeon__content {
 					margin-top: 20px;
+					@media screen and (max-width: $md) {
+						margin-top: 15px;
+					}
 				}
 			}
 		}
@@ -202,5 +212,86 @@
 		@media screen and (max-width: $md) {
 			padding-bottom: 10px;
 		}
+	}
+}
+
+.accordeon-mobile {
+	display: none;
+	@media screen and (max-width: $md) {
+		display: grid;
+		gap: 15px;
+	}
+	&__item {
+		&:not(:last-child) {
+			padding-bottom: 15px;
+			border-bottom: 1px solid $gray-line;
+		}
+		&.active {
+			& .accordeon-mobile__header {
+				font-weight: 600;
+			}
+			& .accordeon-mobile__content {
+				margin-top: 10px;
+			}
+			& .accordeon-mobile__icon span {
+				&::after {
+					transform: rotate(0deg);
+				}
+			}
+		}
+	}
+	&__header {
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 140%;
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		gap: 20px;
+		transition: font-weight $time;
+	}
+	&__header-text {
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+	}
+	&__icon {
+		width: 18px;
+		height: 18px;
+		flex-shrink: 0;
+		position: relative;
+		padding: 2px;
+		display: grid;
+		place-items: center;
+		& span {
+			display: block;
+			position: relative;
+			width: 100%;
+			height: 100%;
+			&::before,
+			&::after {
+				content: '';
+				display: block;
+				width: 100%;
+				height: 2px;
+				background-color: $black;
+				border-radius: 50px;
+				position: absolute;
+				top: 50%;
+				transition:
+					transform $time,
+					opacity $time;
+			}
+			&::after {
+				transform: rotate(90deg);
+			}
+		}
+	}
+	&__content {
+		height: 0px;
+		overflow: hidden;
+		transition:
+			height $time,
+			margin $time;
 	}
 }

@@ -7,7 +7,7 @@
 	&__btn {
 		border: 1px solid $gray-line;
 		border-radius: 5px;
-		padding: 13px 15px;
+		padding: 13px 20px;
 		min-height: 60px;
 		background: $white;
 		position: relative;
@@ -72,6 +72,7 @@
 		min-height: 48px;
 		font-size: 14px;
 		line-height: 140%;
+		padding: 13px 15px;
 		&::after {
 			background-color: $gray-text;
 		}

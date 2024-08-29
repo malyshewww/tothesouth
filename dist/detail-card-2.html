@@ -129,7 +129,7 @@
 							</div>
 						</div>
 						<div class="detail-card__body">
-							<aside class="aside detail-card__aside">
+							<aside class="aside detail-card__aside" data-da=".box-card-mobile, 767.98, 0">
 								<div class="aside-map">
 									<button class="btn btn-white map-button" type="button">Показать на карте</button>
 								</div>
@@ -209,7 +209,7 @@
 										<div class="slider-pagination"></div>
 									</div>
 								</div>
-								<section class="box-card detail-card__box">
+								<section class="box-card detail-card__box box-card--description">
 									<div class="box-card__header">
 										<h2 class="box-card__title">Описание</h2>
 									</div>
@@ -224,7 +224,11 @@
 											<li>Плавание с дельфинами</li>
 										</ul>
 									</div>
+									<button class="btn-detail box-card__btn-show" type="button">
+										<span>Подробнее об отеле</span>
+									</button>
 								</section>
+								<div class="box-card-mobile"></div>
 								<section class="box-card detail-card__box">
 									<div class="accordeon accordeon-price">
 										<div class="accordeon__item">
@@ -337,7 +341,7 @@
 										<div class="box-reviews__stats">
 											<div class="box-reviews__text">
 												<p>Отзывов еще нет</p>
-												<p class="box-reviews__text-appeal">Вы можете <a class="box-reviews__text-link" href="#">стать первым!</a>
+												<p class="box-reviews__text-appeal">Вы можете <a class="text-link" href="#">стать первым!</a>
 												</p>
 											</div>
 										</div>
@@ -829,7 +833,7 @@
 		</footer>
 		<div class="overlay"></div>
 	</div>
-	<script src="assets/scripts/main.js" defer="defer"></script>
+	<script src="assets/scripts/main.js" defer="defer" type="module"></script>
 	<script src="assets/scripts/detail-card.js" type="module"></script>
 </body>
 

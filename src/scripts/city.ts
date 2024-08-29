@@ -98,19 +98,4 @@ document.addEventListener('DOMContentLoaded', () => {
 	// window.addEventListener('resize', () => {
 	// 	checkScrollingNavigation();
 	// });
-	function changePositionButton() {
-		const textClamps = document.querySelectorAll('.text-clamp');
-		if (textClamps) {
-			textClamps.forEach((text) => {
-				const button = text.querySelector('.btn-detail');
-				if (text?.scrollHeight > text?.getBoundingClientRect().height + 1) {
-					button?.classList.add('changed');
-				} else {
-					button?.classList.remove('changed');
-				}
-			});
-		}
-	}
-	changePositionButton();
-	window.addEventListener('resize', changePositionButton);
 });

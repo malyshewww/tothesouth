@@ -5,32 +5,83 @@
 @import 'forms';
 
 .auth {
+	padding-bottom: 80px;
+	@media screen and (max-width: $xl) {
+		padding-bottom: 40px;
+	}
+	@media screen and (max-width: $md) {
+		padding-bottom: 10px;
+	}
 	&__header {
-		min-height: 67px;
-		display: flex;
-		align-items: flex-end;
 	}
 	&__body {
 		padding-top: 120px;
 		display: grid;
 		justify-content: center;
+		@media screen and (max-width: $xl) {
+			padding-top: 60px;
+		}
+		@media screen and (max-width: $md) {
+			padding-top: 30px;
+			justify-content: stretch;
+		}
 	}
 }
 .auth-password-recovery {
 	& .auth-form {
 		width: 498px;
+		@media screen and (max-width: $md) {
+			width: 100%;
+		}
 		&__sub-title {
 			max-width: 80%;
+			@media screen and (max-width: $md) {
+				max-width: 100%;
+			}
 		}
 	}
 }
+.auth-password-recovery,
+.auth-password-code {
+	padding-bottom: 130px;
+	@media screen and (max-width: $xl) {
+		padding-bottom: 60px;
+	}
+	@media screen and (max-width: $md) {
+		padding-bottom: 0px;
+		& .auth__body {
+			padding-top: 20px;
+		}
+	}
+}
+.auth-password-code {
+	& .auth-form__items {
+		margin-top: 10px;
+	}
+}
 .header-auth {
+	min-height: 67px;
+	display: flex;
+	align-items: flex-end;
+	border-bottom: 1px solid $gray-line;
+	@media screen and (max-width: $md) {
+		min-height: 51px;
+		border: none;
+		& .container {
+			width: 100%;
+		}
+	}
 	&__links {
 		display: flex;
 		gap: 34px;
+		@media screen and (max-width: $md) {
+			width: 100%;
+			justify-content: space-between;
+			border-bottom: 1px solid $gray-line;
+		}
 	}
 	&__link {
-		padding-bottom: 16px;
+		padding-bottom: 14px;
 		position: relative;
 		font-weight: 600;
 		font-size: 16px;
@@ -43,6 +94,9 @@
 				transform: scaleX(1);
 			}
 		}
+		@media screen and (max-width: $md) {
+			padding-bottom: 10px;
+		}
 		&::before {
 			content: '';
 			position: absolute;
@@ -54,6 +108,9 @@
 			transform: scaleX(0);
 			transform-origin: right;
 			transition: transform $time;
+			@media screen and (max-width: $md) {
+				height: 2px;
+			}
 		}
 		@media (any-hover: hover) {
 			&:hover {
@@ -70,11 +127,18 @@
 	display: grid;
 	gap: 20px;
 	width: 370px;
+	@media screen and (max-width: $md) {
+		width: 100%;
+		gap: 10px;
+	}
 	&__heading {
 		display: grid;
 		gap: 20px;
 		text-align: center;
 		margin-bottom: 10px;
+		@media screen and (max-width: $md) {
+			gap: 10px;
+		}
 	}
 	&__title {
 		font-weight: 700;
@@ -101,6 +165,8 @@
 	}
 	&__link {
 		justify-self: end;
+		font-size: 16px;
+		line-height: 130%;
 	}
 }
 .code-auth {
@@ -143,7 +209,7 @@
 	position: relative;
 	background-image: url('../images/icons/line.svg');
 	background-repeat: no-repeat;
-	background-position: center bottom 14px;
+	background-position: center bottom 12px;
 }
 
 .field-password {

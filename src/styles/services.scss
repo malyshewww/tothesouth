@@ -6,8 +6,14 @@
 	&__body {
 		border: 1px solid $gray-line;
 		border-radius: 16px;
-		padding: 30px;
+		padding: 29px;
 		background: $white;
+		@media screen and (max-width: $md) {
+			padding: 20px 12px;
+			border: none;
+			border-radius: 0;
+			margin: 0 -12px -20px;
+		}
 	}
 	&__table {
 		border-collapse: collapse;
@@ -15,6 +21,10 @@
 			display: grid;
 			grid-template-columns: 1fr repeat(2, 260px);
 			gap: 20px;
+			@media screen and (max-width: $xl) {
+				grid-template-columns: 1fr;
+				gap: 10px;
+			}
 		}
 		& th {
 			display: grid;
@@ -23,31 +33,70 @@
 			min-height: 42px;
 			font-weight: 600;
 		}
+		& td,
+		& th {
+			font-size: 16px;
+			line-height: 130%;
+			@media screen and (max-width: $md) {
+				font-size: 14px;
+				line-height: 140%;
+			}
+		}
+		& td.td-resort {
+			@media screen and (max-width: $xl) {
+				font-weight: 600;
+			}
+			@media screen and (max-width: $md) {
+				font-size: 16px;
+				line-height: 130%;
+			}
+		}
+		& td.td-price {
+			@media screen and (max-width: $xl) {
+				display: flex;
+				flex-direction: column;
+				gap: 5px;
+				&::before {
+					content: attr(data-price);
+					font-size: 14px;
+					line-height: 140%;
+					display: block;
+				}
+			}
+		}
 		& thead {
+			@media screen and (max-width: $xl) {
+				display: none;
+			}
 			& tr {
 				padding-bottom: 20px;
 				border-bottom: 1px solid $gray-line;
 			}
 		}
 		& tbody {
+			@media screen and (max-width: $xl) {
+				display: grid;
+				gap: 20px;
+			}
 			tr {
-				min-height: 60px;
-				align-items: center;
-				padding: 20px 0;
-				&:not(:last-child) {
-					border-bottom: 1px solid $gray-line;
+				@media screen and (min-width: $xl) {
+					min-height: 60px;
+					align-items: center;
+					padding: 20px 0;
+					&:not(:last-child) {
+						border-bottom: 1px solid $gray-line;
+					}
+					&:last-child {
+						padding-bottom: 0;
+					}
 				}
-				&:last-child {
-					padding-bottom: 0;
+				@media screen and (max-width: $xl) {
+					&:not(:last-child) {
+						padding-bottom: 14px;
+						border-bottom: 1px solid $gray-line;
+					}
 				}
 			}
 		}
 	}
-}
-.container {
-}
-
-.page-title {
-}
-.thead {
 }

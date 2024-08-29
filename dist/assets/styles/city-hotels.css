@@ -1117,7 +1117,7 @@
 .custom-dropdown__btn-calendar {
   border: 1px solid #e1e3eb;
   border-radius: 5px;
-  padding: 13px 15px;
+  padding: 13px 20px;
   min-height: 60px;
   background: #fff;
   position: relative;
@@ -1175,6 +1175,7 @@
   min-height: 48px;
   font-size: 14px;
   line-height: 140%;
+  padding: 13px 15px;
 }
 .aside .custom-dropdown__btn::after,
 .aside .custom-dropdown__btn-calendar::after {
@@ -1402,7 +1403,7 @@
 }
 .form-object__bottom {
   display: grid;
-  gap: 20px;
+  gap: 21px;
 }
 .form-object__bottom-title {
   font-weight: 700;
@@ -1412,6 +1413,7 @@
 }
 .form-object__buttons {
   display: flex;
+  align-content: inherit;
   gap: 10px;
 }
 .form-object__btn-submit {
@@ -2072,6 +2074,21 @@
   .hotel-card__btn-place {
     padding: 9px;
     min-height: 40px;
+  }
+  .form-object {
+    background-color: #fff;
+    padding: 20px 12px;
+    margin: 0 -12px;
+  }
+  .form-object__buttons {
+    flex-direction: column;
+  }
+  .form-object__btn-submit {
+    width: 100%;
+  }
+  .custom-radio label {
+    width: 51px;
+    height: 45px;
   }
   .noUi-target {
     width: calc(100% - 13px);

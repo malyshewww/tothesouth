@@ -19,12 +19,12 @@ block content
 				.page-title= pageTitle 
 				+headerCard("Дельфинарий «Карадагский»", "пер. Береговой, 11, п. Курортное, г. Феодосия, Республика Крым, Россия")
 				.detail-card__body 
-					aside.detail-card__aside.aside
+					aside.detail-card__aside.aside(data-da=".box-card-mobile, 767.98, 0")
 						+asideMap
 						+asideContacts("Контакты")
 					.detail-card__main
 						+gallery([...cardPage.gallery])
-						+detailCardBox("Описание")
+						+detailCardBox("Описание", "", "description")
 							.box-card__content.content 
 								p Карадагский дельфинарий находится между Феодосией и Судаком в районе поселка Курортное на территории Карадагского природного заповедника.
 								p Научно-демонстрационная программа с участием черноморских дельфинов афалин и северных морских котиков не оставит равнодушными не только детей, но и взрослых. В период с июня по сентябрь включительно у Вас есть возможность посетить наш дельфинарий. Начало представлений в 11 и в 15 часов. Продолжительность представления около часа
@@ -34,6 +34,9 @@ block content
 									li Шоу программа
 									li Фото с дельфином
 									li Плавание с дельфинами
+							button(type="button").btn-detail.box-card__btn-show 
+								span Подробнее об отеле
+						.box-card-mobile
 						section.detail-card__box.box-card
 							.accordeon.accordeon-price
 								.accordeon__item
@@ -80,7 +83,7 @@ block content
 								.box-reviews__stats 
 									.box-reviews__text 
 										p Отзывов еще нет
-										p.box-reviews__text-appeal Вы можете #[a(href="#").box-reviews__text-link стать первым!] 
+										p.box-reviews__text-appeal Вы можете #[a(href="#").text-link стать первым!] 
 						+detailCardBox("Популярные вопросы")
 							.box-card__faq.accordeon
 								each item in cardPage.faq

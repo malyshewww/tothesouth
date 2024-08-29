@@ -208,13 +208,18 @@
 .form-object {
 	display: grid;
 	gap: 20px;
+	@media screen and (max-width: $md) {
+		background-color: $white;
+		padding: 20px 12px;
+		margin: 0 -12px;
+	}
 	&__items {
 		display: grid;
 		gap: 10px;
 	}
 	&__bottom {
 		display: grid;
-		gap: 20px;
+		gap: 21px;
 	}
 	&__bottom-title {
 		font-weight: 700;
@@ -224,10 +229,17 @@
 	}
 	&__buttons {
 		display: flex;
+		align-content: inherit;
 		gap: 10px;
+		@media screen and (max-width: $md) {
+			flex-direction: column;
+		}
 	}
 	&__btn-submit {
 		width: 204px;
+		@media screen and (max-width: $md) {
+			width: 100%;
+		}
 	}
 	&__btn-reset {
 		padding-left: 24px;
@@ -385,6 +397,10 @@
 				border-color: #dcf0f3;
 				cursor: pointer;
 			}
+		}
+		@media screen and (max-width: $md) {
+			width: 51px;
+			height: 45px;
 		}
 	}
 	& input:checked ~ label {

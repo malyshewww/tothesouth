@@ -285,7 +285,7 @@
 .custom-dropdown__btn-calendar {
   border: 1px solid #e1e3eb;
   border-radius: 5px;
-  padding: 13px 15px;
+  padding: 13px 20px;
   min-height: 60px;
   background: #fff;
   position: relative;
@@ -343,6 +343,7 @@
   min-height: 48px;
   font-size: 14px;
   line-height: 140%;
+  padding: 13px 15px;
 }
 .aside .custom-dropdown__btn::after,
 .aside .custom-dropdown__btn-calendar::after {

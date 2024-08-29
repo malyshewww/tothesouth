@@ -122,10 +122,7 @@
 	}
 	&__item {
 		display: grid;
-		gap: 11px;
-		@media screen and (max-width: $md) {
-			gap: 10px;
-		}
+		gap: 10px;
 	}
 	&__caption {
 		font-weight: 600;
@@ -164,10 +161,27 @@
 	border-collapse: collapse;
 	display: flex;
 	flex-direction: column;
+	@media screen and (max-width: $md) {
+		display: none;
+		&.table-price-services {
+			display: block;
+		}
+	}
 	& tr {
 		min-height: 38px;
 		display: flex;
 		flex-grow: 1;
+		@media screen and (max-width: $md) {
+			justify-content: space-between;
+			min-height: 36px;
+			&:not(:last-child) {
+				border-bottom: 1px solid $gray-line;
+				padding: 7px 0;
+			}
+			&:last-child {
+				padding: 7px 0 0;
+			}
+		}
 	}
 	& th,
 	& td {
@@ -179,18 +193,37 @@
 		font-weight: 400;
 		font-size: 12px;
 		line-height: 120%;
-		justify-content: flex-end;
-		&:not(:last-child) {
-			border-right: 1px solid $gray-line;
+		@media screen and (min-width: $md) {
+			justify-content: flex-end;
+			&:not(:last-child) {
+				border-right: 1px solid $gray-line;
+			}
+			&:nth-child(1) {
+				flex: 0 0 270px;
+				justify-content: flex-start;
+			}
+			&:nth-child(2) {
+				flex: 0 0 140px;
+				justify-content: center;
+			}
 		}
-		&:nth-child(1) {
-			flex: 0 0 270px;
-			justify-content: flex-start;
+		@media screen and (max-width: $md) {
+			min-height: auto;
+			padding: 0;
+			font-size: 14px;
+			line-height: 120%;
+			flex: 0 0 auto;
 		}
-		&:nth-child(2) {
-			flex: 0 0 140px;
-			justify-content: center;
-		}
+	}
+	& td.td-date {
+		font-weight: 600;
+		font-size: 14px;
+		line-height: 120%;
+		color: $gray-text;
+	}
+	& td.td-price {
+		line-height: 140%;
+		text-align: right;
 	}
 	& th {
 		padding: 5px 10px;
@@ -212,19 +245,49 @@
 }
 
 .table-price.table-price-services {
+	@media screen and (max-width: $md) {
+		display: grid;
+	}
 	tr {
 		display: grid;
 		grid-template-columns: 1fr 171px;
 		min-height: 51px;
+		@media screen and (max-width: $md) {
+			display: flex;
+			justify-content: space-between;
+			min-height: 40px;
+			padding: 0;
+			&:not(:last-child) {
+				border-bottom: 1px solid $gray-line;
+				margin-bottom: 10px;
+			}
+			&:last-child {
+				padding: 0;
+			}
+		}
 	}
 	& .table-price__head {
 		background-color: $gray-background;
+		@media screen and (max-width: $md) {
+			display: none;
+		}
 	}
-	& .table-price__body tr:nth-child(odd) {
-		background-color: transparent;
+	@media screen and (min-width: $md) {
+		& .table-price__body tr:nth-child(odd) {
+			background-color: transparent;
+		}
+		& .table-price__body tr:nth-child(even) {
+			background-color: $gray-background;
+		}
 	}
-	& .table-price__body tr:nth-child(even) {
-		background-color: $gray-background;
+	& .table-price__body {
+		& tr {
+			&:nth-child(odd) {
+				& td {
+					background-color: transparent;
+				}
+			}
+		}
 	}
 	& th {
 		font-size: 16px;
@@ -233,5 +296,8 @@
 	& td {
 		font-size: 14px;
 		line-height: 140%;
+		@media screen and (max-width: $md) {
+			padding: 8px 0;
+		}
 	}
 }

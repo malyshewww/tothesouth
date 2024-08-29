@@ -10,7 +10,7 @@
   gap: 30px;
 }
 .contacts__map {
-  height: 558px;
+  min-height: 558px;
   width: 100%;
   border: 1px solid #e1e3eb;
   border-radius: 10px;
@@ -24,7 +24,7 @@
 .main-contacts__disclamer {
   border: 1px solid #e1e3eb;
   border-radius: 10px;
-  padding: 40px;
+  padding: 39px;
   background: white;
   display: grid;
   gap: 30px;
@@ -64,8 +64,52 @@
   line-height: 140%;
   color: #08151a;
 }
-.main-contacts__disclamer a {
-  color: #1c8cf3;
+@media screen and (max-width: 1024px) {
+  .contacts__wrapper {
+    gap: 20px;
+  }
+  .contacts__main {
+    gap: 20px;
+  }
+}
+@media screen and (max-width: 767.98px) {
+  .contacts .page-title {
+    margin-bottom: 10px;
+  }
+  .contacts__wrapper {
+    grid-template-columns: 100%;
+    gap: 10px;
+    margin-bottom: -20px;
+  }
+  .contacts__main {
+    background-color: #fff;
+    padding: 20px 12px;
+    margin: 0 -12px;
+  }
+  .contacts__map .map {
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .contacts__map {
+    min-height: 385px;
+    width: calc(100% + 24px);
+    border: none;
+    border-radius: 0;
+    background-color: #fff;
+    padding: 20px 12px;
+    margin: 0 -12px;
+  }
+  .main-contacts__items,
+  .main-contacts__disclamer {
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+    gap: 20px;
+  }
+  .main-contacts__disclamer {
+    padding-top: 19px;
+    border-top: 1px solid #e1e3eb;
+  }
 }
 @media (any-hover: hover) {
   .main-contacts__link:hover {

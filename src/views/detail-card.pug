@@ -43,6 +43,22 @@ block content
 											span Скрыть
 											.accordeon__icon
 									.accordeon__content 
+										.accordeon-mobile
+											- for (var x = 0; x < 3; x++)
+												.accordeon-mobile__item
+													.accordeon-mobile__header
+														.accordeon-mobile__header-text
+															| Двухместный «Эконом» (2-й этаж)
+															if x == 0
+																span за комнату
+														span.accordeon-mobile__icon
+															span
+													.accordeon-mobile__content 
+														table.table-price
+															- for (var i = 0; i < 5; i++)
+																tr 
+																	td.td-date 21.05 - 30.06
+																	td.td-price 1000
 										.table-price-wrap
 											table.table-price
 												thead.table-price__head

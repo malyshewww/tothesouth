@@ -1,5 +1,6 @@
 @use 'sass:math';
 @import 'config/variables';
+@import 'config/mixins';
 
 .content {
 	h1,
@@ -64,8 +65,42 @@
 		font-size: 16px;
 		line-height: 130%;
 	}
+	& ul {
+		@include reset-list;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		& li {
+			position: relative;
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			line-height: 130%;
+			&::before {
+				content: '';
+				display: block;
+				width: 15px;
+				height: 15px;
+				background-image: url('../images/icons/check-blue-1.svg');
+				background-repeat: no-repeat;
+				background-position: center;
+			}
+		}
+	}
 	& > *:last-child {
 		margin-bottom: 0;
+	}
+}
+
+.box-card__content {
+	& ul {
+		li {
+			gap: 15px;
+			&::before {
+				width: 11px;
+				height: 9px;
+			}
+		}
 	}
 }
 

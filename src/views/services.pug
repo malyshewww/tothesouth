@@ -22,6 +22,6 @@ block content
 					tbody 
 						each item in servicesPage.table.row
 							tr 
-								td= item.resort
-								td= item.hotelPrice
-								td= item.roomPrice
+								td.td-resort= item.resort
+								td.td-price(data-price="Стандартное размещение для гостиниц и гостевых домов")= item.hotelPrice
+								td.td-price(data-price="Стандартное размещение для квартир и объектов под ключ")= item.roomPrice

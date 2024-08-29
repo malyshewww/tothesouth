@@ -480,7 +480,11 @@
 .accordeon__content {
   height: 0px;
   overflow: hidden;
-  transition: height 0.3s, margin 0.3s;
+  transition:
+    height 0.3s,
+    min-height 0.3s,
+    max-height 0.3s,
+    margin 0.3s;
 }
 .accordeon__text {
   padding: 15px;
@@ -538,6 +542,72 @@
 .box-card__faq .accordeon__header {
   padding-right: 4px;
   padding-bottom: 23.5px;
+}
+.accordeon-mobile {
+  display: none;
+}
+.accordeon-mobile__item:not(:last-child) {
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e1e3eb;
+}
+.accordeon-mobile__item.active .accordeon-mobile__header {
+  font-weight: 600;
+}
+.accordeon-mobile__item.active .accordeon-mobile__content {
+  margin-top: 10px;
+}
+.accordeon-mobile__item.active .accordeon-mobile__icon span::after {
+  transform: rotate(0deg);
+}
+.accordeon-mobile__header {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  transition: font-weight 0.3s;
+}
+.accordeon-mobile__header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.accordeon-mobile__icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  position: relative;
+  padding: 2px;
+  display: grid;
+  place-items: center;
+}
+.accordeon-mobile__icon span {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.accordeon-mobile__icon span::before,
+.accordeon-mobile__icon span::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #08151a;
+  border-radius: 50px;
+  position: absolute;
+  top: 50%;
+  transition: transform 0.3s, opacity 0.3s;
+}
+.accordeon-mobile__icon span::after {
+  transform: rotate(90deg);
+}
+.accordeon-mobile__content {
+  height: 0px;
+  overflow: hidden;
+  transition: height 0.3s, margin 0.3s;
 }
 .box-reviews .box-card__header {
   display: flex;
@@ -599,6 +669,9 @@
 .box-reviews.empty .box-card__header {
   padding: 0;
   border: 0;
+}
+.box-reviews.empty .box-reviews__stats {
+  text-align: right;
 }
 .box-reviews__btn-show {
   margin-top: 10px;
@@ -1300,7 +1373,7 @@
 }
 .places__item {
   display: grid;
-  gap: 11px;
+  gap: 10px;
 }
 .places__caption {
   font-weight: 600;
@@ -1350,21 +1423,16 @@
   font-weight: 400;
   font-size: 12px;
   line-height: 120%;
-  justify-content: flex-end;
 }
-.table-price th:not(:last-child),
-.table-price td:not(:last-child) {
-  border-right: 1px solid #e1e3eb;
+.table-price td.td-date {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 120%;
+  color: #8897b1;
 }
-.table-price th:nth-child(1),
-.table-price td:nth-child(1) {
-  flex: 0 0 270px;
-  justify-content: flex-start;
-}
-.table-price th:nth-child(2),
-.table-price td:nth-child(2) {
-  flex: 0 0 140px;
-  justify-content: center;
+.table-price td.td-price {
+  line-height: 140%;
+  text-align: right;
 }
 .table-price th {
   padding: 5px 10px;
@@ -1383,11 +1451,8 @@
 .table-price.table-price-services .table-price__head {
   background-color: #f7f9fe;
 }
-.table-price.table-price-services .table-price__body tr:nth-child(odd) {
+.table-price.table-price-services .table-price__body tr:nth-child(odd) td {
   background-color: transparent;
-}
-.table-price.table-price-services .table-price__body tr:nth-child(even) {
-  background-color: #f7f9fe;
 }
 .table-price.table-price-services th {
   font-size: 16px;
@@ -1557,6 +1622,9 @@
     width: 18px;
     height: 18px;
   }
+  .accordeon-price .accordeon__item.active .accordeon__content {
+    margin-top: 15px;
+  }
   .accordeon-price .accordeon__button span {
     display: none;
   }
@@ -1571,6 +1639,10 @@
   }
   .box-card__faq .accordeon__header {
     padding-bottom: 10px;
+  }
+  .accordeon-mobile {
+    display: grid;
+    gap: 15px;
   }
   .box-reviews .box-card__header {
     flex-direction: column;
@@ -1595,6 +1667,19 @@
     line-height: 130%;
     color: #8897b1;
     font-weight: 400;
+  }
+  .box-reviews.empty {
+    padding: 20px 12px;
+  }
+  .box-reviews.empty .box-card__title {
+    width: 100%;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e1e3eb;
+  }
+  .box-reviews.empty .box-reviews__text {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px 5px;
   }
   .box-reviews__btn-show {
     display: none;
@@ -1756,11 +1841,81 @@
     grid-template-columns: 100%;
     gap: 15px;
   }
-  .places__item {
-    gap: 10px;
-  }
   .places__list-item {
     align-items: flex-end;
+  }
+  .table-price {
+    display: none;
+  }
+  .table-price.table-price-services {
+    display: block;
+  }
+  .table-price tr {
+    justify-content: space-between;
+    min-height: 36px;
+  }
+  .table-price tr:not(:last-child) {
+    border-bottom: 1px solid #e1e3eb;
+    padding: 7px 0;
+  }
+  .table-price tr:last-child {
+    padding: 7px 0 0;
+  }
+  .table-price th,
+  .table-price td {
+    min-height: auto;
+    padding: 0;
+    font-size: 14px;
+    line-height: 120%;
+    flex: 0 0 auto;
+  }
+  .table-price.table-price-services {
+    display: grid;
+  }
+  .table-price.table-price-services tr {
+    display: flex;
+    justify-content: space-between;
+    min-height: 40px;
+    padding: 0;
+  }
+  .table-price.table-price-services tr:not(:last-child) {
+    border-bottom: 1px solid #e1e3eb;
+    margin-bottom: 10px;
+  }
+  .table-price.table-price-services tr:last-child {
+    padding: 0;
+  }
+  .table-price.table-price-services .table-price__head {
+    display: none;
+  }
+  .table-price.table-price-services td {
+    padding: 8px 0;
+  }
+}
+@media screen and (min-width: 767.98px) {
+  .table-price th,
+  .table-price td {
+    justify-content: flex-end;
+  }
+  .table-price th:not(:last-child),
+  .table-price td:not(:last-child) {
+    border-right: 1px solid #e1e3eb;
+  }
+  .table-price th:nth-child(1),
+  .table-price td:nth-child(1) {
+    flex: 0 0 270px;
+    justify-content: flex-start;
+  }
+  .table-price th:nth-child(2),
+  .table-price td:nth-child(2) {
+    flex: 0 0 140px;
+    justify-content: center;
+  }
+  .table-price.table-price-services .table-price__body tr:nth-child(odd) {
+    background-color: transparent;
+  }
+  .table-price.table-price-services .table-price__body tr:nth-child(even) {
+    background-color: #f7f9fe;
   }
 }
 @media (any-hover: hover) {

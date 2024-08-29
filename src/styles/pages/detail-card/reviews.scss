@@ -79,9 +79,29 @@
 	}
 	&.empty {
 		padding: 30px 39px;
+		@media screen and (max-width: $md) {
+			padding: 20px 12px;
+		}
 		& .box-card__header {
 			padding: 0;
 			border: 0;
+		}
+		& .box-reviews__stats {
+			text-align: right;
+		}
+		& .box-card__title {
+			@media screen and (max-width: $md) {
+				width: 100%;
+				padding-bottom: 15px;
+				border-bottom: 1px solid $gray-line;
+			}
+		}
+		& .box-reviews__text {
+			@media screen and (max-width: $md) {
+				flex-direction: column;
+				align-items: flex-start;
+				gap: 3px 5px;
+			}
 		}
 	}
 	&__progress {

@@ -4230,10 +4230,15 @@ if (canUseDOM2) {
 }
 
 // src/scripts/modules/custom-scrollbar.ts
+var simpleBar;
 var tablePrice = document.querySelector(".table-price-wrap");
-var simpleBar = new SimpleBar(tablePrice, {
-  autoHide: true
-});
+if (tablePrice) {
+  if (window.innerWidth >= 767.98) {
+    simpleBar = new SimpleBar(tablePrice, {
+      autoHide: true
+    });
+  }
+}
 
 // src/scripts/modules/accordeon.ts
 var accordeons = document.querySelectorAll(".accordeon");
@@ -4254,15 +4259,11 @@ if (accordeons.length) {
       [...accordeonItems].forEach((item, index) => {
         const header = item.querySelector(".accordeon__header");
         let content = item.querySelector(".accordeon__content");
-        let tablePriceWrap = content?.querySelector(".table-price-wrap");
-        console.log(tablePriceWrap);
         if (accordeon.classList.contains("accordeon-price")) {
-          let addedHeight = tablePriceWrap?.classList.contains("simplebar-scrollable-x") ? 20 : 0;
-          content.style.height = `${simpleBar ? content?.scrollHeight + addedHeight : content?.scrollHeight}px`;
+          content.style.height = `${simpleBar ? content?.scrollHeight + 1 : content?.scrollHeight}px`;
           item.classList.add("active");
         }
         header.addEventListener("click", () => {
-          console.log("header");
           item.classList.toggle("active");
           if (item.classList.contains("active")) {
             content.style.height = `${content.scrollHeight}px`;
@@ -4275,6 +4276,53 @@ if (accordeons.length) {
     }
   });
 }
+function initAccordeonMobile() {
+  if (window.innerWidth <= 767.98) {
+    const accordeonsMobile = document.querySelectorAll(".accordeon-mobile");
+    if (accordeonsMobile.length) {
+      [...accordeonsMobile].forEach((accordeon) => {
+        if (accordeon) {
+          let removeAccordeonOpen2 = function(index1) {
+            [...accordeonItems].forEach((item2, index2) => {
+              if (index1 != index2) {
+                item2.classList.remove("active");
+                let contentTwo = item2.querySelector(".accordeon-mobile__content");
+                contentTwo.style.height = "0px";
+              }
+            });
+          };
+          var removeAccordeonOpen = removeAccordeonOpen2;
+          const accordeonItems = accordeon.querySelectorAll(".accordeon-mobile__item");
+          [...accordeonItems].forEach((item, index) => {
+            const header = item.querySelector(".accordeon-mobile__header");
+            let content = item.querySelector(".accordeon-mobile__content");
+            const accordeonParentContent = accordeon.closest(".accordeon__content");
+            header.addEventListener("click", () => {
+              console.log(accordeonParentContent);
+              item.classList.toggle("active");
+              if (item.classList.contains("active")) {
+                content.style.height = `${content.scrollHeight}px`;
+                accordeonParentContent.style.height = `100%`;
+                accordeonParentContent.style.maxHeight = `100%`;
+              } else {
+                accordeonParentContent.style.height = `100%`;
+                content.style.height = "0px";
+              }
+              accordeonItems.forEach((accItem) => {
+                if (!accItem.classList.contains("active")) {
+                  accordeonParentContent.style.maxHeight = "100%";
+                  accordeonParentContent.style.height = "100%";
+                }
+              });
+              removeAccordeonOpen2(index);
+            });
+          });
+        }
+      });
+    }
+  }
+}
+initAccordeonMobile();
 
 // src/scripts/detail-card.ts
 Oe.bind("[data-fancybox]", {
