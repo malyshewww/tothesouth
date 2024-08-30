@@ -1,6 +1,7 @@
 /* src/styles/favorites.scss */
 .custom-dropdown {
   width: 100%;
+  position: relative;
 }
 .custom-dropdown__wrapper {
   position: relative;
@@ -928,8 +929,19 @@
   display: grid;
   gap: 20px;
 }
+.favorites .custom-dropdown {
+  display: none;
+}
+.favorites .select-list__item::after {
+  content: none;
+}
+.favorites .select-list__item.current .checkbox .checkbox-count,
+.favorites .select-list__item.current .checkbox input:checked ~ .checkbox-count,
+.favorites .select-list__item.current .checkbox label {
+  color: #1c8cf3;
+}
 .favorites .aside-navigation {
-  padding: 20px 20px 25px;
+  padding: 23px 19px 25px;
 }
 .favorites .aside-navigation__item:not(:last-child) {
   padding-bottom: 30px;
@@ -1056,6 +1068,13 @@
     max-width: 104px;
     margin-left: auto;
   }
+  .favorites__body {
+    grid-template-columns: 100%;
+    gap: 20px;
+  }
+  .favorites__cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 @media screen and (max-width: 767.98px) {
   .form-object {
@@ -1119,6 +1138,32 @@
   .hotel-card__btn-place {
     padding: 9px;
     min-height: 40px;
+  }
+  .favorites__body {
+    margin-bottom: -10px;
+  }
+  .favorites__cards {
+    grid-template-columns: 100%;
+  }
+  .favorites .aside {
+    display: none;
+  }
+  .favorites .custom-dropdown {
+    display: block;
+  }
+  .favorites .checkbox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    pointer-events: none;
+  }
+  .favorites .checkbox label span {
+    display: none;
+  }
+  .favorites .checkbox input:checked ~ .checkbox-count {
+    color: #08151a;
   }
 }
 @media screen and (min-width: 1024px) {

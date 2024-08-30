@@ -276,6 +276,7 @@
 }
 .custom-dropdown {
   width: 100%;
+  position: relative;
 }
 .custom-dropdown__wrapper {
   position: relative;

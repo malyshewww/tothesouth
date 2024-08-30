@@ -1,0 +1,232 @@
+@import '../libs/vanilla-calendar.min.scss';
+
+.vanilla-calendar {
+	padding: 16px 16px 12px 16px;
+	width: 664px;
+	border-radius: 10px;
+	box-shadow: 5px 4px 40px 0 rgba(70, 91, 121, 0.15);
+	@media screen and (max-width: $md) {
+		position: fixed;
+		top: auto !important;
+		left: 0 !important;
+		bottom: 0;
+		width: 100%;
+		transform: translateY(100%);
+		z-index: 10;
+		opacity: 0;
+		border-radius: 0;
+		transition:
+			opacity $time,
+			transform $time;
+		&.active {
+			opacity: 1;
+			transform: translateY(0);
+			// & .vanilla-calendar-container {
+			// 	opacity: 1;
+			// 	transform: translateY(0);
+			// }
+		}
+	}
+}
+// [data-calendar-theme='light'].vanilla-calendar {
+// 	@media screen and (max-width: $md) {
+// 		background-color: rgba(#000, 0.8);
+// 		padding: 0;
+// 	}
+// }
+// .vanilla-calendar-container {
+// 	@media screen and (max-width: $md) {
+// 		overflow-y: auto;
+// 		overflow-x: hidden;
+// 		margin-top: auto;
+// 		background-color: $white;
+// 		padding: 16px 16px 12px 16px;
+// 		box-shadow: 5px 4px 40px 0 rgba(70, 91, 121, 0.15);
+// 		transform: translateY(100%);
+// 		opacity: 0;
+// 		transition:
+// 			transform $time,
+// 			opacity $time;
+// 	}
+// }
+.vanilla-calendar-header {
+	margin-bottom: 0;
+}
+[data-calendar-theme='light'] .vanilla-calendar-header__content,
+[data-calendar-theme='light'] .vanilla-calendar-month,
+[data-calendar-theme='light'] .vanilla-calendar-year {
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 133%;
+	color: $black;
+}
+.vanilla-calendar-arrow {
+	width: 32px;
+	height: 32px;
+	&::before {
+		background-size: 12px 12px;
+		@media screen and (max-width: $md) {
+			background-size: 14px 14px;
+		}
+	}
+}
+.vanilla-calendar-week__day {
+	width: 40px;
+	height: 40px;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 133%;
+	text-align: center;
+}
+[data-calendar-theme='light'] .vanilla-calendar-week__day {
+	color: $gray-text;
+}
+.vanilla-calendar-week {
+	margin-bottom: 4px;
+}
+.vanilla-calendar-day {
+	width: 40px;
+	height: 40px;
+}
+.vanilla-calendar-day__btn {
+	font-size: 14px;
+	line-height: 171%;
+}
+
+.vanilla-calendar-days {
+	row-gap: 4px;
+}
+
+.vanilla-calendar-day_selected-first,
+.vanilla-calendar-day_selected-last {
+	border-radius: 8px;
+	position: relative;
+	z-index: 5;
+	color: $white;
+}
+[data-calendar-theme='light'] .vanilla-calendar-day_selected-intermediate .vanilla-calendar-day__btn_selected,
+[data-calendar-theme='light'] .vanilla-calendar-day_selected-intermediate .vanilla-calendar-day__btn_selected:hover {
+	background-color: $gray-background;
+	color: $blue-1;
+}
+[data-calendar-theme='light']
+	.vanilla-calendar-day_selected-intermediate
+	.vanilla-calendar-day__btn_weekend.vanilla-calendar-day__btn_selected,
+[data-calendar-theme='light']
+	.vanilla-calendar-day_selected-intermediate
+	.vanilla-calendar-day__btn_holiday.vanilla-calendar-day__btn_selected,
+[data-calendar-theme='light']
+	.vanilla-calendar-day_selected-intermediate
+	.vanilla-calendar-day__btn_weekend.vanilla-calendar-day__btn_selected:hover,
+[data-calendar-theme='light']
+	.vanilla-calendar-day_selected-intermediate
+	.vanilla-calendar-day__btn_holiday.vanilla-calendar-day__btn_selected:hover {
+	background: $gray-background;
+	color: $blue-1;
+}
+// [data-calendar-theme='light'] .vanilla-calendar-day__btn_today {
+// 	background-color: transparent;
+// }
+[data-calendar-theme='light'] .vanilla-calendar-day__btn_weekend.vanilla-calendar-day__btn_selected,
+[data-calendar-theme='light'] .vanilla-calendar-day__btn_holiday.vanilla-calendar-day__btn_selected,
+[data-calendar-theme='light'] .vanilla-calendar-day__btn_weekend.vanilla-calendar-day__btn_selected:hover {
+	background-color: $blue-1;
+	color: $white;
+}
+[data-calendar-theme='light'] .vanilla-calendar-day__btn_holiday.vanilla-calendar-day__btn_selected:hover,
+.vanilla-calendar-day_selected-last .vanilla-calendar-day__btn_selected {
+	border-radius: 8px;
+}
+.vanilla-calendar-day_selected-first .vanilla-calendar-day__btn_selected {
+	border-radius: 8px;
+}
+.vanilla-calendar-day_selected-last .vanilla-calendar-day__btn_selected {
+	border-radius: 8px;
+}
+
+[data-calendar-theme='light'] .vanilla-calendar-week__day_weekend {
+	color: $gray-text;
+}
+[data-calendar-theme='light'] .vanilla-calendar-day__btn_weekend,
+[data-calendar-theme='light'] .vanilla-calendar-day__btn_holiday {
+	color: $black;
+}
+[data-calendar-theme='light'] .vanilla-calendar-day__btn_weekend:hover,
+[data-calendar-theme='light'] .vanilla-calendar-day__btn_holiday:hover,
+[data-calendar-theme='light'] .vanilla-calendar-day__btn_weekend.vanilla-calendar-day__btn_hover,
+[data-calendar-theme='light'] .vanilla-calendar-day__btn_holiday.vanilla-calendar-day__btn_hover {
+	background-color: $gray-background;
+}
+.vanilla-calendar-choices {
+	width: 100%;
+	max-width: 392px;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	border: 1px solid $gray-line;
+	min-height: 56px;
+	border-radius: 12px;
+	position: relative;
+	margin-bottom: 24px;
+	&::before {
+		content: '';
+		height: 100%;
+		width: 50%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		border: 2px solid $blue-1;
+		border-radius: 12px;
+		z-index: 2;
+		transition: transform $time;
+	}
+	&.active {
+		&::before {
+			transform: translateX(100%);
+		}
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		padding: 12px 16px;
+	}
+	&__caption {
+		font-weight: 400;
+		font-size: 12px;
+		line-height: 133%;
+		color: $gray-text;
+	}
+	&__value {
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 171%;
+	}
+}
+.vanilla-calendar-footer {
+	margin-left: -16px;
+	margin-right: -16px;
+	margin-top: 32px;
+	padding-top: 12px;
+	display: flex;
+	justify-content: flex-end;
+	border-top: 0.5px solid #ebebeb;
+	@media screen and (max-width: $md) {
+		border: none;
+		padding: 0;
+	}
+}
+.vanilla-calendar-footer__buttons {
+	margin-right: 16px;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+.vanilla-calendar-button {
+	padding: 8px 12px;
+	min-height: 32px;
+	font-weight: 600;
+	font-size: 12px;
+	line-height: 133%;
+	border-radius: 8px;
+}

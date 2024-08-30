@@ -1,4 +1,4 @@
-import "../chunks/chunk-D3KMJQV6.js";
+import "../chunks/chunk-JFZJ3IS6.js";
 
 // src/scripts/city.ts
 document.addEventListener("DOMContentLoaded", () => {

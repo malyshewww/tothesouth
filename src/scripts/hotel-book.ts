@@ -7,8 +7,10 @@ import maskPhone from './modules/mask-phone';
 maskPhone();
 
 const quantityBlocks = document.querySelectorAll('.choice-dropdown__item');
-let outputAdults = '';
-let outputChildren = '';
+const inputAdalts = document.querySelector('input[name="count_adults"]');
+const inputChildren = document.querySelector('input[name="count_children"]');
+let outputAdults = inputAdalts?.value;
+let outputChildren = inputChildren?.value;
 for (let elem of quantityBlocks) {
 	const buttonPlus = elem.querySelector('.button-plus');
 	const buttonMinus = elem.querySelector('.button-minus');
@@ -52,6 +54,7 @@ for (let elem of quantityBlocks) {
 }
 
 const buttonSave = document.querySelector('.choice-dropdown__save-btn');
+const overlay = document.querySelector('.overlay');
 if (buttonSave) {
 	buttonSave.addEventListener('click', (e) => {
 		console.log('save');
@@ -61,6 +64,7 @@ if (buttonSave) {
 			dropdownButtonText.innerHTML = outputAdults + ', ' + outputChildren;
 			dropdownButton.classList.contains('active') && dropdownButton.classList.remove('active');
 		}
+		overlay?.classList.remove('active');
 	});
 }
 

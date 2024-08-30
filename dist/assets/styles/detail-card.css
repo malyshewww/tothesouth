@@ -1844,11 +1844,8 @@
   .places__list-item {
     align-items: flex-end;
   }
-  .table-price {
+  .table-price-wrap.expanded {
     display: none;
-  }
-  .table-price.table-price-services {
-    display: block;
   }
   .table-price tr {
     justify-content: space-between;

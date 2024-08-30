@@ -11,13 +11,69 @@
 		display: grid;
 		grid-template-columns: 270px 1fr;
 		gap: 30px;
+		@media screen and (max-width: $xl) {
+			grid-template-columns: 100%;
+			gap: 20px;
+		}
+		@media screen and (max-width: $md) {
+			margin-bottom: -10px;
+		}
 	}
 	&__cards {
 		display: grid;
 		gap: 20px;
+		@media screen and (max-width: $xl) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@media screen and (max-width: $md) {
+			grid-template-columns: 100%;
+		}
+	}
+	& .aside {
+		@media screen and (max-width: $md) {
+			display: none;
+		}
+	}
+	& .custom-dropdown {
+		display: none;
+		@media screen and (max-width: $md) {
+			display: block;
+		}
+	}
+	& .select-list {
+		&__item {
+			&::after {
+				content: none;
+			}
+			&.current {
+				& .checkbox {
+					& .checkbox-count,
+					& input:checked ~ .checkbox-count,
+					& label {
+						color: $blue;
+					}
+				}
+			}
+		}
+	}
+	& .checkbox {
+		@media screen and (max-width: $md) {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			gap: 20px;
+			width: 100%;
+			pointer-events: none;
+			& label span {
+				display: none;
+			}
+			& input:checked ~ .checkbox-count {
+				color: $black;
+			}
+		}
 	}
 	& .aside-navigation {
-		padding: 20px 20px 25px;
+		padding: 23px 19px 25px;
 		&__item {
 			&:not(:last-child) {
 				padding-bottom: 30px;

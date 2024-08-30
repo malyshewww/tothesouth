@@ -1235,8 +1235,172 @@
   --tw-bg-opacity: 1;
   background-color: rgb(71 85 105/var(--tw-bg-opacity));
 }
+.vanilla-calendar {
+  padding: 16px 16px 12px 16px;
+  width: 664px;
+  border-radius: 10px;
+  box-shadow: 5px 4px 40px 0 rgba(70, 91, 121, 0.15);
+}
+.vanilla-calendar-header {
+  margin-bottom: 0;
+}
+[data-calendar-theme=light] .vanilla-calendar-header__content,
+[data-calendar-theme=light] .vanilla-calendar-month,
+[data-calendar-theme=light] .vanilla-calendar-year {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 133%;
+  color: #08151a;
+}
+.vanilla-calendar-arrow {
+  width: 32px;
+  height: 32px;
+}
+.vanilla-calendar-arrow::before {
+  background-size: 12px 12px;
+}
+.vanilla-calendar-week__day {
+  width: 40px;
+  height: 40px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 133%;
+  text-align: center;
+}
+[data-calendar-theme=light] .vanilla-calendar-week__day {
+  color: #8897b1;
+}
+.vanilla-calendar-week {
+  margin-bottom: 4px;
+}
+.vanilla-calendar-day {
+  width: 40px;
+  height: 40px;
+}
+.vanilla-calendar-day__btn {
+  font-size: 14px;
+  line-height: 171%;
+}
+.vanilla-calendar-days {
+  row-gap: 4px;
+}
+.vanilla-calendar-day_selected-first,
+.vanilla-calendar-day_selected-last {
+  border-radius: 8px;
+  position: relative;
+  z-index: 5;
+  color: #fff;
+}
+[data-calendar-theme=light] .vanilla-calendar-day_selected-intermediate .vanilla-calendar-day__btn_selected,
+[data-calendar-theme=light] .vanilla-calendar-day_selected-intermediate .vanilla-calendar-day__btn_selected:hover {
+  background-color: #f7f9fe;
+  color: #18abc6;
+}
+[data-calendar-theme=light] .vanilla-calendar-day_selected-intermediate .vanilla-calendar-day__btn_weekend.vanilla-calendar-day__btn_selected,
+[data-calendar-theme=light] .vanilla-calendar-day_selected-intermediate .vanilla-calendar-day__btn_holiday.vanilla-calendar-day__btn_selected,
+[data-calendar-theme=light] .vanilla-calendar-day_selected-intermediate .vanilla-calendar-day__btn_weekend.vanilla-calendar-day__btn_selected:hover,
+[data-calendar-theme=light] .vanilla-calendar-day_selected-intermediate .vanilla-calendar-day__btn_holiday.vanilla-calendar-day__btn_selected:hover {
+  background: #f7f9fe;
+  color: #18abc6;
+}
+[data-calendar-theme=light] .vanilla-calendar-day__btn_weekend.vanilla-calendar-day__btn_selected,
+[data-calendar-theme=light] .vanilla-calendar-day__btn_holiday.vanilla-calendar-day__btn_selected,
+[data-calendar-theme=light] .vanilla-calendar-day__btn_weekend.vanilla-calendar-day__btn_selected:hover {
+  background-color: #18abc6;
+  color: #fff;
+}
+[data-calendar-theme=light] .vanilla-calendar-day__btn_holiday.vanilla-calendar-day__btn_selected:hover,
+.vanilla-calendar-day_selected-last .vanilla-calendar-day__btn_selected {
+  border-radius: 8px;
+}
+.vanilla-calendar-day_selected-first .vanilla-calendar-day__btn_selected {
+  border-radius: 8px;
+}
+.vanilla-calendar-day_selected-last .vanilla-calendar-day__btn_selected {
+  border-radius: 8px;
+}
+[data-calendar-theme=light] .vanilla-calendar-week__day_weekend {
+  color: #8897b1;
+}
+[data-calendar-theme=light] .vanilla-calendar-day__btn_weekend,
+[data-calendar-theme=light] .vanilla-calendar-day__btn_holiday {
+  color: #08151a;
+}
+[data-calendar-theme=light] .vanilla-calendar-day__btn_weekend:hover,
+[data-calendar-theme=light] .vanilla-calendar-day__btn_holiday:hover,
+[data-calendar-theme=light] .vanilla-calendar-day__btn_weekend.vanilla-calendar-day__btn_hover,
+[data-calendar-theme=light] .vanilla-calendar-day__btn_holiday.vanilla-calendar-day__btn_hover {
+  background-color: #f7f9fe;
+}
+.vanilla-calendar-choices {
+  width: 100%;
+  max-width: 392px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border: 1px solid #e1e3eb;
+  min-height: 56px;
+  border-radius: 12px;
+  position: relative;
+  margin-bottom: 24px;
+}
+.vanilla-calendar-choices::before {
+  content: "";
+  height: 100%;
+  width: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 2px solid #18abc6;
+  border-radius: 12px;
+  z-index: 2;
+  transition: transform 0.3s;
+}
+.vanilla-calendar-choices.active::before {
+  transform: translateX(100%);
+}
+.vanilla-calendar-choices__item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 12px 16px;
+}
+.vanilla-calendar-choices__caption {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 133%;
+  color: #8897b1;
+}
+.vanilla-calendar-choices__value {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 171%;
+}
+.vanilla-calendar-footer {
+  margin-left: -16px;
+  margin-right: -16px;
+  margin-top: 32px;
+  padding-top: 12px;
+  display: flex;
+  justify-content: flex-end;
+  border-top: 0.5px solid #ebebeb;
+}
+.vanilla-calendar-footer__buttons {
+  margin-right: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.vanilla-calendar-button {
+  padding: 8px 12px;
+  min-height: 32px;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 133%;
+  border-radius: 8px;
+}
 .custom-dropdown {
   width: 100%;
+  position: relative;
 }
 .custom-dropdown__wrapper {
   position: relative;
@@ -1768,167 +1932,6 @@
 .noUi-connects {
   border-radius: 0;
 }
-.vanilla-calendar {
-  padding: 16px 16px 12px 16px;
-  width: 664px;
-}
-.vanilla-calendar-header {
-  margin-bottom: 0;
-}
-[data-calendar-theme=light] .vanilla-calendar-header__content,
-[data-calendar-theme=light] .vanilla-calendar-month,
-[data-calendar-theme=light] .vanilla-calendar-year {
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 133%;
-  color: #08151a;
-}
-.vanilla-calendar-arrow {
-  width: 32px;
-  height: 32px;
-}
-.vanilla-calendar-arrow::before {
-  background-size: 12px 12px;
-}
-.vanilla-calendar-week__day {
-  width: 40px;
-  height: 40px;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 133%;
-  text-align: center;
-}
-[data-calendar-theme=light] .vanilla-calendar-week__day {
-  color: #8897b1;
-}
-.vanilla-calendar-week {
-  margin-bottom: 4px;
-}
-.vanilla-calendar-day {
-  width: 40px;
-  height: 40px;
-}
-.vanilla-calendar-day__btn {
-  font-size: 14px;
-  line-height: 171%;
-}
-.vanilla-calendar-days {
-  row-gap: 4px;
-}
-.vanilla-calendar-day_selected-first,
-.vanilla-calendar-day_selected-last {
-  border-radius: 8px;
-  position: relative;
-  z-index: 5;
-  color: #fff;
-}
-[data-calendar-theme=light] .vanilla-calendar-day_selected-intermediate .vanilla-calendar-day__btn_selected,
-[data-calendar-theme=light] .vanilla-calendar-day_selected-intermediate .vanilla-calendar-day__btn_selected:hover {
-  background-color: #f7f9fe;
-  color: #18abc6;
-}
-[data-calendar-theme=light] .vanilla-calendar-day_selected-intermediate .vanilla-calendar-day__btn_weekend.vanilla-calendar-day__btn_selected,
-[data-calendar-theme=light] .vanilla-calendar-day_selected-intermediate .vanilla-calendar-day__btn_holiday.vanilla-calendar-day__btn_selected,
-[data-calendar-theme=light] .vanilla-calendar-day_selected-intermediate .vanilla-calendar-day__btn_weekend.vanilla-calendar-day__btn_selected:hover,
-[data-calendar-theme=light] .vanilla-calendar-day_selected-intermediate .vanilla-calendar-day__btn_holiday.vanilla-calendar-day__btn_selected:hover {
-  background: #f7f9fe;
-  color: #18abc6;
-}
-[data-calendar-theme=light] .vanilla-calendar-day__btn_weekend.vanilla-calendar-day__btn_selected,
-[data-calendar-theme=light] .vanilla-calendar-day__btn_holiday.vanilla-calendar-day__btn_selected,
-[data-calendar-theme=light] .vanilla-calendar-day__btn_weekend.vanilla-calendar-day__btn_selected:hover {
-  background-color: #18abc6;
-  color: #fff;
-}
-[data-calendar-theme=light] .vanilla-calendar-day__btn_holiday.vanilla-calendar-day__btn_selected:hover,
-.vanilla-calendar-day_selected-last .vanilla-calendar-day__btn_selected {
-  border-radius: 8px;
-}
-.vanilla-calendar-day_selected-first .vanilla-calendar-day__btn_selected {
-  border-radius: 8px;
-}
-.vanilla-calendar-day_selected-last .vanilla-calendar-day__btn_selected {
-  border-radius: 8px;
-}
-[data-calendar-theme=light] .vanilla-calendar-week__day_weekend {
-  color: #8897b1;
-}
-[data-calendar-theme=light] .vanilla-calendar-day__btn_weekend,
-[data-calendar-theme=light] .vanilla-calendar-day__btn_holiday {
-  color: #08151a;
-}
-[data-calendar-theme=light] .vanilla-calendar-day__btn_weekend:hover,
-[data-calendar-theme=light] .vanilla-calendar-day__btn_holiday:hover,
-[data-calendar-theme=light] .vanilla-calendar-day__btn_weekend.vanilla-calendar-day__btn_hover,
-[data-calendar-theme=light] .vanilla-calendar-day__btn_holiday.vanilla-calendar-day__btn_hover {
-  background-color: #f7f9fe;
-}
-.vanilla-calendar-choices {
-  width: 100%;
-  max-width: 392px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  border: 1px solid #e1e3eb;
-  height: 56px;
-  border-radius: 12px;
-  position: relative;
-  margin-bottom: 24px;
-}
-.vanilla-calendar-choices::before {
-  content: "";
-  height: 100%;
-  width: 50%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  border: 2px solid #18abc6;
-  border-radius: 12px;
-  z-index: 2;
-  transition: transform 0.3s;
-}
-.vanilla-calendar-choices.active::before {
-  transform: translateX(100%);
-}
-.vanilla-calendar-choices__item {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 12px 16px;
-}
-.vanilla-calendar-choices__caption {
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 133%;
-  color: #8897b1;
-}
-.vanilla-calendar-choices__value {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 171%;
-}
-.vanilla-calendar-footer {
-  margin-left: -16px;
-  margin-right: -16px;
-  margin-top: 32px;
-  padding-top: 12px;
-  display: flex;
-  justify-content: flex-end;
-  border-top: 0.5px solid #ebebeb;
-}
-.vanilla-calendar-footer__buttons {
-  margin-right: 16px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.vanilla-calendar-button {
-  padding: 8px 12px;
-  min-height: 32px;
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 133%;
-  border-radius: 8px;
-}
 .hotel-book__wrapper {
   display: grid;
   grid-template-columns: 1fr 372px;
@@ -1938,7 +1941,7 @@
 .hotel-book__content {
   border: 1px solid #e1e3eb;
   border-radius: 10px;
-  padding: 40px;
+  padding: 39px;
   background: #fff;
 }
 .hotel-book__form {
@@ -1958,16 +1961,12 @@
 .hotel-book__form-items {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
+  gap: 20px 30px;
 }
 .hotel-book__field-items {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-}
-.hotel-book__field-items .form-item:first-child,
-.hotel-book__field-items .form-item:last-child {
-  grid-column: span 2;
+  gap: 20px 30px;
 }
 .hotel-book__form-footer {
   display: grid;
@@ -2002,7 +2001,7 @@
   opacity: 1;
   pointer-events: all;
 }
-.hotel-book__notice {
+.hotel-book-notice {
   border: 1px solid #e1e3eb;
   border-radius: 10px;
   padding: 39px;
@@ -2020,20 +2019,10 @@
   position: relative;
   margin-bottom: 30px;
 }
-.result-group__inner::before {
-  content: "";
-  width: 1px;
-  height: 100%;
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, 0);
-  top: 0;
-  background-color: #e1e3eb;
-}
 .result-group__items {
   display: flex;
   justify-content: space-between;
-  gap: 80px;
+  gap: 50px;
   width: 42%;
 }
 .result-group__item {
@@ -2048,6 +2037,8 @@
 .result-group__value {
   font-weight: 600;
   line-height: 130%;
+  display: flex;
+  align-self: flex-end;
 }
 .choice-dropdown {
   position: absolute;
@@ -2058,7 +2049,7 @@
   left: 0;
   box-shadow: 0 4px 30px 0 rgba(74, 77, 108, 0.15);
   background: white;
-  z-index: 2;
+  z-index: 10;
   transform: translateY(20%);
   opacity: 0;
   transition: transform 0.3s, opacity 0.3s;
@@ -2153,7 +2144,7 @@
 .hotel-book-preview {
   border: 1px solid #e1e3eb;
   border-radius: 10px;
-  padding: 40px;
+  padding: 39px 40px;
   background: #fff;
   display: grid;
   gap: 20px;
@@ -2163,14 +2154,14 @@
   gap: 10px;
 }
 .hotel-book-preview__image {
-  padding-bottom: 68.4931506849%;
+  padding-bottom: 68.9655172414%;
   overflow: hidden;
   border-radius: 10px;
 }
 .hotel-book-preview__title {
   font-weight: 700;
   font-size: 18px;
-  line-height: 120%;
+  line-height: 130%;
 }
 .hotel-book-preview__parameters {
   padding: 0;
@@ -2184,6 +2175,7 @@
 .hotel-book-preview__parameter {
   font-weight: 400;
   font-size: 12px;
+  line-height: 16px;
   display: flex;
   align-items: center;
   gap: 5px;
@@ -2239,8 +2231,54 @@
   .noUi-target {
     width: calc(100% - 13px);
   }
+  .hotel-book__wrapper {
+    grid-template-columns: 100%;
+    gap: 10px;
+  }
+  .hotel-book__content {
+    border: none;
+    border-radius: 0;
+    padding: 20px 12px;
+    margin: 0 -12px;
+  }
+  .hotel-book__aside {
+    order: -1;
+    padding: 20px 12px;
+    margin: 0 -12px;
+    background-color: #fff;
+  }
+  .hotel-book-preview {
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    background-color: transparent;
+    gap: 10px;
+  }
 }
 @media screen and (max-width: 767.98px) {
+  .vanilla-calendar {
+    position: fixed;
+    top: auto !important;
+    left: 0 !important;
+    bottom: 0;
+    width: 100%;
+    transform: translateY(100%);
+    z-index: 10;
+    opacity: 0;
+    border-radius: 0;
+    transition: opacity 0.3s, transform 0.3s;
+  }
+  .vanilla-calendar.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .vanilla-calendar-arrow::before {
+    background-size: 14px 14px;
+  }
+  .vanilla-calendar-footer {
+    border: none;
+    padding: 0;
+  }
   .form-object {
     background-color: #fff;
     padding: 20px 12px;
@@ -2258,6 +2296,73 @@
   }
   .noUi-target {
     width: calc(100% - 13px);
+  }
+  .hotel-book .page-title {
+    margin-bottom: 10px;
+  }
+  .hotel-book__wrapper {
+    margin-bottom: -30px;
+  }
+  .hotel-book__form {
+    gap: 10px;
+  }
+  .hotel-book__groups {
+    gap: 20px;
+  }
+  .hotel-book__group-caption {
+    margin-bottom: 10px;
+    line-height: 130%;
+  }
+  .hotel-book__form-items {
+    grid-template-columns: 100%;
+    gap: 10px;
+  }
+  .hotel-book__field-items {
+    grid-template-columns: 100%;
+    gap: 10px;
+  }
+  .hotel-book__form-footer {
+    gap: 20px;
+  }
+  .hotel-book__buttons {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .hotel-book-notice {
+    margin-bottom: -20px;
+  }
+  .result-group__inner {
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  .result-group__items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+  }
+  .choice-dropdown {
+    position: fixed;
+    bottom: 0;
+    top: auto;
+    width: 100%;
+    transform: translateY(100%);
+    border-radius: 0;
+  }
+  .hotel-book-preview__image {
+    display: none;
+  }
+}
+@media screen and (min-width: 767.98px) {
+  .hotel-book__field-items .form-item:first-child,
+  .hotel-book__field-items .form-item:last-child {
+    grid-column: span 2;
+  }
+  .result-group__items:nth-child(2) {
+    width: 46%;
+    padding-left: 45px;
+    border-left: 1px solid #e1e3eb;
   }
 }
 @media (any-hover: hover) {

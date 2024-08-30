@@ -38,6 +38,18 @@ body {
 		background-color $time,
 		color $time,
 		border-color $time;
+	&:disabled,
+	&.disabled {
+		background-color: rgba($gray-text, 0.6);
+		border-color: transparent;
+		color: $white;
+		pointer-events: none;
+		cursor: default;
+		&::after,
+		&::before {
+			background-color: currentColor;
+		}
+	}
 }
 
 .btn-circle {
@@ -526,6 +538,7 @@ form .btn-detail {
 	font-size: 14px;
 	line-height: 140%;
 	text-align: center;
+	justify-content: space-between;
 	color: $gray-text;
 	width: fit-content;
 	transition:
@@ -554,6 +567,11 @@ form .btn-detail {
 			background-color: $blue-1;
 			border-color: $blue-1;
 		}
+	}
+	@media screen and (max-width: $md) {
+		width: 100%;
+		padding: 8px 7px;
+		gap: 5px;
 	}
 }
 

@@ -156,17 +156,16 @@
 	&.simplebar-scrollable-x {
 		padding-bottom: 20px;
 	}
+	&.expanded {
+		@media screen and (max-width: $md) {
+			display: none;
+		}
+	}
 }
 .table-price {
 	border-collapse: collapse;
 	display: flex;
 	flex-direction: column;
-	@media screen and (max-width: $md) {
-		display: none;
-		&.table-price-services {
-			display: block;
-		}
-	}
 	& tr {
 		min-height: 38px;
 		display: flex;

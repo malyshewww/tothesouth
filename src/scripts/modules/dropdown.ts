@@ -1,4 +1,6 @@
 // Dropdown
+const overlay = document.querySelector('.overlay');
+
 function checkDropdownValue() {
 	const dropdowns = document.querySelectorAll('.custom-dropdown');
 	[...dropdowns].forEach((elem) => {
@@ -29,12 +31,18 @@ function deactivateAllDropdowns() {
 }
 function handleDropdownClicks(event) {
 	const target = event.target as HTMLElement;
-
+	if (target.closest('.overlay')) {
+		overlay?.classList.remove('active');
+	}
 	if (target.matches('.custom-dropdown__btn')) {
 		if (target.classList.contains('active')) {
 			target.classList.remove('active');
+			overlay?.classList.remove('active');
 		} else {
 			// deactivateAllDropdowns();
+			if (target.classList.contains('guests') && window.innerWidth <= 767.98) {
+				overlay?.classList.add('active');
+			}
 			target.classList.add('active');
 		}
 	} else if (
@@ -57,6 +65,7 @@ function handleDropdownClicks(event) {
 	// 	deactivateAllDropdowns();
 	// }
 	if (target.closest('.select-list__item')) {
+		console.log(target);
 		const parent = target.closest('.custom-dropdown') as HTMLElement;
 		const dropdownButton = parent.querySelector('.custom-dropdown__btn') as HTMLElement;
 		const dropdownInput = parent.querySelector('.custom-dropdown__input') as HTMLElement;

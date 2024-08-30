@@ -25,13 +25,15 @@ block content
 									.reviews-item__place.place-reviews 
 										.place-reviews__image.ibg
 											img(src=`assets/images/user/reviews/1.jpg`, alt="место")
-										.place-reviews__name.anim-title
-											span Гостиница “Южный Берег”
-										address.place-reviews__address Голубицкая, ул.&nbsp;Красная, д.&nbsp;178
+										.place-reviews__header
+											.place-reviews__name.anim-title
+												span Гостиница “Южный Берег”
+											address.place-reviews__address Голубицкая, ул.&nbsp;Красная, д.&nbsp;178
 									.reviews-item__info 
 										.reviews-item__author Марина
 										.reviews-item__date 12.08.22
 										.reviews-item__rating 
 											+rating
-										.reviews-item__text 
+										.reviews-item__text.text-clamp
 											p Шикарное расположение, прямо в самом-самом центре. Рядом остановка есть, до парка Краснодар удобно добираться. В хостеле есть разделение на женские и мужские номера. Контингент приличный. Белье чистое и в помещении для хостела тоже довольно чисто. Для бюджетного варианта с хорошим расположением самое то
+											+btnDetail("Подробнее")

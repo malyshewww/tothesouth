@@ -2,7 +2,7 @@ import {
   mask_phone_default
 } from "../chunks/chunk-VXRPEELR.js";
 import "../chunks/chunk-FDCBVWR5.js";
-import "../chunks/chunk-D3KMJQV6.js";
+import "../chunks/chunk-JFZJ3IS6.js";
 
 // node_modules/vanilla-calendar-pro/build/vanilla-calendar.min.mjs
 var __defProp = Object.defineProperty;
@@ -642,64 +642,131 @@ var VanillaCalendar = class extends DefaultOptionsCalendar {
 
 // src/scripts/modules/calendar.ts
 var resultString = "";
+var overlay = document.querySelector(".overlay");
+var device = window.innerWidth >= 767.98 ? "desktop" : "mobile";
+var calendarOptions = (device2) => {
+  if (device2 === "desktop") {
+    return {
+      DOMTemplates: {
+        multiple: `
+				<div class="vanilla-calendar-container">
+					<div class="vanilla-calendar-choices">
+						<div class="vanilla-calendar-choices__item">
+							<div class="vanilla-calendar-choices__caption">Заезд</div>
+							<div class="vanilla-calendar-choices__value" id="vanilla-calendar-value-from"></div>
+						</div>
+						<div class="vanilla-calendar-choices__item">
+							<div class="vanilla-calendar-choices__caption">Выезд</div>
+							<div class="vanilla-calendar-choices__value" id="vanilla-calendar-value-to">
+							</div>
+						</div>
+					</div>
+					<div class="vanilla-calendar-grid">
+						<#Multiple>
+						<div class="vanilla-calendar-column">
+							<div class="vanilla-calendar-header">
+								<#ArrowPrev />
+							<div class="vanilla-calendar-header__content">
+								<#Month />
+								<#Year />
+							</div>
+							<#ArrowNext />
+							</div>
+							<div class="vanilla-calendar-wrapper">
+							<#WeekNumbers />
+							<div class="vanilla-calendar-content">
+								<#Week />
+								<#Days />
+							</div>
+							</div>
+						</div>
+						<#/Multiple>
+					</div>
+					<div class="vanilla-calendar-footer">
+						<div class="vanilla-calendar-footer__buttons">
+						<button class="vanilla-calendar-button vanilla-calendar-button-reset btn btn-blue-transparent" id="vanilla-calendar-button-reset" type="button">Сбросить</button>
+						<button class="vanilla-calendar-button vanilla-calendar-button-add btn btn-blue" id="vanilla-calendar-button-add" type="button">Применить</button>
+						</div>
+					</div> 
+					<#ControlTime />
+				</div>
+				`
+      },
+      input: true,
+      type: "multiple",
+      settings: {
+        lang: "ru",
+        range: {
+          disablePast: true
+        },
+        selection: {
+          day: "multiple-ranged"
+        },
+        visibility: {
+          weekend: false,
+          daysOutside: false
+        }
+      }
+    };
+  } else {
+    return {
+      DOMTemplates: {
+        default: `
+					<div class="vanilla-calendar-container">
+						<div class="vanilla-calendar-choices">
+							<div class="vanilla-calendar-choices__item">
+								<div class="vanilla-calendar-choices__caption">Заезд</div>
+								<div class="vanilla-calendar-choices__value" id="vanilla-calendar-value-from"></div>
+							</div>
+							<div class="vanilla-calendar-choices__item">
+								<div class="vanilla-calendar-choices__caption">Выезд</div>
+								<div class="vanilla-calendar-choices__value" id="vanilla-calendar-value-to">
+								</div>
+							</div>
+						</div>
+						<div class="vanilla-calendar-header">
+							<#ArrowPrev />
+							<div class="vanilla-calendar-header__content">
+							<#Month />
+							<#Year />
+							</div>
+							<#ArrowNext />
+						</div>
+						<div class="vanilla-calendar-wrapper">
+							<#WeekNumbers />
+							<div class="vanilla-calendar-content">
+							<#Week />
+							<#Days />
+							</div>
+						</div>
+						<div class="vanilla-calendar-footer">
+							<div class="vanilla-calendar-footer__buttons">
+								<button class="vanilla-calendar-button vanilla-calendar-button-reset btn btn-blue-transparent" id="vanilla-calendar-button-reset" type="button">Сбросить</button>
+								<button class="vanilla-calendar-button vanilla-calendar-button-add btn btn-blue" id="vanilla-calendar-button-add" type="button">Применить</button>
+							</div>
+						</div> 
+					<#ControlTime />
+				</div> 
+				`
+      },
+      type: "default",
+      input: true,
+      settings: {
+        lang: "ru",
+        selection: {
+          day: "multiple-ranged"
+        },
+        visibility: {
+          weekend: false,
+          daysOutside: false
+        }
+      }
+    };
+  }
+};
+var opts = calendarOptions(device);
 var options = {
-  DOMTemplates: {
-    multiple: `
-        <div class="vanilla-calendar-choices">
-            <div class="vanilla-calendar-choices__item">
-                <div class="vanilla-calendar-choices__caption">Заезд</div>
-                <div class="vanilla-calendar-choices__value" id="vanilla-calendar-value-from"></div>
-            </div>
-            <div class="vanilla-calendar-choices__item">
-                <div class="vanilla-calendar-choices__caption">Выезд</div>
-                <div class="vanilla-calendar-choices__value" id="vanilla-calendar-value-to">
-                </div>
-            </div>
-        </div>
-          <div class="vanilla-calendar-grid">
-            <#Multiple>
-              <div class="vanilla-calendar-column">
-                <div class="vanilla-calendar-header">
-					<#ArrowPrev />
-                  <div class="vanilla-calendar-header__content">
-                    <#Month />
-                    <#Year />
-                  </div>
-				  <#ArrowNext />
-                </div>
-                <div class="vanilla-calendar-wrapper">
-                  <#WeekNumbers />
-                  <div class="vanilla-calendar-content">
-                    <#Week />
-                    <#Days />
-                  </div>
-                </div>
-              </div>
-            <#/Multiple>
-          </div>
-          <div class="vanilla-calendar-footer">
-		  	<div class="vanilla-calendar-footer__buttons">
-			  <button class="vanilla-calendar-button vanilla-calendar-button-reset btn btn-blue-transparent" id="vanilla-calendar-button-reset" type="button">Сбросить</button>
-			  <button class="vanilla-calendar-button vanilla-calendar-button-add btn btn-blue" id="vanilla-calendar-button-add" type="button">Применить</button>
-			</div>
-          </div> 
-          <#ControlTime />
-        `
-  },
-  input: true,
-  type: "multiple",
-  settings: {
-    lang: "ru",
-    range: {
-      disablePast: true
-    },
-    selection: {
-      day: "multiple-ranged"
-    },
-    visibility: {
-      daysOutside: false
-    }
-  },
+  ...opts,
   actions: {
     changeToInput(e, self) {
       if (!self.HTMLInputElement) return;
@@ -721,6 +788,8 @@ var options = {
       const choicesDates = self.HTMLElement.querySelector(".vanilla-calendar-choices");
       const dateFrom = self.selectedDates[0];
       const dateTo = self.selectedDates.at(-1);
+      const buttonAdd = self.HTMLElement.querySelector("#vanilla-calendar-button-add");
+      const buttonReset = self.HTMLElement.querySelector("#vanilla-calendar-button-reset");
       if (choicesDates) {
         if (dateFrom) {
           choicesDates.classList.add("active");
@@ -740,6 +809,10 @@ var options = {
       }
       if (inputCountNight) {
         inputCountNight.value = getNumberOfDays(dateFrom, dateTo);
+      }
+      if (dateFrom !== "" || dateTo !== "") {
+        buttonAdd?.removeAttribute("disabled");
+        buttonReset?.removeAttribute("disabled");
       }
       const differenceDays = getNumberOfDays(dateFrom, dateTo);
       const night = getNoun(differenceDays, "ночь", "ночи", "ночей");
@@ -761,6 +834,16 @@ var options = {
       const buttonReset = self.HTMLElement.querySelector("#vanilla-calendar-button-reset");
       const calendarButton = document.querySelector("#calendar-input");
       const dropdownButtons = document.querySelectorAll(".custom-dropdown__btn");
+      const calendarContainer = self.HTMLElement.querySelector(".vanilla-calendar-container");
+      const calendar = self.HTMLElement;
+      if (window.innerWidth <= 767.98) {
+        calendar.addEventListener("click", () => {
+        });
+        if (calendarContainer) {
+          calendarContainer.addEventListener("click", (e) => {
+          });
+        }
+      }
       if (dropdownButtons) {
         dropdownButtons.forEach((btn) => {
           btn.classList.remove("active");
@@ -770,11 +853,19 @@ var options = {
         calendarButton.classList.add("active");
       }
       if (buttonAdd) {
+        if (self.selectedDates[0] == null || self.selectedDates[self.selectedDates.length - 1] == null) {
+          buttonAdd.setAttribute("disabled", true);
+          buttonReset.setAttribute("disabled", true);
+        }
         buttonAdd.addEventListener("click", () => {
           if (calendarButton) {
             calendarButton.innerHTML = resultString;
           }
           self.hide();
+          if (window.innerWidth <= 767.98) {
+            self.HTMLElement.classList.remove("active");
+            overlay?.classList.remove("active");
+          }
         });
       }
       if (buttonReset) {
@@ -782,6 +873,8 @@ var options = {
           if (calendarButton) {
             calendarButton.innerHTML = resultString;
           }
+          buttonReset.setAttribute("disabled", true);
+          buttonAdd?.setAttribute("disabled", true);
           const from = self.HTMLElement.querySelector("#vanilla-calendar-value-from");
           const to = self.HTMLElement.querySelector("#vanilla-calendar-value-to");
           const inputFrom = document.querySelector('input[name="date_from"]');
@@ -816,6 +909,15 @@ var options = {
           console.log(self);
           resultString = "";
         });
+        if (overlay && window.innerWidth <= 767.98) {
+          overlay.addEventListener("click", () => {
+            self.HTMLElement.classList.remove("active");
+          });
+        }
+      }
+      if (window.innerWidth <= 767.98) {
+        overlay?.classList.add("active");
+        self.HTMLElement.classList.add("active");
       }
     }
   }
@@ -850,7 +952,6 @@ function getNoun(number, one, two, five) {
   }
   return five;
 }
-console.log(VanillaCalendar);
 var calendarInput = new VanillaCalendar("#calendar-input", options);
 calendarInput.init();
 var dropdownButton = document.querySelector("#calendar-input");
@@ -867,8 +968,10 @@ if (dropdownButton) {
 // src/scripts/hotel-book.ts
 mask_phone_default();
 var quantityBlocks = document.querySelectorAll(".choice-dropdown__item");
-var outputAdults = "";
-var outputChildren = "";
+var inputAdalts = document.querySelector('input[name="count_adults"]');
+var inputChildren = document.querySelector('input[name="count_children"]');
+var outputAdults = inputAdalts?.value;
+var outputChildren = inputChildren?.value;
 for (let elem of quantityBlocks) {
   const buttonPlus = elem.querySelector(".button-plus");
   const buttonMinus = elem.querySelector(".button-minus");
@@ -911,6 +1014,7 @@ for (let elem of quantityBlocks) {
   });
 }
 var buttonSave = document.querySelector(".choice-dropdown__save-btn");
+var overlay2 = document.querySelector(".overlay");
 if (buttonSave) {
   buttonSave.addEventListener("click", (e) => {
     console.log("save");
@@ -920,6 +1024,7 @@ if (buttonSave) {
       dropdownButtonText.innerHTML = outputAdults + ", " + outputChildren;
       dropdownButton2.classList.contains("active") && dropdownButton2.classList.remove("active");
     }
+    overlay2?.classList.remove("active");
   });
 }
 function getNoun2(number, one, two, five) {

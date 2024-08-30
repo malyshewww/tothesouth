@@ -7,10 +7,17 @@
 @import 'components/user-review.scss';
 
 .user-page {
+	@media screen and (max-width: $md) {
+		margin-bottom: -10px;
+	}
 	&__body {
 		display: grid;
 		grid-template-columns: 270px 1fr;
 		gap: 30px;
+		@media screen and (max-width: $xl) {
+			grid-template-columns: 100%;
+			gap: 20px;
+		}
 	}
 	&__content {
 	}
@@ -18,9 +25,21 @@
 		display: grid;
 		grid-template-columns: 1fr;
 		gap: 20px;
+		@media screen and (max-width: $xl) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@media screen and (max-width: $md) {
+			grid-template-columns: 100%;
+		}
 	}
 	& .heading {
 		margin-bottom: 20px;
+		&__title {
+			font-weight: 700;
+		}
+		@media screen and (max-width: $md) {
+			display: none;
+		}
 	}
 	&__masonry {
 		column-count: 3;
@@ -29,6 +48,12 @@
 	}
 	& .pagination {
 		margin-top: 60px;
+		@media screen and (max-width: $xl) {
+			margin-top: 40px;
+		}
+		@media screen and (max-width: $md) {
+			margin-top: 20px;
+		}
 	}
 }
 .info-user {
@@ -40,6 +65,14 @@
 	justify-content: center;
 	gap: 10px;
 	text-align: center;
+	@media screen and (max-width: $md) {
+		padding: 20px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: start;
+		align-items: center;
+		gap: 15px;
+	}
 	&__logo {
 		border-radius: 50%;
 		width: 150px;
@@ -53,21 +86,39 @@
 		text-align: center;
 		color: $gray-text;
 		margin: 0 auto 5px;
+		@media screen and (max-width: $md) {
+			width: 40px;
+			height: 40px;
+			margin: 0;
+			font-size: 20px;
+			line-height: 120%;
+		}
 	}
 	&__name {
 		font-weight: 700;
 		font-size: 24px;
 		line-height: 120%;
 		text-align: center;
+		@media screen and (max-width: $md) {
+			font-size: 18px;
+			line-height: 130%;
+		}
 	}
 	&__date {
 		font-size: 14px;
 		line-height: 140%;
+		@media screen and (max-width: $md) {
+			width: 100%;
+			text-align: left;
+			padding: 14px 0;
+			border-top: 1px solid $gray-line;
+			border-bottom: 1px solid $gray-line;
+		}
 	}
 	&__verified {
 		border: 1px solid $gray-line;
 		border-radius: 5px;
-		padding: 8px 9px;
+		padding: 7px 9px;
 		min-height: 36px;
 		display: flex;
 		align-items: center;
@@ -85,19 +136,58 @@
 			background-repeat: no-repeat;
 			background-position: center;
 		}
+		@media screen and (max-width: $md) {
+			border: none;
+			border-radius: 0;
+			justify-content: flex-start;
+			margin: 0;
+			padding: 0;
+			min-height: auto;
+		}
 	}
 }
 .navigation-user {
 	border: 1px solid $gray-line;
 	border-radius: 10px;
-	padding: 12px 20px;
+	padding: 11px 20px;
 	background: $white;
 	margin-bottom: 30px;
+	min-height: 65px;
+	@media screen and (max-width: $xl) {
+		margin-bottom: 20px;
+	}
+	@media screen and (max-width: $md) {
+		padding: 0;
+		border: 0;
+		border-radius: 0;
+		background-color: transparent;
+		min-height: auto;
+	}
 	&__list {
 		@include reset-list;
 		display: flex;
 		align-items: center;
 		gap: 20px;
+		overflow-x: auto;
+		overflow-y: hidden;
+		scroll-snap-type: x mandatory;
+		&::-webkit-scrollbar,
+		&::-webkit-scrollbar-track,
+		&::-webkit-scrollbar-thumb {
+			width: 0;
+			height: 0;
+			background: none;
+			display: none;
+		}
+		@media screen and (max-width: $md) {
+			gap: 0;
+			padding: 0px 12px;
+			margin: 0 -12px 20px;
+			overflow-x: visible;
+		}
+	}
+	&__item {
+		scroll-snap-align: center;
 	}
 	&__link {
 		font-weight: 400;
@@ -110,6 +200,7 @@
 		justify-content: center;
 		align-items: center;
 		transition: color $time;
+		white-space: nowrap;
 		&.active {
 			color: $white;
 			background-color: $blue-1;
@@ -118,6 +209,12 @@
 			&:hover:not(.active) {
 				color: $blue-1;
 			}
+		}
+		@media screen and (max-width: $md) {
+			padding: 6px 20px;
+			min-height: 34px;
+			font-size: 14px;
+			line-height: 140%;
 		}
 	}
 }
@@ -129,6 +226,8 @@
 	background: $white;
 	display: flex;
 	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 40px;
 	&__text {
 		font-size: 16px;
 		line-height: 130%;
@@ -142,9 +241,23 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		@media screen and (max-width: $md) {
+			& img {
+				width: 100%;
+				height: 100%;
+			}
+		}
 		.user-page-reviews & {
 			width: 223px;
 			height: 159px;
+			@media screen and (max-width: $md) {
+				width: 236px;
+				height: 188px;
+			}
+		}
+		@media screen and (max-width: $md) {
+			width: 236px;
+			height: 236px;
 		}
 	}
 }
