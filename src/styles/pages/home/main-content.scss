@@ -15,8 +15,6 @@
 		display: grid;
 		gap: 30px;
 		position: relative;
-		max-height: 351px;
-		overflow: hidden;
 		@media screen and (max-width: $md) {
 			gap: 20px;
 		}
@@ -24,10 +22,11 @@
 	&__gradient {
 		position: absolute;
 		z-index: 2;
-		bottom: -40px;
+		bottom: -20px;
 		height: 65%;
 		width: 100%;
 		background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fff 100%);
+		transition: opacity $time;
 	}
 	&__item {
 		display: grid;
@@ -35,15 +34,19 @@
 		@media screen and (max-width: $md) {
 			gap: 20px;
 		}
+		&:nth-child(1) {
+			&.content p {
+				font-size: 20px;
+				line-height: 140%;
+			}
+		}
 		&:nth-child(2) {
 			gap: 15px;
-			& .main-content {
-				&__caption {
-					font-size: 32px;
-				}
-				&__text {
-					font-size: 16px;
-				}
+		}
+		&:nth-child(3) {
+			gap: 20px;
+			p {
+				font-size: 16px;
 			}
 		}
 	}
@@ -59,8 +62,8 @@
 	}
 	&__text {
 		font-weight: 400;
-		font-size: 20px;
-		line-height: 140%;
+		// font-size: 20px;
+		// line-height: 140%;
 	}
 	&__button {
 		gap: 10px;
@@ -80,10 +83,32 @@
 			transition: background-color $time;
 		}
 	}
-}
-.container {
-}
-.btn {
-}
-.btn-blue-transparent {
+
+	& .content {
+		p {
+			font-size: 16px;
+			line-height: 140%;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+		& ul li {
+			font-size: 16px;
+			line-height: 140%;
+		}
+		& h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			margin: 0;
+		}
+		& > *:last-child {
+			margin-bottom: 0;
+		}
+		& ul {
+			margin-bottom: 30px;
+		}
+	}
 }

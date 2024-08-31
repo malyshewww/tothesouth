@@ -8,10 +8,12 @@ body {
 			top: 0;
 			left: 0;
 			width: 100%;
-			z-index: 2;
+			z-index: 5;
 			@media screen and (max-width: $xl) {
 				background-color: $white;
-				position: static;
+				position: sticky;
+				top: 0;
+				padding: 10px 0;
 			}
 		}
 	}
@@ -336,7 +338,7 @@ body {
 	font-size: 14px;
 	line-height: 140%;
 	// box-shadow: 0px 1px 0px $blue;
-	transition: color $time;
+	transition: color math.div($time, 4);
 	bottom: 0px;
 	right: 0;
 	& span {
@@ -346,12 +348,23 @@ body {
 		background-repeat: no-repeat;
 		background-position: left 100%;
 		display: inline-block;
+		// transition: background $time;
 	}
-
 	&.changed {
 		background: $white;
 		position: absolute;
 		padding: 0 5px;
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			color: $orange;
+			& span {
+				background: linear-gradient(to bottom, rgba($orange, 1) 0%, rgba($orange, 1) 100%);
+				background-size: 100% 1px;
+				background-repeat: no-repeat;
+				background-position: left 100%;
+			}
+		}
 	}
 }
 
@@ -624,6 +637,43 @@ form .btn-detail {
 		}
 		&:active {
 			color: #1685eb;
+		}
+	}
+}
+
+.text-hidden {
+	position: relative;
+	&-content {
+		max-height: 330px;
+		overflow: hidden;
+		transition: max-height $time * 2;
+	}
+	&.active {
+		& .main-content__gradient {
+			opacity: 0;
+			pointer-events: none;
+		}
+	}
+	&--not-scroll {
+		& .text-hidden-gradient {
+			display: none;
+		}
+	}
+}
+
+.btn-show-more {
+	& .text-btn-hide {
+		display: none;
+	}
+	&.active {
+		&::after {
+			content: none;
+		}
+		& .text-btn-hide {
+			display: block;
+		}
+		& .text-btn-more {
+			display: none;
 		}
 	}
 }

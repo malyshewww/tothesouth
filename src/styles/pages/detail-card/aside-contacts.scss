@@ -84,6 +84,11 @@
 			mask-size: 18px 18px;
 			transition: background-color $time;
 		}
+		@media (any-hover: hover) {
+			&:hover::before {
+				background-color: $blue-1;
+			}
+		}
 	}
 	&__link--whatsapp {
 		&::before {

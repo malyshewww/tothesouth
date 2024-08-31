@@ -330,7 +330,7 @@
     left: 0;
     width: 100%;
     height: calc(100vh - 50px);
-    z-index: 10;
+    z-index: 12;
     overflow-y: auto;
     overflow-x: hidden;
     transition: bottom 0.6s;

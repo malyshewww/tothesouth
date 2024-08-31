@@ -4,6 +4,7 @@ block variables
 	- let pageTitle = "Алушта";
 	- let breadCrumbsList = [{"title": "Главная", "link": "/"}, {"title": "Крым", "link": "/"}];
 	- let currentPage = "Алушта"
+	- let modals = true;
 
 append styles 
 	link(href="assets/styles/city-hotels.css" rel="stylesheet")
@@ -28,7 +29,7 @@ block content
 							li.sorting__list-item Рейтинг
 							li(data-sort="up").sorting__list-item.active Цена
 					button(type="button").filter-button-mobile Фильтры
-					button(type="button").map-button-mobile Карта
+					button(type="button" data-popup="modal-map").map-button-mobile Карта
 			.city-layout 
 				aside.aside
 					.aside-object
@@ -59,7 +60,7 @@ block content
 									.form-group__items
 										each item, index in hotelCheckboxes.type
 											+checkbox(item, index, "type")
-									//- +btnShow
+									+btnShow
 								+fieldGroup("Инфраструктура")
 									.form-group__items
 										each item, index in hotelCheckboxes.objects
@@ -69,12 +70,12 @@ block content
 									.form-group__items
 										each item, index in hotelCheckboxes.food
 											+checkbox(item, index, "food")
-									//- +btnShow
+									+btnShow
 								+fieldGroup("Общие")
 									.form-group__items
 										each item, index in hotelCheckboxes.common
 											+checkbox(item, index, "common")
-									//- +btnShow
+									+btnShow
 							.aside-form__bottom 
 								button(type="submit").btn-submit.btn.btn-blue 
 									span.btn-text-pc Применить 

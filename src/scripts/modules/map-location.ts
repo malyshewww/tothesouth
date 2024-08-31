@@ -6,6 +6,7 @@ function loadMap() {
 	document.body.appendChild(script);
 	script.onload = function () {
 		initMap();
+		isLoaded = true;
 		// if (typeof ymaps3 === 'undefined') return;
 		// ymaps3.ready(initMap);
 	};

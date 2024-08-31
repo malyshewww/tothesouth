@@ -9,6 +9,13 @@
 	gap: 20px;
 }
 .form-group {
+	&.active {
+		& .form-group__items {
+			& .checkbox:nth-child(n + 6) {
+				display: block;
+			}
+		}
+	}
 	&__caption {
 		font-weight: 600;
 		font-size: 16px;
@@ -19,6 +26,9 @@
 	&__items {
 		display: grid;
 		gap: 10px;
+		& .checkbox:nth-child(n + 6) {
+			display: none;
+		}
 	}
 	&__btn-show {
 		font-weight: 400;

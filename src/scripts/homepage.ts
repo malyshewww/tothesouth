@@ -1,7 +1,11 @@
 import Swiper from 'swiper';
 import { Navigation } from 'swiper/modules';
 
+import hiddenContentBlocks from './modules/hidden-blocks';
+
 document.addEventListener('DOMContentLoaded', () => {
+	hiddenContentBlocks();
+
 	const newsSlider = document.querySelector('.main-news__slider');
 	if (newsSlider) {
 		const buttonPrev = newsSlider.closest('.main-news')?.querySelector('.slider-button-prev');
@@ -55,53 +59,5 @@ document.addEventListener('DOMContentLoaded', () => {
 	if (searchFormInput) {
 		searchFormInput.addEventListener('focus', addFocusInput);
 		searchFormInput.addEventListener('blur', removeFocusInput);
-	}
-
-	/*
-		.text-hidden.seo-text 
-                .text-hidden-content
-                    .content
-                        p  
-                    button.text-hidden-content__gradient       
-                
-                button.text-hidden__btn.multiline-stroke 
-                    span.text-hidden__btn-more Далее
-                    span.text-hidden__btn-hide Свернуть
-	*/
-	//Блок со скрытым текстом
-	const textHiddenBlocks = document.querySelectorAll('.text-hidden');
-	if (textHiddenBlocks.length > 0) {
-		textHiddenBlocks.forEach((textHidden) => {
-			//фиксированная макс высота
-			const itemContent = textHidden.querySelector('.text-hidden-content');
-			let heightOld = itemContent.clientHeight + 'px';
-			//высота дочернего блока с текстом
-			let heightContent = itemContent.querySelector('.content').clientHeight + 'px';
-			//если высота текста меньше или равна заданной фиксированной, то скрываем кнопку показать еще
-			if (
-				Number.parseInt(heightContent) === Number.parseInt(heightOld) ||
-				Number.parseInt(heightContent) < Number.parseInt(heightOld)
-			) {
-				textHidden.querySelector('.text-hidden__btn').style.display = 'none';
-				textHidden.classList.add('text-hidden--not-scroll');
-			} else {
-				function textHide() {
-					textHidden.classList.toggle('open');
-					if (textHidden.classList.contains('open')) {
-						itemContent.style.maxHeight = heightContent;
-						ScrollTrigger.refresh();
-					} else {
-						itemContent.style.maxHeight = heightOld;
-						ScrollTrigger.refresh();
-					}
-				}
-				textHidden.querySelector('.text-hidden__btn').addEventListener('click', () => {
-					textHide();
-				});
-				textHidden.querySelector('.text-hidden-content__gradient').addEventListener('click', () => {
-					textHide();
-				});
-			}
-		});
 	}
 });

@@ -18,6 +18,7 @@ html,
 body {
 	height: 100%;
 	min-width: $minWidth + px;
+	scrollbar-gutter: stable;
 }
 body {
 	color: $black;
@@ -100,4 +101,19 @@ img {
 	max-width: 100%;
 	max-height: 100%;
 	object-fit: cover;
+}
+
+*::-webkit-scrollbar {
+	width: 5px;
+	height: 5px;
+	background-color: $white;
+}
+*::-webkit-scrollbar-thumb {
+	cursor: pointer;
+	background-color: rgba($blue-1, 0.8);
+	border-radius: 5px;
+	transition: all 0.5s;
+}
+*::-webkit-scrollbar-thumb:hover {
+	background-color: rgba($blue-1, 0.5);
 }

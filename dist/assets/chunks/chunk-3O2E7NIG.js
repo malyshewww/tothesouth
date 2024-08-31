@@ -4720,9 +4720,44 @@ function Pagination(_ref) {
   });
 }
 
+// src/scripts/modules/hidden-blocks.ts
+function hiddenContentBlocks() {
+  const textHiddenBlocks = document.querySelectorAll(".text-hidden");
+  if (textHiddenBlocks.length > 0) {
+    textHiddenBlocks.forEach((textHidden) => {
+      const itemContent = textHidden.querySelector(".text-hidden-content");
+      let heightOld = `${itemContent.clientHeight}px`;
+      let heightContent = itemContent.querySelector(".content-box")?.clientHeight + "px";
+      if (Number.parseInt(heightContent) <= Number.parseInt(heightOld)) {
+        textHidden.parentNode.querySelector(".btn-show-more").style.display = "none";
+        textHidden.classList.add("text-hidden--not-scroll");
+      } else {
+        let textHide2 = function() {
+          textHidden.classList.toggle("active");
+          textHidden?.parentNode.querySelector(".btn-show-more")?.classList.toggle("active");
+          if (textHidden.classList.contains("active")) {
+            itemContent.style.maxHeight = heightContent;
+          } else {
+            itemContent.style.maxHeight = heightOld;
+          }
+        };
+        var textHide = textHide2;
+        textHidden.parentNode.querySelector(".btn-show-more")?.addEventListener("click", () => {
+          textHide2();
+        });
+        textHidden.querySelector(".text-hidden-gradient")?.addEventListener("click", () => {
+          textHide2();
+        });
+      }
+    });
+  }
+}
+var hidden_blocks_default = hiddenContentBlocks;
+
 export {
   Swiper,
   Navigation,
-  Pagination
+  Pagination,
+  hidden_blocks_default
 };
-//# sourceMappingURL=chunk-3GBN4BPZ.js.map
+//# sourceMappingURL=chunk-3O2E7NIG.js.map

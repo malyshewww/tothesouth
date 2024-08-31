@@ -6,6 +6,7 @@ function loadMap() {
   document.body.appendChild(script);
   script.onload = function() {
     initMap();
+    isLoaded = true;
   };
 }
 var coords = [39.331297, 43.911584];

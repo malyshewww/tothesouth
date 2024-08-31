@@ -110,6 +110,12 @@
 			padding-top: 0;
 		}
 	}
+	& .text-hidden-content {
+		max-height: 100%;
+		@media screen and (max-width: $md) {
+			max-height: 170px;
+		}
+	}
 }
 .places {
 	display: grid;

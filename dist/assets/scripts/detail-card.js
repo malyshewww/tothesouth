@@ -1,8 +1,9 @@
 import {
   Navigation,
   Pagination,
-  Swiper
-} from "../chunks/chunk-3GBN4BPZ.js";
+  Swiper,
+  hidden_blocks_default
+} from "../chunks/chunk-3O2E7NIG.js";
 
 // node_modules/@fancyapps/ui/dist/index.esm.js
 var t = (t2, e2 = 1e4) => (t2 = parseFloat(t2 + "") || 0, Math.round((t2 + Number.EPSILON) * e2) / e2);
@@ -4323,15 +4324,16 @@ function initAccordeonMobile() {
 initAccordeonMobile();
 
 // src/scripts/detail-card.ts
-Oe.bind("[data-fancybox]", {
-  groupAll: true,
-  placeFocusBack: false,
-  Image: {
-    wheel: "slide"
-  },
-  Hash: false
-});
 document.addEventListener("DOMContentLoaded", function() {
+  hidden_blocks_default();
+  Oe.bind("[data-fancybox]", {
+    groupAll: true,
+    placeFocusBack: false,
+    Image: {
+      wheel: "slide"
+    },
+    Hash: false
+  });
   const fancyboxInSlider = document.querySelectorAll(".swiper-slide-duplicate [data-fancybox]");
   if (fancyboxInSlider.length) {
     fancyboxInSlider.forEach(function(item) {

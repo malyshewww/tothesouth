@@ -1240,6 +1240,9 @@
   display: grid;
   gap: 20px;
 }
+.form-group.active .form-group__items .checkbox:nth-child(n+6) {
+  display: block;
+}
 .form-group__caption {
   font-weight: 600;
   font-size: 16px;
@@ -1250,6 +1253,9 @@
 .form-group__items {
   display: grid;
   gap: 10px;
+}
+.form-group__items .checkbox:nth-child(n+6) {
+  display: none;
 }
 .form-group__btn-show {
   font-weight: 400;
@@ -1713,7 +1719,7 @@
     left: 0;
     width: 100%;
     height: calc(100vh - 50px);
-    z-index: 10;
+    z-index: 12;
     overflow-y: auto;
     overflow-x: hidden;
     transition: bottom 0.6s;

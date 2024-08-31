@@ -1365,6 +1365,9 @@
   display: none;
   margin-top: 10px;
 }
+.box-card .text-hidden-content {
+  max-height: 100%;
+}
 .places {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1837,6 +1840,9 @@
   .box-card--description {
     padding-top: 0;
   }
+  .box-card .text-hidden-content {
+    max-height: 170px;
+  }
   .places {
     grid-template-columns: 100%;
     gap: 15px;
@@ -1916,6 +1922,9 @@
   }
 }
 @media (any-hover: hover) {
+  .social-contacts__link:hover::before {
+    background-color: #18abc6;
+  }
   .gallery-item:hover {
     cursor: pointer;
   }

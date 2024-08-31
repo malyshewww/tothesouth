@@ -1,10 +1,12 @@
 import {
   Navigation,
-  Swiper
-} from "../chunks/chunk-3GBN4BPZ.js";
+  Swiper,
+  hidden_blocks_default
+} from "../chunks/chunk-3O2E7NIG.js";
 
 // src/scripts/homepage.ts
 document.addEventListener("DOMContentLoaded", () => {
+  hidden_blocks_default();
   const newsSlider = document.querySelector(".main-news__slider");
   if (newsSlider) {
     const buttonPrev = newsSlider.closest(".main-news")?.querySelector(".slider-button-prev");
@@ -58,36 +60,6 @@ document.addEventListener("DOMContentLoaded", () => {
   if (searchFormInput) {
     searchFormInput.addEventListener("focus", addFocusInput);
     searchFormInput.addEventListener("blur", removeFocusInput);
-  }
-  const textHiddenBlocks = document.querySelectorAll(".text-hidden");
-  if (textHiddenBlocks.length > 0) {
-    textHiddenBlocks.forEach((textHidden) => {
-      const itemContent = textHidden.querySelector(".text-hidden-content");
-      let heightOld = itemContent.clientHeight + "px";
-      let heightContent = itemContent.querySelector(".content").clientHeight + "px";
-      if (Number.parseInt(heightContent) === Number.parseInt(heightOld) || Number.parseInt(heightContent) < Number.parseInt(heightOld)) {
-        textHidden.querySelector(".text-hidden__btn").style.display = "none";
-        textHidden.classList.add("text-hidden--not-scroll");
-      } else {
-        let textHide2 = function() {
-          textHidden.classList.toggle("open");
-          if (textHidden.classList.contains("open")) {
-            itemContent.style.maxHeight = heightContent;
-            ScrollTrigger.refresh();
-          } else {
-            itemContent.style.maxHeight = heightOld;
-            ScrollTrigger.refresh();
-          }
-        };
-        var textHide = textHide2;
-        textHidden.querySelector(".text-hidden__btn").addEventListener("click", () => {
-          textHide2();
-        });
-        textHidden.querySelector(".text-hidden-content__gradient").addEventListener("click", () => {
-          textHide2();
-        });
-      }
-    });
   }
 });
 //# sourceMappingURL=homepage.js.map

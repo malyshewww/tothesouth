@@ -84,11 +84,23 @@
 			grid-column: 1 / -1;
 			grid-row: 1 / -1;
 		}
+		@media (any-hover: hover) {
+			&:hover {
+				cursor: pointer;
+				& .main-regions__image img {
+					transform: scale(1.2);
+					cursor: pointer;
+				}
+			}
+		}
 	}
 	&__image {
 		border-radius: inherit;
 		height: 100%;
 		padding-bottom: math.div(362, 570) * 100%;
+		& img {
+			transition: transform $time * 2 cubic-bezier(0.17, 0.67, 0.83, 0.87);
+		}
 	}
 	&__caption {
 		position: relative;

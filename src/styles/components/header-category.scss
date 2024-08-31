@@ -1,0 +1,181 @@
+.menu-category {
+	position: absolute;
+	left: 0;
+	top: calc(100% + 5px);
+	border-radius: 20px;
+	padding: 40px 0;
+	box-shadow: 10px 10px 30px 0 rgba(47, 62, 80, 0.15);
+	background: $white;
+	z-index: 10;
+	width: 444px;
+	max-height: 648px;
+	overflow: hidden;
+	opacity: 0;
+	pointer-events: none;
+	transform: translateY(20px);
+	transition:
+		transform $time,
+		opacity $time;
+	&.active {
+		opacity: 1;
+		pointer-events: all;
+		transform: translateY(0);
+	}
+	@media screen and (max-width: $xl) {
+		position: static;
+		padding: 0;
+		width: 100%;
+		max-height: 100%;
+		opacity: 1;
+		transform: none;
+		pointer-events: all;
+		box-shadow: none;
+		background-color: transparent;
+		overflow: visible;
+		padding-bottom: 30px;
+	}
+	&__wrapper {
+		overflow-x: hidden;
+		overflow-y: auto;
+		display: grid;
+		grid-template-columns: 1fr 0.5fr;
+		gap: 40px;
+		max-height: 600px;
+		padding: 0 40px;
+		@media screen and (max-width: $xl) {
+			max-height: 100%;
+			padding: 0;
+			overflow: hidden;
+			display: block;
+		}
+	}
+	&__item {
+		@media screen and (max-width: $xl) {
+			&:nth-child(2) {
+				display: none;
+			}
+		}
+	}
+	&__caption {
+		font-weight: 700;
+		font-size: 20px;
+		line-height: 130%;
+		margin-bottom: 20px;
+		padding: 0 15px;
+		@media screen and (max-width: $xl) {
+			display: none;
+		}
+	}
+	&__boxes {
+		display: grid;
+		gap: 30px;
+		@media screen and (max-width: $xl) {
+			display: block;
+		}
+	}
+	&__box {
+		@media screen and (max-width: $xl) {
+			position: relative;
+			&::before {
+				content: '';
+				position: absolute;
+				width: 100%;
+				left: 0;
+				bottom: 0;
+				border-bottom: 1px solid $gray-line;
+			}
+		}
+	}
+	&__label {
+		font-weight: 600;
+		font-size: 16px;
+		line-height: 130%;
+		padding: 0 15px;
+		margin-bottom: 10px;
+		pointer-events: none;
+		@media screen and (max-width: $xl) {
+			pointer-events: all;
+			margin: 0;
+			padding: 15px 12px;
+			min-height: 51px;
+			display: flex;
+			justify-content: space-between;
+			gap: 20px;
+			&::after {
+				content: '';
+				display: block;
+				width: 20px;
+				height: 20px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-shrink: 0;
+				mask-image: url('../images/icons/icon-arrow-gray.svg');
+				mask-repeat: no-repeat;
+				mask-position: center;
+				background-color: $gray-text;
+				transition: transform $time;
+			}
+			&.active {
+				&::after {
+					transform: rotate(-180deg);
+				}
+			}
+		}
+	}
+	&__list {
+		@include reset-list;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		@media screen and (max-width: $xl) {
+			background-color: $gray-background;
+			opacity: 0;
+			height: 0;
+			overflow: hidden;
+			transition:
+				height $time,
+				opacity $time;
+		}
+	}
+	&__list-item {
+		align-self: start;
+		@media screen and (max-width: $xl) {
+			width: 100%;
+			display: flex;
+			justify-content: flex-start;
+			&:first-child {
+				margin-top: 10px;
+			}
+			&:last-child {
+				margin-bottom: 15px;
+			}
+		}
+	}
+	&__link {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		border-radius: 20px;
+		padding: 5px 15px;
+		min-height: 30px;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 140%;
+		transition: color $time;
+		@media (any-hover: hover) {
+			&:not(.active):hover {
+				color: $blue-1;
+			}
+		}
+		&.active {
+			background-color: $blue-1;
+			color: $white;
+			@media screen and (max-width: $xl) {
+				background-color: transparent;
+				color: $blue-1;
+			}
+		}
+	}
+}

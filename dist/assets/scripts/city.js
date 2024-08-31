@@ -1,3 +1,4 @@
+import "../chunks/chunk-JYBK4SOB.js";
 import "../chunks/chunk-JFZJ3IS6.js";
 
 // src/scripts/city.ts
@@ -23,16 +24,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const overlay = document.querySelector(".overlay");
   const sortingBlock = document.querySelector(".sorting");
   const filter = document.querySelector(".filter");
+  const modalMap = document.getElementById("modal-map");
   function documentActions(event) {
     let target = event.target;
     if (target.closest(".filter-button-mobile")) {
       asideForm?.classList.add("active");
       document.body.classList.add("lock");
-      overlay?.classList.add("active");
+      if (!modalMap?.classList.contains("active")) {
+        overlay?.classList.add("active");
+      }
     }
     if (target.closest(".form-heading__close") || target.closest(".aside-form .btn-submit") || target.closest(".overlay") || target.closest(".filter .btn")) {
       asideForm?.classList.remove("active");
-      document.body.classList.remove("lock");
+      if (!modalMap?.classList.contains("active")) {
+        document.body.classList.remove("lock");
+      }
       overlay?.classList.remove("active");
       filter?.classList.remove("active");
     }

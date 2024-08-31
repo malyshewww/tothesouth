@@ -135,6 +135,9 @@
   height: 100%;
   padding-bottom: 63.5087719298%;
 }
+.main-regions__image img {
+  transition: transform 0.6s cubic-bezier(0.17, 0.67, 0.83, 0.87);
+}
 .main-regions__caption {
   position: relative;
   height: 100%;
@@ -535,13 +538,11 @@
   display: grid;
   gap: 30px;
   position: relative;
-  max-height: 351px;
-  overflow: hidden;
 }
 .main-content__gradient {
   position: absolute;
   z-index: 2;
-  bottom: -40px;
+  bottom: -20px;
   height: 65%;
   width: 100%;
   background:
@@ -549,18 +550,23 @@
       180deg,
       rgba(255, 255, 255, 0) 0%,
       #fff 100%);
+  transition: opacity 0.3s;
 }
 .main-content__item {
   display: grid;
   gap: 30px;
 }
+.main-content__item:nth-child(1).content p {
+  font-size: 20px;
+  line-height: 140%;
+}
 .main-content__item:nth-child(2) {
   gap: 15px;
 }
-.main-content__item:nth-child(2) .main-content__caption {
-  font-size: 32px;
+.main-content__item:nth-child(3) {
+  gap: 20px;
 }
-.main-content__item:nth-child(2) .main-content__text {
+.main-content__item:nth-child(3) p {
   font-size: 16px;
 }
 .main-content__caption {
@@ -570,8 +576,6 @@
 }
 .main-content__text {
   font-weight: 400;
-  font-size: 20px;
-  line-height: 140%;
 }
 .main-content__button {
   gap: 10px;
@@ -593,6 +597,31 @@
   mask-position: center;
   background-color: #18abc6;
   transition: background-color 0.3s;
+}
+.main-content .content p {
+  font-size: 16px;
+  line-height: 140%;
+}
+.main-content .content p:last-child {
+  margin-bottom: 0;
+}
+.main-content .content ul li {
+  font-size: 16px;
+  line-height: 140%;
+}
+.main-content .content h1,
+.main-content .content h2,
+.main-content .content h3,
+.main-content .content h4,
+.main-content .content h5,
+.main-content .content h6 {
+  margin: 0;
+}
+.main-content .content > *:last-child {
+  margin-bottom: 0;
+}
+.main-content .content ul {
+  margin-bottom: 30px;
 }
 @media screen and (max-width: 1024px) {
   .main-screen {
@@ -814,6 +843,13 @@
   }
 }
 @media (any-hover: hover) {
+  .main-regions__item:hover {
+    cursor: pointer;
+  }
+  .main-regions__item:hover .main-regions__image img {
+    transform: scale(1.2);
+    cursor: pointer;
+  }
   .main-regions__link:hover {
     color: #ff6933;
   }

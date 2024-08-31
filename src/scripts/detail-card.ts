@@ -2,19 +2,24 @@ import { Fancybox } from '@fancyapps/ui';
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
 
+import hiddenContentBlocks from './modules/hidden-blocks';
+
 import './modules/accordeon';
 import './modules/custom-scrollbar';
 
 // Fancybox
-Fancybox.bind('[data-fancybox]', {
-	groupAll: true,
-	placeFocusBack: false,
-	Image: {
-		wheel: 'slide',
-	},
-	Hash: false,
-});
+
 document.addEventListener('DOMContentLoaded', function () {
+	hiddenContentBlocks();
+
+	Fancybox.bind('[data-fancybox]', {
+		groupAll: true,
+		placeFocusBack: false,
+		Image: {
+			wheel: 'slide',
+		},
+		Hash: false,
+	});
 	// Исправить баг с дублированием изображений в фенсибоксе, если свипер бесконечный
 	const fancyboxInSlider = document.querySelectorAll('.swiper-slide-duplicate [data-fancybox]');
 	if (fancyboxInSlider.length) {

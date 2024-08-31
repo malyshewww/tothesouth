@@ -73,7 +73,7 @@
 		& li {
 			position: relative;
 			display: flex;
-			align-items: center;
+			align-items: flex-start;
 			gap: 10px;
 			line-height: 130%;
 			&::before {
@@ -84,6 +84,7 @@
 				background-image: url('../images/icons/check-blue-1.svg');
 				background-repeat: no-repeat;
 				background-position: center;
+				margin: 4px 0 0;
 			}
 		}
 	}

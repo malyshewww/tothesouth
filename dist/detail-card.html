@@ -38,10 +38,14 @@
 				<div class="header__body">
 					<div class="header__left">
 						<div class="header-burger">
-							<svg width="21" height="17" viewBox="0 0 21 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M1 1.61646H20" stroke="#8897B1" stroke-width="1.5" stroke-linecap="round"></path>
-								<path d="M1 8.61646H20" stroke="#8897B1" stroke-width="1.5" stroke-linecap="round"></path>
-								<path d="M1 15.6165L20 15.6165" stroke="#8897B1" stroke-width="1.5" stroke-linecap="round"></path>
+							<svg class="burger-lines" width="21" height="17" viewBox="0 0 21 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path class="top" d="M1 1.61646H20" stroke="#8897B1" stroke-width="1.5" stroke-linecap="round"></path>
+								<path class="middle" d="M1 8.61646H20" stroke="#8897B1" stroke-width="1.5" stroke-linecap="round"></path>
+								<path class="bottom" d="M1 15.6165L20 15.6165" stroke="#8897B1" stroke-width="1.5" stroke-linecap="round"></path>
+							</svg>
+							<svg class="burger-close" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M21 7L7 21" stroke="#8897B1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+								<path d="M7 7L21 21" stroke="#8897B1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
 							</svg>
 						</div>
 						<a class="header__logo logo" href="homepage.html">
@@ -49,6 +53,87 @@
 						</a>
 						<div class="header__choices">
 							<button class="btn btn-transparent header__btn-choice" type="button">Выберите курорт</button>
+							<nav class="menu-category" data-da=".menu__body, 1024, 1">
+								<div class="menu-category__wrapper">
+									<div class="menu-category__item">
+										<div class="menu-category__caption">Регион</div>
+										<div class="menu-category__boxes">
+											<div class="menu-category__box">
+												<div class="menu-category__label" data-accordeon-button>Краснодарский край</div>
+												<ul class="menu-category__list">
+													<li class="menu-category__list-item">
+														<a class="menu-category__link" href="#">Курорты Сочи</a>
+													</li>
+													<li class="menu-category__list-item">
+														<a class="menu-category__link active" href="#">Курорты Анапы</a>
+													</li>
+													<li class="menu-category__list-item">
+														<a class="menu-category__link" href="#">Курорты Геленджика</a>
+													</li>
+													<li class="menu-category__list-item">
+														<a class="menu-category__link" href="#">Курорты Геленджика</a>
+													</li>
+												</ul>
+											</div>
+											<div class="menu-category__box">
+												<div class="menu-category__label" data-accordeon-button>Крым</div>
+												<ul class="menu-category__list">
+													<li class="menu-category__list-item">
+														<a class="menu-category__link" href="#">Курорт</a>
+													</li>
+													<li class="menu-category__list-item">
+														<a class="menu-category__link" href="#">Курорт</a>
+													</li>
+													<li class="menu-category__list-item">
+														<a class="menu-category__link" href="#">Курорт</a>
+													</li>
+													<li class="menu-category__list-item">
+														<a class="menu-category__link" href="#">Курорт</a>
+													</li>
+												</ul>
+											</div>
+											<div class="menu-category__box">
+												<div class="menu-category__label" data-accordeon-button>Абхазия</div>
+												<ul class="menu-category__list">
+													<li class="menu-category__list-item">
+														<a class="menu-category__link" href="#">Курорт</a>
+													</li>
+													<li class="menu-category__list-item">
+														<a class="menu-category__link" href="#">Курорт</a>
+													</li>
+													<li class="menu-category__list-item">
+														<a class="menu-category__link" href="#">Курорт</a>
+													</li>
+													<li class="menu-category__list-item">
+														<a class="menu-category__link" href="#">Курорт</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="menu-category__item">
+										<div class="menu-category__caption">Курорт</div>
+										<div class="menu-category__boxes">
+											<div class="menu-category__box">
+												<ul class="menu-category__list">
+													<li class="menu-category__list-item">
+														<a class="menu-category__link" href="#">город</a>
+													</li>
+													<li class="menu-category__list-item">
+														<a class="menu-category__link" href="#">город</a>
+													</li>
+													<li class="menu-category__list-item">
+														<a class="menu-category__link" href="#">город</a>
+													</li>
+													<li class="menu-category__list-item">
+														<a class="menu-category__link" href="#">город</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</nav>
 						</div>
 					</div>
 					<div class="header__links">
@@ -60,6 +145,27 @@
 						</a>
 						<a class="btn btn-transparent header__btn-auth" href="auth-registration.html">Авторизация</a>
 						<a class="btn btn-white header__btn-add" href="add-project.html">Добавить проект</a>
+					</div>
+					<div class="header__menu menu">
+						<div class="menu__top">
+							<div class="menu__text">Меню</div>
+						</div>
+						<div class="menu__body">
+							<nav class="menu-main">
+								<ul class="menu__list">
+									<li class="menu__item">
+										<a class="menu__link" href="auth-login.html">Войти</a>
+									</li>
+									<li class="menu__item">
+										<a class="menu__link" href="auth-registration.html">Зарегистрироваться</a>
+									</li>
+								</ul>
+								<div class="menu__actions">
+									<a class="btn header__btn-add" href="add-project.html">Добавить проект</a>
+									<a class="btn btn-transparent header__btn-auth" href="auth-registration.html">Авторизация</a>
+								</div>
+							</nav>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -105,7 +211,7 @@
 								</div>
 								<div class="header-card__name">Radisson Blu Hotel Kaliningrad </div>
 								<div class="header-card__location">Калининград, пл. Победы, д. 10</div>
-								<button class="btn-detail header-card__show-map" type="button">
+								<button class="btn-detail header-card__show-map" type="button" data-popup="modal-map">
 									<span>Показать на карте</span>
 								</button>
 							</div>
@@ -131,7 +237,7 @@
 						<div class="detail-card__body">
 							<aside class="aside detail-card__aside" data-da=".box-card-mobile, 767.98, 0">
 								<div class="aside-map">
-									<button class="btn btn-white map-button" type="button">Показать на карте</button>
+									<button class="btn btn-white map-button" type="button" data-popup="modal-map">Показать на карте</button>
 								</div>
 								<div class="aside-contacts">
 									<div class="aside-contacts__caption">По вопросам бронирования</div>
@@ -162,7 +268,7 @@
 										</div>
 									</div>
 									<div class="aside-contacts__link-wrap">
-										<a class="aside-contacts__link" href="http://more-udachi.ru/" target="_blank">http://more-udachi.ru/</a>
+										<a class="text-link aside-contacts__link" href="http://more-udachi.ru/" target="_blank">http://more-udachi.ru/</a>
 									</div>
 									<div class="aside-contacts__text">Сообщите владельцу, что нашли объявление на сервисе&nbsp; <span>na-uga.ru</span>
 									</div>
@@ -213,15 +319,20 @@
 									<div class="box-card__header">
 										<h2 class="box-card__title">Описание</h2>
 									</div>
-									<div class="box-card__content content">
-										<p>Мы очень признательны Вам, что Вы обратили внимание на наш гостевой дом На Победе. Удобное место расположение его выгодно отличает о  других мест отдыха, находясь в центре поселка Лазаревское.</p>
-										<p>В шаговой доступности находится центральный рынок, аквапарк «Наутилус», экскурсионные бюро, концертный зал ЦНК и места отдыха. И главное — до моря 5 — 10 минут спокойным шагом! Фонового шума в ночное время от кафе и дискотек с центральной набережной не слышно.</p>
-										<p>Территория гостевого дома На Победе облагорожена: газоны, высажены тропические растения и пальмы. Для отдыхающих обустроена площадка для отдыха.</p>
-										<p>Номерной фонд состоит из 2 и 3 местных номеров со всеми удобствами. В каждом номере: телевизор, кондиционер, холодильник, душ, санузел). Производится ежедневная уборка.</p>
+									<div class="text-hidden">
+										<div class="text-hidden-content">
+											<div class="box-card__content content content-box">
+												<p>Мы очень признательны Вам, что Вы обратили внимание на наш гостевой дом На Победе. Удобное место расположение его выгодно отличает о  других мест отдыха, находясь в центре поселка Лазаревское.</p>
+												<p>В шаговой доступности находится центральный рынок, аквапарк «Наутилус», экскурсионные бюро, концертный зал ЦНК и места отдыха. И главное — до моря 5 — 10 минут спокойным шагом! Фонового шума в ночное время от кафе и дискотек с центральной набережной не слышно.</p>
+												<p>Территория гостевого дома На Победе облагорожена: газоны, высажены тропические растения и пальмы. Для отдыхающих обустроена площадка для отдыха.</p>
+												<p>Номерной фонд состоит из 2 и 3 местных номеров со всеми удобствами. В каждом номере: телевизор, кондиционер, холодильник, душ, санузел). Производится ежедневная уборка.</p>
+											</div>
+										</div>
+										<button class="btn-detail box-card__btn-show btn-show-more" type="button">
+											<span class="text-btn-more">Подробнее об отеле</span>
+											<span class="text-btn-hide">Свернуть</span>
+										</button>
 									</div>
-									<button class="btn-detail box-card__btn-show" type="button">
-										<span>Подробнее об отеле</span>
-									</button>
 								</section>
 								<div class="box-card-mobile"></div>
 								<section class="box-card detail-card__box">
@@ -539,7 +650,7 @@
 										<div class="box-card__sub-title">Калининград, пл. Победы, д. 10</div>
 									</div>
 									<div class="box-card__map">
-										<button class="btn btn-white map-button" type="button">Показать на карте</button>
+										<button class="btn btn-white map-button" type="button" data-popup="modal-map">Показать на карте</button>
 									</div>
 									<div class="box-card__places places">
 										<div class="places__item">
@@ -1276,6 +1387,15 @@
 			</div>
 		</footer>
 		<div class="overlay"></div>
+	</div>
+	<div class="popup popup-map" id="modal-map">
+		<div class="popup__window">
+			<div class="popup__close"></div>
+			<div class="popup-map__container">
+				<div class="map" id="map-popup"></div>
+				<button class="filter-button-mobile" type="button">Фильтры</button>
+			</div>
+		</div>
 	</div>
 	<script src="assets/scripts/main.js" defer="defer" type="module"></script>
 	<script src="assets/scripts/detail-card.js" type="module"></script>
