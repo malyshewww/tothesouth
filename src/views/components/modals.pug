@@ -1,4 +1,30 @@
 +popup("modal-map", "popup-map")
-    .popup-map__container
-        .map#map-popup
-        button(type="button").filter-button-mobile Фильтры
+	.popup-map__container
+		.map#map-popup
+		button(type="button").filter-button-mobile Фильтры
++popup("modal-room", "popup-room")
+	.popup-room__body 
+		.room-item
+			.room-item-slider.swiper 
+				.room-item-slider__wrapper.swiper-wrapper
+					- for (var x = 0; x < 3; x++)
+						.room-item-slider__slide 
+							.room-item-slider__image.ibg 
+								img(src="assets/images/detail-card/rooms/room-slide.jpg", alt="изображение")
+				.slider-controls 
+					button(type="button").slider-button.slider-button-prev
+					button(type="button").slider-button.slider-button-next
+				.slider-pagination
+			.room-item__content 
+				.room-item__header 
+					.room-item__title Трехместный «Эконом» (2-й этаж)
+					.room-item__places.places-room
+						span.places-room__item 1 комната
+						span.places-room__item 3 места + 1 доп.
+				ul.features-list
+					li.features-list__item.wi-fi Бесплатный Wi-Fi
+					li.features-list__item.transfer Трансфер
+					li.features-list__item.bar Бар / Ресторан
+					li.features-list__item.children Подходит для детей
+				.room-item__text
+					p Мы очень признательны Вам, что Вы обратили внимание на наш гостевой дом На Победе. Удобное место расположение его выгодно отличает от других мест отдыха, находясь в центре поселка Лазаревское.

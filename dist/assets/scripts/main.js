@@ -1,7 +1,7 @@
 import {
   isLoaded,
   loadMap
-} from "../chunks/chunk-JYBK4SOB.js";
+} from "../chunks/chunk-VSGNHJEM.js";
 
 // src/scripts/modules/dynamic_adapt.ts
 var DynamicAdapt = class {

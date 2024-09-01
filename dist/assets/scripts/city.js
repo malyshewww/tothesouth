@@ -1,4 +1,4 @@
-import "../chunks/chunk-JYBK4SOB.js";
+import "../chunks/chunk-VSGNHJEM.js";
 import "../chunks/chunk-JFZJ3IS6.js";
 
 // src/scripts/city.ts

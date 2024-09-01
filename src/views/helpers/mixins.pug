@@ -352,7 +352,7 @@ mixin roomCard(item)
 						each feature in item.features
 							li.features-list__item(class=`${feature.key}`)= feature.name
 			.room-item__footer 
-				a(href="#").room-item__detail
+				button(type="button" data-popup="modal-room").room-item__detail
 					span Все подробности
 				.room-item__prices 
 					.room-item__area 

@@ -207,4 +207,42 @@ document.addEventListener('DOMContentLoaded', function () {
 	if (progressService) {
 		getBackgroundLine(progressService);
 	}
+
+	const roomSlider = document.querySelector('.room-item-slider');
+	if (roomSlider) {
+		const sliderPagination = roomSlider.querySelector('.slider-pagination');
+		const sliderButtonPrev = roomSlider.querySelector('.slider-button-prev');
+		const sliderButtonNext = roomSlider.querySelector('.slider-button-next');
+		const roomSwiper = new Swiper(roomSlider, {
+			modules: [Navigation, Pagination],
+			slideClass: 'room-item-slider__slide',
+			spaceBetween: 10,
+			slidesPerView: 1,
+			speed: 800,
+			centeredSlides: true,
+			pagination: {
+				el: sliderPagination,
+				type: 'bullets',
+				clickable: true,
+			},
+			navigation: {
+				prevEl: sliderButtonPrev,
+				nextEl: sliderButtonNext,
+			},
+			on: {
+				init: function (swiper) {
+					const slides = swiper.slides;
+					const sliderControls = sliderButtonPrev?.parentNode || sliderButtonNext?.parentNode;
+					if (slides.length <= swiper.passedParams.slidesPerView) {
+						swiper.navigation.destroy();
+						sliderControls?.remove();
+						sliderPagination?.remove();
+					}
+				},
+			},
+		});
+	}
+
+	const places = document.querySelector('.room-item__places')?.innerHTML;
+	console.log(places);
 });

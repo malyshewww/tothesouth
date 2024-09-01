@@ -62,7 +62,6 @@ async function initMap() {
       });
     }
   } else {
-    map2.addChild(new YMapControls({ position: "right" }).addChild(new YMapZoomControl({})));
   }
 }
 
@@ -70,4 +69,4 @@ export {
   isLoaded,
   loadMap
 };
-//# sourceMappingURL=chunk-JYBK4SOB.js.map
+//# sourceMappingURL=chunk-VSGNHJEM.js.map

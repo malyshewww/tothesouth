@@ -66,8 +66,10 @@ function startTimer(duration, display) {
 }
 
 window.addEventListener('load', () => {
-	inputsNumber[0].focus();
+	inputsNumber[0]?.focus();
 	var oneMinutes = 60,
 		display = document.querySelector('.code-auth__time span');
-	startTimer(oneMinutes, display);
+	if (display) {
+		startTimer(oneMinutes, display);
+	}
 });

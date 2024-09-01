@@ -6,28 +6,34 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>Заявка на бронирование</title>
-	<meta name="description">
+	<meta name="description" content="description">
 	<meta name="keywords" content="Перечень ключевых слов">
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://example.com">
 	<meta property="og:title" content="Заявка на бронирование">
-	<meta property="og:description">
+	<meta property="og:description" content="description">
 	<meta property="twitter:title" content="Заявка на бронирование">
 	<meta property="twitter:description" content="description">
 	<link rel="canonical" href="https://example.com">
 	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet">
 	<link href="assets/styles/main.css" rel="stylesheet">
 	<link href="assets/styles/hotel-book.css" rel="stylesheet">
-	<meta name="theme-color" content="#fff">
-	<meta name="msapplication-navbutton-color" content="#fff">
-	<meta name="apple-mobile-web-app-status-bar-style" content="#fff">
-	<meta name="apple-mobile-web-app-title" content="Название">
-	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="format-detection" content="telephone=no">
 	<meta name="format-detection" content="address=no">
 	<meta name="format-detection" content="email=no">
 	<meta name="format-detection" content="date=no">
-	<link rel="shortcut icon" href="images/favicons/favicon.svg" type="image/x-icon">
+	<link type="image/svg" rel="icon" href="assets/images/favicon.svg">
+	<link type="image/x-icon" rel="shortcut icon" href="assets/images/favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+	<link rel="mask-icon" href="assets/images/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="theme-color" content="#ffffff">
+	<meta name="msapplication-navbutton-color" content="#fff">
+	<meta name="apple-mobile-web-app-status-bar-style" content="#fff">
+	<meta name="apple-mobile-web-app-title" content="Название">
+	<meta name="apple-mobile-web-app-capable" content="yes">
 </head>
 
 <body>
@@ -266,18 +272,18 @@
 						<aside class="hotel-book__aside">
 							<div class="hotel-book-preview">
 								<div class="hotel-book-preview__header">
-									<div class="hotel-book-preview__image ibg">
+									<div class="ibg hotel-book-preview__image">
 										<img src="assets/images/hotel-book/preview.jpg" alt="изображение">
 									</div>
 									<div class="hotel-book-preview__title">Название комнаты в отеле, домика</div>
 								</div>
 								<ul class="hotel-book-preview__parameters">
-									<div class="hotel-book-preview__parameter">
+									<li class="hotel-book-preview__parameter">
 										Wi-Fi
 										<svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path d="M0 2.22056C1.83856 0.780743 4.13382 -0.00337279 6.5 1.09055e-05C8.96264 1.09055e-05 11.2241 0.831677 13 2.22056L12.2782 3.08501C10.6438 1.80505 8.60341 1.10803 6.5 1.11112C4.31092 1.11112 2.30115 1.85001 0.721839 3.08501L0 2.22056ZM1.80517 4.38167C3.1331 3.34167 4.79094 2.77531 6.5 2.77779C8.27816 2.77779 9.9115 3.37834 11.1948 4.38112L10.4724 5.24556C9.34876 4.36575 7.94602 3.88668 6.5 3.8889C4.9954 3.8889 3.61322 4.39723 2.52759 5.24556L1.80517 4.38112V4.38167ZM3.61092 6.54278C4.42807 5.90272 5.44826 5.55412 6.5 5.55556C7.59425 5.55556 8.59943 5.925 9.38908 6.54223L8.66667 7.40667C8.05379 6.9268 7.2887 6.66549 6.5 6.66667C5.67931 6.66667 4.92529 6.94389 4.33333 7.40667L3.61092 6.54223V6.54278ZM5.41667 8.70389C5.72302 8.46373 6.10558 8.33288 6.5 8.33334C6.91035 8.33334 7.28736 8.47223 7.58333 8.70334L6.5 10L5.41667 8.70334V8.70389Z" fill="#1C8CF3"></path>
 										</svg>
-									</div>
+									</li>
 								</ul>
 								<div class="hotel-book-preview__prices">
 									<div class="hotel-book-preview__price">4 110 ₽</div>
@@ -357,7 +363,58 @@
 			</div>
 		</div>
 	</div>
-	<script src="assets/scripts/main.js" defer="defer" type="module"></script>
+	<div class="popup popup-room" id="modal-room">
+		<div class="popup__window">
+			<div class="popup__close"></div>
+			<div class="popup-room__body">
+				<div class="room-item">
+					<div class="room-item-slider swiper">
+						<div class="room-item-slider__wrapper swiper-wrapper">
+							<div class="room-item-slider__slide">
+								<div class="ibg room-item-slider__image">
+									<img src="assets/images/detail-card/rooms/room-slide.jpg" alt="изображение">
+								</div>
+							</div>
+							<div class="room-item-slider__slide">
+								<div class="ibg room-item-slider__image">
+									<img src="assets/images/detail-card/rooms/room-slide.jpg" alt="изображение">
+								</div>
+							</div>
+							<div class="room-item-slider__slide">
+								<div class="ibg room-item-slider__image">
+									<img src="assets/images/detail-card/rooms/room-slide.jpg" alt="изображение">
+								</div>
+							</div>
+						</div>
+						<div class="slider-controls">
+							<button class="slider-button slider-button-prev" type="button"></button>
+							<button class="slider-button slider-button-next" type="button"></button>
+						</div>
+						<div class="slider-pagination"></div>
+					</div>
+					<div class="room-item__content">
+						<div class="room-item__header">
+							<div class="room-item__title">Трехместный «Эконом» (2-й этаж)</div>
+							<div class="places-room room-item__places">
+								<span class="places-room__item">1 комната</span>
+								<span class="places-room__item">3 места + 1 доп.</span>
+							</div>
+						</div>
+						<ul class="features-list">
+							<li class="features-list__item wi-fi">Бесплатный Wi-Fi</li>
+							<li class="features-list__item transfer">Трансфер</li>
+							<li class="features-list__item bar">Бар / Ресторан</li>
+							<li class="features-list__item children">Подходит для детей</li>
+						</ul>
+						<div class="room-item__text">
+							<p>Мы очень признательны Вам, что Вы обратили внимание на наш гостевой дом На Победе. Удобное место расположение его выгодно отличает от других мест отдыха, находясь в центре поселка Лазаревское.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="assets/scripts/main.js" type="module"></script>
 	<script src="assets/scripts/hotel-book.js" type="module"></script>
 </body>
 

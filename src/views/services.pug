@@ -17,8 +17,9 @@ block content
 			.services__body 
 				table.services__table 
 					thead.thead
-						each item in servicesPage.table.head
-							th= item
+						tr
+							each item in servicesPage.table.head
+								th= item
 					tbody 
 						each item in servicesPage.table.row
 							tr 

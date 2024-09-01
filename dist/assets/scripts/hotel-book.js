@@ -952,8 +952,11 @@ function getNoun(number, one, two, five) {
   }
   return five;
 }
-var calendarInput = new VanillaCalendar("#calendar-input", options);
-calendarInput.init();
+var calendarTrigger = document.getElementById("calendar-input");
+if (calendarTrigger) {
+  const calendarInput = new VanillaCalendar(calendarTrigger, options);
+  calendarInput.init();
+}
 var dropdownButton = document.querySelector("#calendar-input");
 if (dropdownButton) {
   dropdownButton.addEventListener("click", () => {

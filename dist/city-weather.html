@@ -6,12 +6,12 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>Алушта</title>
-	<meta name="description">
+	<meta name="description" content="description">
 	<meta name="keywords" content="Перечень ключевых слов">
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://example.com">
 	<meta property="og:title" content="Алушта">
-	<meta property="og:description">
+	<meta property="og:description" content="description">
 	<meta property="twitter:title" content="Алушта">
 	<meta property="twitter:description" content="description">
 	<link rel="canonical" href="https://example.com">
@@ -20,16 +20,22 @@
 	<link href="assets/styles/content.css" rel="stylesheet">
 	<link href="assets/styles/city-weather.css" rel="stylesheet">
 	<link href="assets/styles/weather-widget.css" rel="stylesheet">
-	<meta name="theme-color" content="#fff">
-	<meta name="msapplication-navbutton-color" content="#fff">
-	<meta name="apple-mobile-web-app-status-bar-style" content="#fff">
-	<meta name="apple-mobile-web-app-title" content="Название">
-	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="format-detection" content="telephone=no">
 	<meta name="format-detection" content="address=no">
 	<meta name="format-detection" content="email=no">
 	<meta name="format-detection" content="date=no">
-	<link rel="shortcut icon" href="images/favicons/favicon.svg" type="image/x-icon">
+	<link type="image/svg" rel="icon" href="assets/images/favicon.svg">
+	<link type="image/x-icon" rel="shortcut icon" href="assets/images/favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+	<link rel="mask-icon" href="assets/images/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="theme-color" content="#ffffff">
+	<meta name="msapplication-navbutton-color" content="#fff">
+	<meta name="apple-mobile-web-app-status-bar-style" content="#fff">
+	<meta name="apple-mobile-web-app-title" content="Название">
+	<meta name="apple-mobile-web-app-capable" content="yes">
 </head>
 
 <body>
@@ -412,7 +418,58 @@
 			</div>
 		</div>
 	</div>
-	<script src="assets/scripts/main.js" defer="defer" type="module"></script>
+	<div class="popup popup-room" id="modal-room">
+		<div class="popup__window">
+			<div class="popup__close"></div>
+			<div class="popup-room__body">
+				<div class="room-item">
+					<div class="room-item-slider swiper">
+						<div class="room-item-slider__wrapper swiper-wrapper">
+							<div class="room-item-slider__slide">
+								<div class="ibg room-item-slider__image">
+									<img src="assets/images/detail-card/rooms/room-slide.jpg" alt="изображение">
+								</div>
+							</div>
+							<div class="room-item-slider__slide">
+								<div class="ibg room-item-slider__image">
+									<img src="assets/images/detail-card/rooms/room-slide.jpg" alt="изображение">
+								</div>
+							</div>
+							<div class="room-item-slider__slide">
+								<div class="ibg room-item-slider__image">
+									<img src="assets/images/detail-card/rooms/room-slide.jpg" alt="изображение">
+								</div>
+							</div>
+						</div>
+						<div class="slider-controls">
+							<button class="slider-button slider-button-prev" type="button"></button>
+							<button class="slider-button slider-button-next" type="button"></button>
+						</div>
+						<div class="slider-pagination"></div>
+					</div>
+					<div class="room-item__content">
+						<div class="room-item__header">
+							<div class="room-item__title">Трехместный «Эконом» (2-й этаж)</div>
+							<div class="places-room room-item__places">
+								<span class="places-room__item">1 комната</span>
+								<span class="places-room__item">3 места + 1 доп.</span>
+							</div>
+						</div>
+						<ul class="features-list">
+							<li class="features-list__item wi-fi">Бесплатный Wi-Fi</li>
+							<li class="features-list__item transfer">Трансфер</li>
+							<li class="features-list__item bar">Бар / Ресторан</li>
+							<li class="features-list__item children">Подходит для детей</li>
+						</ul>
+						<div class="room-item__text">
+							<p>Мы очень признательны Вам, что Вы обратили внимание на наш гостевой дом На Победе. Удобное место расположение его выгодно отличает от других мест отдыха, находясь в центре поселка Лазаревское.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="assets/scripts/main.js" type="module"></script>
 	<script src="assets/scripts/city.js" type="module"></script>
 </body>
 

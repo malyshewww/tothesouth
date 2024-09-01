@@ -56,8 +56,10 @@ function startTimer(duration, display) {
   }, 1e3);
 }
 window.addEventListener("load", () => {
-  inputsNumber[0].focus();
+  inputsNumber[0]?.focus();
   var oneMinutes = 60, display = document.querySelector(".code-auth__time span");
-  startTimer(oneMinutes, display);
+  if (display) {
+    startTimer(oneMinutes, display);
+  }
 });
 //# sourceMappingURL=auth.js.map

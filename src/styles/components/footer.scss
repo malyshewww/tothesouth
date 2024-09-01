@@ -40,6 +40,14 @@
 		line-height: 120%;
 		color: $white;
 		box-shadow: 0 1px 0 currentColor;
+		transition:
+			box-shadow $time,
+			color $time;
+		@media (any-hover: hover) {
+			&:hover {
+				color: $orange;
+			}
+		}
 	}
 	&__disclamer {
 		font-size: 14px;

@@ -75,6 +75,6 @@ async function initMap() {
 			});
 		}
 	} else {
-		map.addChild(new YMapControls({ position: 'right' }).addChild(new YMapZoomControl({})));
+		// map.addChild(new YMapControls({ position: 'right' }).addChild(new YMapZoomControl({})));
 	}
 }

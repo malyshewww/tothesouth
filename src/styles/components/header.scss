@@ -87,6 +87,10 @@
 		@media screen and (max-width: $xl) {
 			gap: 27px;
 			flex-direction: row-reverse;
+			& .btn {
+				padding: 0;
+				min-height: auto;
+			}
 		}
 	}
 	&__favorite {
@@ -336,9 +340,22 @@ body:not(.home) {
 		min-height: 45px;
 		padding-top: 10px;
 		padding-bottom: 10px;
+		color: $gray-text;
 	}
 	& .header {
-		color: $gray-text;
+		@media screen and (max-width: $xl) {
+			& .menu-actions .header__btn-add.btn {
+				min-height: 51px;
+			}
+		}
+		&__links {
+			@media screen and (max-width: $xl) {
+				& .btn {
+					padding: 0;
+					min-height: auto;
+				}
+			}
+		}
 		&__favorite {
 			& svg {
 				& path:first-child {
@@ -373,6 +390,9 @@ body:not(.home) {
 				background-color: currentColor;
 			}
 		}
+		&__btn-choice.btn.active {
+			color: $white;
+		}
 		&__favorite {
 			&::before {
 				background-color: currentColor;
@@ -404,13 +424,16 @@ body:not(.home) {
 				}
 			}
 		}
+		&__btn-add.btn {
+			color: $orange;
+		}
 		& .menu__actions {
 			& .header__btn-add {
 				color: $white;
 			}
 		}
 	}
-	& .header .btn-transparent {
+	& .header .btn-transparent:not(.active) {
 		@media (any-hover: hover) {
 			&:hover {
 				color: $white;

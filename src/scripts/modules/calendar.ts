@@ -2,9 +2,7 @@ import VanillaCalendar from 'vanilla-calendar-pro';
 import { IOptions } from 'vanilla-calendar-pro/types';
 
 let resultString = '';
-
 const overlay = document.querySelector('.overlay');
-
 const device = window.innerWidth >= 767.98 ? 'desktop' : 'mobile';
 
 const calendarOptions = (device) => {
@@ -333,8 +331,11 @@ function getNoun(number, one, two, five) {
 	return five;
 }
 
-const calendarInput = new VanillaCalendar('#calendar-input', options);
-calendarInput.init();
+const calendarTrigger = document.getElementById('calendar-input');
+if (calendarTrigger) {
+	const calendarInput = new VanillaCalendar(calendarTrigger, options);
+	calendarInput.init();
+}
 
 const dropdownButton = document.querySelector('#calendar-input');
 if (dropdownButton) {

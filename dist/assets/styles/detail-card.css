@@ -288,6 +288,12 @@
   margin: auto;
 }
 .slider-pagination {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 5;
+  bottom: 20px;
   display: none;
 }
 .slider-pagination .swiper-pagination-bullet {
@@ -888,6 +894,12 @@
   gap: 20px;
   transition: box-shadow 0.3s;
 }
+.popup-room .room-item {
+  border: 0;
+  padding: 0;
+  border-radius: 0;
+  display: block;
+}
 .room-item__image {
   width: 100%;
   height: 100%;
@@ -903,6 +915,10 @@
   display: flex;
   justify-content: space-between;
   gap: 10px;
+}
+.popup-room .room-item__header {
+  align-items: center;
+  flex-wrap: wrap;
 }
 .room-item__info {
   display: grid;
@@ -950,6 +966,14 @@
   font-weight: 600;
   line-height: 120%;
 }
+.popup-room .room-item__content {
+  padding: 28px 30px 40px 40px;
+  display: grid;
+  gap: 28px;
+}
+.popup-room .room-item__content .features-list {
+  max-width: 560px;
+}
 .room-item__footer {
   display: flex;
   justify-content: space-between;
@@ -989,6 +1013,11 @@
 .room-item .features-list__item {
   gap: 8px;
 }
+.popup-room .room-item__text {
+  font-size: 16px;
+  line-height: 130%;
+  max-width: 98%;
+}
 .places-room {
   border: 1px solid #18abc6;
   border-radius: 5px;
@@ -1014,6 +1043,23 @@
   width: 17px;
   height: 1px;
   background-color: #18abc6;
+}
+.room-item-slider .slider-pagination {
+  display: flex;
+  bottom: 54px;
+}
+.room-item-slider__slide {
+  flex-shrink: 0;
+  width: 100%;
+}
+.room-item-slider__image {
+  padding-bottom: 66.7816091954%;
+}
+.room-item-slider .slider-controls {
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  padding: 0 50px;
 }
 .features-list {
   display: flex;
@@ -1487,6 +1533,20 @@
   .header-card__actions-item {
     padding-right: 15px;
   }
+  .popup-room .room-item__content {
+    padding: 15px 12px 30px;
+    gap: 20px;
+  }
+  .popup-room .room-item__content .features-list {
+    max-width: 100%;
+    gap: 10px;
+  }
+  .room-item-slider .slider-pagination {
+    bottom: 20px;
+  }
+  .room-item-slider .slider-controls {
+    display: none;
+  }
 }
 @media screen and (max-width: 767.98px) {
   .detail-card__main {
@@ -1566,12 +1626,6 @@
   }
   .slider-pagination {
     display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    z-index: 5;
-    bottom: 20px;
   }
   .conditions__items {
     margin-top: 10px;
@@ -1930,6 +1984,9 @@
   }
   .gallery-item:hover .gallery-item__image img {
     transform: scale(1.3);
+  }
+  .slider-pagination .swiper-pagination-bullet:hover {
+    cursor: pointer;
   }
   .accordeon__header:hover {
     cursor: pointer;
