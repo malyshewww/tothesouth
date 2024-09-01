@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../../../src/scripts/add-object.ts"],
-  "sourcesContent": ["import './modules/dropdown';\r\nimport './modules/forms';\r\n\r\nimport maskPhone from './modules/mask-phone';\r\n\r\nmaskPhone();\r\n"],
-  "mappings": ";;;;;;;AAKA,mBAAU;",
-  "names": []
-}

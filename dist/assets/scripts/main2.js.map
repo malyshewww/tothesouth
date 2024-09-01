@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../../../src/scripts/main2.ts"],
-  "sourcesContent": ["console.log('main 2 js');\n"],
-  "mappings": ";AAAA,QAAQ,IAAI,WAAW;",
-  "names": []
-}

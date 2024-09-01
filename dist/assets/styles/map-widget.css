@@ -1,16 +1,1 @@
-/* src/styles/map-widget.scss */
-.map {
-  border-radius: 10px;
-  height: 250px;
-  width: 100%;
-  overflow: hidden;
-}
-.map ymaps {
-  width: 100% !important;
-}
-@media screen and (max-width: 767.98px) {
-  .map {
-    height: 360px;
-  }
-}
-/*# sourceMappingURL=map-widget.css.map */
+.map{border-radius:10px;height:250px;width:100%;overflow:hidden}.map ymaps{width:100%!important}@media screen and (max-width: 767.98px){.map{height:360px}}

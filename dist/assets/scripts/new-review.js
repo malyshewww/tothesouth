@@ -1,3 +1,1 @@
-import "../chunks/chunk-FDCBVWR5.js";
-import "../chunks/chunk-JFZJ3IS6.js";
-//# sourceMappingURL=new-review.js.map
+import"../chunks/chunk-JWGY7WOG.js";import"../chunks/chunk-7PZ3I4MT.js";

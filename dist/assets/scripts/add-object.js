@@ -1,9 +1,1 @@
-import {
-  mask_phone_default
-} from "../chunks/chunk-VXRPEELR.js";
-import "../chunks/chunk-FDCBVWR5.js";
-import "../chunks/chunk-JFZJ3IS6.js";
-
-// src/scripts/add-object.ts
-mask_phone_default();
-//# sourceMappingURL=add-object.js.map
+import{a as m}from"../chunks/chunk-EDJVN5NE.js";import"../chunks/chunk-JWGY7WOG.js";import"../chunks/chunk-7PZ3I4MT.js";m();

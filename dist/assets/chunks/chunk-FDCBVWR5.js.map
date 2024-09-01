@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../../../src/scripts/modules/forms.ts"],
-  "sourcesContent": ["const fields = document.querySelectorAll('.form-input, .form-textarea');\r\n/*=== Add focus ===*/\r\nfunction addfocus() {\r\n\tlet parent = this.closest('.form-item');\r\n\tparent.classList.add('focus');\r\n}\r\n/*=== Remove focus ===*/\r\nfunction remfocus() {\r\n\tlet parent = this.closest('.form-item');\r\n\tif (this.value === '') {\r\n\t\tparent.classList.remove('focus');\r\n\t}\r\n}\r\n\r\nfields.forEach((input) => {\r\n\tconst errorBlock = input.closest('.form-item')?.querySelector('.error-message');\r\n\tif (errorBlock || input.value !== '') {\r\n\t\tlet parent = input.closest('.form-item');\r\n\t\tparent.classList.add('focus');\r\n\t}\r\n\tinput.addEventListener('focus', addfocus);\r\n\tinput.addEventListener('blur', remfocus);\r\n});\r\n"],
-  "mappings": ";AAAA,IAAM,SAAS,SAAS,iBAAiB,6BAA6B;AAEtE,SAAS,WAAW;AACnB,MAAI,SAAS,KAAK,QAAQ,YAAY;AACtC,SAAO,UAAU,IAAI,OAAO;AAC7B;AAEA,SAAS,WAAW;AACnB,MAAI,SAAS,KAAK,QAAQ,YAAY;AACtC,MAAI,KAAK,UAAU,IAAI;AACtB,WAAO,UAAU,OAAO,OAAO;AAAA,EAChC;AACD;AAEA,OAAO,QAAQ,CAAC,UAAU;AACzB,QAAM,aAAa,MAAM,QAAQ,YAAY,GAAG,cAAc,gBAAgB;AAC9E,MAAI,cAAc,MAAM,UAAU,IAAI;AACrC,QAAI,SAAS,MAAM,QAAQ,YAAY;AACvC,WAAO,UAAU,IAAI,OAAO;AAAA,EAC7B;AACA,QAAM,iBAAiB,SAAS,QAAQ;AACxC,QAAM,iBAAiB,QAAQ,QAAQ;AACxC,CAAC;",
-  "names": []
-}
