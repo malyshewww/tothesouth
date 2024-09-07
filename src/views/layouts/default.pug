@@ -44,9 +44,13 @@ html(lang="ru")
 			include ../components/header
 			if !bodyClass
 				include ../components/breadcrumbs
-			main.main
+			if isDevPage
 				block content
-			include ../components/footer
+				include ../components/footer
+			else 
+				main.main
+					block content
+				include ../components/footer
 			.overlay
 		block modals 
 			include ../components/modals

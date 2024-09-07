@@ -11,11 +11,13 @@ header.header
 						path(d="M21 7L7 21" stroke="#8897B1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
 						path(d="M7 7L21 21" stroke="#8897B1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
 				a.header__logo.logo(href="homepage.html")
-					if bodyClass
+					if bodyClass && bodyClass !== 'dev--page'
 						picture
 							source(srcset="assets/images/logo.svg" media="(min-width: 1024px)")
 							source(srcset="assets/images/logo-blue.svg" media="(min-width: 300px)")
 							img(src="assets/images/logo.svg", alt="логотип")
+					else if isDevPage 
+						img(src="assets/images/logo-blue.svg", alt="логотип")
 					else 
 						img(src="assets/images/logo-blue.svg", alt="логотип")
 				.header__choices

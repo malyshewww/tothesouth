@@ -1,0 +1,93 @@
+extends ./layouts/default
+
+block variables 
+	- let pageTitle = "Разработка сайтов для владельцев отелей на основе шаблонов ";
+	- let currentPage = "Тарифы";
+	- let isDevPage = true;
+	- let bodyClass = 'dev--page'
+
+append styles 
+	link(href="assets/styles/dev.css" rel="stylesheet")
+
+append scripts 
+	script(src="assets/scripts/dev.js" type="module")
+
+block content 
+	.dev-page 
+		section.home-dev
+			.home-dev__wrapper 
+				.container
+					.home-dev__body 
+						.home-dev__image 
+							img(src="assets/images/dev/home-img.svg", alt="")
+						.home-dev__info 
+							h2.home-dev__title Разработка сайтов #[br] для владельцев отелей на основе шаблонов 
+							.home-dev__sub-title Предлагаем создание сайтов для отелей на основе предложенных вариантов. В самые сжатые сроки Вы получаете полностью готовый информационный сайт о Вашем объекте.
+							a(href="#").home-dev__button.btn.btn-blue-dark Заказать проект
+		section.dev-advantages
+			.container 
+				h2.dev-advantages__title.page-title Преимущества работы с нами
+				.dev-advantages__body 
+					each item, index in devPage.advantages
+						.dev-advantages__item.item-advantages
+							.item-advantages__content
+								.item-advantages__icon 
+									img(src=`assets/images/dev/advantages-icon-${index+1}.svg`, alt=item.title)
+								.item-advantages__caption= item.title
+								.item-advantages__text 
+									p!= item.text
+							if item.image
+								.item-advantages__image 
+									picture
+										source(srcset="assets/images/dev/advantages-img.svg" media="(min-width: 767.98px)")
+										source(srcset="assets/images/dev/advantages-img-mobile.svg" media="(min-width: 300px)")
+										img(src="assets/images/dev/advantages-img.svg", alt="изображение")
+		section.dev-variants
+			.container 
+				h2.dev-variants__title.page-title Варианты сайтов для отелей
+				.dev-variants__body 
+					each item, index in devPage.variants
+						.dev-variants__item.item-variants
+							.item-variants__label= item.label
+							.item-variants__caption= item.title
+							.item-variants__prices 
+								.item-variants__price #{item.price} #[span #[sup ₽ / год]]
+								a(href="#").item-variants__link Демо № #{index+1}
+							.item-variants__preview.ibg
+								img(src=`assets/images/dev/variant-${index+1}.png`, alt=item.title)
+							.item-variants__buttons 
+								a(href="#").btn.btn-blue-dark.btn-demo Демо
+								a(href="#").btn.btn-orange Хочу такой
+		section.dev-steps
+			.container 
+				h2.dev-steps__title.page-title Этапы создания сайта
+				.dev-steps__body 
+					each item, index in devPage.steps
+						.dev-steps__item.step-item
+							.step-item__icon 
+								img(src=`assets/images/dev/step-${index+1}.svg`, alt=item.title)
+							.step-item__content 
+								.step-item__title= item.title
+								.step-item__description= item.description
+		section.dev-form
+			.dev-form__wrapper
+				.container 
+					.dev-form__body
+						form(action="#").form 
+							.dev-form__info
+								h2.dev-form__title.page-title Подать заявку на разработку сайта по&nbsp;готовому шаблону
+								.dev-form__text(data-da=".dev-form__bottom, 767.98, 0")
+									| Нажимая на кнопку “Отправить” вы автоматически соглашаетесь на обработку персональных данных в соответствии с #[a(href="#").btn-detail #[span Политикой конфиденциальности и принимаете условия Пользовательского соглашения]]
+							.dev-form__items 
+								+formItem("text", "name", "Имя")
+								+formItem("email", "email", "Email")
+								+formItem("tel", "phone", "+7-900-000-00-00")
+								.form-item
+									.form-item__caption Выбрать тип
+									+customDropdown([...devPage.dropdowns], "Демо № 1")
+								.form-item
+									.form-item__field
+										textarea(name="person_message" id="person_message").form-textarea
+										label(for="person_message").form-label Комментарий
+								button(type="submit").dev-form__button.btn.btn-orange Отправить
+							.dev-form__bottom

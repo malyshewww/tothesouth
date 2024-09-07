@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Разработка сайтов для владельцев отелей на основе шаблонов </title>
+	<meta name="description" content="description">
+	<meta name="keywords" content="Перечень ключевых слов">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://example.com">
+	<meta property="og:title" content="Разработка сайтов для владельцев отелей на основе шаблонов ">
+	<meta property="og:description" content="description">
+	<meta property="twitter:title" content="Разработка сайтов для владельцев отелей на основе шаблонов ">
+	<meta property="twitter:description" content="description">
+	<link rel="canonical" href="https://example.com">
+	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap&_v=20240907152856" rel="stylesheet">
+	<link href="assets/styles/main.css?_v=20240907152856" rel="stylesheet">
+	<link href="assets/styles/dev.css?_v=20240907152856" rel="stylesheet">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="format-detection" content="address=no">
+	<meta name="format-detection" content="email=no">
+	<meta name="format-detection" content="date=no">
+	<link type="image/svg" rel="icon" href="assets/images/favicon.svg">
+	<link type="image/x-icon" rel="shortcut icon" href="assets/images/favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+	<link rel="mask-icon" href="assets/images/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="theme-color" content="#ffffff">
+	<meta name="msapplication-navbutton-color" content="#fff">
+	<meta name="apple-mobile-web-app-status-bar-style" content="#fff">
+	<meta name="apple-mobile-web-app-title" content="Название">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+</head>
+
+<body class="dev--page">
+	<div class="wrapper">
+		<header class="header">
+			<div class="container">
+				<div class="header__body">
+					<div class="header__left">
+						<div class="header-burger">
+							<svg class="burger-lines" width="21" height="17" viewBox="0 0 21 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path class="top" d="M1 1.61646H20" stroke="#8897B1" stroke-width="1.5" stroke-linecap="round"></path>
+								<path class="middle" d="M1 8.61646H20" stroke="#8897B1" stroke-width="1.5" stroke-linecap="round"></path>
+								<path class="bottom" d="M1 15.6165L20 15.6165" stroke="#8897B1" stroke-width="1.5" stroke-linecap="round"></path>
+							</svg>
+							<svg class="burger-close" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M21 7L7 21" stroke="#8897B1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+								<path d="M7 7L21 21" stroke="#8897B1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+							</svg>
+						</div>
+						<a class="header__logo logo" href="homepage.html">
+							<img src="assets/images/logo-blue.svg" alt="логотип">
+						</a>
+						<div class="header__choices">
+							<button class="btn btn-transparent header__btn-choice" type="button">Выберите курорт</button>
+							<nav class="menu-category" data-da=".menu__body, 1024, 1">
+								<div class="menu-category__wrapper">
+									<div class="menu-category__item">
+										<div class="menu-category__caption">Регион</div>
+										<div class="menu-category__boxes">
+											<div class="menu-category__box">
+												<div class="menu-category__label" data-accordeon-button>Краснодарский край</div>
+												<ul class="menu-category__list">
+													<li class="menu-category__list-item">
+														<a class="menu-category__link" href="#">Курорты Сочи</a>
+													</li>
+													<li class="menu-category__list-item">
+														<a class="menu-category__link active" href="#">Курорты Анапы</a>
+													</li>
+													<li class="menu-category__list-item">
+														<a class="menu-category__link" href="#">Курорты Геленджика</a>
+													</li>
+													<li class="menu-category__list-item">
+														<a class="menu-category__link" href="#">Курорты Геленджика</a>
+													</li>
+												</ul>
+											</div>
+											<div class="menu-category__box">
+												<div class="menu-category__label" data-accordeon-button>Крым</div>
+												<ul class="menu-category__list">
+													<li class="menu-category__list-item">
+														<a class="menu-category__link" href="#">Курорт</a>
+													</li>
+													<li class="menu-category__list-item">
+														<a class="menu-category__link" href="#">Курорт</a>
+													</li>
+													<li class="menu-category__list-item">
+														<a class="menu-category__link" href="#">Курорт</a>
+													</li>
+													<li class="menu-category__list-item">
+														<a class="menu-category__link" href="#">Курорт</a>
+													</li>
+												</ul>
+											</div>
+											<div class="menu-category__box">
+												<div class="menu-category__label" data-accordeon-button>Абхазия</div>
+												<ul class="menu-category__list">
+													<li class="menu-category__list-item">
+														<a class="menu-category__link" href="#">Курорт</a>
+													</li>
+													<li class="menu-category__list-item">
+														<a class="menu-category__link" href="#">Курорт</a>
+													</li>
+													<li class="menu-category__list-item">
+														<a class="menu-category__link" href="#">Курорт</a>
+													</li>
+													<li class="menu-category__list-item">
+														<a class="menu-category__link" href="#">Курорт</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="menu-category__item">
+										<div class="menu-category__caption">Курорт</div>
+										<div class="menu-category__boxes">
+											<div class="menu-category__box">
+												<ul class="menu-category__list">
+													<li class="menu-category__list-item">
+														<a class="menu-category__link" href="#">город</a>
+													</li>
+													<li class="menu-category__list-item">
+														<a class="menu-category__link" href="#">город</a>
+													</li>
+													<li class="menu-category__list-item">
+														<a class="menu-category__link" href="#">город</a>
+													</li>
+													<li class="menu-category__list-item">
+														<a class="menu-category__link" href="#">город</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</nav>
+						</div>
+					</div>
+					<div class="header__links">
+						<a class="header__favorite" href="favorites.html">
+							<svg width="26" height="23" viewBox="0 0 26 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M23.1494 2.85655C21.965 1.66785 20.3584 1 18.6831 1C17.0077 1 15.4011 1.66785 14.2167 2.85655L12.9997 4.07749L11.7826 2.85655C9.31597 0.38197 5.31669 0.381971 2.85001 2.85655C0.38333 5.33113 0.38333 9.34322 2.85001 11.8178L4.06705 13.0387L12.9997 22L21.9323 13.0387L23.1494 11.8178C24.3343 10.6297 25 9.01786 25 7.33718C25 5.6565 24.3343 4.0447 23.1494 2.85655Z" fill="#FF6933"></path>
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M13.6856 2.32707C15.0104 0.997456 16.808 0.25 18.6831 0.25C20.5581 0.25 22.3559 0.997503 23.6807 2.3272C25.0059 3.65616 25.75 5.45841 25.75 7.33718C25.75 9.21606 25.0058 11.0184 23.6804 12.3474L13.5309 22.5295C13.3902 22.6707 13.199 22.75 12.9997 22.75C12.8004 22.75 12.6092 22.6707 12.4685 22.5295L2.31883 12.3473C-0.439611 9.58001 -0.439611 5.09435 2.31883 2.32707C5.0786 -0.441535 9.55406 -0.441536 12.3138 2.32707L12.9997 3.01513L13.6856 2.32707C13.6856 2.32703 13.6855 2.32711 13.6856 2.32707ZM18.6831 1.75C17.2075 1.75 15.7919 2.3382 14.748 3.38591L13.5309 4.60698C13.3902 4.74815 13.199 4.82749 12.9997 4.82749C12.8004 4.82749 12.6092 4.74815 12.4685 4.60698L11.2515 3.38603C9.07788 1.20548 5.55478 1.20548 3.38119 3.38603C1.20627 5.56792 1.20627 9.10644 3.38119 11.2883L12.9997 20.9376L22.6182 11.2883C23.6626 10.241 24.25 8.81966 24.25 7.33718C24.25 5.8547 23.6628 4.43345 22.6183 3.38616C21.5744 2.33845 20.1586 1.75 18.6831 1.75Z" fill="#FF6933"></path>
+							</svg>
+						</a>
+						<a class="btn btn-transparent header__btn-auth" href="auth-registration.html">Авторизация</a>
+						<a class="btn header__btn-add btn-white" href="add-project.html">Добавить проект</a>
+					</div>
+					<div class="header__menu menu">
+						<div class="menu__top">
+							<div class="menu__text">Меню</div>
+						</div>
+						<div class="menu__body">
+							<nav class="menu-main">
+								<ul class="menu__list">
+									<li class="menu__item">
+										<a class="menu__link" href="auth-login.html">Войти</a>
+									</li>
+									<li class="menu__item">
+										<a class="menu__link" href="auth-registration.html">Зарегистрироваться</a>
+									</li>
+								</ul>
+								<div class="menu__actions">
+									<a class="btn header__btn-add" href="add-project.html">Добавить проект</a>
+									<a class="btn btn-transparent header__btn-auth" href="auth-registration.html">Авторизация</a>
+								</div>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="dev-page">
+			<section class="home-dev">
+				<div class="home-dev__wrapper">
+					<div class="container">
+						<div class="home-dev__body">
+							<div class="home-dev__image">
+								<img src="assets/images/dev/home-img.svg" alt="">
+							</div>
+							<div class="home-dev__info">
+								<h2 class="home-dev__title">Разработка сайтов
+									<br> для владельцев отелей на основе шаблонов
+								</h2>
+								<div class="home-dev__sub-title">Предлагаем создание сайтов для отелей на основе предложенных вариантов. В самые сжатые сроки Вы получаете полностью готовый информационный сайт о Вашем объекте.</div>
+								<a class="btn btn-blue-dark home-dev__button" href="#">Заказать проект</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="dev-advantages">
+				<div class="container">
+					<h2 class="page-title dev-advantages__title">Преимущества работы с нами</h2>
+					<div class="dev-advantages__body">
+						<div class="dev-advantages__item item-advantages">
+							<div class="item-advantages__content">
+								<div class="item-advantages__icon">
+									<img src="assets/images/dev/advantages-icon-1.svg" alt="Быстрое исполнение">
+								</div>
+								<div class="item-advantages__caption">Быстрое исполнение</div>
+								<div class="item-advantages__text">
+									<p>Гарантируем создание качественного веб-ресурса всего за 7 дней! Подберем оптимальный шаблон, соответствующий вашим требованиям и пожеланиям, а также проведем все необходимые настройки и интеграции</p>
+								</div>
+							</div>
+						</div>
+						<div class="dev-advantages__item item-advantages">
+							<div class="item-advantages__content">
+								<div class="item-advantages__icon">
+									<img src="assets/images/dev/advantages-icon-2.svg" alt="Помощь в управлении сайтом">
+								</div>
+								<div class="item-advantages__caption">Помощь в управлении сайтом</div>
+								<div class="item-advantages__text">
+									<p>После завершения работы над проектом мы предоставляем нашим клиентам подробную инструкцию по работе с системой управления контентом (CMS), а также проводим обучение персонала заказчика</p>
+								</div>
+							</div>
+						</div>
+						<div class="dev-advantages__item item-advantages">
+							<div class="item-advantages__content">
+								<div class="item-advantages__icon">
+									<img src="assets/images/dev/advantages-icon-3.svg" alt="Прием заказов напрямую">
+								</div>
+								<div class="item-advantages__caption">Прием заказов напрямую</div>
+								<div class="item-advantages__text">
+									<p>Мы принимаем заявки на создание сайтов напрямую от клиентов, без привлечения посредников. Это позволяет нам гарантировать высокое качество работы и индивидуальный подход к каждому проекту</p>
+								</div>
+							</div>
+						</div>
+						<div class="dev-advantages__item item-advantages">
+							<div class="item-advantages__content">
+								<div class="item-advantages__icon">
+									<img src="assets/images/dev/advantages-icon-4.svg" alt="Хостинг и домен входят в стоимость">
+								</div>
+								<div class="item-advantages__caption">Хостинг и домен входят в стоимость</div>
+								<div class="item-advantages__text">
+									<p>Вам не нужно беспокоиться о дополнительных расходах. Мы предоставляем качественный хостинг и помогаем выбрать подходящий домен для вашего проекта</p>
+								</div>
+							</div>
+							<div class="item-advantages__image">
+								<picture>
+									<source srcset="assets/images/dev/advantages-img.svg" media="(min-width: 767.98px)">
+									<source srcset="assets/images/dev/advantages-img-mobile.svg" media="(min-width: 300px)">
+									<img src="assets/images/dev/advantages-img.svg" alt="изображение">
+								</picture>
+							</div>
+						</div>
+						<div class="dev-advantages__item item-advantages">
+							<div class="item-advantages__content">
+								<div class="item-advantages__icon">
+									<img src="assets/images/dev/advantages-icon-5.svg" alt="У нас выгодно!">
+								</div>
+								<div class="item-advantages__caption">У нас выгодно!</div>
+								<div class="item-advantages__text">
+									<p>Мы предлагаем наиболее простой и доступный вариант привлечения клиентов и, как следствие, <span>увеличение Вашей прибыли!</span>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="dev-variants">
+				<div class="container">
+					<h2 class="page-title dev-variants__title">Варианты сайтов для отелей</h2>
+					<div class="dev-variants__body">
+						<div class="dev-variants__item item-variants">
+							<div class="item-variants__label">Диджитал маркетинг</div>
+							<div class="item-variants__caption">Сайт для маркетинговых исследований в сфере онлайн бизнеса</div>
+							<div class="item-variants__prices">
+								<div class="item-variants__price">15 000 <span>
+										<sup>₽ / год</sup>
+									</span>
+								</div>
+								<a class="item-variants__link" href="#">Демо № 1</a>
+							</div>
+							<div class="ibg item-variants__preview">
+								<picture>
+									<source srcset="assets/images/dev/variant-1.webp" type="image/webp">
+									<img src="assets/images/dev/variant-1.png" alt="Сайт для маркетинговых исследований в сфере онлайн бизнеса">
+								</picture>
+							</div>
+							<div class="item-variants__buttons">
+								<a class="btn btn-blue-dark btn-demo" href="#">Демо</a>
+								<a class="btn btn-orange" href="#">Хочу такой</a>
+							</div>
+						</div>
+						<div class="dev-variants__item item-variants">
+							<div class="item-variants__label">Диджитал маркетинг</div>
+							<div class="item-variants__caption">Сайт для маркетинговых исследований в сфере онлайн бизнеса</div>
+							<div class="item-variants__prices">
+								<div class="item-variants__price">15 000 <span>
+										<sup>₽ / год</sup>
+									</span>
+								</div>
+								<a class="item-variants__link" href="#">Демо № 2</a>
+							</div>
+							<div class="ibg item-variants__preview">
+								<picture>
+									<source srcset="assets/images/dev/variant-2.webp" type="image/webp">
+									<img src="assets/images/dev/variant-2.png" alt="Сайт для маркетинговых исследований в сфере онлайн бизнеса">
+								</picture>
+							</div>
+							<div class="item-variants__buttons">
+								<a class="btn btn-blue-dark btn-demo" href="#">Демо</a>
+								<a class="btn btn-orange" href="#">Хочу такой</a>
+							</div>
+						</div>
+						<div class="dev-variants__item item-variants">
+							<div class="item-variants__label">Диджитал маркетинг</div>
+							<div class="item-variants__caption">Сайт для маркетинговых исследований в сфере онлайн бизнеса</div>
+							<div class="item-variants__prices">
+								<div class="item-variants__price">15 000 <span>
+										<sup>₽ / год</sup>
+									</span>
+								</div>
+								<a class="item-variants__link" href="#">Демо № 3</a>
+							</div>
+							<div class="ibg item-variants__preview">
+								<picture>
+									<source srcset="assets/images/dev/variant-3.webp" type="image/webp">
+									<img src="assets/images/dev/variant-3.png" alt="Сайт для маркетинговых исследований в сфере онлайн бизнеса">
+								</picture>
+							</div>
+							<div class="item-variants__buttons">
+								<a class="btn btn-blue-dark btn-demo" href="#">Демо</a>
+								<a class="btn btn-orange" href="#">Хочу такой</a>
+							</div>
+						</div>
+						<div class="dev-variants__item item-variants">
+							<div class="item-variants__label">Диджитал маркетинг</div>
+							<div class="item-variants__caption">Сайт для маркетинговых исследований в сфере онлайн бизнеса</div>
+							<div class="item-variants__prices">
+								<div class="item-variants__price">15 000 <span>
+										<sup>₽ / год</sup>
+									</span>
+								</div>
+								<a class="item-variants__link" href="#">Демо № 4</a>
+							</div>
+							<div class="ibg item-variants__preview">
+								<picture>
+									<source srcset="assets/images/dev/variant-4.webp" type="image/webp">
+									<img src="assets/images/dev/variant-4.png" alt="Сайт для маркетинговых исследований в сфере онлайн бизнеса">
+								</picture>
+							</div>
+							<div class="item-variants__buttons">
+								<a class="btn btn-blue-dark btn-demo" href="#">Демо</a>
+								<a class="btn btn-orange" href="#">Хочу такой</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="dev-steps">
+				<div class="container">
+					<h2 class="page-title dev-steps__title">Этапы создания сайта</h2>
+					<div class="dev-steps__body">
+						<div class="dev-steps__item step-item">
+							<div class="step-item__icon">
+								<img src="assets/images/dev/step-1.svg" alt="Тех. задание">
+							</div>
+							<div class="step-item__content">
+								<div class="step-item__title">Тех. задание</div>
+								<div class="step-item__description">Выбираете шаблон и определяете функционал будущего сайта</div>
+							</div>
+						</div>
+						<div class="dev-steps__item step-item">
+							<div class="step-item__icon">
+								<img src="assets/images/dev/step-2.svg" alt="Оплата">
+							</div>
+							<div class="step-item__content">
+								<div class="step-item__title">Оплата</div>
+								<div class="step-item__description">Вы оплачиваете 100% стоимость наших услуг</div>
+							</div>
+						</div>
+						<div class="dev-steps__item step-item">
+							<div class="step-item__icon">
+								<img src="assets/images/dev/step-3.svg" alt="Контент">
+							</div>
+							<div class="step-item__content">
+								<div class="step-item__title">Контент</div>
+								<div class="step-item__description">Предоставление информации для размещения на сайте</div>
+							</div>
+						</div>
+						<div class="dev-steps__item step-item">
+							<div class="step-item__icon">
+								<img src="assets/images/dev/step-4.svg" alt="Разработка">
+							</div>
+							<div class="step-item__content">
+								<div class="step-item__title">Разработка</div>
+								<div class="step-item__description">Создание сайта по оговоренному плану</div>
+							</div>
+						</div>
+						<div class="dev-steps__item step-item">
+							<div class="step-item__icon">
+								<img src="assets/images/dev/step-5.svg" alt="Сайт готов ">
+							</div>
+							<div class="step-item__content">
+								<div class="step-item__title">Сайт готов </div>
+								<div class="step-item__description">Сдача клиенту готового проекта</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="dev-form">
+				<div class="dev-form__wrapper">
+					<div class="container">
+						<div class="dev-form__body">
+							<form class="form" action="#">
+								<div class="dev-form__info">
+									<h2 class="page-title dev-form__title">Подать заявку на разработку сайта по&nbsp;готовому шаблону</h2>
+									<div class="dev-form__text" data-da=".dev-form__bottom, 767.98, 0">Нажимая на кнопку “Отправить” вы автоматически соглашаетесь на обработку персональных данных в соответствии с <a class="btn-detail" href="#">
+											<span>Политикой конфиденциальности и принимаете условия Пользовательского соглашения</span>
+										</a>
+									</div>
+								</div>
+								<div class="dev-form__items">
+									<div class="form-item">
+										<div class="form-item__field">
+											<input class="form-input" type="text" name="name" id="name" placeholder="">
+											<label class="form-label" for="name">Имя</label>
+										</div>
+									</div>
+									<div class="form-item">
+										<div class="form-item__field">
+											<input class="form-input" type="email" name="email" id="email" placeholder="">
+											<label class="form-label" for="email">Email</label>
+										</div>
+									</div>
+									<div class="form-item">
+										<div class="form-item__field-phone">
+											<input class="form-input" type="tel" name="phone" placeholder="+7-900-000-00-00">
+										</div>
+									</div>
+									<div class="form-item">
+										<div class="form-item__caption">Выбрать тип</div>
+										<div class="custom-dropdown">
+											<div class="custom-dropdown__wrapper" data-dropdown>
+												<div class="custom-dropdown__btn" data-dropdown-button>Демо № 1</div>
+												<ul class="custom-dropdown__list select-list" data-dropdown-list>
+													<li class="select-list__item" data-value="Демо № 1">Демо № 1</li>
+													<li class="select-list__item" data-value="Демо № 2">Демо № 2</li>
+													<li class="select-list__item" data-value="Демо № 3">Демо № 3</li>
+												</ul>
+												<input class="custom-dropdown__input" type="hidden" value="">
+											</div>
+										</div>
+									</div>
+									<div class="form-item">
+										<div class="form-item__field">
+											<textarea class="form-textarea" name="person_message" id="person_message"></textarea>
+											<label class="form-label" for="person_message">Комментарий</label>
+										</div>
+									</div>
+									<button class="btn btn-orange dev-form__button" type="submit">Отправить</button>
+								</div>
+								<div class="dev-form__bottom"></div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+		<footer class="footer">
+			<div class="container">
+				<div class="footer__body">
+					<div class="footer__info info-footer">
+						<a class="footer__logo" href="homepage.html">
+							<img src="assets/images/logo.svg" alt="логотип">
+						</a>
+						<div class="info-footer__inner" data-da=".main-footer, 767.98, 0">
+							<div class="footer__copy">©На Юга, 2024</div>
+							<a class="footer__politic" href="#">Политика конфиденциальности</a>
+							<div class="footer__disclamer">Мы не предоставляем услуги бронирования. Всю информацию Вы можете найти на странице заинтресовавшего Вас обьекта Пишите, мы обязательно ответим</div>
+						</div>
+					</div>
+					<div class="footer__main main-footer">
+						<div class="footer__menu menu-footer">
+							<div class="menu-footer__label">Информация</div>
+							<ul class="menu-footer__list">
+								<li class="menu-footer__item">
+									<a class="menu-footer__link" href="about.html">О компании</a>
+								</li>
+								<li class="menu-footer__item">
+									<a class="menu-footer__link" href="services.html">Тарифы</a>
+								</li>
+								<li class="menu-footer__item">
+									<a class="menu-footer__link" href="faq.html">FAQ</a>
+								</li>
+								<li class="menu-footer__item">
+									<a class="menu-footer__link" href="contacts.html">Контакты</a>
+								</li>
+							</ul>
+							<ul class="menu-footer__list">
+								<li class="menu-footer__item">
+									<a class="menu-footer__link" href="#">Соглашение</a>
+								</li>
+								<li class="menu-footer__item">
+									<a class="menu-footer__link" href="#">Работа</a>
+								</li>
+								<li class="menu-footer__item">
+									<a class="menu-footer__link" href="#">Статистика</a>
+								</li>
+								<li class="menu-footer__item">
+									<a class="menu-footer__link" href="#">Карта сайта</a>
+								</li>
+							</ul>
+						</div>
+						<div class="footer__contacts">
+							<a class="footer__phone" href="tel:+79788029014">+7 (978) 802 90 14</a>
+							<a class="footer__email" href="mailto:info@na-uga.ru">info@na-uga.ru</a>
+							<a class="btn btn-orange-transparent footer__button" href="#">Добавить проект </a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<div class="overlay"></div>
+	</div>
+	<div class="popup popup-map" id="modal-map">
+		<div class="popup__window">
+			<div class="popup__close"></div>
+			<div class="popup-map__container">
+				<div class="map" id="map-popup"></div>
+				<button class="filter-button-mobile" type="button">Фильтры</button>
+			</div>
+		</div>
+	</div>
+	<div class="popup popup-room" id="modal-room">
+		<div class="popup__window">
+			<div class="popup__close"></div>
+			<div class="popup-room__body">
+				<div class="room-item">
+					<div class="room-item-slider swiper">
+						<div class="room-item-slider__wrapper swiper-wrapper">
+							<div class="room-item-slider__slide">
+								<div class="ibg room-item-slider__image">
+									<picture>
+										<source srcset="assets/images/detail-card/rooms/room-slide.webp" type="image/webp">
+										<img src="assets/images/detail-card/rooms/room-slide.jpg" alt="изображение">
+									</picture>
+								</div>
+							</div>
+							<div class="room-item-slider__slide">
+								<div class="ibg room-item-slider__image">
+									<picture>
+										<source srcset="assets/images/detail-card/rooms/room-slide.webp" type="image/webp">
+										<img src="assets/images/detail-card/rooms/room-slide.jpg" alt="изображение">
+									</picture>
+								</div>
+							</div>
+							<div class="room-item-slider__slide">
+								<div class="ibg room-item-slider__image">
+									<picture>
+										<source srcset="assets/images/detail-card/rooms/room-slide.webp" type="image/webp">
+										<img src="assets/images/detail-card/rooms/room-slide.jpg" alt="изображение">
+									</picture>
+								</div>
+							</div>
+						</div>
+						<div class="slider-controls">
+							<button class="slider-button slider-button-prev" type="button"></button>
+							<button class="slider-button slider-button-next" type="button"></button>
+						</div>
+						<div class="slider-pagination"></div>
+					</div>
+					<div class="room-item__content">
+						<div class="room-item__header">
+							<div class="room-item__title">Трехместный «Эконом» (2-й этаж)</div>
+							<div class="places-room room-item__places">
+								<span class="places-room__item">1 комната</span>
+								<span class="places-room__item">3 места + 1 доп.</span>
+							</div>
+						</div>
+						<ul class="features-list">
+							<li class="features-list__item wi-fi">Бесплатный Wi-Fi</li>
+							<li class="features-list__item transfer">Трансфер</li>
+							<li class="features-list__item bar">Бар / Ресторан</li>
+							<li class="features-list__item children">Подходит для детей</li>
+						</ul>
+						<div class="room-item__text">
+							<p>Мы очень признательны Вам, что Вы обратили внимание на наш гостевой дом На Победе. Удобное место расположение его выгодно отличает от других мест отдыха, находясь в центре поселка Лазаревское.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="assets/scripts/main.js?_v=20240907152856" type="module"></script>
+	<script src="assets/scripts/dev.js?_v=20240907152856" type="module"></script>
+</body>
+
+</html>

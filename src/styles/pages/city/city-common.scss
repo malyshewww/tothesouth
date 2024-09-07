@@ -266,6 +266,9 @@
 			bottom: 0;
 		}
 	}
+}
+.aside-form,
+.filter {
 	& .form__bottom-wrap {
 		display: none;
 		@media screen and (max-width: $xl) {
@@ -286,6 +289,13 @@
 		width: 100%;
 		& .btn {
 			width: 100%;
+		}
+	}
+}
+.aside-form {
+	& .form__bottom-wrap {
+		@media screen and (max-width: $xl) {
+			margin: 0 -20px;
 		}
 	}
 }

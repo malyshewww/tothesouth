@@ -1,0 +1,666 @@
+@use 'sass:math';
+@import 'config/variables';
+@import 'config/mixins';
+
+@import 'forms';
+
+body.dev--page {
+	background-color: $white;
+}
+
+.dev-page {
+	& .page-title {
+		margin-bottom: 60px;
+		@media screen and (max-width: $md) {
+			margin-bottom: 20px;
+			font-size: 24px;
+			line-height: 120%;
+			max-width: 100%;
+		}
+	}
+}
+.home-dev {
+	padding: 20px 0 50px;
+	@media screen and (max-width: $md) {
+		padding: 0 0 15px;
+	}
+	&__wrapper {
+		background-color: #1a202d;
+		margin: 0 20px;
+		color: $white;
+		overflow: hidden;
+		border-radius: 20px;
+		@media screen and (max-width: $md) {
+			border-radius: 0;
+			margin: 0;
+		}
+	}
+	&__body {
+		min-height: 735px;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		padding: 60px 0;
+		position: relative;
+		z-index: 2;
+		@media screen and (max-width: $md) {
+			flex-direction: column;
+			gap: 20px;
+			min-height: auto;
+			padding: 10px 0 20px;
+		}
+	}
+	&__image {
+		width: 650px;
+		height: 435px;
+		position: absolute;
+		top: 50%;
+		right: calc(-181px);
+		transform: translateY(-50%);
+		z-index: -1;
+		@media screen and (max-width: $md) {
+			width: 100%;
+			height: auto;
+			position: static;
+			transform: none;
+			min-height: 210px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			& img {
+				width: 100%;
+			}
+		}
+	}
+	&__info {
+		display: grid;
+		grid-template-columns: 100%;
+		justify-items: start;
+		gap: 20px;
+		max-width: 600px;
+		position: relative;
+		z-index: 2;
+		@media screen and (max-width: $md) {
+			align-self: start;
+			gap: 10px;
+			max-width: 100%;
+		}
+	}
+	&__title {
+		font-weight: 800;
+		font-size: 48px;
+		line-height: 120%;
+		&::before {
+			content: '';
+			position: absolute;
+			display: block;
+			width: 28px;
+			height: 27px;
+			background-image: url('../images/dev/home-icon.svg');
+			background-repeat: no-repeat;
+			background-position: 60% top;
+			top: 0;
+			right: 13.6%;
+			z-index: -1;
+		}
+		@media screen and (max-width: $md) {
+			font-size: 32px;
+			line-height: 130%;
+		}
+	}
+	&__sub-title {
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 152%;
+	}
+	&__button {
+		margin-top: 20px;
+		@media screen and (max-width: $md) {
+			width: 100%;
+		}
+		&::after {
+			content: '';
+			display: block;
+			background-color: $white;
+			width: 22px;
+			height: 22px;
+			mask-image: url('../images/dev/arrow-rotate.svg');
+			mask-repeat: no-repeat;
+			mask-position: center;
+			transition: transform $time;
+		}
+	}
+}
+.dev-advantages {
+	padding: 50px 0 75px;
+	@media screen and (max-width: $md) {
+		padding: 15px 0 15px;
+	}
+	&__title {
+		max-width: 480px;
+		@media screen and (max-width: $md) {
+			&.page-title {
+				max-width: 98%;
+			}
+		}
+	}
+	&__body {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 30px;
+		@media screen and (max-width: $lg) {
+			grid-template-columns: 100%;
+			gap: 10px;
+		}
+	}
+	&__item {
+	}
+}
+.item-advantages {
+	padding: 30px;
+	border: 1px solid $gray-line;
+	border-radius: 10px;
+	@media screen and (max-width: $md) {
+		padding: 25px;
+	}
+	&:nth-child(4) {
+		grid-column: span 2;
+		display: grid;
+		grid-template-columns: 1fr 225px;
+		align-items: center;
+		gap: 20px;
+		padding: 39px;
+		background-color: $gray-background;
+		& .item-advantages__caption {
+			font-size: 24px;
+			line-height: 120%;
+			max-width: 260px;
+			@media screen and (max-width: $md) {
+				max-width: 100%;
+				font-size: 18px;
+				line-height: 130%;
+			}
+		}
+		@media screen and (max-width: $lg) {
+			grid-column: initial;
+		}
+		@media screen and (max-width: $md) {
+			padding: 25px;
+			grid-template-columns: 100%;
+		}
+	}
+	&:last-child {
+		background-color: $blue;
+		border-color: $blue;
+		padding: 40px;
+		color: $white;
+		& .item-advantages__text {
+			color: $white;
+		}
+		& .item-advantages__caption {
+			font-size: 24px;
+			line-height: 120%;
+			@media screen and (max-width: $md) {
+				font-size: 18px;
+				line-height: 130%;
+			}
+		}
+		@media screen and (max-width: $md) {
+			padding: 25px;
+		}
+	}
+	&__content {
+		display: grid;
+		grid-template-columns: 100%;
+		align-items: start;
+		gap: 10px;
+	}
+	&__icon {
+		width: 40px;
+		height: 40px;
+		overflow: hidden;
+		display: grid;
+		place-items: center;
+		margin-bottom: 10px;
+		& img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+	&__image {
+		width: 225px;
+		@media screen and (max-width: $md) {
+			justify-self: center;
+			height: 215px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	}
+	&__caption {
+		font-weight: 700;
+		font-size: 18px;
+		line-height: 130%;
+	}
+	&__text {
+		font-size: 14px;
+		line-height: 140%;
+		color: rgba(8, 21, 26, 0.6);
+		& span {
+			font-weight: 600;
+		}
+	}
+}
+.dev-variants {
+	padding: 73px 0 75px;
+	@media screen and (max-width: $md) {
+		padding: 15px 0;
+	}
+	&__title {
+		max-width: 400px;
+	}
+	&__body {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 30px;
+		@media screen and (max-width: $md) {
+			grid-template-columns: 100%;
+			gap: 10px;
+		}
+	}
+}
+.item-variants {
+	padding: 49px 49px 54px;
+	border-radius: 10px;
+	border: 1px solid $gray-line;
+	display: grid;
+	grid-template-columns: 100%;
+	gap: 10px;
+	@media screen and (max-width: $md) {
+		padding: 24px;
+	}
+	&__label {
+		font-weight: 600;
+		font-size: 16px;
+		line-height: 130%;
+		color: $gray-text;
+		@media screen and (max-width: $md) {
+			font-size: 14px;
+			line-height: 140%;
+		}
+	}
+	&__caption {
+		font-weight: 700;
+		font-size: 20px;
+		line-height: 130%;
+		@media screen and (max-width: $md) {
+			font-size: 18px;
+			line-height: 130%;
+		}
+	}
+	&__prices {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 10px 20px;
+		margin-top: 10px;
+		@media screen and (max-width: $md) {
+			order: 1;
+		}
+	}
+	&__price {
+		font-weight: 700;
+		font-size: 24px;
+		line-height: 120%;
+		& span {
+			color: $gray-text;
+			font-size: 18px;
+		}
+		@media screen and (max-width: $md) {
+			font-size: 18px;
+			line-height: 133%;
+			& span {
+				font-size: 12px;
+			}
+		}
+	}
+	&__link {
+		font-weight: 600;
+		font-size: 16px;
+		line-height: 130%;
+		color: $blue;
+		@media screen and (max-width: $md) {
+			font-size: 14px;
+		}
+	}
+	&__preview {
+		padding-bottom: 72.4%;
+		overflow: hidden;
+		border-radius: 10px;
+		margin-top: 30px;
+		@media screen and (max-width: $md) {
+			margin-top: 10px;
+			padding-bottom: math.div(180, 246) * 100%;
+		}
+	}
+	&__buttons {
+		display: none;
+		@media screen and (max-width: $md) {
+			display: grid;
+			gap: 10px;
+			order: 1;
+			margin-top: 10px;
+		}
+	}
+}
+.dev-steps {
+	padding: 75px 0;
+	@media screen and (max-width: $md) {
+		padding: 15px 0;
+	}
+	&__title {
+		max-width: 350px;
+		&.page-title {
+			margin-bottom: 30px;
+		}
+	}
+	&__body {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 30px;
+		position: relative;
+		&::before {
+			content: '';
+			position: absolute;
+			display: block;
+			top: 17px;
+			left: -24px;
+			background-image: url('../images/dev/steps-line.svg');
+			background-repeat: no-repeat;
+			width: 1157px;
+			height: 433px;
+			z-index: -1;
+			@media screen and (max-width: $xxl) {
+				top: -10px;
+			}
+			@media screen and (max-width: $xl) {
+				content: none;
+			}
+		}
+		@media screen and (max-width: $md) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@media screen and (max-width: $sm) {
+			grid-template-columns: 100%;
+		}
+	}
+}
+.step-item {
+	max-width: 270px;
+	counter-increment: num;
+	@media screen and (max-width: $xl) {
+		padding: 0;
+		display: flex;
+		align-items: flex-start;
+		gap: 15px;
+		width: 100%;
+		max-width: 100%;
+	}
+	&:nth-child(1) {
+		padding-top: 79px;
+		order: 1;
+		@media screen and (max-width: $xl) {
+			padding: 0;
+		}
+	}
+	&:nth-child(2) {
+		order: 2;
+	}
+	&:nth-child(3) {
+		order: 3;
+	}
+	&:nth-child(5) {
+		order: 3;
+		grid-column: 2 / 3;
+		@media screen and (max-width: $xl) {
+			order: 5;
+		}
+
+		@media screen and (max-width: $xl) {
+			grid-column: initial;
+		}
+	}
+	&:nth-child(2),
+	&:nth-child(5) {
+		padding-top: 50px;
+		@media screen and (max-width: $xl) {
+			padding: 0;
+		}
+	}
+	&:nth-child(4) {
+		order: 5;
+	}
+	&__icon {
+		width: 80px;
+		height: 80px;
+		background-color: $white;
+		display: grid;
+		place-items: center;
+		margin-bottom: 30px;
+		@media screen and (max-width: $xl) {
+			margin: 0;
+			width: 30px;
+			height: 40px;
+			flex-shrink: 0;
+		}
+	}
+	&__content {
+		display: grid;
+		grid-template-columns: 100%;
+		gap: 11px;
+		padding-left: 20px;
+		color: #222;
+		position: relative;
+		@media screen and (max-width: $xl) {
+			padding: 0;
+			flex-grow: 1;
+		}
+		&::before {
+			content: counter(num);
+			display: block;
+			position: absolute;
+			font-weight: 800;
+			font-size: 130px;
+			color: rgba(225, 227, 235, 0.5);
+			left: -4px;
+			top: -35px;
+			z-index: -1;
+			@media screen and (max-width: $xl) {
+				font-size: 80px;
+				left: auto;
+				right: 0;
+				top: -15px;
+			}
+		}
+	}
+	&__title {
+		font-weight: 700;
+		font-size: 24px;
+		line-height: 120%;
+		@media screen and (max-width: $md) {
+			font-size: 18px;
+			line-height: 130%;
+		}
+	}
+	&__description {
+		font-size: 16px;
+		line-height: 130%;
+		max-width: 95%;
+		@media screen and (max-width: $xl) {
+			max-width: 100%;
+		}
+		@media screen and (max-width: $md) {
+			font-size: 14px;
+			line-height: 140%;
+		}
+	}
+}
+.dev-form {
+	padding: 75px 0 0;
+	color: $white;
+	@media screen and (max-width: $md) {
+		padding: 15px 0 0;
+	}
+	& .btn-detail {
+		color: $white;
+		& span {
+			background: linear-gradient(to bottom, $white 0%, $white 100%);
+			background-size: 100% 1px;
+			background-repeat: no-repeat;
+			background-position: left 100%;
+		}
+	}
+	& .form-item {
+		&__caption {
+			color: $white;
+		}
+	}
+	& .form-input,
+	& .form-textarea {
+		background-color: transparent;
+		border-color: $white;
+		color: $white;
+		&::placeholder {
+			color: rgba(255, 255, 255, 0.6);
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: transparent;
+			}
+		}
+	}
+	& .form-textarea {
+		min-height: 89px;
+		max-height: 140px;
+	}
+	& .form-label {
+		color: rgba(255, 255, 255, 0.6);
+	}
+	& .custom-dropdown {
+		&__btn {
+			border-color: $white;
+			background: transparent;
+			color: rgba(255, 255, 255, 0.6);
+			&::after {
+				background-color: $white;
+			}
+			@media (any-hover: hover) {
+				&:hover {
+					background-color: transparent;
+				}
+			}
+		}
+	}
+	&__wrapper {
+		background-color: $blue;
+		padding: 100px 0;
+		@media screen and (max-width: $xl) {
+			padding: 50px 0;
+		}
+		@media screen and (max-width: $md) {
+			padding: 30px 0;
+		}
+	}
+	&__body {
+		& .form {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			align-items: start;
+			justify-content: space-between;
+			gap: 60px;
+			@media screen and (max-width: $md) {
+				grid-template-columns: 100%;
+				gap: 0;
+			}
+		}
+	}
+	&__info {
+		display: grid;
+		gap: 40px;
+		@media screen and (max-width: $md) {
+			display: block;
+		}
+	}
+	&__title {
+		&.page-title {
+			margin: 0;
+		}
+	}
+	&__text {
+		font-size: 14px;
+		line-height: 140%;
+		max-width: 85%;
+	}
+	&__items {
+		display: grid;
+		gap: 15px;
+	}
+	&__button {
+	}
+	&__bottom {
+		display: none;
+		@media screen and (max-width: $md) {
+			display: block;
+			margin-top: 20px;
+		}
+	}
+}
+
+.form-input {
+}
+.form-label {
+}
+.form-textarea {
+}
+.btn-orange {
+	background-color: $orange;
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: #ff8052;
+		}
+		&:active {
+			background-color: #eb4a11;
+		}
+	}
+}
+.btn-blue-dark {
+	background-color: $blue;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: #309bfd;
+			&::after {
+				transform: rotate(45deg);
+			}
+		}
+		&:active {
+			background-color: #1785eb;
+		}
+	}
+}
+
+.btn-demo {
+	&::after {
+		content: '';
+		display: block;
+		width: 19px;
+		height: 19px;
+		background-color: $white;
+		mask-image: url('../images/dev/arrows-expand.svg');
+		mask-repeat: no-repeat;
+		mask-position: center;
+	}
+}
