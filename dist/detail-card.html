@@ -15,10 +15,10 @@
 	<meta property="twitter:title" content="Отель “Море удачи”">
 	<meta property="twitter:description" content="description">
 	<link rel="canonical" href="https://example.com">
-	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap&_v=20240907152856" rel="stylesheet">
-	<link href="assets/styles/main.css?_v=20240907152856" rel="stylesheet">
-	<link href="assets/styles/content.css?_v=20240907152856" rel="stylesheet">
-	<link href="assets/styles/detail-card.css?_v=20240907152856" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap&_v=20240918220232" rel="stylesheet">
+	<link href="assets/styles/main.css?_v=20240918220232" rel="stylesheet">
+	<link href="assets/styles/content.css?_v=20240918220232" rel="stylesheet">
+	<link href="assets/styles/detail-card.css?_v=20240918220232" rel="stylesheet">
 	<meta name="format-detection" content="telephone=no">
 	<meta name="format-detection" content="address=no">
 	<meta name="format-detection" content="email=no">
@@ -69,12 +69,36 @@
 												<ul class="menu-category__list">
 													<li class="menu-category__list-item">
 														<a class="menu-category__link" href="#">Курорты Сочи</a>
+														<div class="menu-category__sub-list-inner">
+															<ul class="menu-category__sub-list">
+																<li class="menu-category__sub-list-item">
+																	<a class="menu-category__sub-link" href="#">город Сочи</a>
+																</li>
+																<li class="menu-category__sub-list-item">
+																	<a class="menu-category__sub-link" href="#">город Сочи</a>
+																</li>
+															</ul>
+														</div>
 													</li>
 													<li class="menu-category__list-item">
-														<a class="menu-category__link active" href="#">Курорты Анапы</a>
+														<a class="menu-category__link" href="#">Курорты Анапы</a>
+														<div class="menu-category__sub-list-inner">
+															<ul class="menu-category__sub-list">
+																<li class="menu-category__sub-list-item">
+																	<a class="menu-category__sub-link" href="#">город Анапы</a>
+																</li>
+															</ul>
+														</div>
 													</li>
 													<li class="menu-category__list-item">
 														<a class="menu-category__link" href="#">Курорты Геленджика</a>
+														<div class="menu-category__sub-list-inner">
+															<ul class="menu-category__sub-list">
+																<li class="menu-category__sub-list-item">
+																	<a class="menu-category__sub-link" href="#">город Геленджика</a>
+																</li>
+															</ul>
+														</div>
 													</li>
 													<li class="menu-category__list-item">
 														<a class="menu-category__link" href="#">Курорты Геленджика</a>
@@ -120,22 +144,7 @@
 									<div class="menu-category__item">
 										<div class="menu-category__caption">Курорт</div>
 										<div class="menu-category__boxes">
-											<div class="menu-category__box">
-												<ul class="menu-category__list">
-													<li class="menu-category__list-item">
-														<a class="menu-category__link" href="#">город</a>
-													</li>
-													<li class="menu-category__list-item">
-														<a class="menu-category__link" href="#">город</a>
-													</li>
-													<li class="menu-category__list-item">
-														<a class="menu-category__link" href="#">город</a>
-													</li>
-													<li class="menu-category__list-item">
-														<a class="menu-category__link" href="#">город</a>
-													</li>
-												</ul>
-											</div>
+											<div class="menu-category__box dynamic-box"></div>
 										</div>
 									</div>
 								</div>
@@ -1078,7 +1087,7 @@
 									<div class="swiper categories-slider__body">
 										<div class="swiper-wrapper categories-slider__wrapper">
 											<div class="categories-slider__item">
-												<div class="card-preview">
+												<a class="card-preview" href="detail-card.html">
 													<button class="button-favorite" type="button">
 														<svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
 															<path fill-rule="evenodd" clip-rule="evenodd" d="M14.3434 2.16035C13.6031 1.41741 12.599 1 11.5519 1C10.5048 1 9.50068 1.41741 8.76046 2.16035L7.99981 2.92343L7.23916 2.16035C5.69748 0.613732 3.19793 0.613732 1.65626 2.16035C0.114581 3.70696 0.114581 6.21452 1.65626 7.76113L2.41691 8.52422L7.99981 14.125L13.5827 8.52422L14.3434 7.76113C15.0839 7.01854 15.5 6.01116 15.5 4.96074C15.5 3.91031 15.0839 2.90293 14.3434 2.16035Z" fill="#FF6933"></path>
@@ -1103,10 +1112,10 @@
 															</div>
 														</div>
 													</div>
-												</div>
+												</a>
 											</div>
 											<div class="categories-slider__item">
-												<div class="card-preview">
+												<a class="card-preview" href="detail-card.html">
 													<button class="button-favorite" type="button">
 														<svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
 															<path fill-rule="evenodd" clip-rule="evenodd" d="M14.3434 2.16035C13.6031 1.41741 12.599 1 11.5519 1C10.5048 1 9.50068 1.41741 8.76046 2.16035L7.99981 2.92343L7.23916 2.16035C5.69748 0.613732 3.19793 0.613732 1.65626 2.16035C0.114581 3.70696 0.114581 6.21452 1.65626 7.76113L2.41691 8.52422L7.99981 14.125L13.5827 8.52422L14.3434 7.76113C15.0839 7.01854 15.5 6.01116 15.5 4.96074C15.5 3.91031 15.0839 2.90293 14.3434 2.16035Z" fill="#FF6933"></path>
@@ -1131,10 +1140,10 @@
 															</div>
 														</div>
 													</div>
-												</div>
+												</a>
 											</div>
 											<div class="categories-slider__item">
-												<div class="card-preview">
+												<a class="card-preview" href="detail-card.html">
 													<button class="button-favorite" type="button">
 														<svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
 															<path fill-rule="evenodd" clip-rule="evenodd" d="M14.3434 2.16035C13.6031 1.41741 12.599 1 11.5519 1C10.5048 1 9.50068 1.41741 8.76046 2.16035L7.99981 2.92343L7.23916 2.16035C5.69748 0.613732 3.19793 0.613732 1.65626 2.16035C0.114581 3.70696 0.114581 6.21452 1.65626 7.76113L2.41691 8.52422L7.99981 14.125L13.5827 8.52422L14.3434 7.76113C15.0839 7.01854 15.5 6.01116 15.5 4.96074C15.5 3.91031 15.0839 2.90293 14.3434 2.16035Z" fill="#FF6933"></path>
@@ -1159,10 +1168,10 @@
 															</div>
 														</div>
 													</div>
-												</div>
+												</a>
 											</div>
 											<div class="categories-slider__item">
-												<div class="card-preview">
+												<a class="card-preview" href="detail-card.html">
 													<button class="button-favorite" type="button">
 														<svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
 															<path fill-rule="evenodd" clip-rule="evenodd" d="M14.3434 2.16035C13.6031 1.41741 12.599 1 11.5519 1C10.5048 1 9.50068 1.41741 8.76046 2.16035L7.99981 2.92343L7.23916 2.16035C5.69748 0.613732 3.19793 0.613732 1.65626 2.16035C0.114581 3.70696 0.114581 6.21452 1.65626 7.76113L2.41691 8.52422L7.99981 14.125L13.5827 8.52422L14.3434 7.76113C15.0839 7.01854 15.5 6.01116 15.5 4.96074C15.5 3.91031 15.0839 2.90293 14.3434 2.16035Z" fill="#FF6933"></path>
@@ -1187,10 +1196,10 @@
 															</div>
 														</div>
 													</div>
-												</div>
+												</a>
 											</div>
 											<div class="categories-slider__item">
-												<div class="card-preview">
+												<a class="card-preview" href="detail-card.html">
 													<button class="button-favorite" type="button">
 														<svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
 															<path fill-rule="evenodd" clip-rule="evenodd" d="M14.3434 2.16035C13.6031 1.41741 12.599 1 11.5519 1C10.5048 1 9.50068 1.41741 8.76046 2.16035L7.99981 2.92343L7.23916 2.16035C5.69748 0.613732 3.19793 0.613732 1.65626 2.16035C0.114581 3.70696 0.114581 6.21452 1.65626 7.76113L2.41691 8.52422L7.99981 14.125L13.5827 8.52422L14.3434 7.76113C15.0839 7.01854 15.5 6.01116 15.5 4.96074C15.5 3.91031 15.0839 2.90293 14.3434 2.16035Z" fill="#FF6933"></path>
@@ -1215,10 +1224,10 @@
 															</div>
 														</div>
 													</div>
-												</div>
+												</a>
 											</div>
 											<div class="categories-slider__item">
-												<div class="card-preview">
+												<a class="card-preview" href="detail-card.html">
 													<button class="button-favorite" type="button">
 														<svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
 															<path fill-rule="evenodd" clip-rule="evenodd" d="M14.3434 2.16035C13.6031 1.41741 12.599 1 11.5519 1C10.5048 1 9.50068 1.41741 8.76046 2.16035L7.99981 2.92343L7.23916 2.16035C5.69748 0.613732 3.19793 0.613732 1.65626 2.16035C0.114581 3.70696 0.114581 6.21452 1.65626 7.76113L2.41691 8.52422L7.99981 14.125L13.5827 8.52422L14.3434 7.76113C15.0839 7.01854 15.5 6.01116 15.5 4.96074C15.5 3.91031 15.0839 2.90293 14.3434 2.16035Z" fill="#FF6933"></path>
@@ -1243,10 +1252,10 @@
 															</div>
 														</div>
 													</div>
-												</div>
+												</a>
 											</div>
 											<div class="categories-slider__item">
-												<div class="card-preview">
+												<a class="card-preview" href="detail-card.html">
 													<button class="button-favorite" type="button">
 														<svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
 															<path fill-rule="evenodd" clip-rule="evenodd" d="M14.3434 2.16035C13.6031 1.41741 12.599 1 11.5519 1C10.5048 1 9.50068 1.41741 8.76046 2.16035L7.99981 2.92343L7.23916 2.16035C5.69748 0.613732 3.19793 0.613732 1.65626 2.16035C0.114581 3.70696 0.114581 6.21452 1.65626 7.76113L2.41691 8.52422L7.99981 14.125L13.5827 8.52422L14.3434 7.76113C15.0839 7.01854 15.5 6.01116 15.5 4.96074C15.5 3.91031 15.0839 2.90293 14.3434 2.16035Z" fill="#FF6933"></path>
@@ -1271,10 +1280,10 @@
 															</div>
 														</div>
 													</div>
-												</div>
+												</a>
 											</div>
 											<div class="categories-slider__item">
-												<div class="card-preview">
+												<a class="card-preview" href="detail-card.html">
 													<button class="button-favorite" type="button">
 														<svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
 															<path fill-rule="evenodd" clip-rule="evenodd" d="M14.3434 2.16035C13.6031 1.41741 12.599 1 11.5519 1C10.5048 1 9.50068 1.41741 8.76046 2.16035L7.99981 2.92343L7.23916 2.16035C5.69748 0.613732 3.19793 0.613732 1.65626 2.16035C0.114581 3.70696 0.114581 6.21452 1.65626 7.76113L2.41691 8.52422L7.99981 14.125L13.5827 8.52422L14.3434 7.76113C15.0839 7.01854 15.5 6.01116 15.5 4.96074C15.5 3.91031 15.0839 2.90293 14.3434 2.16035Z" fill="#FF6933"></path>
@@ -1299,7 +1308,7 @@
 															</div>
 														</div>
 													</div>
-												</div>
+												</a>
 											</div>
 										</div>
 									</div>
@@ -1465,7 +1474,6 @@
 			<div class="popup__close"></div>
 			<div class="popup-map__container">
 				<div class="map" id="map-popup"></div>
-				<button class="filter-button-mobile" type="button">Фильтры</button>
 			</div>
 		</div>
 	</div>
@@ -1529,8 +1537,8 @@
 			</div>
 		</div>
 	</div>
-	<script src="assets/scripts/main.js?_v=20240907152856" type="module"></script>
-	<script src="assets/scripts/detail-card.js?_v=20240907152856" type="module"></script>
+	<script src="assets/scripts/main.js?_v=20240918220232" type="module"></script>
+	<script src="assets/scripts/detail-card.js?_v=20240918220232" type="module"></script>
 </body>
 
 </html>

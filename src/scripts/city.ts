@@ -70,6 +70,9 @@ document.addEventListener('DOMContentLoaded', () => {
 			document.body.classList.add('lock');
 			overlay?.classList.add('active');
 		}
+		if (target.closest('.hotel-card__close')) {
+			target.parentNode.remove();
+		}
 	}
 
 	if (asideForm) {

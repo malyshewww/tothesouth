@@ -391,7 +391,24 @@ body:not(.home) {
 			}
 		}
 		&__btn-choice.btn.active {
-			color: $white;
+			@media (any-hover: hover) {
+				&:hover:not(.active) {
+					color: $white;
+					background-color: $gray-text;
+					border-color: $gray-text;
+					&::after {
+						background-color: $white;
+					}
+				}
+			}
+			&.active {
+				color: $white;
+				background-color: $blue-1;
+				border-color: $blue-1;
+				&::after {
+					background-color: $white;
+				}
+			}
 		}
 		&__favorite {
 			&::before {

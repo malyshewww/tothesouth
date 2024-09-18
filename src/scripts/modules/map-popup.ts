@@ -17,7 +17,10 @@ const map = document.getElementById('map-popup');
 async function initMap() {
 	await ymaps3?.ready;
 
-	const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapMarker } = ymaps3;
+	const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapMarker, YMapControls } = ymaps3;
+
+	const { YMapZoomControl } = await ymaps3.import('@yandex/ymaps3-controls@0.0.1');
+
 	const map = new YMap(document.getElementById('map-popup'), {
 		location: {
 			center: coords,
@@ -30,10 +33,19 @@ async function initMap() {
 	map.addChild(new YMapDefaultFeaturesLayer());
 
 	// Инициализируйте маркер
-	const marker = new YMapMarker({
-		coordinates: coords,
-		draggable: true,
-	});
+	const content = document.createElement('div');
+	const img = document.createElement('img');
+	content.classList.add('map-contacts__point');
+	img.src = 'assets/images/icons/pin.svg';
+	content.appendChild(img);
+	// Инициализируйте маркер
+	const marker = new YMapMarker(
+		{
+			coordinates: coords,
+			draggable: true,
+		},
+		content
+	);
 	map.addChild(marker);
 
 	if (window.innerWidth < 1024) {
@@ -75,6 +87,6 @@ async function initMap() {
 			});
 		}
 	} else {
-		// map.addChild(new YMapControls({ position: 'right' }).addChild(new YMapZoomControl({})));
+		map.addChild(new YMapControls({ position: 'right' }).addChild(new YMapZoomControl({})));
 	}
 }

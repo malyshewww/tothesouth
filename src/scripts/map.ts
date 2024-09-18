@@ -13,12 +13,14 @@ function loadMap() {
 }
 
 const coords = [39.331297, 43.911584];
-const map = document.getElementById('map');
+// const map = document.getElementById('map');
 
 async function initMap() {
 	await ymaps3?.ready;
 
-	const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapMarker } = ymaps3;
+	const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapMarker, YMapControls } = ymaps3;
+
+	const { YMapZoomControl } = await ymaps3.import('@yandex/ymaps3-controls@0.0.1');
 	const map = new YMap(document.getElementById('map'), {
 		location: {
 			center: coords,
@@ -29,11 +31,11 @@ async function initMap() {
 	map.addChild(new YMapDefaultSchemeLayer());
 	// Добавьте слой для маркеров
 	map.addChild(new YMapDefaultFeaturesLayer());
-
-	const content = document.createElement('img');
-	content.classList.add('contacts__map-point');
-	// content.src = '/images/icons/pin.svg';
-
+	const content = document.createElement('div');
+	const img = document.createElement('img');
+	content.classList.add('map-contacts__point');
+	img.src = 'assets/images/icons/pin.svg';
+	content.appendChild(img);
 	// Инициализируйте маркер
 	const marker = new YMapMarker(
 		{
@@ -43,6 +45,7 @@ async function initMap() {
 		content
 	);
 	map.addChild(marker);
+	map.addChild(new YMapControls({ position: 'right' }).addChild(new YMapZoomControl({})));
 }
 
 let observerOptions = {

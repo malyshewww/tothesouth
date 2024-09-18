@@ -29,10 +29,10 @@ block content
 						each post in cityPage.postList
 							li.city-posts__item.post-item
 								.post-item__body 
-									.post-item__image.ibg
+									a(href="#").post-item__image.ibg
 										img(src=`assets/images/city/city-posts/${post.img}.jpg`, alt="")
 									.post-item__content
-										.post-item__title Как добраться до Алушты?
+										a(href="#").post-item__title Как добраться до Алушты?
 										.post-item__description.text-clamp 
 											p Самая крупная транспортная развязка на полуострове – город Симферополь (столица Крыма) находится в 48 км от Алушты. Большая часть туристов попадает на курорт с пересадкой, о самых удобных вариантах проезда вы узнаете далее..
 											+btnDetail("Подробнее")

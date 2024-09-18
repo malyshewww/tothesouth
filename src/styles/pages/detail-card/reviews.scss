@@ -104,15 +104,8 @@
 			}
 		}
 	}
-	&__progress {
-	}
-	&__slider {
-	}
 	&__btn-show {
 		margin-top: 10px;
-		@media screen and (max-width: $md) {
-			display: none;
-		}
 	}
 }
 .progress-items {

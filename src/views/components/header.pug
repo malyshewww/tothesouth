@@ -37,7 +37,17 @@ header.header
 													ul.menu-category__list
 														each listItem, listItemIndex in child.list 
 															li.menu-category__list-item 
-																a(href=listItem.link class={active: itemIndex === 0 && childIndex === 0 && listItemIndex === 1}).menu-category__link= listItem.title
+																a(href=listItem.link).menu-category__link= listItem.title
+																if listItem.subList 
+																	.menu-category__sub-list-inner
+																		ul.menu-category__sub-list 
+																			each subItem in listItem.subList
+																				li.menu-category__sub-list-item 
+																					a(href=subItem.subLink).menu-category__sub-link= subItem.subTitle
+							.menu-category__item 
+								.menu-category__caption Курорт
+								.menu-category__boxes
+									.menu-category__box.dynamic-box
 			.header__links 
 				a.header__favorite(href="favorites.html" class={active: isFavorites})
 					svg(width="26" height="23" viewBox="0 0 26 23" fill="none" xmlns="http://www.w3.org/2000/svg")

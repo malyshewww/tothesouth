@@ -1,3 +1,10 @@
+.hotel-box {
+	visibility: hidden;
+	& .hotel-card {
+		visibility: visible;
+		position: relative;
+	}
+}
 .hotel-card {
 	padding: 14px;
 	padding-right: 20px;
@@ -14,6 +21,7 @@
 	.hotel-box & {
 		width: 296px;
 		padding: 20px;
+		padding-top: 25px;
 		border: none;
 		box-shadow: none;
 		display: grid;
@@ -23,6 +31,7 @@
 		@media screen and (max-width: $md) {
 			width: 262px;
 			padding: 10px 10px 20px;
+			padding-top: 25px;
 		}
 	}
 	@media (any-hover: hover) {
@@ -36,6 +45,48 @@
 	}
 	& .rating {
 		margin-left: 0;
+	}
+	&__close {
+		position: absolute;
+		top: 5px;
+		right: 5px;
+		width: 20px;
+		height: 20px;
+		z-index: 4;
+		display: none;
+		.hotel-box & {
+			display: block;
+		}
+		&:before,
+		&:after {
+			content: '';
+			width: 20px;
+			height: 2px;
+			background-color: $black;
+			border-radius: 2px;
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			margin: auto;
+			transition: background-color 0.3s;
+		}
+		&:hover:before,
+		&:hover:after {
+			background-color: $orange;
+		}
+		&:before {
+			transform: rotate(45deg);
+		}
+		&:after {
+			transform: rotate(-45deg);
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				cursor: pointer;
+			}
+		}
 	}
 	&__body {
 		display: grid;

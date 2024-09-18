@@ -1,5 +1,5 @@
 mixin facilityPreview(item, imgPath, className)
-	.card-preview(class=className)
+	a(href="detail-card.html").card-preview(class=className)
 		button(type="button").button-favorite
 			svg(width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg")
 				path(fill-rule="evenodd" clip-rule="evenodd" d="M14.3434 2.16035C13.6031 1.41741 12.599 1 11.5519 1C10.5048 1 9.50068 1.41741 8.76046 2.16035L7.99981 2.92343L7.23916 2.16035C5.69748 0.613732 3.19793 0.613732 1.65626 2.16035C0.114581 3.70696 0.114581 6.21452 1.65626 7.76113L2.41691 8.52422L7.99981 14.125L13.5827 8.52422L14.3434 7.76113C15.0839 7.01854 15.5 6.01116 15.5 4.96074C15.5 3.91031 15.0839 2.90293 14.3434 2.16035Z" fill="#FF6933")
@@ -192,6 +192,7 @@ mixin btnShow
 	button(type="button").form-group__btn-show Показать еще (10)
 mixin hotelPreview(item, isActive)
 	.hotel-card
+		.hotel-card__close
 		.hotel-card__body 
 			.hotel-card__image-wrap 
 				.hotel-card__image.ibg

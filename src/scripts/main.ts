@@ -110,4 +110,54 @@ document.addEventListener('DOMContentLoaded', () => {
 			filterButtonMobile.remove();
 		}
 	}
+
+	// Динамические данные в меню
+	const removeActiveClassLinks = () => {
+		const categoryLinksActive = document.querySelectorAll('.menu-category__link.active');
+		categoryLinksActive.forEach((link) => link.classList.remove('active'));
+	};
+	const categoryLinks = document.querySelectorAll('.menu-category__link');
+	if (categoryLinks.length) {
+		categoryLinks.forEach((link, index) => {
+			const parent = link.closest('.menu-category__box')?.querySelector('.menu-category__list');
+			let height = `${parent?.scrollHeight}`;
+			const subList = link.nextElementSibling as HTMLElement;
+			if (subList) {
+				link.classList.add('expanded');
+			}
+			link.addEventListener('click', (e) => {
+				e.preventDefault();
+				if (subList) {
+					if (window.innerWidth > 1024) {
+						removeActiveClassLinks();
+						link.classList.add('active');
+						const dynamicBoxWrapper = document.querySelector('.dynamic-box') as HTMLElement;
+						dynamicBoxWrapper.innerHTML = subList !== null ? subList.innerHTML : '';
+					} else {
+						link.classList.toggle('open');
+						if (link.classList.contains('open')) {
+							subList.style.height = `${subList?.scrollHeight}px`;
+							parent.style.height = `${parent?.scrollHeight + subList?.scrollHeight}px`;
+						} else {
+							subList.style.height = `0px`;
+							parent.style.height = `${height}px`;
+						}
+						[...categoryLinks].forEach((item2, index2) => {
+							if (index != index2) {
+								item2.classList.remove('open');
+								let contentTwo = item2.nextElementSibling;
+								if (contentTwo) {
+									contentTwo.style.height = '0px';
+									parent.style.height = `auto`;
+								}
+							}
+						});
+					}
+				}
+			});
+		});
+		if (window.innerWidth > 1024) {
+			categoryLinks[0].click();
+		}
+	}
 });

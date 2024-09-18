@@ -8,7 +8,7 @@
 						.heading__sub-title= region.subTitle
 					.main-regions__items 
 						each item in region.items
-							.main-regions__item
+							a(href="#").main-regions__item
 								.main-regions__image.ibg
 									img(src=`assets/images/homepage/main-regions/${region.key}-${item.image}.jpg`, alt=item.caption)
 								.main-regions__caption= item.caption

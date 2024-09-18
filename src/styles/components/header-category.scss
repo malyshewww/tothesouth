@@ -142,8 +142,7 @@
 		align-self: start;
 		@media screen and (max-width: $xl) {
 			width: 100%;
-			display: flex;
-			justify-content: flex-start;
+			display: block;
 			&:first-child {
 				margin-top: 10px;
 			}
@@ -176,6 +175,70 @@
 				background-color: transparent;
 				color: $blue-1;
 			}
+		}
+		@media screen and (max-width: $xl) {
+			padding: 5px 12px;
+			justify-content: space-between;
+			&::after {
+				content: none;
+				display: block;
+				width: 20px;
+				height: 20px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-shrink: 0;
+				mask-image: url('../images/icons/icon-arrow-gray.svg');
+				mask-repeat: no-repeat;
+				mask-position: center;
+				background-color: $gray-text;
+				transition: transform 0.3s;
+			}
+			&.open {
+				color: $blue-1;
+				&::after {
+					transform: rotate(-180deg);
+				}
+			}
+			&.expanded {
+				&::after {
+					content: '';
+				}
+			}
+		}
+	}
+	&__sub-list-inner {
+		display: none;
+		@media screen and (max-width: $xl) {
+			display: block;
+			overflow: hidden;
+			height: 0;
+			transition:
+				height $time,
+				opacity $time;
+		}
+	}
+	&__sub-list {
+		@include reset-list;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		@media screen and (max-width: $xl) {
+			margin-top: 10px;
+		}
+	}
+	&__sub-link {
+		font-size: 14px;
+		line-height: 140%;
+		color: $black;
+		transition: color $time;
+		@media (any-hover: hover) {
+			&:hover {
+				color: $blue-1;
+			}
+		}
+		@media screen and (max-width: $xl) {
+			padding: 5px 12px;
 		}
 	}
 }
